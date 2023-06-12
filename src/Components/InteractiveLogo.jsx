@@ -105,9 +105,13 @@ const LogoText = styled.input`
     &::placeholder {
       color: #ffffff; // Change placeholder color on hover
     }
+  }
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    &::placeholder {
+      font-size: 1.2rem;
+    }
   }
 `;
 

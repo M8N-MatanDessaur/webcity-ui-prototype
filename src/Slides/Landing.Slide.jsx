@@ -58,7 +58,7 @@ const Slogan = styled.blockquote`
 
 const ScrollArrow = styled.a`
   position: absolute;
-  bottom: 45px;
+  bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -71,4 +71,12 @@ const ScrollArrow = styled.a`
   align-items: center;
   cursor: pointer;
   z-index: 10;
+
+  &:hover {
+    transform scale(1.1);
+  }
+
+  @media (max-width: 480px) {
+    bottom: 55px;
+  }
 `;
