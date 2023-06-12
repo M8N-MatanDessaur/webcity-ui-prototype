@@ -10,7 +10,7 @@ export default function Landing() {
       <Slogan>
         we weave the web in the heart of the city
       </Slogan>
-      <ScrollArrow href="#Slide2">
+      <ScrollArrow href="#services">
         <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M4.855 7.496a.6.6 0 0 1 .85 0l6.775 6.776 6.775-6.776a.6.6 0 0 1 .85.85l-7.2 7.2a.6.6 0 0 1-.85 0l-7.2-7.2a.6.6 0 0 1 0-.85Z" clip-rule="evenodd"></path>
         </svg>
@@ -72,11 +72,7 @@ const ScrollArrow = styled.a`
   cursor: pointer;
   z-index: 10;
 
-  &:hover {
-    transform scale(1.1);
-  }
-
   @media (max-width: 480px) {
-    bottom: 55px;
+    bottom: 65px;
   }
 `;

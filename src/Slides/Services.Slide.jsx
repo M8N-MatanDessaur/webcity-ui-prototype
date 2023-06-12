@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Services() {
     return (
-        <FluidContainer id="Slide2">
+        <FluidContainer id="services">
             <Text>
                 elevate your performance with our insightful services
             </Text>
