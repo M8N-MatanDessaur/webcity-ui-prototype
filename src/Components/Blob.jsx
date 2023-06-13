@@ -13,19 +13,33 @@ export default function Blob() {
 };
 
 const liquidAnimation = keyframes`
-0% {
- border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
- box-shadow: 0 10px 20px rgba(78, 165, 217, 0.2), 0 6px 6px rgba(78, 165, 217, 0.2);
-}
-50% {
- border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
- box-shadow: 0 10px 20px rgba(239, 202, 8, 0.2), 0 6px 6px rgba(239, 202, 8, 0.2);
-}
-100% {
- border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
- box-shadow: 0 10px 20px rgba(248, 117, 117, 0.2), 0 6px 6px rgba(248, 117, 117, 0.2);
-}
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 10px 20px rgba(78, 165, 217, 0.2), 0 6px 6px rgba(78, 165, 217, 0.2);
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    box-shadow: 0 10px 20px rgba(239, 202, 8, 0.2), 0 6px 6px rgba(239, 202, 8, 0.2);
+    transform: translate(-50%, -50%) rotate(90deg) scale(1.05);
+  }
+  50% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    box-shadow: 0 10px 20px rgba(239, 202, 8, 0.2), 0 6px 6px rgba(239, 202, 8, 0.2);
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.08);
+  }
+  75% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    box-shadow: 0 10px 20px rgba(239, 202, 8, 0.2), 0 6px 6px rgba(239, 202, 8, 0.2);
+    transform: translate(-50%, -50%) rotate(270deg) scale(1.05);
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 10px 20px rgba(248, 117, 117, 0.2), 0 6px 6px rgba(248, 117, 117, 0.2);
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
 `;
+
 
 const BlobContainer = styled.div`
 position: absolute;
@@ -37,7 +51,7 @@ transform: translate(-50%, -50%);
 width: 500px;
 height: 500px;
 background-color: transparent;
-animation: ${liquidAnimation} 6s ease-in-out infinite;
+animation: ${liquidAnimation} 6s cubic-bezier(.78,.23,.2,.77) infinite;
 
 @media (max-width: 768px) {
   width: 400px;

@@ -31,7 +31,7 @@ export default function Services() {
                         Web Design
                     </ServiceTitle>
                     <ServiceDescription>
-                        We design websites that are beautiful, functional, and easy to use. We use the latest technologies to ensure your website is up to date with the latest trends.
+                    We create captivating, contemporary websites that blend beauty, functionality, and user-friendliness tailored to reflect your brand.
                     </ServiceDescription>
                 </Service>
             </ServicesContainer>

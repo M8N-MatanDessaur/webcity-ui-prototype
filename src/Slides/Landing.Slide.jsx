@@ -12,7 +12,7 @@ export default function Landing() {
       </Slogan>
       <ScrollArrow href="#services">
         <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M4.855 7.496a.6.6 0 0 1 .85 0l6.775 6.776 6.775-6.776a.6.6 0 0 1 .85.85l-7.2 7.2a.6.6 0 0 1-.85 0l-7.2-7.2a.6.6 0 0 1 0-.85Z" clip-rule="evenodd"></path>
+          <path fillRule="evenodd" d="M4.855 7.496a.6.6 0 0 1 .85 0l6.775 6.776 6.775-6.776a.6.6 0 0 1 .85.85l-7.2 7.2a.6.6 0 0 1-.85 0l-7.2-7.2a.6.6 0 0 1 0-.85Z" clipRule="evenodd"></path>
         </svg>
       </ScrollArrow>
     </FluidContainer>
@@ -63,6 +63,7 @@ const ScrollArrow = styled.a`
   transform: translateX(-50%);
   width: 40px;
   height: 40px;
+  outline: none;
   border-radius: 50%;
   background-color: transparent;
   color: #000;
@@ -71,6 +72,12 @@ const ScrollArrow = styled.a`
   align-items: center;
   cursor: pointer;
   z-index: 10;
+  transition: all 150ms ease-in-out;
+
+  &:active {
+    transform: translateX(-50%) scale(0.9);
+    opacity: 0.4;
+  }
 
   @media (max-width: 480px) {
     bottom: 65px;
