@@ -7,6 +7,7 @@ export default function Landing() {
   return (
     <FluidContainer>
       <Blob />
+      <BlurredOverlay />
       <Slogan>
         we weave the web in the heart of the city
       </Slogan>
@@ -18,6 +19,17 @@ export default function Landing() {
     </FluidContainer>
   );
 }
+
+const BlurredOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(40px);
+`;
 
 const FluidContainer = styled.div`
   position: relative;

@@ -59,7 +59,6 @@ const liquidAnimation = keyframes`
 const BlobContainer = styled.div`
   position: absolute;
   z-index: -1;
-  filter: blur(0px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
