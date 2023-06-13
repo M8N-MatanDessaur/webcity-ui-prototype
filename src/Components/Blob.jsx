@@ -17,13 +17,15 @@ export default function Blob() {
       });
     });
 
-    if (blobRef.current) {
-      observer.observe(blobRef.current);
+    const currentRef = blobRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (blobRef.current) {
-        observer.unobserve(blobRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
