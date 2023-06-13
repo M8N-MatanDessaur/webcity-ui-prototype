@@ -135,11 +135,7 @@ const Service = styled.div`
         border: 1px solid #00000040;
     }
 
-    @media (max-width: 768px) {
-        width: 80%;
-    }
-
-    @media (max-width: 480px) {
+    @media (max-width: 940px) {
         width: auto;
         padding: 1rem;
     }
