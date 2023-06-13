@@ -1,42 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import styled, { keyframes } from "styled-components";
 
 const colors = ["#4EA5D9", "#EFCA08", "#F87575"];
-
-export default function Blob() {
-  const blobRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
-      });
-    });
-
-    const currentRef = blobRef.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
-  return (
-    <BlobContainer ref={blobRef} className="blob">
-      <InnerBlob />
-      <OuterBlob />
-    </BlobContainer>
-  );
-}
 
 const liquidAnimation = keyframes`
   0% {
@@ -115,3 +80,40 @@ const OuterBlob = styled.div`
   overflow: hidden;
   background: linear-gradient(to bottom right, ${colors[1]}, ${colors[2]}, ${colors[0]});
 `;
+
+export default function Blob() {
+  const blobRef = useRef(null);
+
+  const handleIntersection = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection);
+
+    const currentRef = blobRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [handleIntersection]);
+
+  return (
+    <BlobContainer ref={blobRef} className="blob">
+      <InnerBlob />
+      <OuterBlob />
+    </BlobContainer>
+  );
+}

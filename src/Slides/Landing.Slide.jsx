@@ -86,7 +86,7 @@ const ScrollArrow = styled.a`
   z-index: 10;
   transition: all 150ms ease-in-out;
 
-  &:active {
+  &:hover {
     transform: translateX(-50%) scale(0.9);
     opacity: 0.4;
   }
