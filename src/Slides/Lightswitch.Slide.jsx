@@ -55,7 +55,7 @@ const Hint = styled.p`
   font-weight: 600;
   text-align: center;
   padding: 2rem;
-  color: #FFFFFF;
+  color: #FFFFFF60;
   width: auto;
   height: max-content;
   display: flex;
@@ -63,15 +63,7 @@ const Hint = styled.p`
   justify-content: center;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 320px) {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 `;
 
