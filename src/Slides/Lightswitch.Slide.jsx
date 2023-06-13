@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import demoImg from "../Assets/Images/DEMO.png";
+import ScheduleButton from "../Components/ScheduleButton";
 
 const SwitchContainer = styled.div`
   position: relative;
@@ -91,6 +93,20 @@ const Spotlight = styled.div`
   }
 `;
 
+const Image = styled.img`
+  height: 350px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 350px;
+  }
+
+  @media (max-width: 480px) {
+    height: 250px;
+  }
+`;
+
+
 
 const LightSwitch = () => {
   const [isOn, setIsOn] = useState(false);
@@ -120,6 +136,8 @@ const LightSwitch = () => {
       <QuoteContainer isOn={isOn}>
         <Text>shine a spotlight on your achievements <br /> bring your best work to life and share them with the world</Text>
       </QuoteContainer>
+      <Image src={demoImg} alt="demo" style={{ display: isOn ? "block" : "none" }} />
+      <ScheduleButton isOn={isOn} />
     </SwitchContainer>
   );
 };
