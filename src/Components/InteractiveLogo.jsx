@@ -18,7 +18,7 @@ const FLoatingContainer = styled.div`
     position: fixed;
     top: 35px;
     left: 35px;
-    z-index: 1000;
+    z-index: 998;
 
     @media (max-width: 768px) {
         top: 25px;
