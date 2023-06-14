@@ -80,15 +80,19 @@ const Spotlight = styled.div`
   position: absolute;
   top: ${({ mouseY }) => mouseY}px;
   left: ${({ mouseX }) => mouseX}px;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.4);
-  transition: all 0.1s ease;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.4);
+  transition: all 0.15s ease;
   pointer-events: none;
+  display: ${({ isOn }) => (isOn ? "none" : "block")};
 
-  @media (max-width: 500px) {
+  z-index: 2;
+  backdrop-filter: invert(1);
+
+  @media (max-width: 680px) {
     display: none;
   }
 `;
@@ -120,13 +124,13 @@ const LightSwitch = () => {
   };
 
   const handleMouseMove = (e) => {
-    setMouseX(e.clientX - 50);
-    setMouseY(e.clientY - 50);
+    setMouseX(e.clientX - 40);
+    setMouseY(e.clientY - 40);
   };
 
   return (
-    <SwitchContainer isOn={isOn} onClick={handleClick} onMouseMove={handleMouseMove}>
-      <Spotlight mouseX={mouseX} mouseY={mouseY} />
+    <SwitchContainer isOn={isOn} onClick={handleClick} onMouseMove={handleMouseMove} id="schedule">
+      <Spotlight mouseX={mouseX} mouseY={mouseY} isOn={isOn}/>
       {isOn ? "" :
         <FlexCol>
           <Text style={{ filter: "invert(1)" }}>Struggling to display your most significant work to the world?</Text>

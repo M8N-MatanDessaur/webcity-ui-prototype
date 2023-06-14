@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ScrollArrow from "../Components/ScrollArrow";
 
 export default function Services() {
     return (
@@ -35,11 +36,13 @@ export default function Services() {
                     </ServiceDescription>
                 </Service>
             </ServicesContainer>
+            <ScrollArrow slide="#schedule" />
         </FluidContainer>
     );
 }
 
 const FluidContainer = styled.div`
+position: relative;
   width: 100%;
   height: 100%;
   min-height: 100vh;
