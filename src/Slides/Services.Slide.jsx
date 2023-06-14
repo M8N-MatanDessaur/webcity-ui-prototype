@@ -91,11 +91,11 @@ const Text = styled.blockquote`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 320px) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 `;
 
