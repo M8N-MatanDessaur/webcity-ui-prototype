@@ -36,6 +36,19 @@ export default function Services() {
                     We create captivating, contemporary websites that blend beauty, functionality, and user-friendliness tailored to reflect your brand.
                     </ServiceDescription>
                 </Service>
+                <Service>
+                    <ServiceIcon>
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 2.5a.6.6 0 0 1 .6.6v18.8a.6.6 0 0 1-1.2 0V3.1a.6.6 0 0 1 .6-.6Zm-5.6 5.6a.6.6 0 0 1 .6.6v7.2a.6.6 0 0 1-1.2 0v-7.2a.6.6 0 0 1 .6-.6Zm11.2 0a.6.6 0 0 1 .6.6v7.2a.6.6 0 0 1-1.2 0v-7.2a.6.6 0 0 1 .6-.6Zm-5.6 5.6a.6.6 0 0 1 .6.6v2.8a.6.6 0 0 1-1.2 0v-2.8a.6.6 0 0 1 .6-.6Zm-5.6 0a.6.6 0 0 1 .6.6v2.8a.6.6 0 0 1-1.2 0v-2.8a.6.6 0 0 1 .6-.6Z"></path>
+                        </svg>
+                    </ServiceIcon>
+                    <ServiceTitle>
+                        Website Hosting
+                    </ServiceTitle>
+                    <ServiceDescription>
+                    We provide a secure, reliable, and affordable hosting service for your website. We also offer domain registration and management.
+                    </ServiceDescription>
+                </Service>
             </ServicesContainer>
             <ScrollArrow slide="#schedule" />
         </FluidContainer>
@@ -53,7 +66,8 @@ const FluidContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: scroll;
+  padding: 100px 35px;
 `;
 
 const Text = styled.blockquote`
@@ -108,6 +122,7 @@ const ServicesContainer = styled.div`
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 768px) {
         flex-direction: column;
