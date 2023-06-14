@@ -87,15 +87,15 @@ const Text = styled.blockquote`
   
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 2;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.5rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -106,6 +106,7 @@ const ServicesContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
     padding: 2rem;
 
     @media (max-width: 768px) {
@@ -124,13 +125,12 @@ const ServicesContainer = styled.div`
 const Service = styled.div`
     width: 30%;
     height: max-content;
-    max-height: 16rem;
+    max-height: 20em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem;
-    margin: 1rem;
+    padding: 3rem;
     backdrop-filter: blur(8px) saturate(180%);
     -webkit-backdrop-filter: blur(8px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.35);
@@ -188,20 +188,20 @@ const ServiceTitle = styled.h3`
 `;
 
 const ServiceDescription = styled.p`
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
     color: #000;
     
     @media (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
 
     @media (max-width: 480px) {
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
 
     @media (max-width: 320px) {
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
 `;
