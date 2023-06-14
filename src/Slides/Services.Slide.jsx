@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ScrollArrow from "../Components/ScrollArrow";
+import animatedbg from "../Assets/Images/Fluid-10s-1368px.svg";
 
 export default function Services() {
     return (
@@ -42,7 +43,9 @@ export default function Services() {
 }
 
 const FluidContainer = styled.div`
-position: relative;
+  position: relative;
+  background: url(${animatedbg}) no-repeat center center/cover;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -128,8 +131,12 @@ const Service = styled.div`
     flex-direction: column;
     padding: 2rem;
     margin: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #00000020;
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.4);
+
     transition: all 0.2s ease-in-out;
 
     &:hover {
