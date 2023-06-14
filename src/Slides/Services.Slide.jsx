@@ -33,7 +33,7 @@ export default function Services() {
                         Web Design
                     </ServiceTitle>
                     <ServiceDescription>
-                    We create captivating, contemporary websites that blend beauty, functionality, and user-friendliness tailored to reflect your brand.
+                        We create captivating, contemporary websites that blend beauty, functionality, and user-friendliness tailored to reflect your brand.
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -46,7 +46,46 @@ export default function Services() {
                         Website Hosting
                     </ServiceTitle>
                     <ServiceDescription>
-                    We provide a secure, reliable, and affordable hosting service for your website. We also offer domain registration and management.
+                        We provide a secure, reliable, and affordable hosting service for your website. We also offer domain registration and management.
+                    </ServiceDescription>
+                </Service>
+                <Service>
+                    <ServiceIcon>
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.75 11.717a.496.496 0 0 0-.439-.466l-1.202-.194a.253.253 0 0 1-.21-.22 6.815 6.815 0 0 0-.08-.446.259.259 0 0 1 .123-.274l1.068-.593a.485.485 0 0 0 .234-.601l-.185-.511a.484.484 0 0 0-.569-.305l-1.197.234a.258.258 0 0 1-.273-.132 8.426 8.426 0 0 0-.225-.394.262.262 0 0 1 .02-.305l.797-.92a.489.489 0 0 0 .019-.646l-.348-.417a.48.48 0 0 0-.637-.094l-1.048.63a.253.253 0 0 1-.3-.03 9.508 9.508 0 0 0-.345-.29.256.256 0 0 1-.08-.291l.433-1.144a.485.485 0 0 0-.202-.613l-.472-.274a.483.483 0 0 0-.631.133l-.767.96a.215.215 0 0 1-.262.081c-.03-.011-.27-.11-.458-.173a.254.254 0 0 1-.176-.245l.018-1.222a.49.49 0 0 0-.401-.51l-.537-.094a.49.49 0 0 0-.55.336l-.4 1.163a.254.254 0 0 1-.25.171h-.457a.26.26 0 0 1-.249-.172l-.396-1.156a.49.49 0 0 0-.552-.34l-.537.094a.49.49 0 0 0-.402.505l.019 1.227a.256.256 0 0 1-.181.246l-.446.17c-.094.034-.197-.003-.281-.099l-.763-.937a.483.483 0 0 0-.628-.136l-.472.274a.486.486 0 0 0-.202.617l.433 1.141a.26.26 0 0 1-.08.292c-.113.094-.23.187-.346.292a.252.252 0 0 1-.298.03l-1.036-.642a.487.487 0 0 0-.638.094l-.347.417a.484.484 0 0 0 .017.645l.801.919a.254.254 0 0 1 .021.302c-.08.127-.156.261-.225.396a.26.26 0 0 1-.275.132L3.502 8.1a.485.485 0 0 0-.569.305l-.188.51a.486.486 0 0 0 .235.602l1.068.593a.253.253 0 0 1 .124.278l-.01.058c-.026.13-.048.255-.07.387a.257.257 0 0 1-.209.218l-1.205.194a.488.488 0 0 0-.428.482v.543a.481.481 0 0 0 .43.48l1.203.195a.254.254 0 0 1 .211.219c.023.148.047.3.08.446a.259.259 0 0 1-.124.274l-1.067.594a.485.485 0 0 0-.234.601l.187.511a.484.484 0 0 0 .569.305l1.198-.232a.258.258 0 0 1 .272.132c.07.131.147.264.225.395a.262.262 0 0 1-.02.304l-.797.921a.488.488 0 0 0-.024.645l.348.418a.48.48 0 0 0 .636.094l1.049-.63a.253.253 0 0 1 .3.03c.116.101.234.2.345.29a.256.256 0 0 1 .08.29l-.434 1.145a.485.485 0 0 0 .202.612l.474.274a.483.483 0 0 0 .63-.132l.777-.954c.065-.081.168-.117.245-.087.163.068.272.106.466.17a.255.255 0 0 1 .176.246l-.02 1.22a.493.493 0 0 0 .403.51l.536.095a.49.49 0 0 0 .551-.336l.398-1.162a.257.257 0 0 1 .252-.17h.457a.258.258 0 0 1 .248.171l.397 1.157a.49.49 0 0 0 .552.34l.538-.094a.49.49 0 0 0 .401-.506l-.018-1.226a.255.255 0 0 1 .175-.244c.18-.06.306-.11.418-.152l.028-.011c.144-.05.212.007.257.061l.785.968a.483.483 0 0 0 .63.132l.472-.274a.486.486 0 0 0 .202-.614l-.433-1.14a.258.258 0 0 1 .079-.293c.114-.093.23-.187.347-.291a.252.252 0 0 1 .299-.03l1.05.629a.487.487 0 0 0 .637-.094l.347-.417a.483.483 0 0 0-.017-.645l-.8-.922a.253.253 0 0 1-.021-.302 5.32 5.32 0 0 0 .226-.396.261.261 0 0 1 .275-.132l1.194.233a.485.485 0 0 0 .569-.305l.185-.51a.486.486 0 0 0-.234-.602l-1.069-.594a.254.254 0 0 1-.122-.276l.01-.059c.025-.13.047-.255.07-.387a.257.257 0 0 1 .209-.217l1.204-.194a.489.489 0 0 0 .43-.482v-.549Zm-13.707 5.22a6.334 6.334 0 0 1 .024-9.889l2.812 4.95-2.836 4.938ZM12 18.334a6.27 6.27 0 0 1-2.273-.424l2.835-4.935h5.683c-.47 3.031-3.09 5.359-6.245 5.359Zm.565-7.308-2.81-4.945A6.275 6.275 0 0 1 12 5.668c3.154 0 5.776 2.328 6.245 5.359h-5.68Z"></path>
+                        </svg>
+                    </ServiceIcon>
+                    <ServiceTitle>
+                        Website Maintnence
+                    </ServiceTitle>
+                    <ServiceDescription>
+                        We offer a website maintenance service to ensure your website is up to date and secure. We also offer a website redesign service.
+                    </ServiceDescription>
+                </Service>
+                <Service>
+                    <ServiceIcon>
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 23.295v-3.6c-5.01-.26-9-4.42-9-9.49 0-5.24 4.26-9.5 9.5-9.5s9.5 4.26 9.5 9.5c0 4.95-3.44 9.93-8.57 12.4l-1.43.69Zm.5-20.59c-4.14 0-7.5 3.36-7.5 7.5 0 4.14 3.36 7.5 7.5 7.5h1.5v2.3c3.64-2.3 6-6.08 6-9.8 0-4.14-3.36-7.5-7.5-7.5Zm-1 11.5h2v2h-2v-2Zm2-1.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5Z"></path>
+                        </svg>
+                    </ServiceIcon>
+                    <ServiceTitle>
+                        Unlimited Support
+                    </ServiceTitle>
+                    <ServiceDescription>
+                        We are always available to help you with any questions you may have. We are here to help you grow your business.
+                    </ServiceDescription>
+                </Service>
+                <Service>
+                    <ServiceIcon>
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M20 2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h4v5l4-2 4 2v-5h4c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2Zm0 13H4v-2h16v2ZM4 10h16V4H4v6Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </ServiceIcon>
+                    <ServiceTitle>
+                        Monthly Plans
+                    </ServiceTitle>
+                    <ServiceDescription>
+                        We offer different monthly plans to help you get started with your website. We also offer a custom plan to suit your needs.
                     </ServiceDescription>
                 </Service>
             </ServicesContainer>
@@ -152,12 +191,10 @@ const Service = styled.div`
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.4);
 
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 
     &:hover {
-        transform: scale(1.02) translateY(-0.5rem);
-        box-shadow: 0 2rem 2rem #00000009;
-        border: 1px solid #00000040;
+        border: 1.5px solid #00000040;
     }
 
     @media (max-width: 940px) {
