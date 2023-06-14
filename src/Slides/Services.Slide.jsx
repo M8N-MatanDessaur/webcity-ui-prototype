@@ -90,12 +90,12 @@ const Text = styled.blockquote`
     font-size: 2;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
   }
 
-  @media (max-width: 320px) {
-    font-size: 1.3rem;
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -188,7 +188,7 @@ const ServiceTitle = styled.h3`
 `;
 
 const ServiceDescription = styled.p`
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
     color: #000;
@@ -198,10 +198,6 @@ const ServiceDescription = styled.p`
     }
 
     @media (max-width: 480px) {
-        font-size: 1rem;
-    }
-
-    @media (max-width: 320px) {
         font-size: 1rem;
     }
 `;

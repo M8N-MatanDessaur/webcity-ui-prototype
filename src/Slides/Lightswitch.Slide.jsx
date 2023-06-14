@@ -39,15 +39,11 @@ const Text = styled.blockquote`
   justify-content: center;
 
   @media (max-width: 768px) {
-    font-size: 2;
+    font-size: 1.8rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 320px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 `;
 
