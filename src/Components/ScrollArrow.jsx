@@ -15,9 +15,8 @@ export default function ScrollArrow({ slide }) {
 const ScrollArrowButton = styled.p`
   position: absolute;
   bottom: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
+  left: 0;
+  width: 100%;
   height: 40px;
   outline: none;
   border-radius: 50%;
@@ -29,6 +28,10 @@ const ScrollArrowButton = styled.p`
   z-index: 10;
   transition: all 150ms ease-in-out;
   animation: bounce 2s infinite;
+
+  svg{
+    height: 35px;
+  }
 
   @media (max-width: 480px) {
     bottom: 65px;

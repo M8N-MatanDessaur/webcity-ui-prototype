@@ -267,7 +267,7 @@ const Button = styled.button`
   margin-top: 2rem;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 1);
@@ -276,7 +276,7 @@ const Button = styled.button`
     inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 200;
   border: 1px solid #00000020;
   outline: none;
   cursor: pointer;
@@ -287,6 +287,7 @@ const Button = styled.button`
 
   &:hover {
     transform: scale(1.02);
+    filter:drop-shadow(0 10px 10px #00000030);
   }
 
   @media (max-width: 768px) {
@@ -299,12 +300,6 @@ const Button = styled.button`
     width: max-content;
     height: 30px;
     font-size: 0.8rem;
-  }
-
-  @media (max-width: 320px) {
-    width: max-content;
-    height: 25px;
-    font-size: 0.6rem;
   }
 `;
 
