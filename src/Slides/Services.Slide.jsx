@@ -89,7 +89,7 @@ export default function Services() {
                     </ServiceDescription>
                 </Service>
             </ServicesContainer>
-            <ScrollArrow slide="#schedule" />
+            <ScrollArrow/>
         </FluidContainer>
     );
 }

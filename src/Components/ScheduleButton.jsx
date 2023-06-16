@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -171,13 +172,11 @@ const ScheduleButton = ({ isOn }) => {
         setNumber("");
     };
 
-    const handleFormSubmit = (e) => {
+    const confirm = (e) => {
         e.preventDefault();
-        // Add your logic to handle form submission here
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Number:", number);
-        handleModalClose();
+        setShowModal(false);
+        toast.success("Thank you for contacting us.");
+        document.getElementById("form").submit();
     };
 
     return (
@@ -189,14 +188,20 @@ const ScheduleButton = ({ isOn }) => {
                 <ModalOverlay>
                     <ModalContent>
                         <div>
-                        <FormTitle>Schedule an Appointment</FormTitle>
-                        <FormSubTitle>we'll contact you in less than a flash <span>⚡</span></FormSubTitle>
+                            <FormTitle>Schedule an Appointment</FormTitle>
+                            <FormSubTitle>we'll contact you in less than a flash <span>⚡</span></FormSubTitle>
                         </div>
-                        <Form onSubmit={handleFormSubmit}>
+                        <Form onSubmit={confirm} action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
+                            <input type="hidden" name="subject" value="Hurray we got a new client 🎊"></input>
+                            <input type="hidden" name="redirect" value="https://webcity.dev"></input>
+                            <input type="hidden" name="from_name" value="Webcity request"></input>
+                            <input type="checkbox" name="botcheck" class="hidden" style={{ display: "none" }}></input>
                             <FlexRow>
                                 <InputWrapper>
                                     <InputField
                                         type="text"
+                                        name="name"
                                         value={name}
                                         placeholder="full name"
                                         onChange={(e) => setName(e.target.value)}
@@ -205,6 +210,7 @@ const ScheduleButton = ({ isOn }) => {
                                 <InputWrapper>
                                     <InputField
                                         type="tel"
+                                        name="number"
                                         value={number}
                                         placeholder="phone number"
                                         onChange={(e) => setNumber(e.target.value)}
@@ -214,6 +220,7 @@ const ScheduleButton = ({ isOn }) => {
                             <InputWrapper>
                                 <InputField
                                     type="email"
+                                    name="email"
                                     value={email}
                                     placeholder="email"
                                     onChange={(e) => setEmail(e.target.value)}

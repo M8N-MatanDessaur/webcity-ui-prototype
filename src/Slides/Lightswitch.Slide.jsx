@@ -130,7 +130,7 @@ const LightSwitch = () => {
       {isOn ? "" :
         <FlexCol>
           <Text style={{ filter: "invert(1)" }}>Struggling to display your most significant work to the world?</Text>
-          <Hint>Click anywhere to turn on</Hint>
+          <Hint>Click anywhere to turn on the light</Hint>
         </FlexCol>
       }
       <QuoteContainer isOn={isOn}>

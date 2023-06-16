@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
+import ScheduleButton from "../Components/ScheduleButton";
 
 export default function Landing() {
 
@@ -12,7 +13,10 @@ export default function Landing() {
       <Slogan>
         we weave the web in the heart of the city
       </Slogan>
-      <ScrollArrow slide="#services" />
+      <Quote>
+        making your vision, our work of art
+      </Quote>
+      <ScrollArrow/>
     </FluidContainer>
   );
 }
@@ -36,6 +40,7 @@ const FluidContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   overflow: hidden;
 `;
 
@@ -46,7 +51,7 @@ const Slogan = styled.blockquote`
   text-align: center;
   padding: 2rem;
   color: #000;
-  width: max-content;
+  width: fit-content;
   height: max-content;
   display: flex;
   align-items: center;
@@ -64,3 +69,30 @@ const Slogan = styled.blockquote`
     font-size: 1.5rem;
   }
 `;
+
+const Quote = styled.blockquote`
+  font-family: 'poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-align: center;
+  color: #000;
+  width: fit-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+`;
+
+

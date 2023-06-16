@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export default function ScrollArrow({ slide }) {
     return (
 
-        <ScrollArrowButton href={slide}>
+        <ScrollArrowButton>
             <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M4.855 7.496a.6.6 0 0 1 .85 0l6.775 6.776 6.775-6.776a.6.6 0 0 1 .85.85l-7.2 7.2a.6.6 0 0 1-.85 0l-7.2-7.2a.6.6 0 0 1 0-.85Z" clipRule="evenodd"></path>
             </svg>
@@ -12,7 +12,7 @@ export default function ScrollArrow({ slide }) {
     );
 }
 
-const ScrollArrowButton = styled.a`
+const ScrollArrowButton = styled.p`
   position: absolute;
   bottom: 35px;
   left: 50%;
@@ -26,16 +26,22 @@ const ScrollArrowButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   z-index: 10;
   transition: all 150ms ease-in-out;
-
-  &:hover {
-    transform: translateX(-50%) scale(0.9);
-    opacity: 0.4;
-  }
+  animation: bounce 2s infinite;
 
   @media (max-width: 480px) {
     bottom: 65px;
   }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
 `;
