@@ -1,22 +1,30 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
 import ScheduleButton from "../Components/ScheduleButton";
 
 export default function Landing() {
+  const [fadeInQuote, setFadeInQuote] = useState(false);
+  const [fadeInSlogan, setFadeInSlogan] = useState(false);
+
+  useEffect(() => {
+    setFadeInQuote(true);
+    setFadeInSlogan(true);
+  }, []);
 
   return (
     <FluidContainer>
       <Blob />
       <BlurredOverlay />
-      <Slogan>
+      <Slogan fade={fadeInSlogan}>
         we weave the web in the heart of the city
       </Slogan>
-      <Quote>
+      <Quote fade={fadeInQuote}>
         making your vision, our work of art
       </Quote>
-      <ScrollArrow/>
+      <ScheduleButton isOn={true}/>
+      <ScrollArrow />
     </FluidContainer>
   );
 }
@@ -44,6 +52,26 @@ const FluidContainer = styled.div`
   overflow: hidden;
 `;
 
+const fadeInSloganAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeInQuoteAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Slogan = styled.blockquote`
   font-family: 'Montserrat', sans-serif;
   font-size: 3.3rem;
@@ -56,6 +84,8 @@ const Slogan = styled.blockquote`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+  animation: ${({ fade }) => (fade ? fadeInSloganAnimation : "none")} 1s ease-in;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -81,6 +111,8 @@ const Quote = styled.blockquote`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: ${({ fade }) => (fade ? 1 : 0)};
+  animation: ${({ fade }) => (fade ? fadeInQuoteAnimation : "none")} 1s ease-in;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -93,6 +125,5 @@ const Quote = styled.blockquote`
   @media (max-width: 320px) {
     font-size: 0.8rem;
   }
+};
 `;
-
-

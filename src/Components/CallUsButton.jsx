@@ -25,7 +25,7 @@ const Button = styled.button`
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 1000;
+    z-index: 998;
     -webkit-border-radius: 50px;
     border-radius: 50px;
     border: 1px solid #000;
