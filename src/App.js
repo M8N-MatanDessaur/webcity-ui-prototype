@@ -53,8 +53,9 @@ const Offering = styled.blockquote`
   cite {
     display: block;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 100;
     margin-top: 1rem;
+    opacity: 0.8;
   }
 
   @media (max-width: 768px) {
