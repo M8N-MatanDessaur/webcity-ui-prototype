@@ -194,7 +194,7 @@ const Service = styled.div`
     transition: all 0.1s ease-in-out;
 
     &:hover {
-        border: 1.5px solid #00000040;
+        border: 1px solid #00000040;
     }
 
     @media (max-width: 940px) {

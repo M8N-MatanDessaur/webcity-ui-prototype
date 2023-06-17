@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import styled, { keyframes } from "styled-components";
 
@@ -149,7 +149,7 @@ const CloseButton = styled.button`
   top: 10px;
   right: 10px;
   padding: 0.2rem;
-  background-color: black;
+  background-color: #00000080;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -212,6 +212,7 @@ const ScheduleButton = ({ isOn }) => {
                   <InputField
                     type="text"
                     name="name"
+                    required
                     value={name}
                     placeholder="full name"
                     onChange={(e) => setName(e.target.value)}
@@ -221,6 +222,7 @@ const ScheduleButton = ({ isOn }) => {
                   <InputField
                     type="tel"
                     name="number"
+                    required
                     value={number}
                     placeholder="phone number"
                     onChange={(e) => setNumber(e.target.value)}
@@ -231,6 +233,7 @@ const ScheduleButton = ({ isOn }) => {
                 <InputField
                   type="email"
                   name="email"
+                  required
                   value={email}
                   placeholder="email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -286,7 +289,6 @@ const Button = styled.button`
   animation: ${({ isOn }) => (isOn ? fadeInAnimation : "none")} 1s ease-in-out forwards;
 
   &:hover {
-    transform: scale(1.02);
     filter:drop-shadow(0 10px 10px #00000030);
   }
 
@@ -298,8 +300,7 @@ const Button = styled.button`
 
   @media (max-width: 480px) {
     width: max-content;
-    height: 30px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 `;
 

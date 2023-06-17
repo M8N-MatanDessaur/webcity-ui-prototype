@@ -43,7 +43,8 @@ const Button = styled.button`
         text-decoration: none;
     }
     span {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
         text-transform: uppercase;
         display: block;
     }

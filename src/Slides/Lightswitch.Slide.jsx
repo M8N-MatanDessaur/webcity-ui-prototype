@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import demoImg from "../Assets/Images/DEMO.png";
 import ScheduleButton from "../Components/ScheduleButton";
+import PortfolioButton from "../Components/PortfolioButton";
 
 const SwitchContainer = styled.div`
   position: relative;
@@ -110,7 +111,7 @@ const Image = styled.img`
 
 const LightSwitch = () => {
   const [isOn, setIsOn] = useState(false);
-  const [mouseX, setMouseX] = useState(0);
+  const [mouseX, setMouseX] = useState(-500);
   const [mouseY, setMouseY] = useState(0);
 
   const handleClick = () => {
@@ -130,7 +131,7 @@ const LightSwitch = () => {
       {isOn ? "" :
         <FlexCol>
           <Text style={{ filter: "invert(1)" }}>Struggling to display your most significant work to the world?</Text>
-          <Hint>Click anywhere to turn on the light</Hint>
+          <Hint>Click anywhere to shine the spotlight</Hint>
         </FlexCol>
       }
       <QuoteContainer isOn={isOn}>
@@ -138,6 +139,7 @@ const LightSwitch = () => {
       </QuoteContainer>
       <Image src={demoImg} alt="demo" style={{ display: isOn ? "block" : "none" }} />
       <ScheduleButton isOn={isOn} />
+      <PortfolioButton isOn={isOn} />
     </SwitchContainer>
   );
 };
