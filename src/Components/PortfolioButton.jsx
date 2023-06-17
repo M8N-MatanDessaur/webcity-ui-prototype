@@ -1,9 +1,16 @@
 import React from "react";
 import styled,{keyframes} from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function PortfolioButton({isOn}) {
+    const navigate = useNavigate();
+
+    const goToPortfolio = () => {
+        navigate("/portfolio");
+    };
+    
     return (
-        <Button isOn={isOn}>
+        <Button isOn={isOn} onClick={goToPortfolio}>
              our recent work
         </Button>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import demoImg from "../Assets/Images/DEMO.png";
 import ScheduleButton from "../Components/ScheduleButton";
@@ -17,8 +17,10 @@ const SwitchContainer = styled.div`
   font-size: 18px;
   font-weight: bold;
   cursor: ${({ isOn }) => (isOn ? "default" : "pointer")};
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  opacity: ${({ opacity }) => opacity};
 `;
+
 
 const QuoteContainer = styled.div`
   display: ${({ isOn }) => (isOn ? "block" : "none")};
@@ -113,6 +115,7 @@ const LightSwitch = () => {
   const [isOn, setIsOn] = useState(false);
   const [mouseX, setMouseX] = useState(-500);
   const [mouseY, setMouseY] = useState(0);
+  const [opacity, setOpacity] = useState(0);
 
   const handleClick = () => {
     if (!isOn) {
@@ -125,8 +128,26 @@ const LightSwitch = () => {
     setMouseY(e.clientY - 40);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const elementTop = document.getElementById("schedule").offsetTop;
+      const windowHeight = window.innerHeight;
+      
+      if (scrollY + windowHeight > elementTop) {
+        const scrollPercentage = Math.min(1, (scrollY + windowHeight - elementTop) / windowHeight);
+        setOpacity(scrollPercentage);
+      } else {
+        setOpacity(0);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <SwitchContainer isOn={isOn} onClick={handleClick} onMouseMove={handleMouseMove} id="schedule">
+    <SwitchContainer isOn={isOn} opacity={opacity} onClick={handleClick} onMouseMove={handleMouseMove} id="schedule">
       <Spotlight mouseX={mouseX} mouseY={mouseY} isOn={isOn}/>
       {isOn ? "" :
         <FlexCol>
