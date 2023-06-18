@@ -3,6 +3,7 @@ import styled from "styled-components";
 import demoImg from "../Assets/Images/DEMO.png";
 import ScheduleButton from "../Components/ScheduleButton";
 import PortfolioButton from "../Components/PortfolioButton";
+import { useTranslation } from "react-i18next";
 
 const SwitchContainer = styled.div`
   position: relative;
@@ -116,6 +117,7 @@ const LightSwitch = () => {
   const [mouseX, setMouseX] = useState(-500);
   const [mouseY, setMouseY] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const { t } = useTranslation();
 
   const handleClick = () => {
     if (!isOn) {
@@ -151,12 +153,16 @@ const LightSwitch = () => {
       <Spotlight mouseX={mouseX} mouseY={mouseY} isOn={isOn}/>
       {isOn ? "" :
         <FlexCol>
-          <Text style={{ filter: "invert(1)" }}>Struggling to display your most significant work to the world?</Text>
-          <Hint>Click anywhere to shine the spotlight</Hint>
+          <Text style={{ filter: "invert(1)" }}> {t('mainText.struggle')} </Text>
+          <Hint> {t('mainText.struggle2')} </Hint>
         </FlexCol>
       }
       <QuoteContainer isOn={isOn}>
-        <Text>shine a spotlight on your achievements <br /> bring your best work to life and share them with the world</Text>
+        <Text> 
+          {t('mainText.struggle3')} 
+          <br/> 
+          {t('mainText.struggle4')} 
+        </Text>
       </QuoteContainer>
       <Image src={demoImg} alt="demo" style={{ display: isOn ? "block" : "none" }} />
       <ScheduleButton isOn={isOn} />

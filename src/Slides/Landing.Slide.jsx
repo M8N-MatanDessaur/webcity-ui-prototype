@@ -3,10 +3,12 @@ import styled, { keyframes } from "styled-components";
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
 import ScheduleButton from "../Components/ScheduleButton";
+import { useTranslation } from "react-i18next";
 
 export default function Landing() {
   const [fadeInQuote, setFadeInQuote] = useState(false);
   const [fadeInSlogan, setFadeInSlogan] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setFadeInQuote(true);
@@ -18,10 +20,10 @@ export default function Landing() {
       <Blob />
       <BlurredOverlay />
       <Slogan fade={fadeInSlogan}>
-        we weave the web in the heart of the city
+        {t('mainText.slogan')}
       </Slogan>
       <Quote fade={fadeInQuote}>
-        making your vision, our work of art
+        {t('mainText.slogan2')}
       </Quote>
       <ScheduleButton isOn={true}/>
       <ScrollArrow />

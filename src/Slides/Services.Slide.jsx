@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import ScrollArrow from "../Components/ScrollArrow";
 import animatedbg from "../Assets/Images/Fluid-10s-1368px.svg";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+    const { t } = useTranslation();
     return (
         <FluidContainer id="services">
             <Text>
-                elevate your performance with our insightful services
+                {t('serviceText.title')}
             </Text>
             <ServicesContainer>
                 <Service>
@@ -17,10 +19,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Web Development
+                        {t('serviceText.webDevelopment')}                        
                     </ServiceTitle>
                     <ServiceDescription>
-                        We build websites that are fast, secure, and easy to use. We use the latest technologies to ensure your website is up to date with the latest trends.
+                        {t('serviceText.webDevelopmentText')}
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -30,10 +32,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Web Design
+                        {t('serviceText.webDesign')}
                     </ServiceTitle>
                     <ServiceDescription>
-                        We create captivating, contemporary websites that blend beauty, functionality, and user-friendliness tailored to reflect your brand.
+                        {t('serviceText.webDesignText')}
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -43,10 +45,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Website Hosting
+                        {t('serviceText.webHosting')}
                     </ServiceTitle>
                     <ServiceDescription>
-                        We provide a secure, reliable, and affordable hosting service for your website. We also offer domain registration and management.
+                        {t('serviceText.webHostingText')}
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -56,10 +58,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Website Maintnence
+                        {t('serviceText.webMaintenance')}
                     </ServiceTitle>
                     <ServiceDescription>
-                        We offer a website maintenance service to ensure your website is up to date and secure. We also offer a website redesign service.
+                        {t('serviceText.webMaintenanceText')}
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -69,10 +71,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Unlimited Support
+                        {t('serviceText.unlimitedSupport')}
                     </ServiceTitle>
                     <ServiceDescription>
-                        We are always available to help you with any questions you may have. We are here to help you grow your business.
+                        {t('serviceText.unlimitedSupportText')}
                     </ServiceDescription>
                 </Service>
                 <Service>
@@ -82,10 +84,10 @@ export default function Services() {
                         </svg>
                     </ServiceIcon>
                     <ServiceTitle>
-                        Monthly Plans
+                        {t('serviceText.montlyPlan')}
                     </ServiceTitle>
                     <ServiceDescription>
-                        We offer different monthly plans to help you get started with your website. We also offer a custom plan to suit your needs.
+                        {t('serviceText.montlyPlanText')}
                     </ServiceDescription>
                 </Service>
             </ServicesContainer>

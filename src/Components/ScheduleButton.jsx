@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import styled, { keyframes } from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const fadeInAnimation = keyframes`
   from {
@@ -168,6 +169,7 @@ const ScheduleButton = ({ isOn }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
+    const { t } = useTranslation();
   
     const handleButtonClick = () => {
       setShowModal((prevShowModal) => !prevShowModal);
@@ -190,15 +192,17 @@ const ScheduleButton = ({ isOn }) => {
   return (
     <>
       <Button isOn={isOn} onClick={handleButtonClick}>
-        Schedule a Meeting
+        {t('buttonText.scheduling')}
       </Button>
       {showModal && (
         <ModalOverlay>
           <ModalContent>
             <div>
-              <FormTitle>Schedule an Appointment</FormTitle>
+              <FormTitle>
+                {t('formText.schedulingAppointment')}
+              </FormTitle>
               <FormSubTitle>
-                we'll contact you in less than a flash <span>⚡</span>
+                {t('formText.schedulingSlogan')} <span>⚡</span>
               </FormSubTitle>
             </div>
             <Form onSubmit={confirm} action="https://api.web3forms.com/submit" method="POST" id="form">
@@ -214,7 +218,7 @@ const ScheduleButton = ({ isOn }) => {
                     name="name"
                     required
                     value={name}
-                    placeholder="full name"
+                    placeholder={t('formText.fullname')}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </InputWrapper>
@@ -224,7 +228,7 @@ const ScheduleButton = ({ isOn }) => {
                     name="number"
                     required
                     value={number}
-                    placeholder="phone number"
+                    placeholder={t('formText.phone')}
                     onChange={(e) => setNumber(e.target.value)}
                   />
                 </InputWrapper>
@@ -235,11 +239,11 @@ const ScheduleButton = ({ isOn }) => {
                   name="email"
                   required
                   value={email}
-                  placeholder="email"
+                  placeholder={t('formText.email')}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </InputWrapper>
-              <SubmitButton type="submit">Submit</SubmitButton>
+              <SubmitButton type="submit">{t('formText.summit')}</SubmitButton>
             </Form>
             <CloseButton onClick={handleModalClose}>
               <svg
