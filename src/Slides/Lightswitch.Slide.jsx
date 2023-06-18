@@ -16,7 +16,7 @@ const SwitchContainer = styled.div`
   color: ${({ isOn }) => (isOn ? "black" : "white")};
   font-size: 18px;
   font-weight: bold;
-  cursor: ${({ isOn }) => (isOn ? "default" : "pointer")};
+  cursor: ${({ isOn }) => (isOn ? "default" : "crosshair")};
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
   opacity: ${({ opacity }) => opacity};
 `;

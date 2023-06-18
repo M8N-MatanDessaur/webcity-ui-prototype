@@ -274,6 +274,7 @@ const Button = styled.button`
   border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 1);
+  color: #000;
   border-radius: 26px;
   box-shadow: 35px 35px 68px 0px rgba(204, 204, 204, 0.5),
     inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),

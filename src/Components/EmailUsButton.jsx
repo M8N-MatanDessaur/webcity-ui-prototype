@@ -1,22 +1,22 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-export default function CallUsButton() {
+export default function MailUsButton() {
   return (
     <Button>
-      <a href="tel:(438)495-1817">
+      <a href="mailto:info@webcity.dev">
         <svg
-          fill="none"
-          stroke="black"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          fill="black"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M15.75.75h-7.5A2.25 2.25 0 0 0 6 3v18a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 21V3A2.25 2.25 0 0 0 15.75.75Z"></path>
-          <path d="M8.25.75h1.125a.375.375 0 0 1 .375.375.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75.375.375 0 0 1 .375-.375h1.125"></path>
+          <path
+            fillRule="evenodd"
+            d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10v1.43C22 15.4 20.47 17 18.5 17c-1.19 0-2.31-.58-2.96-1.47-.9.91-2.16 1.47-3.54 1.47-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5v1.43c0 .79.71 1.57 1.5 1.57s1.5-.78 1.5-1.57V12c0-4.34-3.66-8-8-8s-8 3.66-8 8 3.66 8 8 8h5v2h-5C6.48 22 2 17.52 2 12Zm7 0c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3Z"
+            clipRule="evenodd"
+          ></path>
         </svg>
-        <span>(438)495-1817</span>
+        <span>info@webcity.dev</span>
       </a>
     </Button>
   );
@@ -25,7 +25,7 @@ export default function CallUsButton() {
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(130%);
   }
   to {
     opacity: 1;
@@ -38,7 +38,7 @@ const Button = styled.button`
   border: none;
   padding: 10px;
   position: fixed;
-  bottom: 95px;
+  bottom: 155px;
   right: 25px;
   z-index: 998;
   border-radius: 50px;
@@ -59,7 +59,6 @@ const Button = styled.button`
   span {
     font-size: 1.2rem;
     font-weight: 600;
-    text-transform: uppercase;
     display: block;
   }
   &:hover {
@@ -79,5 +78,6 @@ const Button = styled.button`
     }
   }
 
-  animation: ${fadeIn} 0.52s ease-in-out;
+  animation: ${fadeIn} 0.5s ease-in-out;
+};
 `;

@@ -1,11 +1,11 @@
 import React from "react";
 import InteractiveLogo from "./Components/InteractiveLogo";
-import CallUsButton from "./Components/CallUsButton";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import MainPage from "./Pages/MainPage";
 import Portfolio from "./Pages/Portfolio";
+import ContactRevealButton from "./Components/ContactRevealButton";
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
         }}
       />
       <InteractiveLogo />
-      <CallUsButton />
+      <ContactRevealButton />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/portfolio" element={<Portfolio />} />
