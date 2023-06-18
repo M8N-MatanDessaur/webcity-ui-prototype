@@ -202,7 +202,7 @@ const ScheduleButton = ({ isOn }) => {
               </FormSubTitle>
             </div>
             <Form onSubmit={confirm} action="https://api.web3forms.com/submit" method="POST" id="form">
-              <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
+              <input type="hidden" name="access_key" value="b07e6e42-1e9f-49f2-a3f6-284515cd1c8c" />
               <input type="hidden" name="subject" value="Hurray we got a new client 🎊"></input>
               <input type="hidden" name="redirect" value="https://webcity.dev"></input>
               <input type="hidden" name="from_name" value="Webcity request"></input>
