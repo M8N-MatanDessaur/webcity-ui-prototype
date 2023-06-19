@@ -41,7 +41,7 @@ export default {
 
     formText: {
         schedulingAppointment: 'Planifier un rendez-vous',
-        schedulingSlogan:'Nous vous contacterons au plus bref délai',
+        schedulingSlogan:'Nous vous contacterons dans les plus brefs délais',
         fullname: 'Nom complet',
         email: 'Email',
         phone: 'Numéro de téléphone',
