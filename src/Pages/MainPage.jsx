@@ -3,6 +3,8 @@ import styled, { keyframes, css } from "styled-components";
 import Landing from "../Slides/Landing.Slide";
 import Services from "../Slides/Services.Slide";
 import LightSwitch from "../Slides/Lightswitch.Slide";
+import { useTranslation, Trans } from 'react-i18next';
+import i18next from 'i18next';
 
 const OBSERVER_OPTIONS = {
   root: null,
@@ -13,6 +15,7 @@ const OBSERVER_OPTIONS = {
 export default function MainPage() {
   const offeringRef = useRef(null);
   const [fadeInOffering, setFadeInOffering] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const current = offeringRef.current;
@@ -41,9 +44,7 @@ export default function MainPage() {
     <>
       <Landing />
       <Offering ref={offeringRef} fade={fadeInOffering}>
-        webcity is a full service web design and development agency. We build
-        websites, web applications, and web experiences. 100% satisfaction
-        guaranteed. <cite>— We offer a full ready to roll solution for your business.</cite>
+      {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
       </Offering>
       <Services />
       <LightSwitch />

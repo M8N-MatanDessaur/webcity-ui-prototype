@@ -1,9 +1,11 @@
 import React from "react";
 import styled,{keyframes} from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function PortfolioButton({isOn}) {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const goToPortfolio = () => {
         navigate("/portfolio");
@@ -11,7 +13,7 @@ export default function PortfolioButton({isOn}) {
     
     return (
         <Button isOn={isOn} onClick={goToPortfolio}>
-             our recent work
+            {t('buttonText.ourRecentWork')}
         </Button>
     );
 }

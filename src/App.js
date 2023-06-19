@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./Pages/MainPage";
 import Portfolio from "./Pages/Portfolio";
 import ContactRevealButton from "./Components/ContactRevealButton";
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../src/Translation/i18n';
 
 export default function App() {
   return (
