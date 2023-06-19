@@ -3,8 +3,7 @@ import styled, { keyframes, css } from "styled-components";
 import Landing from "../Slides/Landing.Slide";
 import Services from "../Slides/Services.Slide";
 import LightSwitch from "../Slides/Lightswitch.Slide";
-import { useTranslation, Trans } from 'react-i18next';
-import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const OBSERVER_OPTIONS = {
   root: null,
