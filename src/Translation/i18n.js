@@ -3,6 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import frTranslations from './Fr';
 import enTranslations from './En';
 
+const userPreferredLanguage = navigator.language;
+
 i18n.use(initReactI18next).init({
   resources: {
     fr: {
@@ -12,7 +14,7 @@ i18n.use(initReactI18next).init({
       translation: enTranslations,
     },
   },
-  lng: 'en',
+  lng: userPreferredLanguage,
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
