@@ -29,8 +29,8 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    background-color: #fff;
-    scroll-behavior: smooth
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
 }
 
 canvas,

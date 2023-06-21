@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import BackButton from "../Components/BackButton";
-import { useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     return (
         <Container>
-            <h1>{t('mainText.portfolio')}</h1>
-            <p> {t('mainText.commingSoon')} </p>
+            <Title>{t('mainText.portfolio')}</Title>
+            <Text> {t('mainText.commingSoon')} </Text>
             <BackButton />
         </Container>
     );
@@ -23,4 +23,12 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    `;
+
+const Title = styled.h1`
+    color: var(--text-color);
+    `;
+
+const Text = styled.p`
+    color: var(--text-color);
     `;

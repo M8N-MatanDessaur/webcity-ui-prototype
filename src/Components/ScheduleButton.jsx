@@ -19,7 +19,9 @@ const ModalOverlay = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
+  width: 100%;
   height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -30,10 +32,10 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   width: 700px;
   position: relative;
-  background-color: #fff;
+  background-color: var(--foreground-color);
   padding: 50px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.209);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +68,7 @@ const InputWrapper = styled.div`
 
 const InputField = styled.input`
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.209);
+  border: 1px solid var(--border-color);
   border-radius: 50px;
   padding: 1.3rem 3rem;
   outline: none;
@@ -74,6 +76,9 @@ const InputField = styled.input`
   transition: all 0.2s ease-in-out;
   width: 100%;
   height: 100%;
+  color: var(--text-color);
+
+
 
   &:focus {
     outline: none;
@@ -93,7 +98,7 @@ const Form = styled.form`
 const FormTitle = styled.h2`
   font-size: 2rem;
   font-weight: 800;
-  color: #000;
+  color: var(--text-color);
   text-align: center;
 
   @media (max-width: 480px) {
@@ -109,7 +114,8 @@ const FormTitle = styled.h2`
 const FormSubTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 100;
-  color: #00000080;
+  color: var(--text-color);
+  opacity: 0.8;
   text-align: center;
 
   & span {
@@ -150,8 +156,9 @@ const CloseButton = styled.button`
   top: 10px;
   right: 10px;
   padding: 0.2rem;
-  background-color: #00000080;
-  color: #fff;
+  background-color: var(--background-color);
+  opacity: 0.8;
+  color: var(--text-color);
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
@@ -248,7 +255,7 @@ const ScheduleButton = ({ isOn }) => {
             <CloseButton onClick={handleModalClose}>
               <svg
                 fill="none"
-                stroke="currentColor"
+                stroke="var(--text-color)"
                 height="16px"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -277,7 +284,7 @@ const Button = styled.button`
   padding: 1.2rem 2rem;
   border-radius: 50px;
   backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fff;
   color: #000;
   border-radius: 26px;
   box-shadow: 35px 35px 68px 0px rgba(204, 204, 204, 0.5),
@@ -291,6 +298,7 @@ const Button = styled.button`
   transition: all 0.1s ease-in-out;
   opacity: 0;
   transform: translateY(20px);
+  z-index: 1;
   animation: ${({ isOn }) => (isOn ? fadeInAnimation : "none")} 1s ease-in-out forwards;
 
   &:hover {

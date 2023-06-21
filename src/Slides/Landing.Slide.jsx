@@ -80,7 +80,7 @@ const Slogan = styled.blockquote`
   font-weight: 600;
   text-align: center;
   padding: 2rem;
-  color: #000;
+  color: var(--text-color);
   width: fit-content;
   height: max-content;
   display: flex;
@@ -107,7 +107,7 @@ const Quote = styled.blockquote`
   font-size: 1.5rem;
   font-weight: 100;
   text-align: center;
-  color: #000;
+  color: var(--text-color);
   width: fit-content;
   height: max-content;
   display: flex;

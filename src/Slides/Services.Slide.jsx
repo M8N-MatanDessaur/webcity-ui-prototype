@@ -99,6 +99,7 @@ export default function Services() {
 const FluidContainer = styled.div`
   position: relative;
   background: url(${animatedbg}) no-repeat center center/cover;
+  filter:var(--isDark);
   background-attachment: fixed;
   width: 100%;
   height: 100%;

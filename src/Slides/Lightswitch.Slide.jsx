@@ -13,8 +13,8 @@ const SwitchContainer = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: ${({ isOn }) => (isOn ? "white" : "black")};
-  color: ${({ isOn }) => (isOn ? "black" : "white")};
+  background-color: ${({ isOn }) => (isOn ? "var(--background-color)" : "black")};
+  color: ${({ isOn }) => (isOn ? "var(--text-color)" : "white")};
   font-size: 18px;
   font-weight: bold;
   cursor: ${({ isOn }) => (isOn ? "default" : "crosshair")};
@@ -35,7 +35,7 @@ const Text = styled.blockquote`
   font-weight: 600;
   text-align: center;
   padding: 2rem;
-  color: #000;
+  color: var(--text-color);
   width: auto;
   height: max-content;
   display: flex;

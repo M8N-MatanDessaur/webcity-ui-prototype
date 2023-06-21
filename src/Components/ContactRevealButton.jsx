@@ -19,7 +19,7 @@ export default function ContactRevealButton() {
         </>
       )}
       <Button onClick={handleClick} isClicked={isClicked}>
-        <svg fill="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg fill="var(--text-color)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41Z"></path>
         </svg>
       </Button>
@@ -28,7 +28,7 @@ export default function ContactRevealButton() {
 }
 
 const Button = styled.button`
-  background-color: #fff;
+  background-color: var(--background-color);
   border: none;
   padding: 15px;
   position: fixed;
@@ -36,7 +36,7 @@ const Button = styled.button`
   right: 25px;
   z-index: 998;
   border-radius: 50px;
-  border: 1px solid #000;
+  border: 1px solid var(--text-color);
   svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -44,10 +44,10 @@ const Button = styled.button`
     transition: transform 0.3s ease-in-out;
   }
   &:hover {
-    background-color: #fff;
+    background-color: var(--background-color);
   }
   &:active {
-    background-color: #f5f5f5;
+    background-color: var(--foreground-color);
   }
 };
 `;

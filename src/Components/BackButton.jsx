@@ -11,7 +11,7 @@ export default function BackButton() {
 
     return (
         <Button onClick={goBack}>
-            <svg fill="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg fill="var(--text-color)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2Z"></path>
             </svg>
         </Button >
@@ -19,7 +19,7 @@ export default function BackButton() {
 }
 
 const Button = styled.button`
-    background-color: #fff;
+    background-color: var(--background-color);
     border: none;
     padding: 15px;
     position: fixed;
@@ -28,15 +28,15 @@ const Button = styled.button`
     z-index: 998;
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    border: 1px solid #000;
+    border: 1px solid var(--text-color);
     svg {
         width: 1.5rem;
         height: 1.5rem;
     }
     &:hover {
-        background-color: #fff;
+        background-color: var(--foreground-color);
     }
     &:active {
-        background-color: #f5f5f5;
+        background-color: var(--background-color);
     }
 `;

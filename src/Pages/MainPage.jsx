@@ -63,7 +63,8 @@ const fadeInAnimation = keyframes`
 `;
 
 const Offering = styled.blockquote`
-  background: #f5f5f5;
+  background: var(--foreground-color);
+  color: var(--text-color);	
   width: 100%;
   font-size: 1.8rem;
   font-weight: 300;

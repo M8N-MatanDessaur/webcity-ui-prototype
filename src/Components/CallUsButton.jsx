@@ -7,7 +7,7 @@ export default function CallUsButton() {
       <a href="tel:(438)495-1817">
         <svg
           fill="none"
-          stroke="black"
+          stroke="var(--text-color)"
           strokeLinecap="round"
           strokeLinejoin="round"
           viewBox="0 0 24 24"
@@ -34,7 +34,7 @@ const fadeIn = keyframes`
 `;
 
 const Button = styled.button`
-  background-color: #fff;
+  background-color: var(--background-color);
   border: none;
   padding: 10px;
   position: fixed;
@@ -42,7 +42,7 @@ const Button = styled.button`
   right: 25px;
   z-index: 998;
   border-radius: 50px;
-  border: 1px solid #000;
+  border: 1px solid var(--text-color);
   svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -53,7 +53,7 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
   }
   span {
@@ -63,10 +63,10 @@ const Button = styled.button`
     display: block;
   }
   &:hover {
-    background-color: #fff;
+    background-color: var(--foreground-color);
   }
   &:active {
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
   }
 
   @media (max-width: 768px) {
