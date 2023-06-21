@@ -153,7 +153,7 @@ const LightSwitch = () => {
       <Spotlight mouseX={mouseX} mouseY={mouseY} isOn={isOn}/>
       {isOn ? "" :
         <FlexCol>
-          <Text style={{ filter: "var(--isDark)" }}> {t('mainText.struggle')} </Text>
+          <Text> {t('mainText.struggle')} </Text>
           <Hint> {t('mainText.struggle2')} </Hint>
         </FlexCol>
       }
