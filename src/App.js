@@ -8,7 +8,7 @@ import i18n from "./Translation/i18n";
 import MainPage from "./Pages/MainPage";
 import Portfolio from "./Pages/Portfolio";
 import ContactRevealButton from "./Components/ContactRevealButton";
-import TranslationButton from "./Components/TranslationButton";
+// import TranslationButton from "./Components/TranslationButton"; //TODO : uncomment this line to enable translation button (Needs to be fixed)
 
 export default function App() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
         }}
       />
       <InteractiveLogo />
-      <TranslationButton />
+      {/* <TranslationButton /> */}
       <ContactRevealButton />
       <Routes>
         <Route path="/" element={<MainPage />} />
