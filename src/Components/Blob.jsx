@@ -1,7 +1,15 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import styled, { keyframes } from "styled-components";
 
-const colors = ["#4EA5D9", "#EFCA08", "#F87575"];
+// Obtain the user's preferred mode (light or dark)
+const userPreferredMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+let colors = [];
+// Update the CSS variables based on the user's preferred mode
+if (userPreferredMode === "light") {
+  colors = ["#4EA5D9", "#EFCA08", "#F87575"];
+} else if (userPreferredMode === "dark") {
+  colors = [ "#992C2C","#4C2C69", "#874000"];
+}
 
 const liquidAnimation = keyframes`
   0% {
@@ -83,7 +91,6 @@ const OuterBlob = styled.div`
 
 export default function Blob() {
   const blobRef = useRef(null);
-
   const handleIntersection = useCallback((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
