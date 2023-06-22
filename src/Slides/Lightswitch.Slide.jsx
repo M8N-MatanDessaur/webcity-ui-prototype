@@ -35,6 +35,28 @@ const Text = styled.blockquote`
   font-weight: 600;
   text-align: center;
   padding: 2rem;
+  color: white;
+  width: auto;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+`;
+
+const TextOn = styled.blockquote`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
   color: var(--text-color);
   width: auto;
   height: max-content;
@@ -158,11 +180,11 @@ const LightSwitch = () => {
         </FlexCol>
       }
       <QuoteContainer isOn={isOn}>
-        <Text> 
+        <TextOn> 
           {t('mainText.struggle3')} 
           <br/> 
           {t('mainText.struggle4')} 
-        </Text>
+        </TextOn>
       </QuoteContainer>
       <Image src={demoImg} alt="demo" style={{ display: isOn ? "block" : "none" }} />
       <ScheduleButton isOn={isOn} />

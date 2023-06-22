@@ -44,8 +44,7 @@ const Button = styled.button`
   background-color: rgba(255, 255, 255, 1);
   color: #000;
   border-radius: 26px;
-  box-shadow: 35px 35px 68px 0px rgba(204, 204, 204, 0.5),
-    inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
+  box-shadow:inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
   font-size: 1.2rem;
   font-weight: 200;
