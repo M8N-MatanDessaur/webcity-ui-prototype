@@ -45,7 +45,7 @@ export default {
         fullname: 'Full Name',
         email: 'Email',
         phone: 'Phone number',
-        summit: 'Summit',
+        summit: 'Submit',
 
 
     },
