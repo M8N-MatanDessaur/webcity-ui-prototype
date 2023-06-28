@@ -12,7 +12,7 @@ export default function AboutUs() {
 
     return (
         <FluidContainer>
-            <SectionTitle>{t('aboutUs.title')}✨</SectionTitle>
+            <SectionTitle>{t('aboutUs.title')}&nbsp;✨</SectionTitle>
             <SectionSubtitle>{t('aboutUs.subtitle')}</SectionSubtitle>
             <Separator />
             <GridWrapper>
