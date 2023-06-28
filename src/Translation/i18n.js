@@ -4,6 +4,9 @@ import frTranslations from './Fr';
 import enTranslations from './En';
 
 const initializeI18n = (userPreferredLanguage) => {
+  // Extract the language code without region or variant information
+  const languageCode = userPreferredLanguage.split('-')[0];
+
   i18n.use(initReactI18next).init({
     resources: {
       fr: {
@@ -13,7 +16,7 @@ const initializeI18n = (userPreferredLanguage) => {
         translation: enTranslations,
       },
     },
-    lng: userPreferredLanguage,
+    lng: languageCode,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
