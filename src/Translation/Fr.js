@@ -54,13 +54,19 @@ export default {
         
         matanSubtitle: 'Développeur / Designer Principal',
         matanText: 'Salut! 👋🏼 Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble !',
-        
+        matanExtraText:'co-fondateur',
+
         ericSubtitle: 'Développement Commercial',
         ericText: 'Bonjour, je suis Eric ! Ancien responsable des opérations devenu passionné de technologie, je combine la planification stratégique, le leadership et la communication avec mes compétences en programmation. Ma mission : mener vos projets commerciaux vers le succès avec efficacité et innovation.',
-        
+        matanExtraText:'co-fondateur',
+
         jacobsSubtitle: 'Spécialiste Marketing',
         jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.'
         
+    },
+
+    footerQuote: {
+        text: 'webcity | faire de votre vision, notre œuvre d\'art',
     }
 
   };

@@ -17,40 +17,42 @@ export default function AboutUs() {
             <Separator />
             <GridWrapper>
                 <MemberCard>
-                    <ConversationHeaderImage src={matan_picture} alt="Matan" />
-                    <ConversationHeader>
-                        <ConversationHeaderText>
-                            <ConversationHeaderTitle>Matan Dessaur</ConversationHeaderTitle>
-                            <ConversationHeaderSubtitle>{t('aboutUs.matanSubtitle')}</ConversationHeaderSubtitle>
-                        </ConversationHeaderText>
-                    </ConversationHeader>
-                    <ConversationBody>
-                        <ConversationBodyText>{t('aboutUs.matanText')}</ConversationBodyText>
-                    </ConversationBody>
+                    <MemberPicture src={matan_picture} alt="Matan" />
+                    <ExtraText>{t('aboutUs.matanExtraText')}</ExtraText>
+                    <CardHeader>
+                        <CardHeaderText>
+                            <CardHeaderTitle>Matan Dessaur</CardHeaderTitle>
+                            <CardHeaderSubtitle>{t('aboutUs.matanSubtitle')}</CardHeaderSubtitle>
+                        </CardHeaderText>
+                    </CardHeader>
+                    <CardBody>
+                        <CardBodyText>{t('aboutUs.matanText')}</CardBodyText>
+                    </CardBody>
                 </MemberCard>
                 <MemberCard>
-                    <ConversationHeaderImage src={eric_picture} alt="Eric" />
-                    <ConversationHeader>
-                        <ConversationHeaderText>
-                            <ConversationHeaderTitle>Eric Gendron</ConversationHeaderTitle>
-                            <ConversationHeaderSubtitle>{t('aboutUs.ericSubtitle')}</ConversationHeaderSubtitle>
-                        </ConversationHeaderText>
-                    </ConversationHeader>
-                    <ConversationBody>
-                        <ConversationBodyText>{t('aboutUs.ericText')}</ConversationBodyText>
-                    </ConversationBody>
+                <ExtraText>{t('aboutUs.ericExtraText')}</ExtraText>
+                    <MemberPicture src={eric_picture} alt="Eric" />
+                    <CardHeader>
+                        <CardHeaderText>
+                            <CardHeaderTitle>Eric Gendron</CardHeaderTitle>
+                            <CardHeaderSubtitle>{t('aboutUs.ericSubtitle')}</CardHeaderSubtitle>
+                        </CardHeaderText>
+                    </CardHeader>
+                    <CardBody>
+                        <CardBodyText>{t('aboutUs.ericText')}</CardBodyText>
+                    </CardBody>
                 </MemberCard>
                 <MemberCard>
-                    <ConversationHeaderImage src={jacob_picture} alt="Jacobs" />
-                    <ConversationHeader>
-                        <ConversationHeaderText>
-                            <ConversationHeaderTitle>Jacob Gourgeon</ConversationHeaderTitle>
-                            <ConversationHeaderSubtitle>{t('aboutUs.jacobsSubtitle')}</ConversationHeaderSubtitle>
-                        </ConversationHeaderText>
-                    </ConversationHeader>
-                    <ConversationBody>
-                        <ConversationBodyText>{t('aboutUs.jacobText')}</ConversationBodyText>
-                    </ConversationBody>
+                    <MemberPicture src={jacob_picture} alt="Jacobs" />
+                    <CardHeader>
+                        <CardHeaderText>
+                            <CardHeaderTitle>Jacob Gourgeon</CardHeaderTitle>
+                            <CardHeaderSubtitle>{t('aboutUs.jacobsSubtitle')}</CardHeaderSubtitle>
+                        </CardHeaderText>
+                    </CardHeader>
+                    <CardBody>
+                        <CardBodyText>{t('aboutUs.jacobText')}</CardBodyText>
+                    </CardBody>
                 </MemberCard>
             </GridWrapper>
         </FluidContainer>
@@ -173,7 +175,7 @@ const MemberCard = styled.div`
     }
 `;
 
-const ConversationHeader = styled.div`
+const CardHeader = styled.div`
     width: 100%;
     height: 20%;
     display: flex;
@@ -186,7 +188,7 @@ const ConversationHeader = styled.div`
 
 `;
 
-const ConversationHeaderImage = styled.img`
+const MemberPicture = styled.img`
     position: absolute;
     top: -35px;
     left: -35px;
@@ -222,7 +224,7 @@ const ConversationHeaderImage = styled.img`
 
 `;
 
-const ConversationHeaderText = styled.div`
+const CardHeaderText = styled.div`
     position: relative;
     width: 80%;
     height: 100%;
@@ -237,7 +239,7 @@ const ConversationHeaderText = styled.div`
     font-weight: bold;
 `;
 
-const ConversationHeaderTitle = styled.div`
+const CardHeaderTitle = styled.div`
     position: relative;
     width: 100%;
     height: 50%;
@@ -260,7 +262,7 @@ const ConversationHeaderTitle = styled.div`
     }
 `;
 
-const ConversationHeaderSubtitle = styled.div`
+const CardHeaderSubtitle = styled.div`
     position: relative;
     width: 100%;
     height: 50%;
@@ -284,7 +286,7 @@ const ConversationHeaderSubtitle = styled.div`
     }
 `;
 
-const ConversationBody = styled.div`    
+const CardBody = styled.div`    
     position: relative;
     width: 100%;
     height: 80%;
@@ -302,7 +304,7 @@ const ConversationBody = styled.div`
     font-weight: bold;
 `;
 
-const ConversationBodyText = styled.div`    
+const CardBodyText = styled.div`    
     position: relative;
     width: 100%;
     height: 100%;
@@ -339,3 +341,12 @@ const ConversationBodyText = styled.div`
         border: 3px solid var(--foreground-color);
     }
 `;
+
+const ExtraText = styled.h2`
+    position: absolute;
+    top: -18px;
+    left: 65px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--border-color);
+    `;

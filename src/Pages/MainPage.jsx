@@ -5,6 +5,7 @@ import Services from "../Slides/Services.Slide";
 import LightSwitch from "../Slides/Lightswitch.Slide";
 import { useTranslation } from 'react-i18next';
 import AboutUs from "../Slides/AboutUs";
+import FooterQuote from "../Components/FooterQuote";
 
 const OBSERVER_OPTIONS = {
   root: null,
@@ -49,6 +50,7 @@ export default function MainPage() {
       <Services />
       <LightSwitch />
       <AboutUs />
+      <FooterQuote />
     </>
   );
 }
