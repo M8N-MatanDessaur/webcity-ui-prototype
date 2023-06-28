@@ -250,7 +250,7 @@ const ScheduleButton = ({ isOn }) => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </InputWrapper>
-              <SubmitButton type="submit">{t('formText.summit')}</SubmitButton>
+              <SubmitButton type="submit">{t('formText.submit')}</SubmitButton>
             </Form>
             <CloseButton onClick={handleModalClose}>
               <svg

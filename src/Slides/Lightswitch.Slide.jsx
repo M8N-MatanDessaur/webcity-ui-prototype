@@ -6,6 +6,8 @@ import PortfolioButton from "../Components/PortfolioButton";
 import { useTranslation } from "react-i18next";
 
 const SwitchContainer = styled.div`
+--mouse-x: 0;
+--mouse-y: 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,7 +19,6 @@ const SwitchContainer = styled.div`
   color: ${({ isOn }) => (isOn ? "var(--text-color)" : "white")};
   font-size: 18px;
   font-weight: bold;
-  cursor: ${({ isOn }) => (isOn ? "default" : "crosshair")};
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
   opacity: ${({ opacity }) => opacity};
 `;
@@ -100,8 +101,8 @@ const FlexCol = styled.div`
 
 const Spotlight = styled.div`
   position: absolute;
-  top: ${({ mouseY }) => mouseY}px;
-  left: ${({ mouseX }) => mouseX}px;
+  top: calc(var(--mouse-y) * 1px);
+  left: calc(var(--mouse-x) * 1px);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -109,7 +110,7 @@ const Spotlight = styled.div`
   box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.4);
   transition: all 0.15s ease;
   pointer-events: none;
-  display: ${({ isOn }) => (isOn ? "none" : "block")};
+  display: ${({ isOn, isMouseOver }) => (!isOn && isMouseOver ? "block" : "none")};
 
   z-index: 2;
   backdrop-filter: invert(1);
@@ -136,9 +137,9 @@ const Image = styled.img`
 
 const LightSwitch = () => {
   const [isOn, setIsOn] = useState(false);
-  const [mouseX, setMouseX] = useState(-500);
-  const [mouseY, setMouseY] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
   const { t } = useTranslation();
 
   const handleClick = () => {
@@ -148,16 +149,18 @@ const LightSwitch = () => {
   };
 
   const handleMouseMove = (e) => {
-    setMouseX(e.clientX - 40);
-    setMouseY(e.clientY - 40);
+    const switchContainer = document.getElementById("schedule");
+    switchContainer.style.setProperty('--mouse-x', e.clientX - 40);
+    switchContainer.style.setProperty('--mouse-y', e.clientY - 40);
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const elementTop = document.getElementById("schedule").offsetTop;
       const windowHeight = window.innerHeight;
-      
+
       if (scrollY + windowHeight > elementTop) {
         const scrollPercentage = Math.min(1, (scrollY + windowHeight - elementTop) / windowHeight);
         setOpacity(scrollPercentage);
@@ -165,14 +168,16 @@ const LightSwitch = () => {
         setOpacity(0);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <SwitchContainer isOn={isOn} opacity={opacity} onClick={handleClick} onMouseMove={handleMouseMove} id="schedule">
-      <Spotlight mouseX={mouseX} mouseY={mouseY} isOn={isOn}/>
+    <SwitchContainer isOn={isOn} opacity={opacity} onClick={handleClick} onMouseMove={handleMouseMove} onMouseEnter={() => setIsMouseOver(true)}
+      onMouseLeave={() => setIsMouseOver(false)} id="schedule">
+      <Spotlight isOn={isOn} isMouseOver={isMouseOver} />
+
       {isOn ? "" :
         <FlexCol>
           <Text> {t('mainText.struggle')} </Text>
@@ -180,10 +185,10 @@ const LightSwitch = () => {
         </FlexCol>
       }
       <QuoteContainer isOn={isOn}>
-        <TextOn> 
-          {t('mainText.struggle3')} 
-          <br/> 
-          {t('mainText.struggle4')} 
+        <TextOn>
+          {t('mainText.struggle3')}
+          <br />
+          {t('mainText.struggle4')}
         </TextOn>
       </QuoteContainer>
       <Image src={demoImg} alt="demo" style={{ display: isOn ? "block" : "none" }} />

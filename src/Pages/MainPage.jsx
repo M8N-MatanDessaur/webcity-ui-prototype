@@ -4,6 +4,7 @@ import Landing from "../Slides/Landing.Slide";
 import Services from "../Slides/Services.Slide";
 import LightSwitch from "../Slides/Lightswitch.Slide";
 import { useTranslation } from 'react-i18next';
+import AboutUs from "../Slides/AboutUs";
 
 const OBSERVER_OPTIONS = {
   root: null,
@@ -43,10 +44,11 @@ export default function MainPage() {
     <>
       <Landing />
       <Offering ref={offeringRef} fade={fadeInOffering}>
-      {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
+        {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
       </Offering>
       <Services />
       <LightSwitch />
+      <AboutUs />
     </>
   );
 }

@@ -35,17 +35,17 @@ export default {
 
 
     buttonText: {
-        scheduling: 'Schedule a Meeting',
+        scheduling: 'Contact Us',
         ourRecentWork: 'Our Recent Work',
     },
 
     formText: {
-        schedulingAppointment: 'Scheduling an appointment',
+        schedulingAppointment: 'Engage with Our Expertise',
         schedulingSlogan:'well contact you in less than a flash',
         fullname: 'Full Name',
         email: 'Email',
         phone: 'Phone number',
-        summit: 'Submit',
+        submit: 'Submit',
 
 
     },

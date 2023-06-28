@@ -35,17 +35,17 @@ export default {
 
 
     buttonText: {
-        scheduling: 'Planifier une réunion',
+        scheduling: 'Contactez-nous',
         ourRecentWork: 'Nos récents travaux',
     },
 
     formText: {
-        schedulingAppointment: 'Planifier un rendez-vous',
+        schedulingAppointment: 'Engagez-vous avec notre expertise',
         schedulingSlogan:'Nous vous contacterons dans les plus brefs délais',
         fullname: 'Nom complet',
         email: 'Email',
         phone: 'Numéro de téléphone',
-        summit: 'Soumettre',
+        submit: 'Soumettre',
     },
 
   };
