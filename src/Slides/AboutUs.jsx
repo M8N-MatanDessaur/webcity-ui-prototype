@@ -168,7 +168,6 @@ const MemberCard = styled.div`
 const ConversationHeader = styled.div`
     width: 100%;
     height: 20%;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,7 +188,7 @@ const ConversationHeaderImage = styled.img`
     font-size: 18px;
     font-weight: bold;
     border-radius: 50%;
-    border: 5px solid var(--foreground-color);
+    border: 5px solid var(--background-color);
     z-index: 1;
 
     @media (max-width: 768px) {
