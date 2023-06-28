@@ -199,9 +199,12 @@ const ConversationHeaderImage = styled.img`
     border: 5px solid var(--background-color);
     z-index: 1;
 
-    -moz-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     touch-action: none;
 
     &:active {
