@@ -349,4 +349,12 @@ const ExtraText = styled.h2`
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--border-color);
+
+    @media (max-width: 768px) {
+        left: 55px;
+    }
+
+    @media (max-width: 480px) {
+        left: 45px;
+    }
     `;
