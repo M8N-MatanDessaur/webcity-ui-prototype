@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import demoImg from "../Assets/Images/DEMO.png";
 import ScheduleButton from "../Components/ScheduleButton";
 import PortfolioButton from "../Components/PortfolioButton";
 import { useTranslation } from "react-i18next";
+
+const glowAnimation = keyframes`
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.6);
+  }
+  100% {
+    opacity: 0.3;
+  }
+`;
 
 const SwitchContainer = styled.div`
 --mouse-x: 0;
@@ -74,6 +87,7 @@ const TextOn = styled.blockquote`
   }
 `;
 
+
 const Hint = styled.p`
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
@@ -86,6 +100,7 @@ const Hint = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${glowAnimation} 2s ease-in-out infinite;
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
