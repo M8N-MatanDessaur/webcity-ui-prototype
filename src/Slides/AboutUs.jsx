@@ -7,16 +7,17 @@ import eric_picture from "../Assets/Images/eric.png";
 import jacob_picture from "../Assets/Images/jacob.png";
 
 export default function AboutUs() {
-    
+
     const { t } = useTranslation();
 
     return (
         <FluidContainer>
-            <SectionTitle>{t('aboutUs.title')}</SectionTitle>
+            <SectionTitle>{t('aboutUs.title')}✨</SectionTitle>
             <SectionSubtitle>{t('aboutUs.subtitle')}</SectionSubtitle>
+            <Separator />
             <GridWrapper>
                 <MemberCard>
-                <ConversationHeaderImage src={matan_picture} alt="Matan" />
+                    <ConversationHeaderImage src={matan_picture} alt="Matan" />
                     <ConversationHeader>
                         <ConversationHeaderText>
                             <ConversationHeaderTitle>Matan Dessaur</ConversationHeaderTitle>
@@ -28,7 +29,7 @@ export default function AboutUs() {
                     </ConversationBody>
                 </MemberCard>
                 <MemberCard>
-                <ConversationHeaderImage src={eric_picture} alt="Eric" />
+                    <ConversationHeaderImage src={eric_picture} alt="Eric" />
                     <ConversationHeader>
                         <ConversationHeaderText>
                             <ConversationHeaderTitle>Eric Gendron</ConversationHeaderTitle>
@@ -40,7 +41,7 @@ export default function AboutUs() {
                     </ConversationBody>
                 </MemberCard>
                 <MemberCard>
-                <ConversationHeaderImage src={jacob_picture} alt="Jacobs" />
+                    <ConversationHeaderImage src={jacob_picture} alt="Jacobs" />
                     <ConversationHeader>
                         <ConversationHeaderText>
                             <ConversationHeaderTitle>Jacob Gourgeon</ConversationHeaderTitle>
@@ -75,6 +76,13 @@ const FluidContainer = styled.div`
         min-height: 100svh !important;
         max-height: unset !important;
     }
+`;
+
+const Separator = styled.hr`
+    width: 30%;
+    height: 1px;
+    border-color: var(--border-color);
+    margin-bottom: 15px;
 `;
 
 const SectionTitle = styled.h1`
@@ -191,6 +199,17 @@ const ConversationHeaderImage = styled.img`
     border: 5px solid var(--background-color);
     z-index: 1;
 
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    &:active {
+        transform: scale(0.95);
+        transition: all 0.1s ease-in-out;
+        filter: brightness(0.8);
+    }
+
+
     @media (max-width: 768px) {
         width: 75px;
         top: -25px;
@@ -203,7 +222,6 @@ const ConversationHeaderText = styled.div`
     position: relative;
     width: 80%;
     height: 100%;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,7 +237,6 @@ const ConversationHeaderTitle = styled.div`
     position: relative;
     width: 100%;
     height: 50%;
-    border-radius: 10px;
     display: flex;
     align-items: end;
     justify-content: center;
@@ -243,7 +260,6 @@ const ConversationHeaderSubtitle = styled.div`
     position: relative;
     width: 100%;
     height: 50%;
-    border-radius: 10px;
     display: flex;
     align-items: end;
     justify-content: center;

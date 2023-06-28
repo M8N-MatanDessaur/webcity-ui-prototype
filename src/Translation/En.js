@@ -56,10 +56,10 @@ export default {
         matanText: 'Hello! 👋🏼 I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together!',
 
         ericSubtitle: 'Buisness Development',
-        ericText: '"Hello, I\'m Eric! An operations manager turned tech enthusiast, I blend strategic planning, leadership, and communication with my programming skills. My mission: driving your business projects to success with efficiency and innovation.',
+        ericText: 'Hello, I\'m Eric! An operations manager turned tech enthusiast, I blend strategic planning, leadership, and communication with my programming skills. My mission: driving your business projects to success with efficiency and innovation.',
 
         jacobsSubtitle: 'Marketing Specialist',
-        jacobText: '"Hi, I\'m Jacob! A tech and marketing enthusiast, my path naturally led to web marketing. With a marketing degree and rich web experience, I\'m thrilled to contribute to projects that ignite my passion, adding value with my unique expertise."',
+        jacobText: 'Hi, I\'m Jacob! A tech and marketing enthusiast, my path naturally led to web marketing. With a marketing degree and rich web experience, I\'m thrilled to contribute to projects that ignite my passion, adding value with my unique expertise.',
     }
   };
   
