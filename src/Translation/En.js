@@ -46,8 +46,20 @@ export default {
         email: 'Email',
         phone: 'Phone number',
         submit: 'Submit',
-
-
     },
+
+    aboutUs: {
+        title: 'The team behind the magic',
+        subtitle: 'We are a young passionate team who are dedicated to helping businesses grow and succeed. We are a full service web design and development agency. We build websites, web applications, and web experiences. 100% satisfaction guaranteed.',
+
+        matanSubtitle: 'Lead Developer / Designer',
+        matanText: 'Hello! 👋🏼 I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together!',
+
+        ericSubtitle: 'Buisness Development',
+        ericText: '"Hello, I\'m Eric! An operations manager turned tech enthusiast, I blend strategic planning, leadership, and communication with my programming skills. My mission: driving your business projects to success with efficiency and innovation.',
+
+        jacobsSubtitle: 'Marketing Specialist',
+        jacobText: '"Hi, I\'m Jacob! A tech and marketing enthusiast, my path naturally led to web marketing. With a marketing degree and rich web experience, I\'m thrilled to contribute to projects that ignite my passion, adding value with my unique expertise."',
+    }
   };
   
