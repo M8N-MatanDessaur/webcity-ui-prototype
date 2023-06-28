@@ -48,5 +48,20 @@ export default {
         submit: 'Soumettre',
     },
 
+    aboutUs: {
+        title: 'L\'équipe derrière la magie',
+        subtitle: 'Nous sommes une équipe jeune et passionnée dédiée à aider les entreprises à grandir et réussir. Nous sommes une agence de conception et développement web à service complet. Nous créons des sites web, des applications web et des expériences web. Satisfaction à 100% garantie.',
+        
+        matanSubtitle: 'Développeur / Designer Principal',
+        matanText: 'Salut! 👋🏼 Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble !',
+        
+        ericSubtitle: 'Développement Commercial',
+        ericText: 'Bonjour, je suis Eric ! Ancien responsable des opérations devenu passionné de technologie, je combine la planification stratégique, le leadership et la communication avec mes compétences en programmation. Ma mission : mener vos projets commerciaux vers le succès avec efficacité et innovation.',
+        
+        jacobsSubtitle: 'Spécialiste Marketing',
+        jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.'
+        
+    }
+
   };
   
