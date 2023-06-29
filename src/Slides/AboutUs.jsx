@@ -65,19 +65,12 @@ const FluidContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  padding: 50px;
 
-    @media (max-width: 800px) {
-        padding: 25px;
-        min-height: 100svh !important;
-        max-height: unset !important;
-    }
 `;
 
 const Separator = styled.hr`
@@ -92,6 +85,7 @@ const SectionTitle = styled.h1`
     font-weight: bold;
     color: var(--text-color);
     margin: 75px 0 15px 0;
+    padding: 0 50px;
 
     @media (max-width: 800px) {
         font-size: 40px;
@@ -109,6 +103,7 @@ const SectionSubtitle = styled.h2`
     color: var(--text-color);
     opacity: 0.8;
     margin-bottom: 35px;
+    padding: 0 50px;
     
     @media (max-width: 800px) {
         width: 100%;
@@ -123,10 +118,11 @@ const SectionSubtitle = styled.h2`
 const GridWrapper = styled.div` 
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: max-content;
-    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px;
     padding: 35px;
 
     @media (max-width: 800px) {
@@ -153,9 +149,9 @@ const GridWrapper = styled.div`
 
 const MemberCard = styled.div`
     position: relative;
-    width: 400px;
+    width: 350px;
     height: max-content;
-    min-height: 260px;
+    min-height: 300px;
     padding: 25px;
     margin: 15px 0;
     border: 1px solid var(--border-color);    
@@ -170,8 +166,8 @@ const MemberCard = styled.div`
     font-weight: bold;
 
     @media (max-width: 800px) {
-        width: 100%;
         height: max-content;
+        min-height: 0;
     }
 `;
 
