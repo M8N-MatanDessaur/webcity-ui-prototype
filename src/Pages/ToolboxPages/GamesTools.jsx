@@ -15,7 +15,7 @@ const links = [
     },
     {
         title: "The boolean game",
-        description: "Blending mode mastering game",
+        description: "Blending modes game",
         link: "https://boolean.method.ac/"
     },
     {
@@ -125,7 +125,7 @@ const links = [
     },
     {
         title: "SuperMarkupWorld",
-        description: "A game to learn Markup (HTML)",
+        description: "game to learn HTML",
         link: "https://supermarkupworld.com/"
     }
 ];
@@ -144,7 +144,7 @@ export default function GamesTools() {
                 }
             </TiltContainer>
             <ToolsListButton />
-            <PageIndicator page="Games" />
+            <PageIndicator pageName="Games" />
         </Container>
     );
 }
@@ -152,7 +152,7 @@ export default function GamesTools() {
 const Container = styled.div`
     position: relative;
     height: 100%;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     display: flex;
     flex-direction: column;

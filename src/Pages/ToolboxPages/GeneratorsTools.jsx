@@ -43,17 +43,17 @@ const links = [
         link: "https://pocoloco.io/"
     },
     {
-        title: "hype4 Glassphormism",
+        title: "Glassphormism",
         description: "Glassphormism generator",
         link: "https://hype4.academy/tools/glassmorphism-generator"
     },
     {
-        title: "hype4 Neumorphism",
+        title: "Neumorphism",
         description: "Neumorphism generator",
         link: "https://hype4.academy/tools/neumorphism-generator"
     },
     {
-        title: "hype4 Claymorphism",
+        title: "Claymorphism",
         description: "Claymorphism generator",
         link: "https://hype4.academy/tools/claymorphism-generator"
     },
@@ -147,7 +147,7 @@ export default function Generatorstools() {
 const Container = styled.div`
     position: relative;
     height: 100%;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     display: flex;
     flex-direction: column;

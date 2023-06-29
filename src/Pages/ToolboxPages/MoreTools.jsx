@@ -9,7 +9,7 @@ import PageIndicator from "../../Components/PageIndicator";
 const links = [
     {
         title: "TinyWow",
-        description: "Free PDF, Video, Images & Other online tools",
+        description: "Tools for PDF, Video, Images",
         link: "https://tinywow.com/"
     },
     {
@@ -94,7 +94,7 @@ const links = [
     },
     {
         title: "Design.facebook",
-        description: "Devices mockups for your projects",
+        description: "Devices mockups",
         link: "https://design.facebook.com/toolsandresources/"
     },
     {
@@ -159,7 +159,7 @@ export default function MoreTools() {
                 }
             </TiltContainer>
             <ToolsListButton />
-            <PageIndicator currentPage="More Tools" />
+            <PageIndicator pageName="More Tools" />
         </Container>
     );
 }
@@ -167,7 +167,7 @@ export default function MoreTools() {
 const Container = styled.div`
     position: relative;
     height: 100%;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     display: flex;
     flex-direction: column;

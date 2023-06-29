@@ -81,7 +81,7 @@ export default function FontsTools() {
 const Container = styled.div`
     position: relative;
     height: 100%;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     display: flex;
     flex-direction: column;
