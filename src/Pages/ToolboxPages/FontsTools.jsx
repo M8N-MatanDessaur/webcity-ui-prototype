@@ -19,7 +19,7 @@ const links = [
     },
     {
         title: "PangramPangram",
-        description: "Modern fonts and typefaces all free",
+        description: "Modern fonts and typefaces",
         link: "https://pangrampangram.com/"
     },
     {

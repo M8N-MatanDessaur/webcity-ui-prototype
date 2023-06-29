@@ -89,5 +89,6 @@ const Tilt = styled.div`
 
     @media (max-width: 680px) {
         max-height: 500px;
+        width: 90%;
         margin: 0 10px;
     `;
