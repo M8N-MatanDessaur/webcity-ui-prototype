@@ -55,7 +55,7 @@ export default {
         subtitle: 'We are a young passionate team who are dedicated to helping businesses grow and succeed. We are a full service web design and development agency. We build websites, web applications, and web experiences. 100% satisfaction guaranteed.',
 
         matanSubtitle: 'Lead Developer / Designer',
-        matanText: 'Hey there!👋🏼 I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together!',
+        matanText: 'Hey there!👋🏼 I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together! Psst!, don\'t forget to checkout our toolbox ',
         matanExtraText:'cofounder',
 
         ericSubtitle: 'Buisness Development',

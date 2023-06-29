@@ -53,7 +53,7 @@ export default {
         subtitle: 'Nous sommes une équipe jeune et passionnée dédiée à aider les entreprises à grandir et réussir. Nous sommes une agence de conception et développement web à service complet. Nous créons des sites web, des applications web et des expériences web. Satisfaction à 100% garantie.',
         
         matanSubtitle: 'Développeur / Designer Principal',
-        matanText: 'Salut! 👋🏼 Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble !',
+        matanText: 'Salut! 👋🏼 Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble! Psst! N\'oublie pas de jetter un coup d\'œuil a notre boite d\'outils ',
         matanExtraText:'co-fondateur',
 
         ericSubtitle: 'Développement Commercial',

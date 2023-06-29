@@ -9,6 +9,7 @@ import Portfolio from "./Pages/Portfolio";
 
 import InteractiveLogo from "./Components/InteractiveLogo";
 import ContactRevealButton from "./Components/ContactRevealButton";
+import Toolbox from "./Pages/Toolbox";
 //TODO : uncomment this line to enable translation button (Needs to be fixed)
 // import TranslationButton from "./Components/TranslationButton"; 
 
@@ -52,6 +53,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/toolbox" element={<Toolbox />} />
         </Routes>
       </Router>
     </I18nextProvider>

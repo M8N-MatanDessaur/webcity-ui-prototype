@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import matan_picture from "../Assets/Images/matan.png";
 import eric_picture from "../Assets/Images/eric.png";
 import jacob_picture from "../Assets/Images/jacob.png";
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
 
@@ -26,7 +27,7 @@ export default function AboutUs() {
                         </CardHeaderText>
                     </CardHeader>
                     <CardBody>
-                        <CardBodyText>{t('aboutUs.matanText')}</CardBodyText>
+                        <CardBodyText>{t('aboutUs.matanText')}<span><LinkAlt to="/toolbox">click here</LinkAlt></span></CardBodyText>
                     </CardBody>
                 </MemberCard>
                 <MemberCard>
@@ -305,10 +306,6 @@ const CardBodyText = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
     overflow: auto;
     color: var(--text-color);
     font-size: 0.9rem;
@@ -354,3 +351,17 @@ const ExtraText = styled.h2`
         left: 45px;
     }
     `;
+
+
+    const LinkAlt = styled(Link)`
+    text-decoration: none;
+    margin-left: 5px;
+    color: #7b68e1;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: var(--text-color);
+        transition: all 0.2s ease-in-out;
+    }
+`;
