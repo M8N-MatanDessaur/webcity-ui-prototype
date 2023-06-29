@@ -6,6 +6,7 @@ import LightSwitch from "../Slides/Lightswitch.Slide";
 import { useTranslation } from 'react-i18next';
 import AboutUs from "../Slides/AboutUs";
 import FooterQuote from "../Components/FooterQuote";
+import PortfolioButton from "../Components/PortfolioButton";
 
 const OBSERVER_OPTIONS = {
   root: null,
@@ -46,6 +47,8 @@ export default function MainPage() {
       <Landing />
       <Offering ref={offeringRef} fade={fadeInOffering}>
         {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
+        <br/>
+        <PortfolioButton isOn={true}/>
       </Offering>
       <Services />
       <LightSwitch />
@@ -74,6 +77,10 @@ const Offering = styled.blockquote`
   font-weight: 300;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 100px 200px;
   position: relative;
 
