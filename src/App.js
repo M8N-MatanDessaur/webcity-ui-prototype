@@ -10,6 +10,13 @@ import Portfolio from "./Pages/Portfolio";
 import InteractiveLogo from "./Components/InteractiveLogo";
 import ContactRevealButton from "./Components/ContactRevealButton";
 import Toolbox from "./Pages/Toolbox";
+import AiTools from "./Pages/ToolboxPages/AiTools";
+import FontsTools from "./Pages/ToolboxPages/FontsTools";
+import GamesTools from "./Pages/ToolboxPages/GamesTools";
+import GeneratorsTools from "./Pages/ToolboxPages/GeneratorsTools";
+import IllustrationsTools from "./Pages/ToolboxPages/IllustrationsTools";
+import MoreTools from "./Pages/ToolboxPages/MoreTools";
+
 //TODO : uncomment this line to enable translation button (Needs to be fixed)
 // import TranslationButton from "./Components/TranslationButton"; 
 
@@ -54,6 +61,14 @@ export default function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/toolbox" element={<Toolbox />} />
+          
+          <Route path="/aitools" element={<AiTools />} />
+          <Route path="/fontstools" element={<FontsTools />} />
+          <Route path="/gamestools" element={<GamesTools />} />
+          <Route path="/generatorstools" element={<GeneratorsTools />} />
+          <Route path="/illustrationstools" element={<IllustrationsTools />} />
+          <Route path="/moretools" element={<MoreTools />} />
+
         </Routes>
       </Router>
     </I18nextProvider>
