@@ -27,6 +27,10 @@ const Indicator = styled.div`
     &:active {
         background-color: var(--background-color);
     }
+
+    @media (max-width: 380px) {
+        padding: 10px;
+    }
 `;
 
 const Title = styled.h1`
@@ -35,4 +39,8 @@ font-weight: 600;
 text-transform: uppercase;
 display: block;
 color: var(--text-color);
+
+@media (max-width: 380px) {
+    font-size: 0.8rem;
+}
 `;

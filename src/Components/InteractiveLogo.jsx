@@ -50,6 +50,11 @@ transition: all 0.1s ease-in-out;
     width: 150px;
     height: 50px;
 }
+
+@media (max-width: 380px) {
+    width: 120px;
+    height: 40px;
+}
 `;
 
 const LogoIcon = styled.svg`
@@ -67,6 +72,11 @@ const LogoIcon = styled.svg`
   @media (max-width: 768px) {
     width: 2rem;
     height: 2rem;
+  }
+
+  @media (max-width: 380px) {
+    width: 1.7rem;
+    height: 1.7rem;
   }
 `;
 
@@ -111,6 +121,13 @@ const LogoText = styled.input`
     font-size: 1rem;
     &::placeholder {
       font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    font-size: 0.8rem;
+    &::placeholder {
+      font-size: 1rem;
     }
   }
 `;
