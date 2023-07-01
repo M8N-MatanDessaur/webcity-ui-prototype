@@ -39,6 +39,17 @@ const Container = styled.div`
         &:last-child {
             border-bottom: none;
         }
+
+        & a {
+            transform: scale(1.1) translateX(10px);
+            transition: all 0.1s ease-in-out;
+        }
+
+        & p {
+            transform: scale(0.98) translateX(-5px);
+            opacity: 0.8;
+            transition: all 0.1s ease-in-out;
+        }
     }
 
     @media (max-width: 680px) {
@@ -54,11 +65,6 @@ const LinkTitle = styled.a`
     font-size: 1.2rem;
     font-weight: 700;
 
-    &:hover {
-        transform: scale(1.1) translateX(5px);
-        transition: all 0.1s ease-in-out;
-    }
-
     @media (max-width: 680px) {
          font-size: 1rem;
     }
@@ -68,12 +74,6 @@ const LinkDescription = styled.p`
     color: var(--text-color);
     font-size: 0.9rem;
     font-weight: 400;
-
-    &:hover {
-        transform: scale(0.98) translateX(-5px);
-        opacity: 0.8;
-        transition: all 0.1s ease-in-out;
-    }
 
     @media (max-width: 680px) {
        font-size: 0.7rem;
