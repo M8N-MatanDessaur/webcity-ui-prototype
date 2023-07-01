@@ -72,6 +72,10 @@ const Container = styled.div`
     overflow: hidden;
     background-image:url(https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png);
     background-size: 10%;
+
+    @media (max-width: 480px) {
+        background-size: 25%;
+    }
     `;
 
 const Title = styled.h1`

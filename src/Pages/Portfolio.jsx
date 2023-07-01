@@ -23,6 +23,10 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image:url(https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png);
+    @media (max-width: 480px) {
+        background-size: 25%;
+    }
     `;
 
 const Title = styled.h1`

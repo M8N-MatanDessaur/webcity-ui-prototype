@@ -117,6 +117,10 @@ const FluidContainer = styled.div`
   justify-content: center;
   overflow: scroll;
   padding: 100px 35px;
+
+  @media (max-width: 480px) {
+    background-size: 25%;
+}
 `;
 
 const Text = styled.blockquote`

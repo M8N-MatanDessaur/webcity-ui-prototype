@@ -75,6 +75,9 @@ const FluidContainer = styled.div`
   background-size: 10%;
   background-attachment: fixed;
 
+  @media (max-width: 480px) {
+    background-size: 25%;
+}
 `;
 
 const Separator = styled.hr`
