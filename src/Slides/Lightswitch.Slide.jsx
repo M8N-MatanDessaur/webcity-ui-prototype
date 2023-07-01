@@ -34,6 +34,12 @@ const SwitchContainer = styled.div`
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
   opacity: ${({ opacity }) => opacity};
+  background-image:url(https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png);
+  background-attachment: fixed;
+  background-size: 10%;
+  @media (max-width: 480px) {
+    background-size: 25%;
+}
 `;
 
 
