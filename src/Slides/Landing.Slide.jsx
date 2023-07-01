@@ -251,6 +251,7 @@ cite {
 
 &:hover {
   box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
+  transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {
