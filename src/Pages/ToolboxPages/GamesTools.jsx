@@ -127,7 +127,27 @@ const links = [
         title: "SuperMarkupWorld",
         description: "game to learn HTML",
         link: "https://supermarkupworld.com/"
-    }
+    },
+    {
+        title: "Flexbox Zombies",
+        description: "Flexbox mastering game",
+        link: "https://mastery.games/flexboxzombies/"
+    },
+    {
+        title: "Grid Critters",
+        description: "Grid mastering game",
+        link: "https://mastery.games/p/gridcritters/"
+    },
+    {
+        title: "designercize",
+        description: "UI design mastering game",
+        link: "https://www.designercize.com/"
+    },
+    {
+        title:"AI Dungeon",
+        description:"AI text adventure",
+        link:"https://play.aidungeon.io/"
+    },
 ];
 
 

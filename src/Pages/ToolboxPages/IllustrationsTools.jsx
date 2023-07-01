@@ -63,6 +63,21 @@ const links = [
         link: "https://iconer.app/"
     },
     {
+        title: "Iconfinder",
+        description: "Icons for the web",
+        link: "https://www.iconfinder.com/"
+    },
+    {
+        title: "Iconscout",
+        description: "Icons for the web",
+        link: "https://iconscout.com/"
+    },
+    {
+        title:"Phosphor Icons",
+        description:"Icons for the web",
+        link:"https://phosphoricons.com/"
+    },
+    {
         title: "OpenCursors",
         description: "Cursors for the web",
         link: "http://www.rw-designer.com/cursor-library"

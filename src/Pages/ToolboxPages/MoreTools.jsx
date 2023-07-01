@@ -141,6 +141,26 @@ const links = [
         title: "10015-Tools",
         description: "Handy set of web tools",
         link: "https://10015.io/"
+    },
+    {
+        title: "Background Remover",
+        description: "Remove background",
+        link: "https://www.remove.bg/"
+    },
+    {
+        title: "Framer Motion",
+        description: "React animation library",
+        link: "https://www.framer.com/motion/"
+    },
+    {
+        title: "Snappify",
+        description: "Create a snapcode",
+        link: "https://snappify.com/editor"
+    },
+    {
+        title: "Palette FM",
+        description: "Image colorizer",
+        link: "https://palette.fm/"
     }
 ];
 
