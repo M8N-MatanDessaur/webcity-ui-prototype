@@ -79,7 +79,6 @@ const Tilt = styled.div`
     }
     &::-webkit-scrollbar-track {
         border-radius: 50px;
-        border-left: 1px solid var(--border-color);
     }
     &::-webkit-scrollbar-thumb {
         background-color: var(--text-color);
