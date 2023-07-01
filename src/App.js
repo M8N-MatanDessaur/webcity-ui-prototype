@@ -31,13 +31,13 @@ export default function App() {
     document.documentElement.style.setProperty("--text-color", "#000000");
     document.documentElement.style.setProperty("--foreground-color", "#f5f5f5");
     document.documentElement.style.setProperty("--border-color", "#00000035");
-    document.documentElement.style.setProperty("--accent-color", "#ff7a7380");
+    document.documentElement.style.setProperty("--accent-color", "#00000090");
   } else if (userPreferredMode === "dark") {
     document.documentElement.style.setProperty("--background-color", "#181818");
     document.documentElement.style.setProperty("--text-color", "#FFFFFF");
     document.documentElement.style.setProperty("--foreground-color", "#1f1f1f");
     document.documentElement.style.setProperty("--border-color", "#FFFFFF35");
-    document.documentElement.style.setProperty("--accent-color", "#b3560e80");
+    document.documentElement.style.setProperty("--accent-color", "#FFFFFF90");
   }
 
 

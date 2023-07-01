@@ -38,19 +38,36 @@ const ServiceWrapper = styled.div`
     transition: all 0.1s ease-in-out;
 
     &:hover {
-        box-shadow: 0 0 25px var(--accent-color), 0 0 15px var(--accent-color), inset 0 0 15px var(--accent-color);
+        box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
         border-color: var(--accent-color);
         border-radius: 20px;
         transition: all 0.1s ease-in-out;
         & svg {
-            transform: scale(1.1);
-            transition: all 0.3s ease-in-out;
+            transform: scale(1.2);
+            transition: all 0.2s ease-in-out;
         }
     }
 
     @media (max-width: 940px) {
         width: auto;
         padding: 1rem;
+
+        &:hover {
+            box-shadow: none;
+            border-color: var(--border-color);
+        }
+
+        &:active {
+            box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
+            border-color: var(--accent-color);
+            border-radius: 20px;
+            transition: all 0.1s ease-in-out;
+            & svg {
+                transform: scale(1.2);
+                transition: all 0.1s ease-in-out;
+            }
+        }
+
     }
 `;
 
