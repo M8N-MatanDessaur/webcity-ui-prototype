@@ -224,7 +224,6 @@ const StyledOffering = styled.div`
 `;
 
 const OfferingQuote = styled.blockquote`
-border: 2px solid var(--accent-color);
 background: var(--foreground-color);
 padding: 30px 60px;
 border-radius: 10px;
