@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, memo } from "react";
 import styled, { keyframes, css } from "styled-components";
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
@@ -12,7 +12,7 @@ const OBSERVER_OPTIONS = {
   threshold: 0.5,
 };
 
-export default function Landing() {
+const Landing = () => {
   const [fadeInQuote, setFadeInQuote] = useState(false);
   const [fadeInSlogan, setFadeInSlogan] = useState(false);
   const offeringRef = useRef(null);
@@ -52,25 +52,27 @@ export default function Landing() {
       <FluidContainer>
         <Blob />
         <BlurredOverlay />
-        <Slogan fade={fadeInSlogan}>
+        <StyledSlogan fade={fadeInSlogan}>
           {t('mainText.slogan')}
-        </Slogan>
-        <Quote fade={fadeInQuote}>
+        </StyledSlogan>
+        <StyledQuote fade={fadeInQuote}>
           {t('mainText.slogan2')}
-        </Quote>
+        </StyledQuote>
         <ScheduleButton isOn={true} />
         <ScrollArrow />
       </FluidContainer>
 
-      <Offering ref={offeringRef} fade={fadeInOffering}>
+      <StyledOffering ref={offeringRef} fade={fadeInOffering}>
         <OfferingQuote>
           {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
           <PortfolioButton isOn={true} />
         </OfferingQuote>
-      </Offering>
+      </StyledOffering>
     </LandingContainer>
   );
 }
+
+export default memo(Landing);
 
 const BlurredOverlay = styled.div`
   position: absolute;
@@ -128,7 +130,7 @@ const fadeInQuoteAnimation = keyframes`
   }
 `;
 
-const Slogan = styled.blockquote`
+const StyledSlogan = styled.blockquote`
   font-family: 'Montserrat', sans-serif;
   font-size: 3.3rem;
   font-weight: 600;
@@ -156,7 +158,7 @@ const Slogan = styled.blockquote`
   }
 `;
 
-const Quote = styled.blockquote`
+const StyledQuote = styled.blockquote`
   font-family: 'poppins', sans-serif;
   font-size: 1.5rem;
   font-weight: 100;
@@ -196,7 +198,7 @@ const fadeInAnimation = keyframes`
   }
 `;
 
-const Offering = styled.div`
+const StyledOffering = styled.div`
   background: transparent;
   color: var(--text-color);	
   width: 100%;

@@ -1,0 +1,103 @@
+import React from "react";
+import styled from "styled-components";
+import ScrollArrow from "./ScrollArrow";
+import { useTranslation } from "react-i18next";
+
+function Service({svg, title, description}) {
+  return (
+    <ServiceWrapper>
+        <ServiceIcon>
+            {svg}
+        </ServiceIcon>
+        <ServiceTitle>
+            {title}
+        </ServiceTitle>
+        <ServiceDescription>
+            {description}
+        </ServiceDescription>
+    </ServiceWrapper>
+  );
+}
+
+export default Service;
+
+const ServiceWrapper = styled.div`
+    width: 30%;
+    height: max-content;
+    min-height: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
+
+        & svg {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    @media (max-width: 940px) {
+        width: auto;
+        padding: 1rem;
+    }
+`;
+
+const ServiceIcon = styled.div`
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+
+    & svg {
+        width: 100%;
+        height: 100%;
+    }
+`;
+
+const ServiceTitle = styled.h3`
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 0.5rem;
+    }
+`;
+
+const ServiceDescription = styled.p`
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-color);
+    
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
+`;

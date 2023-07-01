@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ToolsListButton from "../../Components/ToolsListButton";
 import TiltContainer from "../../Components/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer";
-import { Link } from "react-router-dom";
 import PageIndicator from "../../Components/PageIndicator";
 
 const links = [
@@ -159,9 +158,3 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     `;
-
-const Title = styled.h1`
-    color: var(--text-color);
-    `;
-
-
