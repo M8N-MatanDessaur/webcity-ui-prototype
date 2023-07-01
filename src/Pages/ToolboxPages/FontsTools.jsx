@@ -24,12 +24,12 @@ const links = [
     },
     {
         title: "Cufon Fonts",
-        description: "Other fonts",
+        description: "Original fonts",
         link: "https://www.cufonfonts.com/"
     },
     {
         title: "velvetyne",
-        description: "Modern fonts collection",
+        description: "Abstract fonts collection",
         link: "https://velvetyne.fr/"
     },
     {

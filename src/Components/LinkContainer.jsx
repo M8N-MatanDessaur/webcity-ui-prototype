@@ -76,7 +76,7 @@ const LinkDescription = styled.p`
     }
 
     @media (max-width: 680px) {
-       font-size: 0.8rem;
+       font-size: 0.7rem;
        text-align: right;
     }
     `;

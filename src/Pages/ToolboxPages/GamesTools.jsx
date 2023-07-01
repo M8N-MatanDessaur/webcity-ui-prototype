@@ -25,12 +25,12 @@ const links = [
     },
     {
         title: "Kolor",
-        description: "Color matching mastering game",
+        description: "Color matching game",
         link: "https://kolor.moro.es/"
     },
     {
         title: "What the hex",
-        description: "Color guessing mastering game",
+        description: "Color guessing game",
         link: "https://yizzle.com/whatthehex/"
     },
     {
@@ -50,7 +50,7 @@ const links = [
     },
     {
         title: "Pixactly",
-        description: "Pixel precision mastering game",
+        description: "Pixel precision game",
         link: "https://pixact.ly/"
     },
     {
@@ -65,22 +65,22 @@ const links = [
     },
     {
         title: "SQL Murder Game",
-        description: "SQL mastering game",
+        description: "SQL Murder Mistery",
         link: "https://mystery.knightlab.com/"
     },
     {
         title: "Elevator Saga",
-        description: "Programming logic mastering game",
+        description: "Programming logic game",
         link: "https://play.elevatorsaga.com/"
     },
     {
         title: "Untrusted",
-        description: "Programming logic mastering game",
+        description: "Programming escape the room",
         link: "https://alexnisnevich.github.io/untrusted/"
     },
     {
         title: "Codewars",
-        description: "Programming learning exercices",
+        description: "Code challenges",
         link: "https://www.codewars.com/"
     },
     {
@@ -105,12 +105,12 @@ const links = [
     },
     {
         title: "FlexBox Defence",
-        description: "Flexbox mastering game",
+        description: "CSS Flexbox game",
         link: "http://www.flexboxdefense.com/"
     },
     {
         title: "CSS Garden",
-        description: "Grid mastering game",
+        description: "CSS Grid game",
         link: "https://cssgridgarden.com/"
     },
     {
@@ -120,12 +120,12 @@ const links = [
     },
     {
         title: "Ztype",
-        description: "Typing practice game",
+        description: "Typing practice shooter",
         link: "https://zty.pe/"
     },
     {
         title: "SuperMarkupWorld",
-        description: "game to learn HTML",
+        description: "learn HTML the fun way",
         link: "https://supermarkupworld.com/"
     },
     {
@@ -140,7 +140,7 @@ const links = [
     },
     {
         title: "designercize",
-        description: "UI design mastering game",
+        description: "UI design Timed Challenges",
         link: "https://www.designercize.com/"
     },
     {

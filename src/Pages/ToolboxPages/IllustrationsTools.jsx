@@ -14,17 +14,17 @@ const links = [
     },
     {
         title: "Noun Project",
-        description: "Creative illustrations",
+        description: "Minimalistic Icons",
         link: "https://thenounproject.com/"
     },
     {
         title: "Open Peeps",
-        description: "People illustrations",
+        description: "Hand-drawn illustrations",
         link: "https://www.openpeeps.com/"
     },
     {
         title: "humaaans",
-        description: "Humans illustrations",
+        description: "Illustrations of people",
         link: "https://www.humaaans.com/"
     },
     {

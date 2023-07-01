@@ -14,17 +14,17 @@ const links = [
     },
     {
         title: "CoulorCode",
-        description: "Another color pallet generator",
+        description: "Color pallet generator",
         link: "https://www.toptal.com/designers/colourcode"
     },
     {
-        title: "Logojoy",
-        description: "A free logo generator",
+        title: "Looka",
+        description: "AI logo generator",
         link: "https://looka.com/logo-maker/"
     },
     {
         title: "Haikei",
-        description: "Cool background generator",
+        description: "Unique background generator",
         link: "https://app.haikei.app/"
     },
     {
