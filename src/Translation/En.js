@@ -64,6 +64,18 @@ export default {
 
         jacobsSubtitle: 'Marketing Specialist',
         jacobText: 'Hi, I\'m Jacob! A tech and marketing enthusiast, my path naturally led to web marketing. With a marketing degree and rich web experience, I\'m thrilled to contribute to projects that ignite my passion, adding value with my unique expertise.',
+    
+        clickHere: 'click here',
+    },
+
+    toolbox:{
+        title: 'Toolbox',
+        fontsTools: 'Font Tools',
+        illustrationsTools: 'Illustration Tools',
+        generatorsTools: 'Generators Tools',
+        moreTools: 'More Tools',
+        aiTools: 'AI Tools',
+        games: 'Games',
     },
 
     footerQuote: {

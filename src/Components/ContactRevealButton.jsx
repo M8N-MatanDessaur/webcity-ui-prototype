@@ -32,8 +32,8 @@ const Button = styled.button`
   border: none;
   padding: 15px;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 35px;
+  right: 35px;
   z-index: 998;
   border-radius: 50px;
   border: 1px solid var(--text-color);
@@ -49,5 +49,10 @@ const Button = styled.button`
   &:active {
     background-color: var(--foreground-color);
   }
-};
+}
+
+@media (max-width: 768px) {
+  bottom: 25px;
+  right: 25px;
+}
 `;

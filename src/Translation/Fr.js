@@ -61,8 +61,19 @@ export default {
         matanExtraText:'co-fondateur',
 
         jacobsSubtitle: 'Spécialiste Marketing',
-        jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.'
+        jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.',
         
+        clickHere: 'appuis ici',
+    },
+
+    toolbox:{
+        title: 'Boite à outils',
+        fontsTools: 'outils de typographie',
+        illustrationsTools: 'outils d\'illustration',
+        generatorsTools: 'outils de générateur',
+        moreTools: 'plus d\'outils',
+        aiTools: 'outils d\'IA',
+        games: 'Jeux',
     },
 
     footerQuote: {

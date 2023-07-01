@@ -38,8 +38,8 @@ const Button = styled.button`
   border: none;
   padding: 10px;
   position: fixed;
-  bottom: 155px;
-  right: 25px;
+  bottom: 170px;
+  right: 35px;
   z-index: 998;
   border-radius: 50px;
   border: 1px solid var(--text-color);
@@ -70,6 +70,7 @@ const Button = styled.button`
 
   @media (max-width: 768px) {
     right: 30px;
+    bottom: 150px;
     span {
       display: none;
     }

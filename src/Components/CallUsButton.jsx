@@ -38,8 +38,8 @@ const Button = styled.button`
   border: none;
   padding: 10px;
   position: fixed;
-  bottom: 95px;
-  right: 25px;
+  bottom: 105px;
+  right: 35px;
   z-index: 998;
   border-radius: 50px;
   border: 1px solid var(--text-color);
@@ -70,6 +70,7 @@ const Button = styled.button`
   }
 
   @media (max-width: 768px) {
+    bottom: 95px;
     right: 30px;
     span {
       display: none;
@@ -78,6 +79,7 @@ const Button = styled.button`
       display: block;
     }
   }
+  
 
   animation: ${fadeIn} 0.52s ease-in-out;
 `;

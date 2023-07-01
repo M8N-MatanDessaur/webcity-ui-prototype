@@ -27,7 +27,7 @@ export default function AboutUs() {
                         </CardHeaderText>
                     </CardHeader>
                     <CardBody>
-                        <CardBodyText>{t('aboutUs.matanText')}<span><LinkAlt to="/toolbox">click here</LinkAlt></span></CardBodyText>
+                        <CardBodyText>{t('aboutUs.matanText')}<span><LinkAlt to="/toolbox">{t('aboutUs.clickHere')}</LinkAlt></span></CardBodyText>
                     </CardBody>
                 </MemberCard>
                 <MemberCard>

@@ -126,6 +126,7 @@ const LogoText = styled.input`
 
   @media (max-width: 380px) {
     font-size: 0.8rem;
+    padding-left: 5px;
     &::placeholder {
       font-size: 1rem;
     }

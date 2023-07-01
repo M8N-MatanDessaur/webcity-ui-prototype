@@ -12,15 +12,19 @@ export default function PageIndicator({pageName}) {
 
 const Indicator = styled.div`
     background-color: var(--background-color);
+    height: 60px;
     border: none;
     padding: 15px;
     position: fixed;
-    top: 25px;
-    right: 25px;
+    top: 35px;
+    right: 35px;
     z-index: 998;
     -webkit-border-radius: 50px;
     border-radius: 50px;
     border: 1px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover {
         background-color: var(--foreground-color);
     }
@@ -28,8 +32,18 @@ const Indicator = styled.div`
         background-color: var(--background-color);
     }
 
+    @media (max-width: 768px) {
+        padding: 10px;
+        height: 50px;
+        top: 25px;
+        right: 25px;
+    }
+
     @media (max-width: 380px) {
         padding: 10px;
+        top: 25px;
+        right: 25px;
+        height: 40px;
     }
 `;
 

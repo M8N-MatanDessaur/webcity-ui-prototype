@@ -23,8 +23,8 @@ const Button = styled.button`
     border: none;
     padding: 15px;
     position: fixed;
-    bottom: 25px;
-    left: 25px;
+    bottom: 35px;
+    left: 35px;
     z-index: 998;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -38,5 +38,10 @@ const Button = styled.button`
     }
     &:active {
         background-color: var(--background-color);
+    }
+
+    @media (max-width: 768px) {
+        bottom: 25px;
+        left: 25px;
     }
 `;
