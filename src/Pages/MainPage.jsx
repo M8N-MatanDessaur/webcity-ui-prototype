@@ -8,48 +8,12 @@ import AboutUs from "../Slides/AboutUs";
 import FooterQuote from "../Components/FooterQuote";
 import PortfolioButton from "../Components/PortfolioButton";
 
-const OBSERVER_OPTIONS = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.5,
-};
-
 export default function MainPage() {
-  const offeringRef = useRef(null);
-  const [fadeInOffering, setFadeInOffering] = useState(false);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const current = offeringRef.current;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setFadeInOffering(true);
-        }
-      },
-      OBSERVER_OPTIONS
-    );
-
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, []);
 
   return (
     <>
       <Landing />
-      <Offering ref={offeringRef} fade={fadeInOffering}>
-        {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
-        <br/>
-        <PortfolioButton isOn={true}/>
-      </Offering>
       <Services />
       <LightSwitch />
       <AboutUs />
@@ -69,19 +33,15 @@ const fadeInAnimation = keyframes`
   }
 `;
 
-const Offering = styled.blockquote`
+const Offering = styled.div`
   background: var(--foreground-color);
   color: var(--text-color);	
   width: 100%;
-  font-size: 1.8rem;
-  font-weight: 300;
-  text-align: center;
-  margin: 0 auto;
+  padding: 30px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 200px;
   position: relative;
 
   ${({ fade }) => fade ? css`
@@ -93,17 +53,41 @@ const Offering = styled.blockquote`
     transform: translateY(30px);
   `}
 
-  cite {
-    display: block;
-    font-size: 1rem;
-    font-weight: 100;
-    margin-top: 1rem;
-    opacity: 0.8;
-  }
-
   @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 30px 60px;
+    padding: 30px 30px;
   }
 `;
+
+const Quote = styled.blockquote`
+border: 2px solid var(--border-color);
+background: var(--accent-color);
+padding: 30px 60px;
+border-radius: 10px;
+font-size: 1.8rem;
+font-weight: 300;
+text-align: center;
+margin: 0 auto;
+max-width: 800px;
+line-height: 1.5;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+z-index: 1;
+
+cite {
+  display: block;
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: 1rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  font-size: 1rem;
+  padding: 30px 30px;
+}
+`;
+
 

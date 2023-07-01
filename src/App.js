@@ -29,15 +29,15 @@ export default function App() {
   if (userPreferredMode === "light") {
     document.documentElement.style.setProperty("--background-color", "#FFFFFF");
     document.documentElement.style.setProperty("--text-color", "#000000");
-    document.documentElement.style.setProperty("--isDark", "invert(0)");
     document.documentElement.style.setProperty("--foreground-color", "#f5f5f5");
     document.documentElement.style.setProperty("--border-color", "#00000035");
+    document.documentElement.style.setProperty("--accent-color", "#FFBA08");
   } else if (userPreferredMode === "dark") {
     document.documentElement.style.setProperty("--background-color", "#181818");
     document.documentElement.style.setProperty("--text-color", "#FFFFFF");
-    document.documentElement.style.setProperty("--isDark", "invert(1)");
     document.documentElement.style.setProperty("--foreground-color", "#1f1f1f");
     document.documentElement.style.setProperty("--border-color", "#FFFFFF35");
+    document.documentElement.style.setProperty("--accent-color", "#b3560e");
   }
 
 

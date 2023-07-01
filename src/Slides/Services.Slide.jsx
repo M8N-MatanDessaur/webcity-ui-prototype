@@ -105,8 +105,7 @@ const RelativeContainer = styled.div`
 
 const FluidContainer = styled.div`
   position: relative;
-  background: url(${animatedbg}) no-repeat center center/cover;
-  filter:var(--isDark);
+  background-image:url(https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png);
   background-attachment: fixed;
   width: 100%;
   height: 100%;
@@ -125,7 +124,7 @@ const Text = styled.blockquote`
   font-weight: 600;
   text-align: center;
   padding: 2rem;
-  color: #000;
+  color: var(--text-color);
   width: auto;
   height: max-content;
   display: flex;
@@ -135,7 +134,7 @@ const Text = styled.blockquote`
   &::before {
     content: open-quote;
     font-size: 3rem;
-    color: #000;
+    color: var(--text-color);
     opacity: 0.5;
     margin-right: 1rem;
     }
@@ -143,7 +142,7 @@ const Text = styled.blockquote`
 &::after {
     content: close-quote;
     font-size: 3rem;
-    color: #000;
+    color: var(--text-color);
     opacity: 0.5;
     margin-left: 1rem;
     }
@@ -189,22 +188,25 @@ const ServicesContainer = styled.div`
 const Service = styled.div`
     width: 30%;
     height: max-content;
-    max-height: 20em;
+    min-height: 20em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 3rem;
-    backdrop-filter: blur(8px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: var(--accent-color);
     border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.4);
+    border: 1px solid var(--border-color);
 
     transition: all 0.1s ease-in-out;
 
     &:hover {
-        border: 1px solid #00000040;
+        box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
+
+        & svg {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
     }
 
     @media (max-width: 940px) {
@@ -220,7 +222,7 @@ const ServiceIcon = styled.div`
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: #000;
+    color: var(--text-color);
     margin-bottom: 1rem;
 
     & svg {
@@ -233,7 +235,7 @@ const ServiceTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    color: #000;
+    color: var(--text-color);
     margin-bottom: 1rem;
 
     @media (max-width: 768px) {
@@ -253,7 +255,7 @@ const ServiceDescription = styled.p`
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-    color: #000;
+    color: var(--text-color);
     
     @media (max-width: 768px) {
         font-size: 1.1rem;
