@@ -39,8 +39,6 @@ const ServiceWrapper = styled.div`
 
     &:hover {
         box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
-        border-color: var(--accent-color);
-        border-radius: 20px;
         transition: all 0.1s ease-in-out;
         & svg {
             transform: scale(1.2);
@@ -54,13 +52,11 @@ const ServiceWrapper = styled.div`
 
         &:hover {
             box-shadow: none;
-            border-color: var(--border-color);
         }
 
         &:active {
             box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
             border-color: var(--accent-color);
-            border-radius: 20px;
             transition: all 0.1s ease-in-out;
             & svg {
                 transform: scale(1.2);
