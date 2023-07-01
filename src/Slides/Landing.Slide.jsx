@@ -224,7 +224,7 @@ const StyledOffering = styled.div`
 `;
 
 const OfferingQuote = styled.blockquote`
-border: 2px solid var(--border-color);
+border: 2px solid var(--accent-color);
 background: var(--foreground-color);
 padding: 30px 60px;
 border-radius: 10px;
@@ -247,12 +247,6 @@ cite {
   font-weight: 100;
   margin-top: 1rem;
   opacity: 0.8;
-}
-
-&:hover {
-  box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
-  border-color: var(--accent-color);  
-  transition: all 0.1s ease-in-out;
 }
 
 @media (max-width: 768px) {

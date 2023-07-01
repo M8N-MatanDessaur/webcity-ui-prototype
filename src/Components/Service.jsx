@@ -37,8 +37,9 @@ const ServiceWrapper = styled.div`
     transition: all 0.1s ease-in-out;
 
     &:hover {
-        box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
+        box-shadow: 0 0 25px var(--accent-color), 0 0 15px var(--accent-color), inset 0 0 15px var(--accent-color);
         border-color: var(--accent-color);
+        border-radius: 20px;
         transition: all 0.1s ease-in-out;
         & svg {
             transform: scale(1.1);
