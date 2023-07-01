@@ -74,8 +74,8 @@ const Tilt = styled.div`
     flex-direction: column;
     background: var(--foreground-color);
     opacity: 0.8;
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     overflow: scroll;
     scrollbar-width: thin;
     scrollbar-color: var(--text-color) var(--foreground-color);

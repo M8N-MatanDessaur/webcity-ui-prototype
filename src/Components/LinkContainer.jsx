@@ -21,7 +21,7 @@ const Container = styled.div`
     flex-direction: row;
     background: var(--foreground-color);
     opacity: 0.8;
-    border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-bottom: 1px solid var(--border-color);
 
     &:last-child {
         border-bottom: none;
