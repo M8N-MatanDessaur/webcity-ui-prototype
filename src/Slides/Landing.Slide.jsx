@@ -225,7 +225,7 @@ const StyledOffering = styled.div`
 
 const OfferingQuote = styled.blockquote`
 border: 2px solid var(--border-color);
-background: var(--accent-color);
+background: var(--foreground-color);
 padding: 30px 60px;
 border-radius: 10px;
 font-size: 1.8rem;
@@ -251,7 +251,8 @@ cite {
 
 &:hover {
   box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
-  transition: all 0.5s ease-in-out;
+  border-color: var(--accent-color);  
+  transition: all 0.1s ease-in-out;
 }
 
 @media (max-width: 768px) {

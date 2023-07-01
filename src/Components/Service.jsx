@@ -30,7 +30,7 @@ const ServiceWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     padding: 3rem;
-    background-color: var(--accent-color);
+    background-color: var(--foreground-color);
     border-radius: 12px;
     border: 1px solid var(--border-color);
 
@@ -38,7 +38,8 @@ const ServiceWrapper = styled.div`
 
     &:hover {
         box-shadow: 0 0 100px var(--accent-color), inset 0 0 50px var(--accent-color);
-
+        border-color: var(--accent-color);
+        transition: all 0.1s ease-in-out;
         & svg {
             transform: scale(1.1);
             transition: all 0.3s ease-in-out;
