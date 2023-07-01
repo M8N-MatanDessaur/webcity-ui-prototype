@@ -24,7 +24,7 @@ export default Service;
 const ServiceWrapper = styled.div`
     width: 30%;
     height: max-content;
-    min-height: 20em;
+    min-height: 23em;
     display: flex;
     align-items: center;
     justify-content: center;
