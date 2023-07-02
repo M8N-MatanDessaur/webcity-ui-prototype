@@ -201,7 +201,6 @@ const MemberPicture = styled.img`
     font-weight: bold;
     border-radius: 50%;
     border: 5px solid transparent;
-    filter: drop-shadow(2px 4px 6px #00000050);
     z-index: 1;
 
     user-select: none;
