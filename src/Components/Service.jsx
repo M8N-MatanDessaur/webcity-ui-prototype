@@ -56,7 +56,6 @@ const ServiceWrapper = styled.div`
 
         &:active {
             box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
-            border-color: var(--accent-color);
             transition: all 0.1s ease-in-out;
             & svg {
                 transform: scale(1.2);

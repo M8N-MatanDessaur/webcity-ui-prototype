@@ -188,7 +188,6 @@ const CardHeader = styled.div`
     overflow: hidden;
     color: var(--text-color);
     font-weight: bold;
-
 `;
 
 const MemberPicture = styled.img`
@@ -196,12 +195,12 @@ const MemberPicture = styled.img`
     top: -35px;
     left: -35px;
     width: 100px;
-    background-color: var(--foreground-color);
+    background-color: transparent;
     color: var(--text-color);
     font-size: 18px;
     font-weight: bold;
     border-radius: 50%;
-    border: 5px solid var(--background-color);
+    border: 5px solid transparent;
     z-index: 1;
 
     user-select: none;
