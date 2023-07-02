@@ -31,6 +31,8 @@ const Container = styled.div`
         padding: 15px 20px;
         border-bottom: 1px solid var(--text-color);
         border-top: 1px solid var(--text-color);
+        background: var(--foreground-color);
+        box-shadow: 0px 40px 100px var(--accent-color);
 
         &:first-child {
             border-top: none;
