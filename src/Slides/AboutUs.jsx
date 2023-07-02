@@ -18,7 +18,7 @@ export default function AboutUs() {
             <Separator />
             <GridWrapper>
                 <MemberCard>
-                    <MemberPicture src={matan_picture} alt="Matan" />
+                    <MemberPicture src={matan_picture} alt="Matan" onContextMenu={(event)=>event.preventDefault()}/>
                     <ExtraText>{t('aboutUs.matanExtraText')}</ExtraText>
                     <CardHeader>
                         <CardHeaderText>
@@ -32,7 +32,7 @@ export default function AboutUs() {
                 </MemberCard>
                 <MemberCard>
                 <ExtraText>{t('aboutUs.ericExtraText')}</ExtraText>
-                    <MemberPicture src={eric_picture} alt="Eric" />
+                    <MemberPicture src={eric_picture} alt="Eric" onContextMenu={(event)=>event.preventDefault()}/>
                     <CardHeader>
                         <CardHeaderText>
                             <CardHeaderTitle>Eric Gendron</CardHeaderTitle>
@@ -44,7 +44,7 @@ export default function AboutUs() {
                     </CardBody>
                 </MemberCard>
                 <MemberCard>
-                    <MemberPicture src={jacob_picture} alt="Jacobs" />
+                    <MemberPicture src={jacob_picture} alt="Jacobs" onContextMenu={(event)=>event.preventDefault()}/>
                     <CardHeader>
                         <CardHeaderText>
                             <CardHeaderTitle>Jacob Gourgeon</CardHeaderTitle>
@@ -211,6 +211,7 @@ const MemberPicture = styled.img`
     -moz-user-select: none;
     -ms-user-select: none;
     touch-action: none;
+    pointer-events: none;
 
     &:active {
         transform: scale(0.95);
