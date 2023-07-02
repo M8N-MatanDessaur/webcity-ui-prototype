@@ -213,13 +213,6 @@ const MemberPicture = styled.img`
     touch-action: none;
     pointer-events: none;
 
-    &:active {
-        transform: scale(0.95);
-        transition: all 0.1s ease-in-out;
-        filter: brightness(0.8);
-    }
-
-
     @media (max-width: 768px) {
         width: 75px;
         top: -25px;

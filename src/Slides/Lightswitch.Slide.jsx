@@ -160,7 +160,7 @@ const LightSwitch = () => {
   const [isOn, setIsOn] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [isMouseOver, setIsMouseOver] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+
 
   const { t } = useTranslation();
 

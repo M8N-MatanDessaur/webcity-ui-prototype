@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ScrollArrow from "./ScrollArrow";
 import { useTranslation } from "react-i18next";
 
 function Service({svg, title, description}) {
