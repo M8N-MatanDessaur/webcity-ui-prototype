@@ -234,6 +234,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 z-index: 1;
+border: 1px solid var(--border-color);
 
 cite {
   display: block;
