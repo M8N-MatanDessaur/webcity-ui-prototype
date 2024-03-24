@@ -5,7 +5,8 @@ export default {
       contact: 'Contact',
     },
     mainText: {
-        slogan: 'Nous tissons la toile au cœur de la ville',
+        slogan: 'Nous construisons des sites Web',
+        slogan1: 'sur mesure pour votre entreprise',
         slogan2: 'Faire de votre vision, notre œuvre d\'art',
         offeringText: 'Webcity est une agence de conception et de développement Web offrant un service clé-en-main. Nous créons des sites Web, des applications Web et des expériences Web. Satisfaction garantie à 100 %.',
         offeringText2: '— Nous offrons une solution complète prête à l\'emploi pour votre entreprise.',

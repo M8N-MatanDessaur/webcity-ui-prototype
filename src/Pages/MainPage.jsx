@@ -11,7 +11,7 @@ export default function MainPage() {
     <>
       <Landing />
       <Services />
-      <LightSwitch />
+      {/* <LightSwitch /> */}
       <AboutUs />
       <FooterQuote />
     </>

@@ -53,7 +53,8 @@ const Landing = () => {
         <Blob />
         <BlurredOverlay />
         <StyledSlogan fade={fadeInSlogan}>
-          {t('mainText.slogan')}
+          {t('mainText.slogan')}<br />
+          {t('mainText.slogan1')}
         </StyledSlogan>
         <StyledQuote fade={fadeInQuote}>
           {t('mainText.slogan2')}

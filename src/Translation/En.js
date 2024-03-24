@@ -7,7 +7,8 @@ export default {
       contact: 'Contact',
     },
     mainText: {
-        slogan: 'We weave the web in the heart of the city',
+        slogan: 'We build websites',
+        slogan1: 'tailored for your business',
         slogan2: 'Making your vision, our work of art',
         offeringText: 'Webcity is a full service web design and development agency. We build websites, web applications, and web experiences. 100% satisfaction guaranteed.',
         offeringText2: '— We offer a full ready to roll solution for your business.',
