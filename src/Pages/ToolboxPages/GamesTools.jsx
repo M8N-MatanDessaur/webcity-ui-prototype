@@ -129,16 +129,6 @@ const links = [
         link: "https://supermarkupworld.com/"
     },
     {
-        title: "Flexbox Zombies",
-        description: "Flexbox mastering game",
-        link: "https://mastery.games/flexboxzombies/"
-    },
-    {
-        title: "Grid Critters",
-        description: "Grid mastering game",
-        link: "https://mastery.games/p/gridcritters/"
-    },
-    {
         title: "designercize",
         description: "UI design Timed Challenges",
         link: "https://www.designercize.com/"
@@ -172,7 +162,7 @@ const links = [
         title:"Oh My Git",
         description:"Git learning game",
         link:"https://ohmygit.org/"
-    }
+    },
 ];
 
 
