@@ -32,7 +32,7 @@ const ServiceWrapper = styled.div`
     padding: 3rem;
     background-color: var(--foreground-color);
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
 
     transition: all 0.1s ease-in-out;
 

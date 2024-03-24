@@ -220,7 +220,7 @@ const StyledOffering = styled.div`
 
 const OfferingQuote = styled.blockquote`
 background: var(--foreground-color);
-box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.05);
+box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
 padding: 30px 60px;
 border-radius: 10px;
 font-size: 1.8rem;
@@ -235,7 +235,6 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 z-index: 1;
-border: 1px solid var(--border-color);
 
 cite {
   display: block;

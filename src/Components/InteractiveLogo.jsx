@@ -67,6 +67,7 @@ const LogoIcon = styled.svg`
 
   ${LogoContainer}:hover & {
     stroke: var(--text-color);
+    fill: #FFFFFF;
   }
 
   @media (max-width: 768px) {
