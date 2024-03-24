@@ -76,7 +76,7 @@ const Tilt = styled.div`
     opacity: 0.8;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    overflow: scroll;
+    overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--text-color) var(--foreground-color);
     &::-webkit-scrollbar {
@@ -89,6 +89,12 @@ const Tilt = styled.div`
         background-color: var(--text-color);
         border-radius: 20px;
         border: 3px solid var(--foreground-color);
+    }
+    &::-webkit-scrollbar-button:single-button:vertical:decrement{
+        display: none;
+    }
+    &::-webkit-scrollbar-button:single-button:vertical:increment{
+        display: none;
     }
 
     @media (max-width: 680px) {
