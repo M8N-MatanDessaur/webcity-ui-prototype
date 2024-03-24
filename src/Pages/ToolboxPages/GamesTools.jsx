@@ -4,6 +4,7 @@ import ToolsListButton from "../../Components/ToolsListButton";
 import TiltContainer from "../../Components/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator";
+import { t } from "i18next";
 
 
 const links = [
@@ -147,6 +148,31 @@ const links = [
         description:"AI text adventure",
         link:"https://play.aidungeon.io/"
     },
+    {
+        title:"JSRobot",
+        description:"Javascript programming game",
+        link:"https://lab.reaal.me/jsrobot/"
+    },
+    {
+        title:"JSWarrior",
+        description:"Javascript dungeon crawler",
+        link:"https://warriorjs.com/"
+    },
+    {
+        title:"yare.io",
+        description:"Real-Time Strategy game",
+        link:"https://yare.io/"
+    },
+    {
+        title:"cyber-dojo",
+        description:"Programming challenges",
+        link:"https://cyber-dojo.org/creator/home"
+    },
+    {
+        title:"Oh My Git",
+        description:"Git learning game",
+        link:"https://ohmygit.org/"
+    }
 ];
 
 
