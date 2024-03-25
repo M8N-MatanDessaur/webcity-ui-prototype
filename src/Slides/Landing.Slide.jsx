@@ -64,7 +64,12 @@ const Landing = () => {
       </FluidContainer>
 
       <StyledOffering ref={offeringRef} fade={fadeInOffering}>
-
+        {
+          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ?
+            <iframe src='https://my.spline.design/ballz-e803baa4ec449f30747e7386239820df/' frameborder='0' width='100%' height='100%'></iframe>
+            :
+            <iframe src='https://my.spline.design/ballzcopy-e2bbd9f51237171a2fa2dac5240f639b/' frameborder='0' width='100%' height='100%'></iframe>
+        }
         <OfferingQuote>
           {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
           <PortfolioButton isOn={true} />
@@ -198,6 +203,7 @@ const StyledOffering = styled.div`
   background: transparent;
   color: var(--text-color);	
   width: 100%;
+  height: 625px;
   padding: 30px 60px;
   display: flex;
   flex-direction: column;
@@ -224,7 +230,7 @@ const StyledOffering = styled.div`
 `;
 
 const OfferingQuote = styled.blockquote`
-background: #1f1f1f90;
+background: var(--blurCardColor);
 backdrop-filter: blur(10px);
 box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
 padding: 30px 60px;
