@@ -148,7 +148,7 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
 const CloseButton = styled.button`
