@@ -113,7 +113,7 @@ const CategoriesGrid = styled.div`
     height: 100%;
     width: 100%;
     gap: 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--text-color) var(--foreground-color);
     &::-webkit-scrollbar {

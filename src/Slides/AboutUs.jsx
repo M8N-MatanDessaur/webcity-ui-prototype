@@ -65,6 +65,8 @@ export default function AboutUs() {
 const FluidContainer = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   height: 100%;
   display: flex;
   align-items: center;
@@ -72,6 +74,7 @@ const FluidContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   background-attachment: fixed;
+  margin-bottom: 100px;
 `;
 
 const Separator = styled.hr`

@@ -64,6 +64,7 @@ const Landing = () => {
       </FluidContainer>
 
       <StyledOffering ref={offeringRef} fade={fadeInOffering}>
+
         <OfferingQuote>
           {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
           <PortfolioButton isOn={true} />
@@ -213,13 +214,18 @@ const StyledOffering = styled.div`
     transform: translateY(30px);
   `}
 
+  & iframe {
+    position: absolute;
+  }
+
   @media (max-width: 768px) {
     padding: 30px 30px;
   }
 `;
 
 const OfferingQuote = styled.blockquote`
-background: var(--foreground-color);
+background: #1f1f1f90;
+backdrop-filter: blur(10px);
 box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
 padding: 30px 60px;
 border-radius: 10px;

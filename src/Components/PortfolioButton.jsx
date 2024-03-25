@@ -33,12 +33,11 @@ const fadeInAnimation = keyframes`
 const Button = styled.button`
   display: ${({ isOn }) => (isOn ? "flex" : "none")};
   width: max-content;
-  height: 50px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 2rem;
+  padding: 0.5rem 2rem;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 1);
@@ -62,7 +61,6 @@ const Button = styled.button`
 
   @media (max-width: 768px) {
     width: max-content;
-    height: 40px;
     font-size: 1rem;
   }
 
