@@ -1,26 +1,65 @@
-import React from "react";
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 
-function Service({svg, title, description}) {
-  return (
-    <ServiceWrapper>
-        <ServiceIcon>
-            {svg}
-        </ServiceIcon>
-        <ServiceTitle>
-            {title}
-        </ServiceTitle>
-        <ServiceDescription>
-            {description}
-        </ServiceDescription>
-    </ServiceWrapper>
-  );
+function Service({ svg, title, description }) {
+    const [inView, setInView] = useState(false);
+    const [animated, setAnimated] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !animated) {
+                    setInView(true);
+                    setAnimated(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, [ref, animated]);
+
+    return (
+        <ServiceWrapper ref={ref} className={inView ? "in-view" : ""}>
+            <ServiceIcon>
+                {svg}
+            </ServiceIcon>
+            <ServiceTitle>
+                {title}
+            </ServiceTitle>
+            <ServiceDescription>
+                {description}
+            </ServiceDescription>
+        </ServiceWrapper>
+    );
 }
 
 export default Service;
 
+const flip3d = keyframes`
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+`;
+
 const ServiceWrapper = styled.div`
+    &.in-view {
+        animation: ${flip3d} 1s forwards;
+    }
+    perspective: 1000px;
+    backface-visibility: hidden;
     width: 30%;
     height: max-content;
     height: 22em;

@@ -9,7 +9,7 @@ import PortfolioButton from "../Components/PortfolioButton";
 const OBSERVER_OPTIONS = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.5,
+  threshold: 0.1,
 };
 
 const Landing = () => {
@@ -25,27 +25,27 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
-    const current = offeringRef.current;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setFadeInOffering(true);
-        }
+        // Set fadeInOffering to true when the component is in view, and false when it's not
+        setFadeInOffering(entry.isIntersecting);
       },
       OBSERVER_OPTIONS
     );
-
+  
+    const current = offeringRef.current;
+  
     if (current) {
       observer.observe(current);
     }
-
+  
     return () => {
       if (current) {
         observer.unobserve(current);
       }
     };
   }, []);
+  
 
   return (
     <LandingContainer>
@@ -64,7 +64,7 @@ const Landing = () => {
       </FluidContainer>
 
       <StyledOffering ref={offeringRef} fade={fadeInOffering}>
-        {
+        {fadeInOffering &&
           window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ?
             <iframe src='https://my.spline.design/ballz-e803baa4ec449f30747e7386239820df/' frameborder='0' width='100%' height='100%'></iframe>
             :
