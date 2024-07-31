@@ -45,6 +45,7 @@ video {
 
 canvas{
     cursor: auto !important;
+    touch-action: auto !important;
 }
 
 button,
