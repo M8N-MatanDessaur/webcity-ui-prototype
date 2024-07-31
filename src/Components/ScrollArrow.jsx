@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ScrollArrow({ slide }) {
+export default function ScrollArrow({ slide, bottom }) {
     return (
 
-        <ScrollArrowButton>
+        <ScrollArrowButton bottom={bottom}>
             <svg fill="var(--text-color)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M4.855 7.496a.6.6 0 0 1 .85 0l6.775 6.776 6.775-6.776a.6.6 0 0 1 .85.85l-7.2 7.2a.6.6 0 0 1-.85 0l-7.2-7.2a.6.6 0 0 1 0-.85Z" clipRule="evenodd"></path>
             </svg>
@@ -14,7 +14,7 @@ export default function ScrollArrow({ slide }) {
 
 const ScrollArrowButton = styled.p`
   position: absolute;
-  bottom: 35px;
+  bottom: ${props => props.bottom ? props.bottom : "35px"};
   left: 0;
   width: 100%;
   height: 40px;
@@ -34,7 +34,7 @@ const ScrollArrowButton = styled.p`
   }
 
   @media (max-width: 480px) {
-    bottom: 65px;
+    bottom: ${props => props.bottom ? props.bottom : "65px"};
   }
 
   @keyframes bounce {
