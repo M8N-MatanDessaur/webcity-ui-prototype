@@ -8,8 +8,14 @@ export default function PortfolioButton({isOn}) {
     const { t } = useTranslation();
 
     const goToPortfolio = () => {
-        navigate("/portfolio");
-    };
+      const portfolioElement = document.getElementById('portfolio');
+      if (portfolioElement) {
+          portfolioElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+          // Fallback if the element is not found
+          window.location.hash = '#portfolio';
+      }
+  };
     
     return (
         <Button isOn={isOn} onClick={goToPortfolio}>

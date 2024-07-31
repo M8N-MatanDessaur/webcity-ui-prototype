@@ -1,16 +1,20 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import img1 from "../Assets/Images/media/1.jpg";
 import img2 from "../Assets/Images/media/2.jpg";
 import img3 from "../Assets/Images/media/3.jpg";
 import img4 from "../Assets/Images/media/4.jpg";
 
 export default function Projects() {
+    const { t } = useTranslation();
     return (
-        <div style={{
+        <div id="portfolio" style={{
             padding: "3rem",
             maxWidth: "1400px",
             margin: "0 auto",
         }}>
+              <Title>{t('mainText.portfolio')}</Title>
             <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2 }}>
                 <Masonry>
                     <img
@@ -42,3 +46,9 @@ export default function Projects() {
         </div>
     );
 }
+
+const Title = styled.h1`
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    `;
