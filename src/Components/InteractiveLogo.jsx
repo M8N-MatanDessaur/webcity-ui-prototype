@@ -37,7 +37,8 @@ align-items: center;
 justify-content: center;
 border-radius: 50px;
 border: 1px solid var(--text-color);
-background-color: var(--background-color);
+background-color: #ffffff94;
+backdrop-filter: blur(10px);
 cursor: pointer;
 transition: all 0.1s ease-in-out;
 

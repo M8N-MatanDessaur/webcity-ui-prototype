@@ -28,7 +28,8 @@ export default function ContactRevealButton() {
 }
 
 const Button = styled.button`
-  background-color: var(--background-color);
+  background-color: #ffffff94;
+backdrop-filter: blur(10px);
   border: none;
   padding: 15px;
   position: fixed;
