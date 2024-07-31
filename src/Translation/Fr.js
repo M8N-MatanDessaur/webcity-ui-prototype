@@ -10,7 +10,7 @@ export default {
         slogan2: 'Faire de votre vision, notre œuvre d\'art',
         offeringText: 'Webcity est une agence de conception et de développement Web offrant un service clé-en-main. Nous créons des sites Web, des applications Web et des expériences Web. Satisfaction garantie à 100 %.',
         offeringText2: '— Nous offrons une solution complète prête à l\'emploi pour votre entreprise.',
-        portfolio: 'Portfolio',
+        portfolio: 'Certains de nos travaux',
         commingSoon: 'Bientôt disponible ...',
         struggle: 'Vous avez du mal à montrer votre travail le plus important au monde ?',
         struggle2: 'Cliquez n\'importe où pour mettre en lumière',
