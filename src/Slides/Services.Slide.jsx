@@ -84,7 +84,7 @@ const FluidContainer = styled.div`
 `;
 
 const Text = styled.blockquote`
-  font-family: 'Montserrat', sans-serif;
+ font-family: Poppins, sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;

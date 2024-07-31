@@ -31,9 +31,10 @@ const fadeInAnimation = keyframes`
 `;
 
 const Button = styled.button`
+font-family: Poppins, sans-serif;
   display: ${({ isOn }) => (isOn ? "flex" : "none")};
   width: max-content;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
@@ -46,7 +47,7 @@ const Button = styled.button`
   box-shadow:inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
     inset 0px 11px 28px 0px rgb(255, 255, 255);
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 300;
   border: 1px solid #00000020;
   outline: none;
   cursor: pointer;

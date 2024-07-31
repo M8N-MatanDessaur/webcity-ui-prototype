@@ -45,7 +45,7 @@ const QuoteContainer = styled.div`
 `;
 
 const Text = styled.blockquote`
-  font-family: 'Montserrat', sans-serif;
+      font-family: Poppins, sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
@@ -67,7 +67,7 @@ const Text = styled.blockquote`
 `;
 
 const TextOn = styled.blockquote`
-  font-family: 'Montserrat', sans-serif;
+    font-family: Poppins, sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
@@ -90,7 +90,7 @@ const TextOn = styled.blockquote`
 
 
 const Hint = styled.p`
-  font-family: 'Montserrat', sans-serif;
+    font-family: Poppins, sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;

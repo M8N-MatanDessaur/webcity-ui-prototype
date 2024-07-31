@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, memo } from "react";
 import styled, { keyframes, css } from "styled-components";
+import Spline from '@splinetool/react-spline';
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
 import ScheduleButton from "../Components/ScheduleButton";
@@ -65,10 +66,15 @@ const Landing = () => {
 
       <StyledOffering ref={offeringRef} fade={fadeInOffering}>
         {fadeInOffering &&
-          window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ?
-            <iframe src='https://my.spline.design/ballz-e803baa4ec449f30747e7386239820df/' frameborder='0' width='100%' height='100%'></iframe>
-            :
-            <iframe src='https://my.spline.design/ballzcopy-e2bbd9f51237171a2fa2dac5240f639b/' frameborder='0' width='100%' height='100%'></iframe>
+             <Spline scene="https://prod.spline.design/Uq-svW2LpfK3vn4h/scene.splinecode" style={{
+              width: "100%",
+              height: "100%",
+              border: "none",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+             }}/>
         }
         <OfferingQuote>
           {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
@@ -114,9 +120,11 @@ const FluidContainer = styled.div`
 const fadeInSloganAnimation = keyframes`
   from {
     opacity: 0;
+    scale: 0.95;
   }
   to {
     opacity: 1;
+    scale: 1;
   }
 `;
 
@@ -132,8 +140,9 @@ const fadeInQuoteAnimation = keyframes`
 `;
 
 const StyledSlogan = styled.blockquote`
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3.3rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 4rem;
   font-weight: 600;
   text-align: center;
   padding: 2rem;
@@ -144,7 +153,7 @@ const StyledSlogan = styled.blockquote`
   align-items: center;
   justify-content: center;
   opacity: ${({ fade }) => (fade ? 1 : 0)};
-  animation: ${({ fade }) => (fade ? fadeInSloganAnimation : "none")} 1s ease-in;
+  animation: ${({ fade }) => (fade ? fadeInSloganAnimation : "none")} 500ms ease-in;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -160,9 +169,10 @@ const StyledSlogan = styled.blockquote`
 `;
 
 const StyledQuote = styled.blockquote`
-  font-family: 'poppins', sans-serif;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-size: 1.5rem;
-  font-weight: 100;
+ font-weight: 300
   text-align: center;
   color: var(--text-color);
   width: fit-content;
@@ -171,7 +181,7 @@ const StyledQuote = styled.blockquote`
   align-items: center;
   justify-content: center;
   opacity: ${({ fade }) => (fade ? 1 : 0)};
-  animation: ${({ fade }) => (fade ? fadeInQuoteAnimation : "none")} 1s ease-in;
+  animation: ${({ fade }) => (fade ? fadeInQuoteAnimation : "none")} 500ms ease-in;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -214,7 +224,7 @@ const StyledOffering = styled.div`
   ${({ fade }) => fade ? css`
     opacity: 1;
     transform: translateY(0);
-    animation: ${fadeInAnimation} 1s ease-in-out;
+    animation: ${fadeInAnimation} 500ms ease-in-out;
   ` : css`
     opacity: 0;
     transform: translateY(30px);
@@ -230,6 +240,8 @@ const StyledOffering = styled.div`
 `;
 
 const OfferingQuote = styled.blockquote`
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 background: var(--blurCardColor);
 backdrop-filter: blur(10px);
 box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
@@ -251,7 +263,7 @@ z-index: 1;
 cite {
   display: block;
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300
   margin-top: 1rem;
   opacity: 0.8;
 }

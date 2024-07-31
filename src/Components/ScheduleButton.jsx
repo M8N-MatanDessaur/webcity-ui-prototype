@@ -113,7 +113,7 @@ const FormTitle = styled.h2`
 
 const FormSubTitle = styled.h3`
   font-size: 1.5rem;
-  font-weight: 100;
+ font-weight: 300
   color: var(--text-color);
   opacity: 0.8;
   text-align: center;
@@ -275,6 +275,7 @@ const ScheduleButton = ({ isOn }) => {
 };
 
 const Button = styled.button`
+font-family: Poppins, sans-serif;
   display: ${({ isOn }) => (isOn ? "flex" : "none")};
   width: max-content;
   margin-top: 2rem;
@@ -289,7 +290,7 @@ const Button = styled.button`
   box-shadow: inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
   inset 0px 11px 28px 0px rgb(255, 255, 255);
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 300;
   border: 1px solid #00000020;
   outline: none;
   cursor: pointer;
@@ -297,7 +298,7 @@ const Button = styled.button`
   opacity: 0;
   transform: translateY(20px);
   z-index: 1;
-  animation: ${({ isOn }) => (isOn ? fadeInAnimation : "none")} 1s ease-in-out forwards;
+  animation: ${({ isOn }) => (isOn ? fadeInAnimation : "none")} 500ms ease-in-out forwards;
 
   &:hover {
     filter:drop-shadow(0 10px 10px #00000030);

@@ -29,7 +29,7 @@ const FooterQuoteContainer = styled.div`
     `;
 
 const FooterQuoteTextQuote = styled.div`
-   font-family: 'Montserrat', sans-serif;
+    font-family: Poppins, sans-serif;
    font-size: 0.7rem;
     font-weight: 300;
     text-align: center;

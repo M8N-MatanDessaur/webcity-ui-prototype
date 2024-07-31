@@ -44,10 +44,13 @@ const Button = styled.button`
     transition: transform 0.3s ease-in-out;
   }
   &:hover {
-    background-color: var(--background-color);
+    background-color: black;
+    & svg {
+      fill: white;
+}
   }
   &:active {
-    background-color: var(--foreground-color);
+    opacity: 0.8;
   }
 }
 

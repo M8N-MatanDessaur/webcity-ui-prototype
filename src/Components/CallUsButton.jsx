@@ -34,9 +34,10 @@ const fadeIn = keyframes`
 `;
 
 const Button = styled.button`
+font-family: Poppins, sans-serif;
   background-color: var(--background-color);
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   position: fixed;
   bottom: 105px;
   right: 35px;
@@ -63,13 +64,21 @@ const Button = styled.button`
     display: block;
   }
   &:hover {
-    background-color: var(--foreground-color);
+    background-color: black;
+    & svg {
+      fill: white;
+    }
+    & span {
+      color: white;
+    }
+      color: white;
   }
   &:active {
     background-color: var(--background-color);
   }
 
   @media (max-width: 768px) {
+    padding: 10px ;
     bottom: 95px;
     right: 30px;
     span {

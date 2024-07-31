@@ -19,6 +19,7 @@ export default function ToolsListButton() {
 }
 
 const Button = styled.button`
+font-family: Poppins, sans-serif;
     background-color: var(--background-color);
     border: none;
     padding: 15px;

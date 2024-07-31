@@ -103,7 +103,7 @@ const SectionTitle = styled.h1`
 const SectionSubtitle = styled.h2`
     width: 70%;    
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: 300
     color: var(--text-color);
     opacity: 0.8;
     margin-bottom: 35px;

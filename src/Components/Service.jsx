@@ -123,6 +123,8 @@ const ServiceIcon = styled.div`
 const ServiceTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
     text-align: center;
     color: var(--text-color);
     margin-bottom: 1rem;

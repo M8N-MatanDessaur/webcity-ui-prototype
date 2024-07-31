@@ -4,12 +4,8 @@ import styled, { keyframes } from "styled-components";
 // Obtain the user's preferred mode (light or dark)
 const userPreferredMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 let colors = [];
-// Update the CSS variables based on the user's preferred mode
-if (userPreferredMode === "light") {
-  colors = ["#4EA5D9", "#EFCA08", "#F87575"];
-} else if (userPreferredMode === "dark") {
-  colors = [ "#992C2C","#4C2C69", "#874000"];
-}
+colors = ["#C07FFD", "#FF8472", "#FFBB72"];
+
 
 const liquidAnimation = keyframes`
   0% {
@@ -35,8 +31,8 @@ const BlobContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background-color: transparent;
   animation: ${liquidAnimation} 6s cubic-bezier(.78,.23,.2,.77) infinite;
   opacity: 0;
@@ -53,8 +49,8 @@ const BlobContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
   }
 
   @media (max-width: 480px) {
