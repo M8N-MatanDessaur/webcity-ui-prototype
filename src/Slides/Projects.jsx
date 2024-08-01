@@ -6,16 +6,20 @@ import img1 from "../Assets/Images/media/1.jpg";
 import img2 from "../Assets/Images/media/2.jpg";
 import img3 from "../Assets/Images/media/3.jpg";
 import img4 from "../Assets/Images/media/4.jpg";
+import img5 from "../Assets/Images/media/5.jpg";
 import img1fr from "../Assets/Images/media/1fr.jpg";
 import img2fr from "../Assets/Images/media/2fr.jpg";
 import img3fr from "../Assets/Images/media/3fr.jpg";
 import img4fr from "../Assets/Images/media/4fr.jpg";
+import img5fr from "../Assets/Images/media/5fr.jpg";
 import ScrollArrow from "../Components/ScrollArrow";
+import ScheduleButton from "../Components/ScheduleButton";
+import Blob from "../Components/Blob";
 
 export default function Projects() {
     const { t, i18n } = useTranslation();
     const isFrench = i18n.language === 'fr';
-    const images = isFrench ? [img1fr, img2fr, img3fr, img4fr] : [img1, img2, img3, img4];
+    const images = isFrench ? [img1fr, img2fr, img3fr, img4fr, img5fr] : [img1, img2, img3, img4, img5];
     const imgRefs = useRef([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -88,12 +92,34 @@ export default function Projects() {
                             placeholder="blurred"
                         />
                     ))}
+                    <YourProject>
+                        <h4>{t('mainText.yourProjectSub')}</h4>
+                        <h3>{t('mainText.yourProject')}</h3>
+                        <p>{t('mainText.yourProjectText')}</p>
+                        <div>
+                        <ScheduleButton isOn={true} />
+                        </div>
+                        <BlurerdContainer>
+                            <Blob height="300" width="300" />
+                        </BlurerdContainer>
+                    </YourProject>
                 </Masonry>
             </ResponsiveMasonry>
             <ScrollArrow bottom={"-36px"} />
         </div>
     );
 }
+
+const BlurerdContainer = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+    filter: blur(50px);
+`;
 
 const Title = styled.h2`
     color: var(--text-color);
@@ -128,5 +154,45 @@ const FadeImage = styled.img`
 
     &.fade-in {
         opacity: 1;
+    }
+`;
+
+const YourProject = styled.div`
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h3 {
+        font-family: Poppins, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        font-family: Poppins, sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+}
+
+    p {
+        font-family: Poppins, sans-serif;
+        font-size: 1rem;
+        max-width: 70%;
     }
 `;

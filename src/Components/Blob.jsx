@@ -31,8 +31,8 @@ const BlobContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
+  width: ${(props)=>props.width || 600}px;
+  height: ${(props)=>props.height || 600}px;
   background-color: transparent;
   animation: ${liquidAnimation} 6s cubic-bezier(.78,.23,.2,.77) infinite;
   opacity: 0;
@@ -49,18 +49,18 @@ const BlobContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 500px;
-    height: 500px;
+      width: ${(props)=>props.width || 400}px;
+  height: ${(props)=>props.height || 400}px;
   }
 
   @media (max-width: 480px) {
-    width: 300px;
-    height: 300px;
+     width: ${(props)=>props.width || 300}px;
+  height: ${(props)=>props.height || 300}px;
   }
 
   @media (max-width: 320px) {
-    width: 200px;
-    height: 200px;
+     width: ${(props)=>props.width || 200}px;
+  height: ${(props)=>props.height || 200}px;
   }
 `;
 
@@ -85,7 +85,7 @@ const OuterBlob = styled.div`
   background: linear-gradient(to bottom right, ${colors[1]}, ${colors[2]}, ${colors[0]});
 `;
 
-export default function Blob() {
+export default function Blob({width, height}) {
   const blobRef = useRef(null);
   const handleIntersection = useCallback((entries) => {
     entries.forEach((entry) => {
@@ -114,7 +114,7 @@ export default function Blob() {
   }, [handleIntersection]);
 
   return (
-    <BlobContainer ref={blobRef} className="blob">
+    <BlobContainer ref={blobRef} height={height} width={width} className="blob">
       <InnerBlob />
       <OuterBlob />
     </BlobContainer>

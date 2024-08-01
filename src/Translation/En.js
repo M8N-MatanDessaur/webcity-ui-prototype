@@ -18,6 +18,9 @@ export default {
         struggle2: 'Click anywhere to shine the spotlight',
         struggle3: 'Shine a spotlight on your achievements',
         struggle4: 'bring your best work to life and share them with the world',
+        yourProject: 'Transform Your Vision into Reality!',
+        yourProjectText: 'Unlock the potential of your business with our comprehensive, ready-to-launch solution!',
+        yourProjectSub: 'Your Project, Here!',
     },
     serviceText: {
         title: 'Elevate your performance with our insightful services',
@@ -38,7 +41,7 @@ export default {
 
 
     buttonText: {
-        scheduling: 'Contact Us',
+        scheduling: 'Let\'s Get Started!',
         ourRecentWork: 'Our Recent Work',
     },
 
