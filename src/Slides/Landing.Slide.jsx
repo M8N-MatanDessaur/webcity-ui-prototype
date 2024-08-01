@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, { useEffect, useRef, useState, memo, lazy, Suspense } from "react";
 import styled, { keyframes, css } from "styled-components";
-import Spline from '@splinetool/react-spline';
 import Blob from "../Components/Blob";
 import ScrollArrow from "../Components/ScrollArrow";
 import ScheduleButton from "../Components/ScheduleButton";
 import { useTranslation } from "react-i18next";
 import PortfolioButton from "../Components/PortfolioButton";
+
+const LazySpline = lazy(() => import('@splinetool/react-spline'));
 
 const OBSERVER_OPTIONS = {
   root: null,
@@ -14,70 +15,78 @@ const OBSERVER_OPTIONS = {
 };
 
 const Landing = () => {
-  const [fadeInQuote, setFadeInQuote] = useState(false);
-  const [fadeInSlogan, setFadeInSlogan] = useState(false);
   const offeringRef = useRef(null);
-  const [fadeInOffering, setFadeInOffering] = useState(false);
+  const [isSplineVisible, setIsSplineVisible] = useState(false);
+  const [isSplineLoaded, setIsSplineLoaded] = useState(false);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    setFadeInQuote(true);
-    setFadeInSlogan(true);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Set fadeInOffering to true when the component is in view, and false when it's not
-        setFadeInOffering(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          setIsSplineVisible(true);
+        } else {
+          entry.target.classList.remove('visible');
+          setIsSplineVisible(false);
+        }
       },
       OBSERVER_OPTIONS
     );
   
-    const current = offeringRef.current;
-  
-    if (current) {
-      observer.observe(current);
+    if (offeringRef.current) {
+      observer.observe(offeringRef.current);
     }
   
     return () => {
-      if (current) {
-        observer.unobserve(current);
+      if (offeringRef.current) {
+        observer.unobserve(offeringRef.current);
       }
     };
   }, []);
-  
+
+  const handleSplineLoad = () => {
+    setIsSplineLoaded(true);
+  };
 
   return (
     <LandingContainer>
       <FluidContainer>
         <Blob />
         <BlurredOverlay />
-        <StyledSlogan fade={fadeInSlogan}>
+        <StyledSlogan>
           {t('mainText.slogan')}<br />
           {t('mainText.slogan1')}
         </StyledSlogan>
-        <StyledQuote fade={fadeInQuote}>
+        <StyledQuote>
           {t('mainText.slogan2')}
         </StyledQuote>
         <ScheduleButton isOn={true} />
         <ScrollArrow />
       </FluidContainer>
 
-      <StyledOffering ref={offeringRef} fade={fadeInOffering}>
-        {fadeInOffering &&
-             <Spline scene="https://prod.spline.design/Uq-svW2LpfK3vn4h/scene.splinecode" style={{
-              width: "100%",
-              height: "100%",
-              border: "none",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-             }}/>
-        }
+      <StyledOffering ref={offeringRef}>
+        {isSplineVisible && (
+          <Suspense fallback={<LoadingPlaceholder>Loading 3D scene...</LoadingPlaceholder>}>
+            <LazySpline
+              scene="https://prod.spline.design/Uq-svW2LpfK3vn4h/scene.splinecode"
+              style={{
+                width: "100%",
+                height: "100%",
+                border: "none",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                zIndex: -1,
+                opacity: isSplineLoaded ? 1 : 0,
+                transition: 'opacity 0.5s ease-out',
+              }}
+              onLoad={handleSplineLoad}
+            />
+          </Suspense>
+        )}
         <OfferingQuote>
-          {t('mainText.offeringText')} <cite> {t('mainText.offeringText2')} </cite>
+          {t('mainText.offeringText')} {t('mainText.offeringText2')}
           <PortfolioButton isOn={true} />
         </OfferingQuote>
       </StyledOffering>
@@ -86,6 +95,20 @@ const Landing = () => {
 }
 
 export default memo(Landing);
+
+const LoadingPlaceholder = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blurCardColor);
+  color: var(--text-color);
+  font-size: 1.2rem;
+`;
 
 const BlurredOverlay = styled.div`
   position: absolute;
@@ -103,7 +126,7 @@ const LandingContainer = styled.div`
   width: 100%;
   height: 100%;
   background-attachment: fixed;
-  `;
+`;
 
 const FluidContainer = styled.div`
   position: relative;
@@ -117,21 +140,10 @@ const FluidContainer = styled.div`
   overflow: hidden;
 `;
 
-const fadeInSloganAnimation = keyframes`
+const fadeInAnimation = keyframes`
   from {
     opacity: 0;
-    scale: 0.95;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-`;
-
-const fadeInQuoteAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -152,8 +164,7 @@ const StyledSlogan = styled.blockquote`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: ${({ fade }) => (fade ? 1 : 0)};
-  animation: ${({ fade }) => (fade ? fadeInSloganAnimation : "none")} 500ms ease-in;
+  animation: ${fadeInAnimation} 500ms ease-in;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -172,7 +183,7 @@ const StyledQuote = styled.blockquote`
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-size: 1.5rem;
- font-weight: 300
+  font-weight: 300;
   text-align: center;
   color: var(--text-color);
   width: fit-content;
@@ -180,8 +191,7 @@ const StyledQuote = styled.blockquote`
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: ${({ fade }) => (fade ? 1 : 0)};
-  animation: ${({ fade }) => (fade ? fadeInQuoteAnimation : "none")} 500ms ease-in;
+  animation: ${fadeInAnimation} 500ms ease-in;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -194,22 +204,12 @@ const StyledQuote = styled.blockquote`
   @media (max-width: 320px) {
     font-size: 0.8rem;
   }
-};
-`;
-
-
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 `;
 
 const StyledOffering = styled.div`
+  --transition-duration: 0.5s;
+  --transition-timing: ease-out;
+
   background: transparent;
   color: var(--text-color);	
   width: 100%;
@@ -220,18 +220,14 @@ const StyledOffering = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-duration) var(--transition-timing),
+              transform var(--transition-duration) var(--transition-timing);
 
-  ${({ fade }) => fade ? css`
+  &.visible {
     opacity: 1;
     transform: translateY(0);
-    animation: ${fadeInAnimation} 500ms ease-in-out;
-  ` : css`
-    opacity: 0;
-    transform: translateY(30px);
-  `}
-
-  & iframe {
-    position: absolute;
   }
 
   @media (max-width: 768px) {
@@ -242,34 +238,35 @@ const StyledOffering = styled.div`
 const OfferingQuote = styled.blockquote`
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-background: var(--blurCardColor);
-backdrop-filter: blur(10px);
-box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
-padding: 30px 60px;
-border-radius: 10px;
-font-size: 1.8rem;
-font-weight: 300;
-text-align: center;
-margin: 0 auto;
-max-width: 800px;
-line-height: 1.5;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-z-index: 1;
+  background: var(--blurCardColor);
+  backdrop-filter: blur(10px);
+  box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
+  padding: 30px 60px;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-duration) var(--transition-timing),
+              transform var(--transition-duration) var(--transition-timing);
 
-cite {
-  display: block;
-  font-size: 1rem;
-  font-weight: 300
-  margin-top: 1rem;
-  opacity: 0.8;
-}
+  .visible & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-@media (max-width: 768px) {
-  font-size: 1rem;
-  padding: 30px 30px;
-}
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 30px 30px;
+  }
 `;
