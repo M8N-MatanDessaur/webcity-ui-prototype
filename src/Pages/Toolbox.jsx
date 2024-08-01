@@ -122,6 +122,7 @@ const CategoriesGrid = styled.div`
     }
     &::-webkit-scrollbar-track {
         background: var(--foreground-color);
+        border-radius: 50px;
     }
     &::-webkit-scrollbar-thumb {
         background-color: var(--text-color);
