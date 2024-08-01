@@ -337,7 +337,7 @@ const ExtraText = styled.h2`
     left: 65px;
     font-size: 0.8rem;
     font-weight: 400;
-    color: var(--border-color);
+    color: var(text-color);
 
     @media (max-width: 768px) {
         left: 55px;
