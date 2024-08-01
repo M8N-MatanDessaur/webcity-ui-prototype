@@ -76,7 +76,7 @@ export default function App() {
           <Route path="/generatorstools" element={<GeneratorsTools />} />
           <Route path="/illustrationstools" element={<IllustrationsTools />} />
           <Route path="/moretools" element={<MoreTools />} />
-
+          <Route path="*" element={<MainPage />} />
         </Routes>
       </Router>
     </I18nextProvider>
