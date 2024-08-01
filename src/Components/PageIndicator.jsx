@@ -33,14 +33,14 @@ const Indicator = styled.div`
     }
 
     @media (max-width: 768px) {
-        padding: 10px;
+        padding: 10px 20px;
         height: 50px;
         top: 25px;
         right: 25px;
     }
 
     @media (max-width: 380px) {
-        padding: 10px;
+        padding: 10px 20px;
         top: 25px;
         right: 25px;
         height: 40px;
