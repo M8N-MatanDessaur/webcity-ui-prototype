@@ -27,7 +27,8 @@ export default function AboutUs() {
                         </CardHeaderText>
                     </CardHeader>
                     <CardBody>
-                        <CardBodyText>{t('aboutUs.matanText')}<span><LinkAlt to="/toolbox">{t('aboutUs.clickHere')}</LinkAlt></span></CardBodyText>
+                        <CardBodyText>{t('aboutUs.matanText')}</CardBodyText>
+                        <LinkAlt to="/toolbox">{t('aboutUs.clickHere')}</LinkAlt>
                     </CardBody>
                 </MemberCard>
                 <MemberCard>
@@ -156,6 +157,7 @@ const MemberCard = styled.div`
     position: relative;
     width: 450px;
     height: max-content;
+    min-height: 260px;
     padding: 25px;
     margin: 15px 0;
     border: 1px solid var(--border-color);    
@@ -347,9 +349,10 @@ const ExtraText = styled.h2`
 
     const LinkAlt = styled(Link)`
     text-decoration: none;
-    margin-left: 5px;
+    align-self: flex-start;
+    font-size: 0.9rem;
     color: #6376f8;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.2s ease-in-out;
 
     &:hover {
