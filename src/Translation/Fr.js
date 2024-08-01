@@ -17,7 +17,7 @@ export default {
         struggle3: 'Mettez en lumière vos réalisations',
         struggle4: 'Donner vie à votre meilleur travail et les partager avec le monde',
         yourProject : 'Transformez Votre Vision en Réalité !',
-        yourProjectText: 'Libérez le potentiel de votre entreprise avec notre solution complète, prête à être lancée !',
+        yourProjectText: 'Libérez le potentiel de votre entreprise avec notre solution clé-en-main !',
         yourProjectSub: 'Votre Projet, Ici !',
     },
     serviceText: {

@@ -19,7 +19,7 @@ export default {
         struggle3: 'Shine a spotlight on your achievements',
         struggle4: 'bring your best work to life and share them with the world',
         yourProject: 'Transform Your Vision into Reality!',
-        yourProjectText: 'Unlock the potential of your business with our comprehensive, ready-to-launch solution!',
+        yourProjectText: 'Unlock the potential of your business with our comprehensive, turnkey solution!',
         yourProjectSub: 'Your Project, Here!',
     },
     serviceText: {
