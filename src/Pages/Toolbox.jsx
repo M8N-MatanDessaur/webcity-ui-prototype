@@ -5,13 +5,13 @@ import Blob from "../Components/Blob";
 import BackButton from "../Components/BackButton";
 
 import { useTranslation } from "react-i18next";
+import PageIndicator from "../Components/PageIndicator";
 
 
 export default function Toolbox() {
     const { t } = useTranslation();
     return (
         <Container>
-            <Title>{t('toolbox.title')}</Title>
             <Glassbox>
                 <CategoriesGrid>
                     <Category href="/fontstools">
@@ -55,6 +55,7 @@ export default function Toolbox() {
                 </CategoriesGrid>
             </Glassbox>
             <BackButton />
+            <PageIndicator pageName={t('toolbox.title')}/>
             <Blob /><BlurredOverlay />
         </Container>
     );
