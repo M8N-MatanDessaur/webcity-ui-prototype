@@ -332,7 +332,7 @@ const CardBodyText = styled.div`
 const ExtraText = styled.h2`
     position: absolute;
     top: -18px;
-    left: 65px;
+    left: 75px;
     font-size: 0.8rem;
     font-weight: 400;
     color: var(text-color);
