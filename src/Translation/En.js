@@ -62,7 +62,7 @@ export default {
         matanText: 'Hey there! I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together! Psst!, don\'t forget to check out our toolbox ',
         matanExtraText:'cofounder',
 
-        ericSubtitle: 'Buisness Development',
+        ericSubtitle: 'Business Development',
         ericText: 'Hello, I\'m Eric! An operations manager turned tech enthusiast, I blend strategic planning, leadership, and communication with my programming skills. My mission: driving your business projects to success with efficiency and innovation.',
         ericExtraText:'cofounder',
 
