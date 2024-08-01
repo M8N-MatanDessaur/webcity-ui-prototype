@@ -86,25 +86,31 @@ const Separator = styled.hr`
     margin-bottom: 15px;
 `;
 
-const SectionTitle = styled.h1`
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--text-color);
-    margin: 75px 0 15px 0;
-    padding: 0 50px;
+const SectionTitle = styled.h2`
+ font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 50px;
 
-    @media (max-width: 800px) {
-        font-size: 40px;
-    }
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 
-    @media (max-width: 480px) {
-        font-size: 30px;
-    }
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.5rem;
+  }
 `;
 
-const SectionSubtitle = styled.h2`
+const SectionSubtitle = styled.h3`
     width: 70%;    
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300
     color: var(--text-color);
     opacity: 0.8;

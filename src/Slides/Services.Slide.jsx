@@ -83,8 +83,8 @@ const FluidContainer = styled.div`
   padding: 100px 35px;
 `;
 
-const Text = styled.blockquote`
- font-family: Poppins, sans-serif;
+const Text = styled.h2`
+  font-family: Poppins, sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
   text-align: center;
@@ -115,6 +115,7 @@ const Text = styled.blockquote`
 
   @media (max-width: 768px) {
     font-size: 2;
+    padding: 1rem;
   }
 
   @media (max-width: 768px) {

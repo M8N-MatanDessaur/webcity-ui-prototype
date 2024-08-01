@@ -95,10 +95,28 @@ export default function Projects() {
     );
 }
 
-const Title = styled.h1`
+const Title = styled.h2`
     color: var(--text-color);
     text-align: center;
     margin-bottom: 2rem;
+    font-family: Poppins, sans-serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 2;
+      padding: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
 `;
 
 const FadeImage = styled.img`

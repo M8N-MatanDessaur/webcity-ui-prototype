@@ -67,7 +67,7 @@ const Landing = () => {
 
       <StyledOffering ref={offeringRef}>
         {isSplineVisible && (
-          <Suspense fallback={<LoadingPlaceholder>Loading 3D scene...</LoadingPlaceholder>}>
+          <Suspense fallback={<LoadingPlaceholder></LoadingPlaceholder>}>
             <LazySpline
               scene="https://prod.spline.design/Uq-svW2LpfK3vn4h/scene.splinecode"
               style={{
@@ -151,7 +151,7 @@ const fadeInAnimation = keyframes`
   }
 `;
 
-const StyledSlogan = styled.blockquote`
+const StyledSlogan = styled.h1`
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-size: 4rem;
@@ -179,7 +179,7 @@ const StyledSlogan = styled.blockquote`
   }
 `;
 
-const StyledQuote = styled.blockquote`
+const StyledQuote = styled.h3`
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-size: 1.5rem;
@@ -213,7 +213,7 @@ const StyledOffering = styled.div`
   background: transparent;
   color: var(--text-color);	
   width: 100%;
-  height: 625px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,7 +238,7 @@ const OfferingQuote = styled.blockquote`
   background: var(--blurCardColor);
   backdrop-filter: blur(5px);
   padding: 30px 20rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   text-align: center;
   line-height: 1.5;
@@ -249,7 +249,7 @@ const OfferingQuote = styled.blockquote`
   justify-content: center;
   z-index: 1;
   opacity: 0;
-  transform: translateY(30px);
+
   transition: opacity var(--transition-duration) var(--transition-timing),
               transform var(--transition-duration) var(--transition-timing);
 
