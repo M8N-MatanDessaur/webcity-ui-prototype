@@ -214,7 +214,6 @@ const StyledOffering = styled.div`
   color: var(--text-color);	
   width: 100%;
   height: 625px;
-  padding: 30px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -229,25 +228,19 @@ const StyledOffering = styled.div`
     opacity: 1;
     transform: translateY(0);
   }
-
-  @media (max-width: 768px) {
-    padding: 30px 30px;
-  }
 `;
 
 const OfferingQuote = styled.blockquote`
+  width: 100vw;
+  height: 100%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   background: var(--blurCardColor);
-  backdrop-filter: blur(10px);
-  box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
-  padding: 30px 60px;
-  border-radius: 10px;
-  font-size: 1.8rem;
+  backdrop-filter: blur(5px);
+  padding: 30px 20rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
   line-height: 1.5;
   position: relative;
   display: flex;
@@ -266,7 +259,7 @@ const OfferingQuote = styled.blockquote`
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 30px 30px;
   }
 `;

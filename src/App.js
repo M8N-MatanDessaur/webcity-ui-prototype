@@ -32,7 +32,7 @@ export default function App() {
     document.documentElement.style.setProperty("--foreground-color", "#f5f5f5");
     document.documentElement.style.setProperty("--border-color", "#00000035");
     document.documentElement.style.setProperty("--accent-color", "#00000010");
-    document.documentElement.style.setProperty("--blurCardColor", "#f5f5f5b0");
+    document.documentElement.style.setProperty("--blurCardColor", "#f5f5f590");
   } else if (userPreferredMode === "dark") {
     // document.documentElement.style.setProperty("--background-color", "#181818");
     // document.documentElement.style.setProperty("--text-color", "#FFFFFF");
@@ -45,7 +45,7 @@ export default function App() {
     document.documentElement.style.setProperty("--foreground-color", "#f5f5f5");
     document.documentElement.style.setProperty("--border-color", "#00000035");
     document.documentElement.style.setProperty("--accent-color", "#00000010");
-    document.documentElement.style.setProperty("--blurCardColor", "#f5f5f5b0");
+    document.documentElement.style.setProperty("--blurCardColor", "#f5f5f590");
   }
 
 
