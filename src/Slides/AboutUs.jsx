@@ -350,7 +350,7 @@ const ExtraText = styled.h2`
     const LinkAlt = styled(Link)`
     text-decoration: none;
     align-self: flex-start;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #6376f8;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
