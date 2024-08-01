@@ -43,7 +43,7 @@ export default function AboutUs() {
                         <CardBodyText>{t('aboutUs.ericText')}</CardBodyText>
                     </CardBody>
                 </MemberCard>
-                <MemberCard>
+                {/* <MemberCard>
                     <MemberPicture src={jacob_picture} alt="Jacobs" onContextMenu={(event)=>event.preventDefault()}/>
                     <CardHeader>
                         <CardHeaderText>
@@ -54,7 +54,7 @@ export default function AboutUs() {
                     <CardBody>
                         <CardBodyText>{t('aboutUs.jacobText')}</CardBodyText>
                     </CardBody>
-                </MemberCard>
+                </MemberCard> */}
             </GridWrapper>
         </FluidContainer>
     );
@@ -79,8 +79,9 @@ const FluidContainer = styled.div`
 
 const Separator = styled.hr`
     width: 30%;
+    border:none;
     height: 1px;
-    border-color: var(--border-color);
+    background-color: var(--border-color);
     margin-bottom: 15px;
 `;
 
@@ -153,9 +154,8 @@ const GridWrapper = styled.div`
 
 const MemberCard = styled.div`
     position: relative;
-    width: 350px;
+    width: 450px;
     height: max-content;
-    min-height: 300px;
     padding: 25px;
     margin: 15px 0;
     border: 1px solid var(--border-color);    
@@ -164,7 +164,6 @@ const MemberCard = styled.div`
     align-items: center;
     justify-content: start;
     flex-direction: column;
-    background-color: var(--foreground-color);
     color: var(--text-color);
     font-size: 18px;
     font-weight: bold;
@@ -197,7 +196,7 @@ const MemberPicture = styled.img`
     font-size: 18px;
     font-weight: bold;
     border-radius: 50%;
-    border: 5px solid transparent;
+    border: 1px solid var(--border-color);
     z-index: 1;
 
     user-select: none;
@@ -226,7 +225,6 @@ const CardHeaderText = styled.div`
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    background-color: var(--foreground-color);
     color: var(--text-color);
     font-size: 1rem;
     font-weight: bold;
@@ -241,7 +239,6 @@ const CardHeaderTitle = styled.div`
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    background-color: var(--foreground-color);
     color: var(--text-color);
     font-size: 1.2rem;
     font-weight: bold;
@@ -264,7 +261,6 @@ const CardHeaderSubtitle = styled.div`
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    background-color: var(--foreground-color);
     color: var(--text-color);
     opacity: 0.8;
     font-size: 0.8rem;
@@ -352,7 +348,7 @@ const ExtraText = styled.h2`
     const LinkAlt = styled(Link)`
     text-decoration: none;
     margin-left: 5px;
-    color: #7b68e1;
+    color: #6376f8;
     font-weight: bold;
     transition: all 0.2s ease-in-out;
 
