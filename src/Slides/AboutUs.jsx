@@ -13,7 +13,7 @@ export default function AboutUs() {
 
     return (
         <FluidContainer>
-            <SectionTitle>{t('aboutUs.title')}&nbsp;✨</SectionTitle>
+            <SectionTitle>{t('aboutUs.title')}</SectionTitle>
             <SectionSubtitle>{t('aboutUs.subtitle')}</SectionSubtitle>
             <Separator />
             <GridWrapper>
@@ -93,7 +93,8 @@ const SectionTitle = styled.h2`
   font-weight: 600;
   margin-top: 4rem;
   margin-bottom: 2rem;
-  padding: 0 50px;
+  padding: 0 25px;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
