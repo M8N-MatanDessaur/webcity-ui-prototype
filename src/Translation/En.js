@@ -74,10 +74,10 @@ export default {
 
     toolbox:{
         title: 'Toolbox',
-        fontsTools: 'Font Tools',
-        illustrationsTools: 'Illustration Tools',
-        generatorsTools: 'Generators Tools',
-        moreTools: 'More Tools',
+        fontsTools: 'Fonts & Typography',
+        illustrationsTools: 'Graphics & Illustrations',
+        generatorsTools: 'Generators',
+        moreTools: 'Other Tools',
         aiTools: 'AI Tools',
         games: 'Games',
     },
