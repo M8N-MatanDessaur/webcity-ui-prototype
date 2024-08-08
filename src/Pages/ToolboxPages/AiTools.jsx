@@ -155,11 +155,6 @@ const links = [
             title: "ChatPDF",
             description: "AI tool for PDFs",
             link: "https://www.chatpdf.com/"
-        },
-        {
-            title: "Hugging Face",
-            description: "Machine learning community",
-            link: "https://huggingface.co/"
         }
 ];
 
