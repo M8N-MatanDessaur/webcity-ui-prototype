@@ -72,11 +72,11 @@ export default {
 
     toolbox:{
         title: 'Boite à outils',
-        fontsTools: 'outils de typographie',
-        illustrationsTools: 'outils d\'illustration',
-        generatorsTools: 'outils de générateur',
-        moreTools: 'plus d\'outils',
-        aiTools: 'outils d\'IA',
+        fontsTools: 'Polices & Typographie',
+        illustrationsTools: 'Graphiques & Illustrations',
+        generatorsTools: 'Générateurs',
+        moreTools: 'Autres Outils',
+        aiTools: 'outils IA',
         games: 'Jeux',
     },
 
