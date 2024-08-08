@@ -122,11 +122,6 @@ const links = [
         link: "https://toruskit.com/tools/blobz/"
     },
     {
-        title: "Framer Motion",
-        description: "react plugin for animations",
-        link: "https://www.framer.com/motion/"
-    },
-    {
         title: "Hamburgers",
         description: "css hamburger-menus",
         link: "https://jonsuh.com/hamburgers/"
@@ -160,7 +155,67 @@ const links = [
         title: "Palette FM",
         description: "Image colorizer",
         link: "https://palette.fm/"
-    }
+    },
+     {
+            title: "Bezel",
+            description: "Design tool for teams",
+            link: "https://www.bezel.it"
+        },
+        {
+            title: "Rive",
+            description: "Real-time interactive design",
+            link: "https://rive.app/editor"
+        },
+        {
+            title: "The Stocks - Design Tools",
+            description: "Resources for designers",
+            link: "https://thestocks.im/design-tools"
+        },
+        {
+            title: "GSAP",
+            description: "JavaScript animation library",
+            link: "https://gsap.com/"
+        },
+        {
+            title: "HackReels",
+            description: "Video editing tool",
+            link: "https://www.hackreels.com/"
+        },
+        {
+            title: "Rombo",
+            description: "Tools for video professionals",
+            link: "https://rombo.co/"
+        },
+        {
+            title: "The Stocks - Image Tools",
+            description: "Image resources",
+            link: "https://thestocks.im/image-tools"
+        },
+        {
+            title: "DevDocs",
+            description: "API documentation browser",
+            link: "https://devdocs.io/"
+        },
+        {
+            title: "Builder",
+            description: "Visual site builder",
+            link: "https://www.builder.io/"
+        },
+        {
+            title: "Plasmic",
+            description: "Design tool for code",
+            link: "https://www.plasmic.app/"
+        },
+        {
+            title: "Sanity",
+            description: "Real-time content platform",
+            link: "https://www.sanity.io/"
+        },
+        {
+            title: "Typesense",
+            description: "Fast search engine",
+            link: "https://typesense.org/"
+        }
 ];
 
 
