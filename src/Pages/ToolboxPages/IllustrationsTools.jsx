@@ -85,7 +85,52 @@ const links = [
         title: "Bgjar",
         description: "Css svg backgrounds",
         link: "https://bgjar.com/"
-    }
+    },
+      {
+            title: "unDraw",
+            description: "Free open-source illustrations",
+            link: "https://undraw.co/"
+        },
+        {
+            title: "IRA Design",
+            description: "Build custom illustrations",
+            link: "https://iradesign.io"
+        },
+        {
+            title: "The Doodle Library",
+            description: "Hand-drawn illustrations",
+            link: "https://www.thedoodlelibrary.com"
+        },
+        {
+            title: "DrawKit",
+            description: "Free high-quality illustrations",
+            link: "https://www.drawkit.com/"
+        },
+        {
+            title: "Dorik Illustrations",
+            description: "Illustrations for websites",
+            link: "https://dorik.com/illustrations"
+        },
+        {
+            title: "Grabient",
+            description: "Gradient color combinations",
+            link: "https://www.grabient.com"
+        },
+        {
+            title: "Mesh Gradients",
+            description: "Beautiful mesh gradients",
+            link: "https://products.ls.graphics/mesh-gradients"
+        },
+        {
+            title: "Meshy",
+            description: "Gradient mesh generator",
+            link: "https://meshy.uxie.io"
+        },
+        {
+            title: "Gradient Cards",
+            description: "Interactive gradients",
+            link: "https://gradients.ray.st"
+        }
 ];
 
 
