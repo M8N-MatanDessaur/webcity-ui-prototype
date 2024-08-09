@@ -54,7 +54,6 @@ export const AltHeading = styled.h2`
   font-weight: 600;
   margin-top: 4rem;
   margin-bottom: 2rem;
-  padding: 0 25px;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -152,6 +151,14 @@ export const FluidContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   padding: 100px 35px;
+
+  @media (max-width: 768px) {
+    padding: 100px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 100px 10px;
+  }
 `;
 
 export const FullScreenContainer = styled.div`
