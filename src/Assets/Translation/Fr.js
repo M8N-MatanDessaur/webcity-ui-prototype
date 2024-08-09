@@ -58,7 +58,7 @@ export default {
         vision: "Réaliser vos rêves numériques",
         visionText: "Chez webcity.dev, nous croyons que chaque entreprise peut exploiter pleinement son potentiel numérique. Nous ne créons pas simplement des sites web ; nous bâtissons des passerelles vers votre succès. Notre passion nous pousse à repousser les limites du design et du développement web, transformant vos rêves entrepreneuriaux en réalités numériques captivantes. Nous sommes engagés envers l'excellence et votre entière satisfaction. Ensemble, façonnons l'avenir du commerce en ligne. Votre succès est notre vision—réalisons-le ensemble !",
         matanSubtitle: 'Développeur / Designer Principal',
-        matanText: 'Salut! Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble! Psst! N\'oublie pas de jetter un coup d\'œuil a notre boite d\'outils ',
+        matanText: 'Salut! Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble!',
         matanExtraText:'co-fondateur',
 
         ericSubtitle: 'Développement Commercial',
@@ -68,7 +68,7 @@ export default {
         jacobsSubtitle: 'Spécialiste Marketing',
         jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.',
         
-        clickHere: 'appuis ici',
+        clickHere: 'Jettez un coup d\'œuil à notre boite d\'outils',
     },
 
     toolbox:{

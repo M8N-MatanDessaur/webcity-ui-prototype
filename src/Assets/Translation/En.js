@@ -60,7 +60,7 @@ export default {
         vision: "Empowering Digital Dreams",
         visionText: "At webcity.dev, we believe every business can unlock its digital potential. We're not just crafting websites; we're building gateways to your success. Our passion fuels us to push the boundaries of web design and development, transforming entrepreneurial dreams into captivating digital realities. We're committed to excellence and your 100% satisfaction. Let's shape the future of online business together. Your success is our vision—let’s make it happen!",
         matanSubtitle: 'Lead Developer / Designer',
-        matanText: 'Hey there! I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together! Psst!, don\'t forget to check out our toolbox ',
+        matanText: 'Hey there! I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together!',
         matanExtraText:'cofounder',
 
         ericSubtitle: 'Business Development',
@@ -70,7 +70,7 @@ export default {
         jacobsSubtitle: 'Marketing Specialist',
         jacobText: 'Hi, I\'m Jacob! A tech and marketing enthusiast, my path naturally led to web marketing. With a marketing degree and rich web experience, I\'m thrilled to contribute to projects that ignite my passion, adding value with my unique expertise.',
     
-        clickHere: 'click here',
+        clickHere: 'Check out our toolbox',
     },
 
     toolbox:{
