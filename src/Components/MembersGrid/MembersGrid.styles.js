@@ -182,14 +182,6 @@ export const CardBodyText = styled.div`
     font-size: 0.9rem;
     font-weight: 400;
 
-    @media (max-width: 768px) {
-        font-size: 16px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 14px;
-    }
-
     &::-webkit-scrollbar {
         width: 10px;
         background: var(--foreground-color);
@@ -223,7 +215,7 @@ export const ExtraText = styled.h2`
     export const LinkAlt = styled(Link)`
     text-decoration: none;
     align-self: flex-start;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #6376f8;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
