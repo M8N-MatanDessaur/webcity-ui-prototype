@@ -12,17 +12,23 @@ font-family: Poppins, sans-serif;
     -webkit-border-radius: 50px;
     border-radius: 50px;
     border: 1px solid var(--text-color);
-    svg {
+       svg {
         width: 1.5rem;
         height: 1.5rem;
-    }
-    &:hover {
-        background-color: var(--foreground-color);
-    }
-    &:active {
-        background-color: var(--background-color);
+        transform: ${props => (props.isClicked ? "scaleY(-1)" : "none")};
+        transition: transform 0.3s ease-in-out;
     }
 
+    &:hover {
+    background-color: black;
+        & svg {
+          fill: white;
+        }
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
     @media (max-width: 768px) {
         bottom: 25px;
         left: 25px;

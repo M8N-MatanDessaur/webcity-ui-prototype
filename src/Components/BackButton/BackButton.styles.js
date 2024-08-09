@@ -12,15 +12,22 @@ export const Button = styled.button`
     -webkit-border-radius: 50px;
     border-radius: 50px;
     border: 1px solid var(--text-color);
-    svg {
+      svg {
         width: 1.5rem;
         height: 1.5rem;
+        transform: ${props => (props.isClicked ? "scaleY(-1)" : "none")};
+        transition: transform 0.3s ease-in-out;
     }
+
     &:hover {
-        background-color: var(--foreground-color);
+    background-color: black;
+        & svg {
+          fill: white;
+        }
     }
+
     &:active {
-        background-color: var(--background-color);
+        opacity: 0.8;
     }
 
     @media (max-width: 768px) {

@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Title = styled.h1`
+font-size: 0.9rem;
+font-weight: 600;
+text-transform: uppercase;
+display: block;
+color: var(--text-color);
+
+@media (max-width: 380px) {
+    font-size: 0.8rem;
+}
+`;
+
 export const Indicator = styled.div`
     background-color: var(--background-color);
     height: 60px;
@@ -16,7 +28,13 @@ export const Indicator = styled.div`
     align-items: center;
     justify-content: center;
     &:hover {
-        background-color: var(--foreground-color);
+        background-color: var(--text-color);
+        & ${Title} {
+            color: var(--background-color);
+        }
+        & svg {
+            fill: var(--background-color);
+        }
     }
     &:active {
         background-color: var(--background-color);
@@ -37,14 +55,3 @@ export const Indicator = styled.div`
     }
 `;
 
-export const Title = styled.h1`
-font-size: 0.9rem;
-font-weight: 600;
-text-transform: uppercase;
-display: block;
-color: var(--text-color);
-
-@media (max-width: 380px) {
-    font-size: 0.8rem;
-}
-`;
