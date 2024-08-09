@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import ToolsListButton from "../../Components/ToolsListButton";
-import TiltContainer from "../../Components/TiltContainer";
-import LinkContainer from "../../Components/LinkContainer";
-import PageIndicator from "../../Components/PageIndicator";
+import ToolsListButton from "../../Components/ToolsListButton/ToolsListButton";
+import TiltContainer from "../../Components/TiltContainer/TiltContainer";
+import LinkContainer from "../../Components/LinkContainer/LinkContainer";
+import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { t } from "i18next";
 
 

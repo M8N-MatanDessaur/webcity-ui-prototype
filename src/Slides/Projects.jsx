@@ -12,9 +12,9 @@ import img2fr from "../Assets/Images/media/2fr.jpg";
 import img3fr from "../Assets/Images/media/3fr.jpg";
 import img4fr from "../Assets/Images/media/4fr.jpg";
 import img5fr from "../Assets/Images/media/5fr.jpg";
-import ScrollArrow from "../Components/ScrollArrow";
-import ScheduleButton from "../Components/ScheduleButton";
-import Blob from "../Components/Blob";
+import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
+import ScheduleButton from "../Components/ScheduleButton/ScheduleButton";
+import Blob from "../Components/Blob/Blob";
 
 export default function Projects() {
     const { t, i18n } = useTranslation();

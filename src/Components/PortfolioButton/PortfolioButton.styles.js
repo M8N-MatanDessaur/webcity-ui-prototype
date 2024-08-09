@@ -1,29 +1,4 @@
-import React from "react";
 import styled,{keyframes} from "styled-components";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
-export default function PortfolioButton({isOn}) {
-    const navigate = useNavigate();
-    const { t } = useTranslation();
-
-    const goToPortfolio = () => {
-      const portfolioElement = document.getElementById('portfolio');
-      if (portfolioElement) {
-          portfolioElement.scrollIntoView({ behavior: 'smooth' });
-      } else {
-          // Fallback if the element is not found
-          window.location.hash = '#portfolio';
-      }
-  };
-    
-    return (
-        <Button isOn={isOn} onClick={goToPortfolio}>
-            {t('buttonText.ourRecentWork')}
-        </Button>
-    );
-}
-
 
 const fadeInAnimation = keyframes`
   from {
@@ -36,7 +11,7 @@ const fadeInAnimation = keyframes`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
 font-family: Poppins, sans-serif;
   display: ${({ isOn }) => (isOn ? "flex" : "none")};
   width: max-content;

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Blob from "../Components/Blob";
-import BackButton from "../Components/BackButton";
+import Blob from "../Components/Blob/Blob";
+import BackButton from "../Components/BackButton/BackButton";
 
 import { useTranslation } from "react-i18next";
-import PageIndicator from "../Components/PageIndicator";
+import PageIndicator from "../Components/PageIndicator/PageIndicator";
 
 
 export default function Toolbox() {

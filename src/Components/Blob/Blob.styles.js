@@ -1,13 +1,8 @@
-import React, { useRef, useEffect, useCallback } from "react";
 import styled, { keyframes } from "styled-components";
 
-// Obtain the user's preferred mode (light or dark)
-const userPreferredMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-let colors = [];
-colors = ["#C07FFD", "#FF8472", "#FFBB72"];
+const colors = ["#C07FFD", "#FF8472", "#FFBB72"];
 
-
-const liquidAnimation = keyframes`
+export const liquidAnimation = keyframes`
   0% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     box-shadow: 0 10px 20px rgba(78, 165, 217, 0.2), 0 6px 6px rgba(78, 165, 217, 0.2);
@@ -25,7 +20,7 @@ const liquidAnimation = keyframes`
   }
 `;
 
-const BlobContainer = styled.div`
+export const BlobContainer = styled.div`
   position: absolute;
   z-index: -1;
   top: 50%;
@@ -64,7 +59,7 @@ const BlobContainer = styled.div`
   }
 `;
 
-const InnerBlob = styled.div`
+export const InnerBlob = styled.div`
   position: absolute;
   top: 10px;
   left: 10px;
@@ -74,7 +69,7 @@ const InnerBlob = styled.div`
   background: linear-gradient(to bottom right, ${colors[0]}, ${colors[1]}, ${colors[2]});
 `;
 
-const OuterBlob = styled.div`
+export const OuterBlob = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -84,39 +79,3 @@ const OuterBlob = styled.div`
   overflow: hidden;
   background: linear-gradient(to bottom right, ${colors[1]}, ${colors[2]}, ${colors[0]});
 `;
-
-export default function Blob({width, height}) {
-  const blobRef = useRef(null);
-  const handleIntersection = useCallback((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection);
-
-    const currentRef = blobRef.current;
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [handleIntersection]);
-
-  return (
-    <BlobContainer ref={blobRef} height={height} width={width} className="blob">
-      <InnerBlob />
-      <OuterBlob />
-    </BlobContainer>
-  );
-}

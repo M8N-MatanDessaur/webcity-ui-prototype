@@ -1,24 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
-export default function ToolsListButton() {
-    const navigate = useNavigate();
-
-    const goBack = () => {
-        navigate("/toolbox");
-    };
-
-    return (
-        <Button onClick={goBack}>
-            <svg fill="var(--text-color)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M3 9h4V5H3v4Zm4 5H3v-4h4v4Zm0 5H3v-4h4v4Zm13-5H8v-4h12v4ZM8 19h12v-4H8v4ZM8 9V5h12v4H8Z" clip-rule="evenodd"></path>
-            </svg>
-        </Button >
-    );
-}
-
-const Button = styled.button`
+export const Button = styled.button`
 font-family: Poppins, sans-serif;
     background-color: var(--background-color);
     border: none;

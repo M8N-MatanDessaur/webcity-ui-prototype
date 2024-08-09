@@ -1,16 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-export default function PageIndicator({pageName}) {
-
-    return (
-        <Indicator>
-            <Title>{pageName}</Title>
-        </Indicator >
-    );
-}
-
-const Indicator = styled.div`
+export const Indicator = styled.div`
     background-color: var(--background-color);
     height: 60px;
     border: none;
@@ -47,7 +37,7 @@ const Indicator = styled.div`
     }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
 font-size: 0.9rem;
 font-weight: 600;
 text-transform: uppercase;

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState, memo, lazy, Suspense } from "react";
 import styled, { keyframes, css } from "styled-components";
-import Blob from "../Components/Blob";
-import ScrollArrow from "../Components/ScrollArrow";
-import ScheduleButton from "../Components/ScheduleButton";
+import Blob from "../Components/Blob/Blob";
+import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
+import ScheduleButton from "../Components/ScheduleButton/ScheduleButton";
 import { useTranslation } from "react-i18next";
-import PortfolioButton from "../Components/PortfolioButton";
+import PortfolioButton from "../Components/PortfolioButton/PortfolioButton";
 
 const LazySpline = lazy(() => import('@splinetool/react-spline'));
 

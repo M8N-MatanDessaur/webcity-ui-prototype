@@ -1,4 +1,4 @@
-import FooterQuote from "../Components/FooterQuote";
+import FooterQuote from "../Components/FooterQuote/FooterQuote";
 
 export default {
     translation: {

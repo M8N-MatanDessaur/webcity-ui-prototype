@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ScrollArrow from "../Components/ScrollArrow";
-import Service from "../Components/Service";
+import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
+import Service from "../Components/Service/Service";
 import { useTranslation } from "react-i18next";
 
 const serviceList = [

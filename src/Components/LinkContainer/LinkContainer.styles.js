@@ -1,16 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-export default function LinkContainer({title, description, link}) {
-    return (
-        <Container>
-            <LinkTitle href={link} target="blank">{title}</LinkTitle>
-            <LinkDescription>{description}</LinkDescription>
-        </Container>
-    );
-}
-
-const Container = styled.div`
+export const Container = styled.div`
     position: relative;
     width: 650px;
     height: max-content;
@@ -59,7 +49,7 @@ const Container = styled.div`
     }
     `;
 
-const LinkTitle = styled.a`
+export const LinkTitle = styled.a`
     color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 700;
@@ -72,7 +62,7 @@ const LinkTitle = styled.a`
     }
     `;
 
-const LinkDescription = styled.p`
+export const LinkDescription = styled.p`
     color: var(--text-color);
     font-size: 0.9rem;
     font-weight: 400;

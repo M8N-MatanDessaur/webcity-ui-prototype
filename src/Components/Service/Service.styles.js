@@ -1,51 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-function Service({ svg, title, description }) {
-    const [inView, setInView] = useState(false);
-    const [animated, setAnimated] = useState(false);
-    const ref = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !animated) {
-                    setInView(true);
-                    setAnimated(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, [ref, animated]);
-
-    return (
-        <ServiceWrapper ref={ref} className={inView ? "in-view" : ""}>
-            <ServiceIcon>
-                {svg}
-            </ServiceIcon>
-            <ServiceTitle>
-                {title}
-            </ServiceTitle>
-            <ServiceDescription>
-                {description}
-            </ServiceDescription>
-        </ServiceWrapper>
-    );
-}
-
-export default Service;
-
-const flip3d = keyframes`
+export const flip3d = keyframes`
     0% {
         transform: rotateY(180deg);
     }
@@ -54,7 +9,7 @@ const flip3d = keyframes`
     }
 `;
 
-const ServiceWrapper = styled.div`
+export const ServiceWrapper = styled.div`
     &.in-view {
         animation: ${flip3d} 1s forwards;
     }
@@ -104,7 +59,7 @@ const ServiceWrapper = styled.div`
     }
 `;
 
-const ServiceIcon = styled.div`
+export const ServiceIcon = styled.div`
     width: 2.2rem;
     height: 2.2rem;
     display: flex;
@@ -120,7 +75,7 @@ const ServiceIcon = styled.div`
     }
 `;
 
-const ServiceTitle = styled.h3`
+export const ServiceTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
     font-family: "Inter", sans-serif;
@@ -142,7 +97,7 @@ const ServiceTitle = styled.h3`
     }
 `;
 
-const ServiceDescription = styled.p`
+export const ServiceDescription = styled.p`
     font-size: 1rem;
     font-weight: 400;
     text-align: center;

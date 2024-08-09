@@ -1,31 +1,9 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
-
-export default function CallUsButton() {
-  return (
-    <Button>
-      <a href="tel:(450)822-6026">
-        <svg
-          fill="none"
-          stroke="var(--text-color)"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M15.75.75h-7.5A2.25 2.25 0 0 0 6 3v18a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 21V3A2.25 2.25 0 0 0 15.75.75Z"></path>
-          <path d="M8.25.75h1.125a.375.375 0 0 1 .375.375.75.75 0 0 0 .75.75h3a.75.75 0 0 0 .75-.75.375.375 0 0 1 .375-.375h1.125"></path>
-        </svg>
-        <span>(450)822-6026</span>
-      </a>
-    </Button>
-  );
-}
 
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(130%);
   }
   to {
     opacity: 1;
@@ -33,14 +11,14 @@ const fadeIn = keyframes`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
 font-family: Poppins, sans-serif;
   background-color: #ffffff94;
 backdrop-filter: blur(10px);
   border: none;
   padding: 10px 20px;
   position: fixed;
-  bottom: 105px;
+  bottom: 170px;
   right: 35px;
   z-index: 998;
   border-radius: 50px;
@@ -61,11 +39,10 @@ backdrop-filter: blur(10px);
   span {
     font-size: 1.2rem;
     font-weight: 600;
-    text-transform: uppercase;
     display: block;
   }
   &:hover {
-    background-color: black;
+      background-color: black;
     & svg {
       fill: white;
     }
@@ -79,9 +56,9 @@ backdrop-filter: blur(10px);
   }
 
   @media (max-width: 768px) {
-    padding: 10px ;
-    bottom: 95px;
+   padding: 10px ;
     right: 30px;
+    bottom: 150px;
     span {
       display: none;
     }
@@ -89,7 +66,7 @@ backdrop-filter: blur(10px);
       display: block;
     }
   }
-  
 
-  animation: ${fadeIn} 0.52s ease-in-out;
+  animation: ${fadeIn} 0.3s ease-in-out;
+};
 `;

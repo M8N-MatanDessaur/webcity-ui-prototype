@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BackButton from "../Components/BackButton";
+import BackButton from "../Components/BackButton/BackButton";
 import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
