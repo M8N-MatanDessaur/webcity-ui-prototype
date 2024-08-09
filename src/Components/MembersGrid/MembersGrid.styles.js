@@ -1,5 +1,20 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { Link } from "react-router-dom";
+
+const pulse = keyframes`
+    0% {
+        transform: scale(0.97);
+        box-shadow: 0 0 0 0 #00000030;
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px #00000000;
+    }
+    100% {
+        transform: scale(0.97);
+        box-shadow: 0 0 0 0 #00000030;
+    }
+`;
 
 export const GridWrapper = styled.div` 
     width: 100%;
@@ -81,6 +96,8 @@ export const MemberPicture = styled.img`
     border-radius: 50%;
     border: 1px solid var(--border-color);
     z-index: 1;
+
+    animation: ${pulse} 2s infinite;
 
     &:hover {
         transform: scale(1.08);
