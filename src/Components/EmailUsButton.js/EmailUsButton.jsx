@@ -4,7 +4,7 @@ import { Button } from "./EmailUsButton.styles";
 
 export default function MailUsButton() {
   return (
-    <Button>
+    <Button role="button">
       <a href="mailto:info@webcity.dev">
         <svg
           fill="var(--text-color)"

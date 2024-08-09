@@ -4,7 +4,7 @@ import { Button } from "./CallUsButton.styles";
 
 export default function CallUsButton() {
   return (
-    <Button>
+    <Button role="button" title="CallUs">
       <a href="tel:(450)822-6026">
         <svg
           fill="none"

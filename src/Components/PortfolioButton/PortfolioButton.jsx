@@ -17,7 +17,7 @@ export default function PortfolioButton({ isOn }) {
   };
 
   return (
-    <Button isOn={isOn} onClick={goToPortfolio}>
+    <Button isOn={isOn} onClick={goToPortfolio} role="button" title="Portfolio">
       {t('buttonText.ourRecentWork')}
     </Button>
   );

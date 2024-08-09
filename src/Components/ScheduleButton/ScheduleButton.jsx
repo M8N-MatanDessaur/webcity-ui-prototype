@@ -31,7 +31,7 @@ export default function ScheduleButton ({ isOn }) {
 
   return (
     <>
-      <Button isOn={isOn} onClick={handleButtonClick}>
+      <Button isOn={isOn} onClick={handleButtonClick} role="button" title="Schedule">
         {t('buttonText.scheduling')}
       </Button>
       {showModal && (
