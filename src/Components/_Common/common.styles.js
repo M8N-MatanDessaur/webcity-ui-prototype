@@ -150,14 +150,10 @@ export const FluidContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  padding: 100px 35px;
+  padding: 35px;
 
   @media (max-width: 768px) {
-    padding: 100px 20px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 100px 10px;
+    padding: 25px;
   }
 `;
 
