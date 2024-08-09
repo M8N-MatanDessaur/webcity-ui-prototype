@@ -55,7 +55,47 @@ const links = [
         title: "Fontjoy",
         description: "Font pairing made easy",
         link: "https://fontjoy.com/"
-    }
+    },
+    {
+            title: "Wordmark.it",
+            description: "Preview fonts with text",
+            link: "https://wordmark.it"
+        },
+        {
+            title: "Google Fonts",
+            description: "Open-source font library",
+            link: "https://fonts.google.com/"
+        },
+        {
+            title: "WhatTheFont",
+            description: "Identify fonts from images",
+            link: "https://www.myfonts.com/pages/whatthefont"
+        },
+        {
+            title: "TypeScale",
+            description: "Visual type scale calculator",
+            link: "https://typescale.com/"
+        },
+        {
+            title: "Flaticon",
+            description: "Free vector icons",
+            link: "https://www.flaticon.com/"
+        },
+        {
+            title: "Nucleo App",
+            description: "Icon manager for pros",
+            link: "https://nucleoapp.com/app"
+        },
+        {
+            title: "FontForge",
+            description: "Open-source font editor",
+            link: "https://fontforge.org/"
+        },
+        {
+            title: "Modern Font Stacks",
+            description: "Curated font stacks",
+            link: "https://modernfontstacks.com"
+        }
 ];
 
 

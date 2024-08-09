@@ -163,6 +163,16 @@ const links = [
         description:"Git learning game",
         link:"https://ohmygit.org/"
     },
+     {
+            title: "Human or Not",
+            description: "Turing test game",
+            link: "https://humanornot.so/"
+        },
+        {
+            title: "Infinite Craft",
+            description: "Endless building game",
+            link: "https://neal.fun/infinite-craft/"
+        }
 ];
 
 

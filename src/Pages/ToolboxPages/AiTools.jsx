@@ -121,10 +121,40 @@ const links = [
         description:"AI playground",
         link:"https://huggingface.co/"
     },
-    {
-        title:"AI Trends",
+     {
+            title: "Pieces",
+            description: "AI code snippet manager",
+            link: "https://pieces.app/"
+        },
+        {
+            title: "Thunderbit",
+            description: "AI data analysis",
+            link: "https://thunderbit.com/"
+        },
+        {
+            title: "Claude",
+            description: "AI assistant by Anthropic",
+            link: "https://claude.ai/"
+        },
+        {
+            title: "Tome",
+            description: "AI storytelling tool",
+            link: "https://tome.app/"
+        },
+        {
+            title: "Globe Explorer",
+            description: "AI research assistant",
+            link: "https://explorer.globe.engineer/"
+        },
+        {
+            title: "ChatPDF",
+            description: "AI tool for PDFs",
+            link: "https://www.chatpdf.com/"
+        },
+        {
+        title:"There's an ai for that",
         description:"AI Tools & News",
-        link:"https://aitrends.com/"
+        link:"https://theresanaiforthat.com/"
     },
 ];
 
