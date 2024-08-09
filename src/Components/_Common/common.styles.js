@@ -28,10 +28,7 @@ export const Headline = styled.h1`
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 2rem;
+      padding: 1rem;
     }
 
     @media (max-width: 320px) {
@@ -48,6 +45,29 @@ export const Heading = styled.h2`
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
+`;
+
+export const AltHeading = styled.h2`
+ font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 25px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const SubHeading = styled.h3`
@@ -81,6 +101,8 @@ export const SubHeading = styled.h3`
 export const Paragraph = styled.p`
     font-size: 1rem;
     color: var(--text-color);
+    max-width: 75%;
+    padding: 0 1rem;
 `;
 
 export const Blockquote = styled.blockquote`
@@ -182,6 +204,14 @@ export const BlurredOverlay = styled.div`
   height: 100%;
   z-index: -1;
   backdrop-filter: blur(40px);
+`;
+
+export const Separator = styled.hr`
+width: 30%;
+border:none;
+height: 1px;
+background-color: var(--border-color);
+margin: 25px;
 `;
 
 export const FadeImage = styled.img`

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import matan_picture from "../Assets/Images/matan.png";
 import eric_picture from "../Assets/Images/eric.png";
 import { Link } from "react-router-dom";
+import { AltHeading, Paragraph, Separator } from "../Components/_Common/common.styles";
 
 export default function AboutUs() {
 
@@ -12,12 +13,14 @@ export default function AboutUs() {
 
     return (
         <FluidContainer>
-            <SectionTitle>{t('aboutUs.title')}</SectionTitle>
-            <SectionSubtitle>{t('aboutUs.subtitle')}</SectionSubtitle>
+            <AltHeading>{t('aboutUs.title')}</AltHeading>
+            <Paragraph>{t('aboutUs.subtitle')}</Paragraph>
             <Separator />
             <GridWrapper>
                 <MemberCard>
+                    <a href="https://matandessaur.me" target="_blank" rel="noreferrer">
                     <MemberPicture src={matan_picture} alt="Matan" onContextMenu={(event)=>event.preventDefault()}/>
+                    </a>
                     <ExtraText>{t('aboutUs.matanExtraText')}</ExtraText>
                     <CardHeader>
                         <CardHeaderText>
@@ -65,56 +68,6 @@ const FluidContainer = styled.div`
   margin-bottom: 100px;
 `;
 
-const Separator = styled.hr`
-    width: 30%;
-    border:none;
-    height: 1px;
-    background-color: var(--border-color);
-    margin-bottom: 15px;
-`;
-
-const SectionTitle = styled.h2`
- font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 3rem;
-  font-weight: 600;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  padding: 0 25px;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 2rem;
-  }
-
-  @media (max-width: 320px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const SectionSubtitle = styled.h3`
-    width: 70%;    
-    font-size: 1.3rem;
-    font-weight: 300
-    color: var(--text-color);
-    opacity: 0.8;
-    margin-bottom: 35px;
-    padding: 0 50px;
-    
-    @media (max-width: 800px) {
-        width: 100%;
-        font-size: 1.25rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 1.15rem;
-    }
-`;
-
 const GridWrapper = styled.div` 
     width: 100%;
     height: 100%;
@@ -122,13 +75,14 @@ const GridWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 45px;
+    gap: 75px;
     padding: 35px;
 
     @media (max-width: 800px) {
         grid-template-columns: repeat(1, 1fr);
         place-items: center;
         padding: 35px;
+        gap: 35px;
     }
 
     &::-webkit-scrollbar {
@@ -195,14 +149,10 @@ const MemberPicture = styled.img`
     border: 1px solid var(--border-color);
     z-index: 1;
 
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    touch-action: none;
-    pointer-events: none;
+    &:hover {
+        transform: scale(1.08);
+        transition: all 0.1s ease-in-out;
+    }
 
     @media (max-width: 768px) {
         width: 75px;
@@ -331,12 +281,8 @@ const ExtraText = styled.h2`
     font-weight: 400;
     color: var(text-color);
 
-    @media (max-width: 768px) {
-        left: 55px;
-    }
-
     @media (max-width: 480px) {
-        left: 45px;
+        left: 55px;
     }
     `;
 
