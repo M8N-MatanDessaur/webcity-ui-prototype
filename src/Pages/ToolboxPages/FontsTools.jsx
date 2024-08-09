@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import ToolsListButton from "../../Components/ToolsListButton/ToolsListButton";
 import TiltContainer from "../../Components/TiltContainer/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
+import { FullScreenContainer } from "../../Components/_Common/common.styles";
 
 const links = [
     {
@@ -62,11 +62,6 @@ const links = [
             link: "https://wordmark.it"
         },
         {
-            title: "Google Fonts",
-            description: "Open-source font library",
-            link: "https://fonts.google.com/"
-        },
-        {
             title: "WhatTheFont",
             description: "Identify fonts from images",
             link: "https://www.myfonts.com/pages/whatthefont"
@@ -101,7 +96,7 @@ const links = [
 
 export default function FontsTools() {
     return (
-        <Container>
+        <FullScreenContainer>
             <TiltContainer>
                 {
                     links.map((link, index) => {
@@ -113,17 +108,6 @@ export default function FontsTools() {
             </TiltContainer>
             <ToolsListButton />
             <PageIndicator pageName="Fonts Tools" />
-        </Container>
+        </FullScreenContainer>
     );
 }
-
-const Container = styled.div`
-    position: relative;
-    height: 100%;
-    height: 100svh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    `;

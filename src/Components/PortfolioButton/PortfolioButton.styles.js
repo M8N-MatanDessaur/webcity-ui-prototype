@@ -19,7 +19,7 @@ font-family: Poppins, sans-serif;
   margin-bottom: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 1);

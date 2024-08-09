@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import ToolsListButton from "../../Components/ToolsListButton/ToolsListButton";
 import TiltContainer from "../../Components/TiltContainer/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
+import { FullScreenContainer } from "../../Components/_Common/common.styles";
 
 const links = [
     {
@@ -218,11 +218,9 @@ const links = [
         }
 ];
 
-
-
 export default function MoreTools() {
     return (
-        <Container>
+        <FullScreenContainer>
             <TiltContainer>
                 {
                     links.map((link, index) => {
@@ -234,17 +232,6 @@ export default function MoreTools() {
             </TiltContainer>
             <ToolsListButton />
             <PageIndicator pageName="More Tools" />
-        </Container>
+        </FullScreenContainer>
     );
 }
-
-const Container = styled.div`
-    position: relative;
-    height: 100%;
-    height: 100svh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    `;

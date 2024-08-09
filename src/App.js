@@ -5,16 +5,15 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./Translation/i18n";
 
 import MainPage from "./Pages/MainPage";
-import Portfolio from "./Pages/Portfolio";
 import InteractiveLogo from "./Components/InteractiveLogo/InteractiveLogo";
 import ContactRevealButton from "./Components/ContactRevealButton/ContactRevealButton";
-import Toolbox from "./Pages/Toolbox";
 import AiTools from "./Pages/ToolboxPages/AiTools";
 import FontsTools from "./Pages/ToolboxPages/FontsTools";
 import GamesTools from "./Pages/ToolboxPages/GamesTools";
 import GeneratorsTools from "./Pages/ToolboxPages/GeneratorsTools";
 import IllustrationsTools from "./Pages/ToolboxPages/IllustrationsTools";
 import MoreTools from "./Pages/ToolboxPages/MoreTools";
+import ToolboxPage from "./Pages/ToolboxPage";
 
 // import TranslationButton from "./Components/TranslationButton"; 
 
@@ -44,8 +43,7 @@ export default function App() {
         <ContactRevealButton />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/toolbox" element={<Toolbox />} />
+          <Route path="/toolbox" element={<ToolboxPage />} />
           <Route path="/aitools" element={<AiTools />} />
           <Route path="/fontstools" element={<FontsTools />} />
           <Route path="/gamestools" element={<GamesTools />} />

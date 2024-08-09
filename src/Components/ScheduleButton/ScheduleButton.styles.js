@@ -7,7 +7,7 @@ font-family: Poppins, sans-serif;
   margin-top: 2rem;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: #fff;
@@ -182,7 +182,7 @@ export const FlexRow = styled.div`
 
 export const SubmitButton = styled.button`
   padding: 1.3rem 3rem;
-  background-color: #007bff;
+  background-color: #C07FFD;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -194,11 +194,11 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  padding: 0.2rem;
+  padding: 0.3rem;
   background-color: var(--background-color);
+  border: 1px solid var(--border-color);
   opacity: 0.8;
   color: var(--text-color);
-  border: none;
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 500;

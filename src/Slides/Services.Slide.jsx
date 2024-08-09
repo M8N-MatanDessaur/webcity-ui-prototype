@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
 import Service from "../Components/Service/Service";
 import { useTranslation } from "react-i18next";
+import { FluidContainer, GridContainer, Heading, RelativeContainer } from "../Components/_Common/common.styles";
 
 const serviceList = [
     {
@@ -42,10 +42,10 @@ export default function Services() {
     return (
         <RelativeContainer>
             <FluidContainer id="services">
-                <Text>
+                <Heading>
                     {t('serviceText.title')}
-                </Text>
-                <ServicesContainer>
+                </Heading>
+                <GridContainer>
                     {serviceList.map((service, index) => (
                         <Service
                             key={index}
@@ -55,98 +55,9 @@ export default function Services() {
                         />
                     ))}
 
-                </ServicesContainer>
-
+                </GridContainer>
             </FluidContainer>
             <ScrollArrow />
         </RelativeContainer>
     );
 }
-
-const RelativeContainer = styled.div`
-    position: relative;
-    `;
-
-const FluidContainer = styled.div`
-  position: relative;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: scroll;
-  padding: 100px 35px;
-`;
-
-const Text = styled.h2`
-  font-family: Poppins, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-color);
-  width: auto;
-  height: max-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {
-    content: open-quote;
-    font-size: 3rem;
-    color: var(--text-color);
-    opacity: 0.5;
-    margin-right: 1rem;
-    }
-
-&::after {
-    content: close-quote;
-    font-size: 3rem;
-    color: var(--text-color);
-    opacity: 0.5;
-    margin-left: 1rem;
-    }
-  
-
-  @media (max-width: 768px) {
-    font-size: 2;
-    padding: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const ServicesContainer = styled.div`
-    width: 100%;
-    height: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
-
-    @media (max-width: 480px) {
-        padding: 1rem;
-    }
-
-    @media (max-width: 320px) {
-        padding: 0.5rem;
-    }
-`;

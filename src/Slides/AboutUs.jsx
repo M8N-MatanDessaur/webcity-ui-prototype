@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 
 import matan_picture from "../Assets/Images/matan.png";
 import eric_picture from "../Assets/Images/eric.png";
-import jacob_picture from "../Assets/Images/jacob.png";
 import { Link } from "react-router-dom";
 
 export default function AboutUs() {
@@ -44,18 +43,6 @@ export default function AboutUs() {
                         <CardBodyText>{t('aboutUs.ericText')}</CardBodyText>
                     </CardBody>
                 </MemberCard>
-                {/* <MemberCard>
-                    <MemberPicture src={jacob_picture} alt="Jacobs" onContextMenu={(event)=>event.preventDefault()}/>
-                    <CardHeader>
-                        <CardHeaderText>
-                            <CardHeaderTitle>Jacob Gourgeon</CardHeaderTitle>
-                            <CardHeaderSubtitle>{t('aboutUs.jacobsSubtitle')}</CardHeaderSubtitle>
-                        </CardHeaderText>
-                    </CardHeader>
-                    <CardBody>
-                        <CardBodyText>{t('aboutUs.jacobText')}</CardBodyText>
-                    </CardBody>
-                </MemberCard> */}
             </GridWrapper>
         </FluidContainer>
     );
