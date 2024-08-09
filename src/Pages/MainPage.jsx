@@ -1,9 +1,9 @@
 import React from "react";
-import Landing from "../Slides/Landing.Slide";
-import Services from "../Slides/Services.Slide";
-import AboutUs from "../Slides/AboutUs";
+import Landing from "../Blocks/Landing.Slide";
+import Services from "../Blocks/Services.Slide";
+import AboutUs from "../Blocks/AboutUs";
 import FooterQuote from "../Components/FooterQuote/FooterQuote";
-import Projects from "../Slides/Projects";
+import Projects from "../Blocks/Projects";
 
 export default function MainPage() {
 
