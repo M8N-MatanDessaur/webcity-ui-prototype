@@ -121,11 +121,6 @@ const links = [
         description:"AI playground",
         link:"https://huggingface.co/"
     },
-    {
-        title:"AI Trends",
-        description:"AI Tools & News",
-        link:"https://aitrends.com/"
-    },
      {
             title: "Pieces",
             description: "AI code snippet manager",
@@ -155,7 +150,12 @@ const links = [
             title: "ChatPDF",
             description: "AI tool for PDFs",
             link: "https://www.chatpdf.com/"
-        }
+        },
+        {
+        title:"There's an ai for that",
+        description:"AI Tools & News",
+        link:"https://theresanaiforthat.com/"
+    },
 ];
 
 
