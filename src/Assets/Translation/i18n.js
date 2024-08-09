@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import frTranslations from './Fr';
-import enTranslations from './En';
+import frTranslations from '../Translation/Fr';
+import enTranslations from '../Translation/En';
 
 const initializeI18n = (userPreferredLanguage) => {
   // Extract the language code without region or variant information

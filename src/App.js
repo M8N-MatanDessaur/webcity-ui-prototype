@@ -2,7 +2,7 @@ import React from "react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
-import i18n from "./Translation/i18n";
+import i18n from "./Assets/Translation/i18n";
 
 import MainPage from "./Pages/MainPage";
 import InteractiveLogo from "./Components/InteractiveLogo/InteractiveLogo";
