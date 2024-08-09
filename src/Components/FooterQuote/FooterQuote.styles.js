@@ -5,7 +5,6 @@ export const FooterQuoteContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--foreground-color);
     color: var(--text-color);
     padding: 0.5rem;
 

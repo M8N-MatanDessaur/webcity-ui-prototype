@@ -55,7 +55,8 @@ export default {
     aboutUs: {
         title: 'L\'équipe derrière la magie',
         subtitle: 'Nous sommes une équipe jeune et passionnée dédiée à aider les entreprises à grandir et réussir. Nous sommes une agence de conception et développement web à service complet. Nous créons des sites web, des applications web et des expériences web. Satisfaction à 100% garantie.',
-        
+        vision: "Réaliser vos rêves numériques",
+        visionText: "Chez webcity.dev, nous croyons que chaque entreprise peut exploiter pleinement son potentiel numérique. Nous ne créons pas simplement des sites web ; nous bâtissons des passerelles vers votre succès. Notre passion nous pousse à repousser les limites du design et du développement web, transformant vos rêves entrepreneuriaux en réalités numériques captivantes. Nous sommes engagés envers l'excellence et votre entière satisfaction. Ensemble, façonnons l'avenir du commerce en ligne. Votre succès est notre vision—réalisons-le ensemble !",
         matanSubtitle: 'Développeur / Designer Principal',
         matanText: 'Salut! Je suis Matan, un développeur full-stack dévoué. Expert dans la création de solutions robustes, j\'excelle dans l\'aide aux entreprises avec un code propre et efficace. Construisons quelque chose d\'incroyable ensemble! Psst! N\'oublie pas de jetter un coup d\'œuil a notre boite d\'outils ',
         matanExtraText:'co-fondateur',

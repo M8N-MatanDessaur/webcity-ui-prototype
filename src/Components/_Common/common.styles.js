@@ -101,8 +101,7 @@ export const SubHeading = styled.h3`
 export const Paragraph = styled.p`
     font-size: 1rem;
     color: var(--text-color);
-    max-width: 75%;
-    padding: 0 1rem;
+    max-width: 80%;
 `;
 
 export const Blockquote = styled.blockquote`
