@@ -16,7 +16,7 @@ import MoreTools from "./Pages/ToolboxPages/MoreTools";
 import ToolboxPage from "./Pages/ToolboxPage";
 import BlogsPage from "./Pages/BlogsPage";
 
-// import TranslationButton from "./Components/TranslationButton"; 
+// import TranslationButton from "./Components/TranslationButton/TranslationButton"; 
 
 export default function App() {
   document.documentElement.style.setProperty("--background-color", "#FFFFFF");

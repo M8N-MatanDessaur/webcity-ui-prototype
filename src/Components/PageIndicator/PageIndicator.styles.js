@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-font-size: 0.9rem;
-font-weight: 600;
-text-transform: uppercase;
-display: block;
-color: var(--text-color);
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 500;
+  text-transform: capitalize;
+  display: block;
+  color: var(--text-color);
+
+@media (max-width: 768px) {
+    font-size: 1.2rem;
+}
 
 @media (max-width: 380px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 `;
 
