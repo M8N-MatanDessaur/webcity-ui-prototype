@@ -16,7 +16,7 @@ export const Button = styled.button`
     background-color: #ffffff94;
     backdrop-filter: blur(10px);
     border: none;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     position: fixed;
     bottom: 105px;
     right: 35px;

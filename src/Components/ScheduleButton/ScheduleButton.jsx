@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-
-import { Button, ModalOverlay, ModalContent, Form, FormTitle, FormSubTitle, FlexRow, InputWrapper, InputField, SubmitButton, CloseButton } from "./ScheduleButton.styles";
+import { PrimaryButton } from "../_Common/common.styles";
+import { ModalOverlay, ModalContent, Form, FormTitle, FormSubTitle, FlexRow, InputWrapper, InputField, SubmitButton, CloseButton } from "./ScheduleButton.styles";
 
 export default function ScheduleButton ({ isOn }) {
     const [showModal, setShowModal] = useState(false);
@@ -31,9 +31,9 @@ export default function ScheduleButton ({ isOn }) {
 
   return (
     <>
-      <Button isOn={isOn} onClick={handleButtonClick} role="button" title="Schedule">
+      <PrimaryButton isOn={isOn} onClick={handleButtonClick} role="button" title="Schedule">
         {t('buttonText.scheduling')}
-      </Button>
+      </PrimaryButton>
       {showModal && (
         <ModalOverlay>
           <ModalContent>

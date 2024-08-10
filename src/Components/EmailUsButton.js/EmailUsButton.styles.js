@@ -14,9 +14,9 @@ const fadeIn = keyframes`
 export const Button = styled.button`
 font-family: Poppins, sans-serif;
   background-color: #ffffff94;
-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: none;
-  padding: 10px 20px;
+  padding: 1rem 2rem;;
   position: fixed;
   bottom: 170px;
   right: 35px;

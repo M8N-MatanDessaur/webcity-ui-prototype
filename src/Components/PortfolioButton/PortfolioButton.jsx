@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-import { Button } from "./PortfolioButton.styles";
+import { PrimaryButton } from "../_Common/common.styles";
 
 export default function PortfolioButton({ isOn }) {
   const { t } = useTranslation();
@@ -17,8 +16,8 @@ export default function PortfolioButton({ isOn }) {
   };
 
   return (
-    <Button isOn={isOn} onClick={goToPortfolio} role="button" title="Portfolio">
+    <PrimaryButton isOn={isOn} onClick={goToPortfolio} role="button" title="Portfolio">
       {t('buttonText.ourRecentWork')}
-    </Button>
+    </PrimaryButton>
   );
 }
