@@ -83,6 +83,10 @@ export default {
         games: 'Games',
     },
 
+    blogs: {
+        comingsoon: 'Blogs coming soon !!!',
+    },
+
     footerQuote: {
         text: 'webcity | making your vision, our work of art',
     }

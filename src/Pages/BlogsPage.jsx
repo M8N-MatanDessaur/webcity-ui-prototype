@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { FluidContainer, Headline } from "../Components/_Common/common.styles";
 import JSConfetti from 'js-confetti'
 import BackButton from "../Components/BackButton/BackButton";
+import { t } from "i18next";
 
 export default function BlogsPage() {
-    const jsConfetti = new JSConfetti()
-
     useEffect(() => {
+        const jsConfetti = new JSConfetti();
         jsConfetti.addConfetti({
             emojis: ['⚡️', '💥', '✨', '💫', '❗'],
          })
@@ -14,7 +14,7 @@ export default function BlogsPage() {
 
     return (
         <FluidContainer>
-            <Headline>Blogs are coming soon !!!</Headline>
+            <Headline>{t('blogs.comingsoon')}</Headline>
             <BackButton />
         </FluidContainer>
     );

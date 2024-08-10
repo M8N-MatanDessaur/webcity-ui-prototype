@@ -81,6 +81,10 @@ export default {
         games: 'Jeux',
     },
 
+    blogs: {
+        comingsoon: 'Blogs bientôt disponible !!!',
+    },
+
     footerQuote: {
         text: 'webcity | faire de votre vision, notre œuvre d\'art',
     }
