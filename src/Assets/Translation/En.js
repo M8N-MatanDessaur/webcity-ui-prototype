@@ -84,7 +84,7 @@ export default {
     },
 
     blogs: {
-        comingsoon: 'Blogs coming soon !!!',
+        comingsoon: 'Coming soon !!!',
     },
 
     footerQuote: {
