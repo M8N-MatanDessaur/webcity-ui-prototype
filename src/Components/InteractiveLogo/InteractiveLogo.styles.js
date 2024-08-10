@@ -78,8 +78,7 @@ export const LogoText = styled.input`
   outline: none;
   background-color: transparent;
   padding-left: 10px;
-  font-size: 1.6rem;
-  color: var(--text-color);
+  font-size: 20px;
   font-weight: 500;
   color: var(--text-color);
   outline: none;
