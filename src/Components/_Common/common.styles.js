@@ -268,3 +268,15 @@ export const PrimaryButton = styled.button`
     font-size: 0.9rem;
   }
 `;
+
+export const QuotedText = styled.q`
+  font-family: Poppins, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+ font-style: italic;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;

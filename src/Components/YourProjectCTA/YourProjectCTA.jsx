@@ -7,7 +7,7 @@ export default function YourProjectCTA() {
     const { t } = useTranslation();
     return (
         <YourProject>
-            <h4>{t('mainText.yourProjectSub')}</h4>
+            <q>{t('mainText.yourProjectSub')}</q>
             <h3>{t('mainText.yourProject')}</h3>
             <p>{t('mainText.yourProjectText')}</p>
             <div>

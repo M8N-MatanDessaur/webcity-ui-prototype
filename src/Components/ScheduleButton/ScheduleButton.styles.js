@@ -135,6 +135,8 @@ export const SubmitButton = styled.button`
   border-radius: 50px;
   cursor: pointer;
   margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 `;
 
 export const CloseButton = styled.button`

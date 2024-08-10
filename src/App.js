@@ -14,6 +14,8 @@ import GeneratorsTools from "./Pages/ToolboxPages/GeneratorsTools";
 import IllustrationsTools from "./Pages/ToolboxPages/IllustrationsTools";
 import MoreTools from "./Pages/ToolboxPages/MoreTools";
 import ToolboxPage from "./Pages/ToolboxPage";
+import BlogsButton from "./Components/BlogsButton/BlogsButton";
+import BlogsPage from "./Pages/BlogsPage";
 
 // import TranslationButton from "./Components/TranslationButton"; 
 
@@ -39,10 +41,12 @@ export default function App() {
           }}
         />
         <InteractiveLogo />
+        <BlogsButton />
         {/* <TranslationButton /> */}
         <ContactRevealButton />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/toolbox" element={<ToolboxPage />} />
           <Route path="/aitools" element={<AiTools />} />
           <Route path="/fontstools" element={<FontsTools />} />

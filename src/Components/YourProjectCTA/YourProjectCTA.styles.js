@@ -37,12 +37,20 @@ export const YourProject = styled.div`
         margin-bottom: 1rem;
     }
 
-    h4 {
+    q {
         font-family: Poppins, sans-serif;
         font-size: 0.9rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
-}
+
+        &::before {
+            content: "";
+        }
+
+        &::after {
+            content: "";
+        }
+    }
 
     p {
         font-family: Poppins, sans-serif;
