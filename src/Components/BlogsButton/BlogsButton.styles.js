@@ -17,8 +17,8 @@ font-family: Poppins, sans-serif;
   border: none;
   padding: 1rem 2rem;;
   position: fixed;
-  top: 25px;
-  right: 25px;
+  top: 35px;
+  right: 35px;
   z-index: 998;
   border-radius: 50px;
   border: 1px solid var(--text-color);
@@ -54,6 +54,8 @@ font-family: Poppins, sans-serif;
   }
 
    @media (max-width: 768px) {
+   top: 25px;
+    right: 25px;
     font-size: 1rem;
     & span {
       font-size: 1.2rem;
@@ -62,7 +64,7 @@ font-family: Poppins, sans-serif;
 
   @media (max-width: 380px) {
     font-size: 0.8rem;
-    padding-left: 5px;
+    padding: 0.8rem 2rem;
     & span {
       font-size: 1rem;
     }
