@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import {Button} from "./BackButton.styles";
 
 export default function BackButton() {
-    const navigate = useNavigate();
+    const history = useNavigate();
 
     const goBack = () => {
-        navigate("/");
+        history(-1);
     };
 
     return (

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@portabletext/react": "^3.1.0",
+    "@sanity/client": "^6.21.2",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",

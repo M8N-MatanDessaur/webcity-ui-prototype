@@ -39,7 +39,7 @@ export const Headline = styled.h1`
 export const Heading = styled.h2`
     font-size: 2rem;
     color: var(--text-color);
-    text-align: center;
+     text-align: ${({ notCentered }) => (notCentered ? "left" : "center")};
     margin-bottom: 2rem;
 
     @media (max-width: 768px) {
@@ -166,6 +166,15 @@ export const FullScreenContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    `;
+
+export const BlocksContainer = styled.div`
+    width: 100%;
+    height: max-content;
+    padding: 150px 2rem;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
     `;
 
 

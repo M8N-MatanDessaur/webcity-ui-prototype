@@ -15,6 +15,7 @@ import IllustrationsTools from "./Pages/ToolboxPages/IllustrationsTools";
 import MoreTools from "./Pages/ToolboxPages/MoreTools";
 import ToolboxPage from "./Pages/ToolboxPage";
 import BlogsPage from "./Pages/BlogsPage";
+import BlogPost from "./Components/BlogPost/BlogPost";
 
 // import TranslationButton from "./Components/TranslationButton/TranslationButton"; 
 
@@ -45,6 +46,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/toolbox" element={<ToolboxPage />} />
           <Route path="/aitools" element={<AiTools />} />
           <Route path="/fontstools" element={<FontsTools />} />

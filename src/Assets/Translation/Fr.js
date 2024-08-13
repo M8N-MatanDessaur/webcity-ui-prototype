@@ -82,7 +82,9 @@ export default {
     },
 
     blogs: {
-        comingsoon: 'Bientôt disponible !!!',
+        title: 'Articles',
+        loadMore: 'Charger plus',
+        recentPosts: 'Articles récents',
     },
 
     footerQuote: {
