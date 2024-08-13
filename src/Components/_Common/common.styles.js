@@ -175,6 +175,10 @@ export const BlocksContainer = styled.div`
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        padding: 120px 1rem;
+    }
     `;
 
 
