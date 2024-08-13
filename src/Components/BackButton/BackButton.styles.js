@@ -34,10 +34,4 @@ export const Button = styled.button`
         bottom: 25px;
         left: 25px;
     }
-
-    @media (max-width: 380px) {
-          height: 40px;
-        width: 40px;
-        padding: 9px;
-}
 `;
