@@ -62,9 +62,9 @@ export const Button = styled.button`
     }
 
     @media (max-width: 768px) {
-        padding: 8px;
-        bottom: 76px;
-        right: 26px;
+               padding: 10px;
+        bottom: 93px;
+        right: 30px;
         span {
           display: none;
         }

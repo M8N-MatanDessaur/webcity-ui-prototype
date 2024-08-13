@@ -56,9 +56,9 @@ font-family: Poppins, sans-serif;
   }
 
   @media (max-width: 768px) {
-   padding: 8px;
-        right: 26px;
-        bottom: 126px;
+  padding: 10px;
+        right: 30px;
+        bottom: 150px;
     span {
       display: none;
     }
