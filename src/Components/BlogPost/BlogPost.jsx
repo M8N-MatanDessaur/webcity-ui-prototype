@@ -13,9 +13,8 @@ import {
   AuthorSection,
   AuthorImage,
   AuthorInfo,
-  PageWrapper
 } from './BlogPost.styles';
-import { BlocksContainer, FluidContainer, Heading } from '../_Common/common.styles';
+import { BlocksContainer, FluidContainer, Heading, WallpaperWrapper } from '../_Common/common.styles';
 import { usePost } from '../../Hooks/UsePost';
 import BackButton from '../BackButton/BackButton';
 
@@ -41,7 +40,7 @@ const BlogPost = () => {
   }
 
   return (
-    <PageWrapper>
+    <WallpaperWrapper>
       <BlocksContainer>
         <ImageContainer imageUrl={post.mainImage?.asset?.url}>
           <TitleOverlay>
@@ -67,7 +66,7 @@ const BlogPost = () => {
         </Article>
         <BackButton link={"blogs"} />
       </BlocksContainer>
-    </PageWrapper>
+    </WallpaperWrapper>
   );
 };
 

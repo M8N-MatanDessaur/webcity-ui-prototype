@@ -41,7 +41,6 @@ export default function App() {
           }}
         />
         <InteractiveLogo />
-        {/* <TranslationButton /> */}
         <ContactRevealButton />
         <Routes>
           <Route path="/" element={<MainPage />} />

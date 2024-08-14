@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled, { createGlobalStyle } from 'styled-components';
-import { BlocksContainer, FluidContainer, Heading, PrimaryButton } from '../Components/_Common/common.styles';
+import { BlocksContainer, FluidContainer, Heading, PrimaryButton, WallpaperWrapper } from '../Components/_Common/common.styles';
 import BackButton from '../Components/BackButton/BackButton';
 import { useCategories } from '../Hooks/useCategories';
 import { usePosts } from '../Hooks/usePosts';
@@ -40,7 +40,7 @@ const BlogsPage = () => {
     }
 
     return (
-        <PageWrapper>
+        <WallpaperWrapper>
         <BlocksContainer>
             <BlogContentWrapper>
                 <MainSection>
@@ -67,21 +67,9 @@ const BlogsPage = () => {
             </BlogContentWrapper>
             <BackButton link={""} />
         </BlocksContainer>
-        </PageWrapper>
+        </WallpaperWrapper>
     );
 };
-
-const PageWrapper = styled.div`
-    min-height: 100vh;
-    width: 100%;
-    background-image: 
-        linear-gradient(rgba(181, 134, 247, 0.1) 1px, transparent 1px), 
-        linear-gradient(to right, rgba(181, 134, 247, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
-    background-position: 0 0, 0 0;
-    background-size: 20px 20px, 20px 20px;
-    background-repeat: repeat, repeat;
-    background-color: white; /* Add a white background to ensure contrast */
-`;
 
 const ComingSoonBlogCard = styled.div`
     display: flex;

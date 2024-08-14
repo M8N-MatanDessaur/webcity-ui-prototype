@@ -50,7 +50,7 @@ font-family: Poppins, sans-serif;
       color: white;
   }
   &:active {
-    background-color: var(--background-color);
+    opacity: 0.8
   }
 
    @media (max-width: 768px) {
