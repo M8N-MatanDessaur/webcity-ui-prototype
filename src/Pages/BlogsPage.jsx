@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { BlocksContainer, FluidContainer, Heading, PrimaryButton, WallpaperWrapper } from '../Components/_Common/common.styles';
 import BackButton from '../Components/BackButton/BackButton';
 import { useCategories } from '../Hooks/useCategories';

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { AltHeading, Paragraph, Separator, FluidContainer, Heading, QuotedText } from "../Components/_Common/common.styles";
+import { AltHeading, Paragraph, Separator, FluidContainer, QuotedText } from "../Components/_Common/common.styles";
 import MembersGrid from "../Components/MembersGrid/MembersGrid";
 
 export default function AboutUs() {
