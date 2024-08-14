@@ -11,7 +11,6 @@ import img2fr from "../Assets/Images/media/2fr.jpg";
 import img3fr from "../Assets/Images/media/3fr.jpg";
 import img4fr from "../Assets/Images/media/4fr.jpg";
 import img5fr from "../Assets/Images/media/5fr.jpg";
-import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
 
 import {FadeImage, Heading} from "../Components/_Common/common.styles";
 import YourProjectCTA from "../Components/YourProjectCTA/YourProjectCTA";
@@ -95,7 +94,6 @@ export default function Projects() {
                   <YourProjectCTA />
                 </Masonry>
             </ResponsiveMasonry>
-            <ScrollArrow bottom={"-36px"} />
         </div>
     );
 }

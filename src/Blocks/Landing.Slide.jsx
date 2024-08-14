@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import Blob from "../Components/Blob/Blob";
-import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
 import ScheduleButton from "../Components/ScheduleButton/ScheduleButton";
 import { useTranslation } from "react-i18next";
 import PortfolioButton from "../Components/PortfolioButton/PortfolioButton";
@@ -23,7 +22,6 @@ const Landing = () => {
           {t('mainText.slogan2')}
         </SubHeading>
         <ScheduleButton isOn={true} />
-        <ScrollArrow />
       </FluidContainer>
       <CanvasContainer>
         <Blockquote>

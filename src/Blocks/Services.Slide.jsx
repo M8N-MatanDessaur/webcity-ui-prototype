@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollArrow from "../Components/ScrollArrow/ScrollArrow";
 import Service from "../Components/Service/Service";
 import { useTranslation } from "react-i18next";
 import { FluidContainer, GridContainer, Heading, RelativeContainer } from "../Components/_Common/common.styles";
@@ -57,7 +56,6 @@ export default function Services() {
 
                 </GridContainer>
             </FluidContainer>
-            <ScrollArrow />
         </RelativeContainer>
     );
 }
