@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import {
   Article,
-  MetaData,
   Categories,
   Category,
   Content,

@@ -1,5 +1,4 @@
 import React from "react";
-import ToolsListButton from "../../Components/ToolsListButton/ToolsListButton";
 import TiltContainer from "../../Components/TiltContainer/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";

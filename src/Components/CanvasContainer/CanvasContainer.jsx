@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState, useRef, lazy, Children } from "react";
+import React, { Suspense, useEffect, useState, useRef, lazy } from "react";
 import { Container, LoadingPlaceholder } from "./CanvasContainer.styles";
 
 const LazySpline = lazy(() => import('@splinetool/react-spline'));
