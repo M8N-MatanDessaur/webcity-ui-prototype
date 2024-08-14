@@ -50,7 +50,7 @@ const BlogPost = () => {
         <meta property="og:title" content={`webcity.dev | ${post.title}`} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:image" content={post.mainImage?.asset?.url} />
-        <meta property="og:url" content={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+        <meta property="og:url" content={`https://www.webcity.dev/blog/${post.slug.current}`} />
         <meta property="og:type" content="article" />
 
         {/* Twitter Card tags */}
@@ -64,7 +64,7 @@ const BlogPost = () => {
         <meta name="keywords" content={`${post.categories.map(cat => cat.title).join(', ')}, web development, programming, blogs, tech news, web agency, business`} />
 
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+        <link rel="canonical" href={`https://www.webcity.dev/blog/${post.slug.current}`} />
 
         {/* Google Structured Data */}
         <script type="application/ld+json">
@@ -90,7 +90,7 @@ const BlogPost = () => {
             "description": post.metaDescription,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://www.webcity.dev/blogs/${post.slug.current}`
+              "@id": `https://www.webcity.dev/blog/${post.slug.current}`
             },
             "keywords": post.categories.map(cat => cat.title).join(', '),
             "articleSection": post.categories[0]?.title
@@ -104,7 +104,7 @@ const BlogPost = () => {
             window.navigator.share({
               title: post.title,
               text: post.metaDescription,
-              url: `https://www.webcity.dev/blogs/${post.slug.current}`
+              url: `https://www.webcity.dev/blog/${post.slug.current}`
             });
             }}>
             <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
