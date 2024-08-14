@@ -1,18 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
-import { 
-  Article, 
-  MetaData, 
-  Categories, 
-  Category, 
-  Content, 
-  ImageContainer, 
-  TitleOverlay, 
+import {
+  Article,
+  MetaData,
+  Categories,
+  Category,
+  Content,
+  ImageContainer,
+  TitleOverlay,
   BlogHeadline,
   AuthorSection,
   AuthorImage,
-  AuthorInfo
+  AuthorInfo,
+  PageWrapper
 } from './BlogPost.styles';
 import { BlocksContainer, FluidContainer, Heading } from '../_Common/common.styles';
 import { usePost } from '../../Hooks/UsePost';
@@ -40,31 +41,33 @@ const BlogPost = () => {
   }
 
   return (
-    <BlocksContainer>
-      <ImageContainer imageUrl={post.mainImage?.asset?.url}>
-        <TitleOverlay>
-          <BlogHeadline>{post.title}</BlogHeadline>
-        </TitleOverlay>
-      </ImageContainer>
-      <Article>
-        <AuthorSection>
-          <AuthorImage src={post.author.image?.asset?.url} alt={post.author.name} />
-          <AuthorInfo>
-            <span>{post.author.name}</span>
-            <span>{formatDate(post.publishedAt)}</span>
-          </AuthorInfo>
-        </AuthorSection>
-        <Categories>
-          {post.categories.map(category => (
-            <Category key={category._id}>{category.title}</Category>
-          ))}
-        </Categories>
-        <Content>
-          <PortableText value={post.body} />
-        </Content>
-      </Article>
-      <BackButton link={"blogs"} />
-    </BlocksContainer>
+    <PageWrapper>
+      <BlocksContainer>
+        <ImageContainer imageUrl={post.mainImage?.asset?.url}>
+          <TitleOverlay>
+            <BlogHeadline>{post.title}</BlogHeadline>
+          </TitleOverlay>
+        </ImageContainer>
+        <Article>
+          <AuthorSection>
+            <AuthorImage src={post.author.image?.asset?.url} alt={post.author.name} />
+            <AuthorInfo>
+              <span>{post.author.name}</span>
+              <span>{formatDate(post.publishedAt)}</span>
+            </AuthorInfo>
+          </AuthorSection>
+          <Categories>
+            {post.categories.map(category => (
+              <Category key={category._id}>{category.title}</Category>
+            ))}
+          </Categories>
+          <Content>
+            <PortableText value={post.body} />
+          </Content>
+        </Article>
+        <BackButton link={"blogs"} />
+      </BlocksContainer>
+    </PageWrapper>
   );
 };
 

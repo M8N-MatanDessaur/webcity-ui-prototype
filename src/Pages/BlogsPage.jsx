@@ -40,8 +40,8 @@ const BlogsPage = () => {
     }
 
     return (
+        <PageWrapper>
         <BlocksContainer>
-            <GlobalStyle />
             <BlogContentWrapper>
                 <MainSection>
                     <CategoryFilter
@@ -67,17 +67,20 @@ const BlogsPage = () => {
             </BlogContentWrapper>
             <BackButton link={""} />
         </BlocksContainer>
+        </PageWrapper>
     );
 };
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
-                      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, rgba(255, 255, 255, 0) 1px);
+const PageWrapper = styled.div`
+    min-height: 100vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(rgba(181, 134, 247, 0.1) 1px, transparent 1px), 
+        linear-gradient(to right, rgba(181, 134, 247, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
     background-position: 0 0, 0 0;
     background-size: 20px 20px, 20px 20px;
     background-repeat: repeat, repeat;
-  }
+    background-color: white; /* Add a white background to ensure contrast */
 `;
 
 const ComingSoonBlogCard = styled.div`
