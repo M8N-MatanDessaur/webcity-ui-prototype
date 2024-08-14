@@ -164,8 +164,8 @@ export const ShareButton = styled.button`
     border: none;
     padding: 15px;
     position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
     z-index: 998;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -189,8 +189,6 @@ export const ShareButton = styled.button`
     }
 
     @media (max-width: 768px) {
-        top: 1rem;
-        right: 1rem;
         width: 40px;
         height: 40px;
         padding: 9px;
