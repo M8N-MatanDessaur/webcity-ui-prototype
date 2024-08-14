@@ -1,5 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const { createClient } = require('@sanity/client');
+
+// Initialize Sanity client
+const client = createClient({
+    projectId: 'e4zkjk7p',
+    dataset: 'production',
+    useCdn: true,
+    apiVersion: '2024-03-13',
+});
 
 // Define your site structure here
 const siteStructure = {
@@ -15,14 +24,30 @@ const siteStructure = {
     { url: '/generatorstools', priority: 0.6 },
     { url: '/illustrationstools', priority: 0.6 },
     { url: '/moretools', priority: 0.6 },
-  ],
-  blogPosts: [
-    { slug: 'learning-custom-styling-for-web-development', priority: 0.7 },
-    // Add more blog posts here as needed
   ]
 };
 
-function generateSitemap() {
+// Function to get all blog post slugs from Sanity
+async function getBlogSlugs() {
+  const query = `*[_type == "post"] {
+    "slug": slug.current,
+    publishedAt
+  }`;
+  
+  try {
+    const posts = await client.fetch(query);
+    return posts.map(post => ({
+      slug: post.slug,
+      priority: 0.7,
+      publishedAt: post.publishedAt
+    }));
+  } catch (error) {
+    console.error('Error fetching blog posts from Sanity:', error);
+    return [];
+  }
+}
+
+async function generateSitemap() {
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
@@ -52,11 +77,13 @@ function generateSitemap() {
   }
 
   // Add blog posts
-  for (const post of siteStructure.blogPosts) {
+  const blogPosts = await getBlogSlugs();
+  for (const post of blogPosts) {
     sitemap += `
   <url>
     <loc>https://webcity.dev/blog/${post.slug}</loc>
     <priority>${post.priority}</priority>
+    <lastmod>${new Date(post.publishedAt).toISOString()}</lastmod>
   </url>`;
   }
 
@@ -67,7 +94,11 @@ function generateSitemap() {
 }
 
 // Write sitemap to file
-const sitemap = generateSitemap();
-fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
-
-console.log('Sitemap generated successfully!');
+generateSitemap()
+  .then(sitemap => {
+    fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
+    console.log('Sitemap generated successfully!');
+  })
+  .catch(error => {
+    console.error('Error generating sitemap:', error);
+  });
