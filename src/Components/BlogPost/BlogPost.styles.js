@@ -157,3 +157,42 @@ export const AuthorInfo = styled.div`
     color: #666;
   }
 `;
+
+export const ShareButton = styled.button`
+ font-family: Poppins, sans-serif;
+    background-color: var(--background-color);
+    border: none;
+    padding: 15px;
+    position: absolute;
+  top: 2rem;
+  right: 2rem;
+    z-index: 998;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    border: 1px solid var(--text-color);
+      svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        transform: ${props => (props.isClicked ? "scaleY(-1)" : "none")};
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+    background-color: black;
+        & svg {
+          fill: white;
+        }
+    }
+
+    &:active {
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        padding: 9px;
+    }
+`;
