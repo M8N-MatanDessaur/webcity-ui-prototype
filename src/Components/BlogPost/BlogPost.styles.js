@@ -43,6 +43,7 @@ export const ImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
+  border-radius: 10px;
 `;
 
 export const TitleOverlay = styled.div`
