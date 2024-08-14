@@ -23,7 +23,7 @@ export const ServiceWrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 3rem;
+    padding: 35px;
     background-color: var(--foreground-color);
     border-radius: 12px;
     box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
@@ -41,7 +41,7 @@ export const ServiceWrapper = styled.div`
 
     @media (max-width: 940px) {
         width: auto;
-        padding: 1rem;
+        padding: 25px;
 
         &:hover {
             box-shadow: none;
