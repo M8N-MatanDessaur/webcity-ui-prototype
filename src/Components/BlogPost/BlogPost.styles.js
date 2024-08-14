@@ -1,7 +1,36 @@
 import styled from 'styled-components';
 
+const breakpoints = {
+  large: '1200px',
+  xlarge: '1440px',
+  xxlarge: '1800px',
+};
+
+const maxWidths = {
+  default: '800px',
+  large: '960px',
+  xlarge: '80%',
+  xxlarge: '1440px',
+};
+
+const responsiveMaxWidth = `
+  max-width: ${maxWidths.default};
+
+  @media (min-width: ${breakpoints.large}) {
+    max-width: ${maxWidths.large};
+  }
+
+  @media (min-width: ${breakpoints.xlarge}) {
+    max-width: ${maxWidths.xlarge};
+  }
+
+  @media (min-width: ${breakpoints.xxlarge}) {
+    max-width: ${maxWidths.xxlarge};
+  }
+`;
+
 export const Article = styled.article`
-  max-width: 800px;
+  ${responsiveMaxWidth}
   margin: 0 auto;
   padding: 2rem;
 `;
@@ -26,6 +55,9 @@ export const TitleOverlay = styled.div`
   justify-content: center;
   padding: 2rem;
   color: white;
+  h1 {
+    width: 100%;
+  }
 `;
 
 export const MetaData = styled.div`
@@ -46,14 +78,14 @@ export const Categories = styled.div`
 export const Category = styled.span`
   background-color: #c07ffd;
   color: white;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `;
 
 export const Content = styled.div`
   line-height: 1.6;
-  
+
   p {
     margin-bottom: 1rem;
   }
@@ -67,15 +99,30 @@ export const Content = styled.div`
     max-width: 100%;
     height: auto;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const BlogHeadline = styled.h1`
-    background: white;
-    padding: 2rem;
-    position: absolute;
-    bottom: -36px;
-    color: var(--text-color);
-    max-width: 800px;
+  ${responsiveMaxWidth}
+  background: white;
+  padding: 2rem;
+  position: absolute;
+  bottom: -36px;
+  color: var(--text-color);
+  font-size: 2.5rem;
+
+  border-radius: 10px;
+
+  @media (max-width: 860px) {
+    border-radius: 0;
+    font-size: 2rem;
+}
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
 `;
 
 export const AuthorSection = styled.div`

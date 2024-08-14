@@ -4,6 +4,7 @@ import TiltContainer from "../../Components/TiltContainer/TiltContainer";
 import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
+import BackButton from "../../Components/BackButton/BackButton";
 
 const links = [
     {
@@ -106,7 +107,7 @@ export default function FontsTools() {
                     })
                 }
             </TiltContainer>
-            <ToolsListButton />
+            <BackButton link="toolbox" />
             <PageIndicator pageName="Fonts Tools" />
         </FullScreenContainer>
     );

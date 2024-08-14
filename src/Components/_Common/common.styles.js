@@ -179,6 +179,19 @@ export const BlocksContainer = styled.div`
     @media (max-width: 768px) {
         padding: 120px 1rem;
     }
+
+  @media (min-width: 1200px) {
+    max-width: 1200px
+  }
+
+   @media (min-width: 1440px) {
+    max-width: 90%;
+  }
+
+    @media (min-width: 1800px) {
+    max-width: 1800px;
+  }
+
     `;
 
 

@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import {Button} from "./BackButton.styles";
 
-export default function BackButton() {
-    const history = useNavigate();
+export default function BackButton({link}) {
+    const navigate = useNavigate();
 
     const goBack = () => {
-        history(-1);
+        navigate(`/${link}`);
     };
 
     return (

@@ -63,7 +63,7 @@ const BlogPost = () => {
           <PortableText value={post.body} />
         </Content>
       </Article>
-      <BackButton />
+      <BackButton link={"blogs"} />
     </BlocksContainer>
   );
 };

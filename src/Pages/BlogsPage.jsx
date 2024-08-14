@@ -62,7 +62,7 @@ const BlogsPage = () => {
                 </MainSection>
                 <RecentPostsSidebar recentPosts={recentPosts} formatDate={formatDate} />
             </BlogContentWrapper>
-            <BackButton />
+            <BackButton link={""} />
         </BlocksContainer>
     );
 };
@@ -85,8 +85,14 @@ const MainSection = styled.div`
 
 const BlogGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 2rem;
+
+
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+    
 `;
 
 

@@ -53,7 +53,7 @@ export default function Toolbox() {
             ))}
           </CategoriesGrid>
         </Glassbox>
-        <BackButton />
+        <BackButton link={""} />
         <PageIndicator pageName={t('toolbox.title')}/>
         <Blob /><BlurredOverlay />
       </Container>
