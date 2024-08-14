@@ -45,10 +45,57 @@ const BlogPost = () => {
       <Helmet>
         <meta name="description" content={post.metaDescription} />
         <title>{`webcity.dev - ${post.title}`}</title>
-          <meta property="og:title" content={`webcity.dev | ${post.title}`} />
-          <meta property="og:description" content={post.metaDescription} />
-          <meta property="og:image" content={post.mainImage?.asset?.url} />
-          <meta property="og:url" content={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+
+        {/* Open Graph tags */}
+        <meta property="og:title" content={`webcity.dev | ${post.title}`} />
+        <meta property="og:description" content={post.metaDescription} />
+        <meta property="og:image" content={post.mainImage?.asset?.url} />
+        <meta property="og:url" content={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@webcitydev" />
+        <meta name="twitter:title" content={`webcity.dev | ${post.title}`} />
+        <meta name="twitter:description" content={post.metaDescription} />
+        <meta name="twitter:image" content={post.mainImage?.asset?.url} />
+
+        {/* Keywords including categories */}
+        <meta name="keywords" content={`${post.categories.map(cat => cat.title).join(', ')}, web development, programming`} />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+
+        {/* Google Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "image": post.mainImage?.asset?.url,
+            "author": {
+              "@type": "Person",
+              "name": post.author.name
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "webcity.dev",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.webcity.dev/logo192.png"
+              }
+            },
+            "datePublished": post.publishedAt,
+            "dateModified": post._updatedAt,
+            "description": post.metaDescription,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.webcity.dev/blogs/${post.slug.current}`
+            },
+            "keywords": post.categories.map(cat => cat.title).join(', '),
+            "articleSection": post.categories[0]?.title
+          })}
+        </script>
       </Helmet>
       <BlocksContainer>
         <ImageContainer imageUrl={post.mainImage?.asset?.url}>
