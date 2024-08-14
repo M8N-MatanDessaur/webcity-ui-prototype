@@ -87,6 +87,7 @@ export default {
         title: 'Blogs',
         recentPosts: 'Recent Posts',
         loadMore: 'Load More',
+        comingSoon: 'Stay tuned for our latest blogs',
     },
 
     footerQuote: {

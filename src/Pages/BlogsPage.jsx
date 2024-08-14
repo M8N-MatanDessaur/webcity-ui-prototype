@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { BlocksContainer, FluidContainer, Heading, PrimaryButton } from '../Components/_Common/common.styles';
 import BackButton from '../Components/BackButton/BackButton';
 import { useCategories } from '../Hooks/useCategories';
 import { usePosts } from '../Hooks/usePosts';
 import { useRecentPosts } from '../Hooks/useRecentPosts';
-import { Link } from 'react-router-dom';
 import CategoryFilter from '../Components/CategoryFilter/CategoryFilter';  // Import the new component
 import BlogPostCard from '../Components/BlogPostCard/BlogPostCard';
 import RecentPostsSidebar from '../Components/RecentPostsSidebar/RecentPostsSidebar';
@@ -42,6 +41,7 @@ const BlogsPage = () => {
 
     return (
         <BlocksContainer>
+            <GlobalStyle />
             <BlogContentWrapper>
                 <MainSection>
                     <CategoryFilter
@@ -53,6 +53,9 @@ const BlogsPage = () => {
                         {filteredPosts.slice(0, visiblePosts).map(post => (
                             <BlogPostCard key={post._id} post={post} formatDate={formatDate} />
                         ))}
+                        <ComingSoonBlogCard>
+                            <Heading>{t('blogs.comingSoon')} . . .</Heading>
+                        </ComingSoonBlogCard>
                     </BlogGrid>
                     {visiblePosts < filteredPosts.length && (
                         <LoadMoreButton onClick={loadMore}>
@@ -67,6 +70,41 @@ const BlogsPage = () => {
     );
 };
 
+const GlobalStyle = createGlobalStyle`
+  html {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), 
+                      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, rgba(255, 255, 255, 0) 1px);
+    background-position: 0 0, 0 0;
+    background-size: 20px 20px, 20px 20px;
+    background-repeat: repeat, repeat;
+  }
+`;
+
+const ComingSoonBlogCard = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+
+    &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        width: 100%;
+        font-weight: 200;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+`;
 
 const BlogContentWrapper = styled.div`
   display: flex;

@@ -85,6 +85,7 @@ export default {
         title: 'Articles',
         loadMore: 'Charger plus',
         recentPosts: 'Articles récents',
+        comingSoon: 'Restez à l\'écoute pour nos derniers articles',
     },
 
     footerQuote: {

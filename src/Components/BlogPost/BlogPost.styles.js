@@ -33,6 +33,7 @@ export const Article = styled.article`
   ${responsiveMaxWidth}
   margin: 0 auto;
   padding: 2rem;
+  background-color: white;
 `;
 
 export const ImageContainer = styled.div`

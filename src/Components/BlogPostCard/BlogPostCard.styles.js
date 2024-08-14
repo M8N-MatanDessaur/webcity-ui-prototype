@@ -5,6 +5,7 @@ export const BlogPost = styled.article`
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+  background-color: #fff;
 
   &:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
