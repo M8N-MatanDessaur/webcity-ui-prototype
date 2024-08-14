@@ -5,6 +5,7 @@ import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
 import BackButton from "../../Components/BackButton/BackButton";
+import { Helmet } from "react-helmet";
 
 const links = [
     {
@@ -98,6 +99,13 @@ const links = [
 export default function FontsTools() {
     return (
         <FullScreenContainer>
+            <Helmet>
+                <meta name="description" content="webcity's fonts tools is a collection of tools and resources for web designers and developers. From font pairing to font libraries, we've got you covered." />
+                <title>webcity - fonts tools</title>
+                <meta property="og:title" content="webcity - fonts tools" />
+                <meta property="og:description" content="webcity's fonts tools is a collection of tools and resources for web designers and developers. From font pairing to font libraries, we've got you covered." />
+                <meta property="og:url" content="https://www.webcity.dev/toolbox/fontstools" />
+            </Helmet>
             <TiltContainer>
                 {
                     links.map((link, index) => {

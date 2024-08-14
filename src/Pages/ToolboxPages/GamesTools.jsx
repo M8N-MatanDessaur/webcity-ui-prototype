@@ -5,6 +5,7 @@ import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
 import BackButton from "../../Components/BackButton/BackButton";
+import { Helmet } from "react-helmet";
 
 const links = [
     {
@@ -178,6 +179,13 @@ const links = [
 export default function GamesTools() {
     return (
         <FullScreenContainer>
+            <Helmet>
+                <meta name="description" content="webcity's toolbox is a collection of games and tools for web designers and developers. From color games to programming challenges, we've got you covered." />
+                <title>webcity - games</title>
+                <meta property="og:title" content="webcity - games" />
+                <meta property="og:description" content="webcity's toolbox is a collection of games and tools for web designers and developers. From color games to programming challenges, we've got you covered." />
+                <meta property="og:url" content="https://www.webcity.dev/gamestools" />
+            </Helmet>
             <TiltContainer>
                 {
                     links.map((link, index) => {

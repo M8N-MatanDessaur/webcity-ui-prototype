@@ -5,6 +5,7 @@ import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
 import BackButton from "../../Components/BackButton/BackButton";
+import { Helmet } from "react-helmet";
 
 const links = [
     {
@@ -129,6 +130,13 @@ const links = [
 export default function Generatorstools() {
     return (
         <FullScreenContainer>
+            <Helmet>
+                <meta name="description" content="webcity's generators tools is a collection of tools and resources for web designers and developers. From color pallets to background generators, we've got you covered." />
+                <title>webcity - generators tools</title>
+                <meta property="og:title" content="webcity - generators tools" />
+                <meta property="og:description" content="webcity's generators tools is a collection of tools and resources for web designers and developers. From color pallets to background generators, we've got you covered." />
+                <meta property="og:url" content="https://www.webcity.dev/toolbox/generatorstools" />
+            </Helmet>
             <TiltContainer>
                 {
                     links.map((link, index) => {

@@ -5,6 +5,7 @@ import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
 import BackButton from "../../Components/BackButton/BackButton";
+import { Helmet } from "react-helmet";
 
 const links = [
     {
@@ -137,6 +138,13 @@ const links = [
 export default function Illustrationstools() {
     return (
         <FullScreenContainer>
+            <Helmet>
+                <meta name="description" content="webcity's illustrations tools is a collection of tools and resources for web designers and developers. From illustrations to icons, we've got you covered." />
+                <title>webcity - illustrations tools</title>
+                <meta property="og:title" content="webcity - illustrations tools" />
+                <meta property="og:description" content="webcity's illustrations tools is a collection of tools and resources for web designers and developers. From illustrations to icons, we've got you covered." />
+                <meta property="og:url" content="https://www.webcity.dev/toolbox/illustrationstools" />
+            </Helmet>
             <TiltContainer>
                 {
                     links.map((link, index) => {

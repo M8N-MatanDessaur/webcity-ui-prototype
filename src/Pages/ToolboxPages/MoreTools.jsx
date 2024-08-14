@@ -5,6 +5,7 @@ import LinkContainer from "../../Components/LinkContainer/LinkContainer";
 import PageIndicator from "../../Components/PageIndicator/PageIndicator";
 import { FullScreenContainer } from "../../Components/_Common/common.styles";
 import BackButton from "../../Components/BackButton/BackButton";
+import { Helmet } from "react-helmet";
 
 const links = [
     {
@@ -222,6 +223,13 @@ const links = [
 export default function MoreTools() {
     return (
         <FullScreenContainer>
+            <Helmet>
+                <title>webcity - other tools</title>
+                <meta property="og:title" content="webcity - other tools" />
+                <meta name="description" content="webcity's other tools is a collection of tools and resources for web designers and developers. From image tools to design tools, we've got you covered." />
+                <meta property="og:description" content="webcity's other tools is a collection of tools and resources for web designers and developers. From image tools to design tools, we've got you covered." />
+                <meta property="og:url" content="https://www.webcity.dev/toolbox/moretools" />
+            </Helmet>
             <TiltContainer>
                 {
                     links.map((link, index) => {

@@ -17,6 +17,7 @@ import {
 import { BlocksContainer, FluidContainer, Heading, WallpaperWrapper } from '../_Common/common.styles';
 import { usePost } from '../../Hooks/UsePost';
 import BackButton from '../BackButton/BackButton';
+import { Helmet } from 'react-helmet';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -41,6 +42,14 @@ const BlogPost = () => {
 
   return (
     <WallpaperWrapper>
+      <Helmet>
+        <meta name="description" content={post.metaDescription} />
+        <title>{`webcity.dev - ${post.title}`}</title>
+          <meta property="og:title" content={`webcity.dev | ${post.title}`} />
+          <meta property="og:description" content={post.metaDescription} />
+          <meta property="og:image" content={post.mainImage?.asset?.url} />
+          <meta property="og:url" content={`https://www.webcity.dev/blogs/${post.slug.current}`} />
+      </Helmet>
       <BlocksContainer>
         <ImageContainer imageUrl={post.mainImage?.asset?.url}>
           <TitleOverlay>

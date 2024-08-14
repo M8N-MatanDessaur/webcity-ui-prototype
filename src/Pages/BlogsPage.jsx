@@ -9,6 +9,7 @@ import { useRecentPosts } from '../Hooks/useRecentPosts';
 import CategoryFilter from '../Components/CategoryFilter/CategoryFilter';  // Import the new component
 import BlogPostCard from '../Components/BlogPostCard/BlogPostCard';
 import RecentPostsSidebar from '../Components/RecentPostsSidebar/RecentPostsSidebar';
+import { Helmet } from 'react-helmet';
 
 const BlogsPage = () => {
     const { t } = useTranslation();
@@ -41,32 +42,39 @@ const BlogsPage = () => {
 
     return (
         <WallpaperWrapper>
-        <BlocksContainer>
-            <BlogContentWrapper>
-                <MainSection>
-                    <CategoryFilter
-                        categories={categories}
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
-                    <BlogGrid>
-                        {filteredPosts.slice(0, visiblePosts).map(post => (
-                            <BlogPostCard key={post._id} post={post} formatDate={formatDate} />
-                        ))}
-                        <ComingSoonBlogCard>
-                            <Heading>{t('blogs.comingSoon')} . . .</Heading>
-                        </ComingSoonBlogCard>
-                    </BlogGrid>
-                    {visiblePosts < filteredPosts.length && (
-                        <LoadMoreButton onClick={loadMore}>
-                            {t('blogs.loadMore')}
-                        </LoadMoreButton>
-                    )}
-                </MainSection>
-                <RecentPostsSidebar recentPosts={recentPosts} formatDate={formatDate} />
-            </BlogContentWrapper>
-            <BackButton link={""} />
-        </BlocksContainer>
+            <Helmet>
+                <meta name="description" content="webcity.dev blogs" />
+                <title>webcity.dev - Blogs</title>
+                <meta property="og:title" content="webcity.dev | Blogs" />
+                <meta property="og:description" content="webcity.dev blogs" />
+                <meta property="og:url" content="https://www.webcity.dev/blogs" />
+            </Helmet>
+            <BlocksContainer>
+                <BlogContentWrapper>
+                    <MainSection>
+                        <CategoryFilter
+                            categories={categories}
+                            selectedCategory={selectedCategory}
+                            setSelectedCategory={setSelectedCategory}
+                        />
+                        <BlogGrid>
+                            {filteredPosts.slice(0, visiblePosts).map(post => (
+                                <BlogPostCard key={post._id} post={post} formatDate={formatDate} />
+                            ))}
+                            <ComingSoonBlogCard>
+                                <Heading>{t('blogs.comingSoon')} . . .</Heading>
+                            </ComingSoonBlogCard>
+                        </BlogGrid>
+                        {visiblePosts < filteredPosts.length && (
+                            <LoadMoreButton onClick={loadMore}>
+                                {t('blogs.loadMore')}
+                            </LoadMoreButton>
+                        )}
+                    </MainSection>
+                    <RecentPostsSidebar recentPosts={recentPosts} formatDate={formatDate} />
+                </BlogContentWrapper>
+                <BackButton link={""} />
+            </BlocksContainer>
         </WallpaperWrapper>
     );
 };
