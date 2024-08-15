@@ -28,9 +28,28 @@ const siteStructure = {
 };
 
 // Function to get all blog post slugs from Sanity
-async function getBlogSlugs() {
+async function getEnBlogSlugs() {
   const query = `*[_type == "post"] {
-    "slug": slug.current,
+    "slug": slug.en,
+    publishedAt
+  }`;
+  
+  try {
+    const posts = await client.fetch(query);
+    return posts.map(post => ({
+      slug: post.slug,
+      priority: 0.7,
+      publishedAt: post.publishedAt
+    }));
+  } catch (error) {
+    console.error('Error fetching blog posts from Sanity:', error);
+    return [];
+  }
+}
+
+async function getFrBlogSlugs() {
+  const query = `*[_type == "post"] {
+    "slug": slug.fr,
     publishedAt
   }`;
   
@@ -77,8 +96,17 @@ async function generateSitemap() {
   }
 
   // Add blog posts
-  const blogPosts = await getBlogSlugs();
-  for (const post of blogPosts) {
+  const En = await getEnBlogSlugs();
+  const Fr = await getFrBlogSlugs();
+  for (const post of En) {
+    sitemap += `
+  <url>
+    <loc>https://webcity.dev/blog/${post.slug}</loc>
+    <priority>${post.priority}</priority>
+    <lastmod>${new Date(post.publishedAt).toISOString()}</lastmod>
+  </url>`;
+  }
+  for (const post of Fr) {
     sitemap += `
   <url>
     <loc>https://webcity.dev/blog/${post.slug}</loc>
