@@ -2,6 +2,7 @@ import { BlogPost, BlogImageWrapper, BlogImage, BlogContent, BlogTitle, BlogMeta
 import { Link } from 'react-router-dom';
 
 const BlogPostCard = ({ post, formatDate }) => {
+  console.log('post', post);
   return (
     <BlogPost>
       <BlogImageWrapper>
@@ -9,7 +10,7 @@ const BlogPostCard = ({ post, formatDate }) => {
       </BlogImageWrapper>
       <BlogContent>
         <BlogTitle>
-          <Link to={`/blog/${post.slug.current}`}>{post.title}</Link>
+          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
         </BlogTitle>
         <BlogMeta>
           <CategorySpan>{post.categories.map(cat => cat.title).join(', ')}</CategorySpan>
