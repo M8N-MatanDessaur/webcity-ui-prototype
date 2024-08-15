@@ -8,9 +8,9 @@ export const CategoryFilterWrapper = styled.div`
 `;
 
 export const CategoryButton = styled.button`
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.2rem;
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 50px;
   background-color: white;
   color: var(--text-color);
   cursor: pointer;
