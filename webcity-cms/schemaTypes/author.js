@@ -1,4 +1,5 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
+import localeBlockContent from './localeBlockContent'; // Import the localeBlockContent
 
 export default defineType({
   name: 'author',
@@ -8,7 +9,7 @@ export default defineType({
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'string', // Define the name as a simple string (no localization)
     }),
     defineField({
       name: 'slug',
@@ -30,15 +31,7 @@ export default defineType({
     defineField({
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'localeBlockContent', // Bio can be localized if needed
     }),
   ],
   preview: {
@@ -47,4 +40,4 @@ export default defineType({
       media: 'image',
     },
   },
-})
+});

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { categoriesService } from '../Services/categories';
 
 // Custom hook for fetching categories
-export const useCategories = () => {
+export const useCategories = (lang = 'en') => {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -10,8 +10,8 @@ export const useCategories = () => {
     useEffect(() => {
       const fetchCategories = async () => {
         try {
-          const fetchedCategories = await categoriesService.getCategories();
-          setCategories([{ _id: 'all', title: 'All' }, ...fetchedCategories]);
+          const fetchedCategories = await categoriesService.getCategories(lang);
+          setCategories([{ _id: 'all', title: lang === 'en' ? 'All' : 'Tous' }, ...fetchedCategories]);
           setLoading(false);
         } catch (err) {
           setError(err);
@@ -20,7 +20,7 @@ export const useCategories = () => {
       };
   
       fetchCategories();
-    }, []);
+    }, [lang]); // Depend on lang to refetch when it changes
   
     return { categories, loading, error };
-  };
+};

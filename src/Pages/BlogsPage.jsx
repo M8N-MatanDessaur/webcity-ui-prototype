@@ -6,38 +6,48 @@ import BackButton from '../Components/BackButton/BackButton';
 import { useCategories } from '../Hooks/useCategories';
 import { usePosts } from '../Hooks/usePosts';
 import { useRecentPosts } from '../Hooks/useRecentPosts';
-import CategoryFilter from '../Components/CategoryFilter/CategoryFilter';  // Import the new component
+import CategoryFilter from '../Components/CategoryFilter/CategoryFilter';
 import BlogPostCard from '../Components/BlogPostCard/BlogPostCard';
 import RecentPostsSidebar from '../Components/RecentPostsSidebar/RecentPostsSidebar';
 import { Helmet } from 'react-helmet';
 
 const BlogsPage = () => {
-    const { t } = useTranslation();
-    const { posts, loading: postsLoading, error: postsError } = usePosts();
-    const { categories, loading: categoriesLoading, error: categoriesError } = useCategories();
-    const { recentPosts, loading: recentPostsLoading, error: recentPostsError } = useRecentPosts();
+    const { t, i18n } = useTranslation();
+    const currentLang = i18n.language;
+
+    const { posts, loading: postsLoading, error: postsError } = usePosts(currentLang);
+    const { categories, loading: categoriesLoading, error: categoriesError } = useCategories(currentLang);
+    const { recentPosts, loading: recentPostsLoading, error: recentPostsError } = useRecentPosts(currentLang);
+
     const [visiblePosts, setVisiblePosts] = useState(6);
-    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [selectedCategory, setSelectedCategory] = useState(currentLang === 'en' ? 'All' : 'Tous'); // Default value based on language
 
     const loadMore = () => {
         setVisiblePosts(prevVisible => prevVisible + 6);
     };
 
-    const filteredPosts = selectedCategory === 'All'
+    const filteredPosts = selectedCategory === (currentLang === 'en' ? 'All' : 'Tous')
         ? posts
         : posts.filter(post => post.categories.some(cat => cat.title === selectedCategory));
 
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString(undefined, options);
+        return new Date(dateString).toLocaleDateString(currentLang, options);
     };
 
     if (postsLoading || categoriesLoading || recentPostsLoading) {
-        return <FluidContainer><Heading>Loading...</Heading></FluidContainer>;
+        return <FluidContainer><Heading>{t('loading')}</Heading></FluidContainer>;
     }
 
     if (postsError || categoriesError || recentPostsError) {
-        return <FluidContainer><Heading>Error loading content. Please try again later.</Heading></FluidContainer>;
+        console.log('recentPostsError', recentPostsError);
+        console.log('postsError', postsError);
+        console.log('categoriesError', categoriesError);
+        return <FluidContainer><Heading>{t('errorLoadingContent')}</Heading></FluidContainer>;
+    }
+
+    if (posts.length === 0) {
+        return <FluidContainer><Heading>{t('blogs.noPosts')}</Heading></FluidContainer>;
     }
 
     return (
@@ -61,9 +71,11 @@ const BlogsPage = () => {
                             {filteredPosts.slice(0, visiblePosts).map(post => (
                                 <BlogPostCard key={post._id} post={post} formatDate={formatDate} />
                             ))}
-                            <ComingSoonBlogCard>
-                                <Heading>{t('blogs.comingSoon')} . . .</Heading>
-                            </ComingSoonBlogCard>
+                            {filteredPosts.length === 0 && (
+                                <ComingSoonBlogCard>
+                                    <Heading>{t('blogs.comingSoon')} . . .</Heading>
+                                </ComingSoonBlogCard>
+                            )}
                         </BlogGrid>
                         {visiblePosts < filteredPosts.length && (
                             <LoadMoreButton onClick={loadMore}>
@@ -84,7 +96,7 @@ const ComingSoonBlogCard = styled.div`
     align-items: center;
     justify-content: center;
     padding: 2rem;
-     border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
@@ -119,19 +131,15 @@ const MainSection = styled.div`
   flex: 3;
 `;
 
-
 const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 2rem;
 
-
   @media (max-width: 1440px) {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-    
 `;
-
 
 const LoadMoreButton = styled(PrimaryButton)`
   margin: 2rem auto;

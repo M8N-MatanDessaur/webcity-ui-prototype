@@ -13,7 +13,7 @@ const RecentPostsSidebar = ({ recentPosts, formatDate }) => {
       <RecentPostsList>
         {recentPosts.slice(0, 3).map(post => (
           <RecentPost key={post._id}>
-            <Link to={`/blog/${post.slug.current}`}>
+            <Link to={`/blog/${post.slug}`}>
               <RecentPostTitle>{post.title}</RecentPostTitle>
               <RecentPostDate>{formatDate(post.publishedAt)}</RecentPostDate>
             </Link>

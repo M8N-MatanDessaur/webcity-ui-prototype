@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { postsService } from "../Services/posts";
 
-export const usePosts = () => {
+export const usePosts = (lang = 'en') => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ export const usePosts = () => {
     useEffect(() => {
       const fetchPosts = async () => {
         try {
-          const fetchedPosts = await postsService.getPosts();
+          const fetchedPosts = await postsService.getPosts(lang);
           setPosts(fetchedPosts);
           setLoading(false);
         } catch (err) {
@@ -19,8 +19,7 @@ export const usePosts = () => {
       };
   
       fetchPosts();
-    }, []);
+    }, [lang]);
   
     return { posts, loading, error };
-  };
-  
+};
