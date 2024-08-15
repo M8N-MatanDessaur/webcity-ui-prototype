@@ -17,12 +17,12 @@ export const CategoryButton = styled.button`
   transition: all 0.3s ease;
 
   ${props => props.isSelected && css`
-    background-color: black;
-    color: white;
+    background-color: ${props.children === ('All' || 'Tous') ? 'black' : '#C07FFD'};
+    color: ${props.children === ('All' || 'Tous') ? 'white' : 'black'};
   `}
 
   &:hover {
-    background-color: ${props => props.isSelected ? 'black' : '#C07FFD'};
-    color: ${props => props.isSelected ? 'white' : 'black'};
+    background-color: ${props => props.children === ('All' || 'Tous') ? 'black' : '#C07FFD'};
+    color: ${props => props.children === ('All' || 'Tous') ? 'white' : 'black'};
   }
 `;
