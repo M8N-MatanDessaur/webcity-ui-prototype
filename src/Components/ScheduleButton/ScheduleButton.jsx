@@ -10,6 +10,8 @@ export default function ScheduleButton ({ isOn }) {
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const { t } = useTranslation();
+    const { i18n } = useTranslation();
+    const currentLang = i18n.language;
   
     const handleButtonClick = () => {
       setShowModal((prevShowModal) => !prevShowModal);
@@ -22,11 +24,34 @@ export default function ScheduleButton ({ isOn }) {
       setNumber("");
     };
   
-    const confirm = (e) => {
+    const confirm = async (e) => {
       e.preventDefault();
-      setShowModal(false);
-      toast.success("Thank you for contacting us.");
-      document.getElementById("form").submit();
+      
+      const formData = new FormData(e.target);
+      
+      try {
+        // Submit the form data using fetch
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          toast.success("Thank you for contacting us.");
+          setShowModal(false);
+          
+          // Redirect based on the current language
+          const redirectUrl = currentLang === "en" 
+            ? "https://ibuw043jey1.typeform.com/to/oimMXCve" 
+            : "https://ibuw043jey1.typeform.com/to/ztpszSyT";
+          
+          window.location.href = redirectUrl;
+        } else {
+          toast.error("There was an error submitting the form.");
+        }
+      } catch (error) {
+        toast.error("Submission failed. Please try again.");
+      }
     };
 
   return (
@@ -45,12 +70,11 @@ export default function ScheduleButton ({ isOn }) {
                 {t('formText.schedulingSlogan')} <span>⚡</span>
               </FormSubTitle>
             </div>
-            <Form onSubmit={confirm} action="https://api.web3forms.com/submit" method="POST" id="form">
+            <Form onSubmit={confirm} id="form">
               <input type="hidden" name="access_key" value="b07e6e42-1e9f-49f2-a3f6-284515cd1c8c" />
               <input type="hidden" name="subject" value="Hurray we got a new client 🎊"></input>
-              <input type="hidden" name="redirect" value="https://webcity.dev"></input>
               <input type="hidden" name="from_name" value="Webcity request"></input>
-              <input type="checkbox" name="botcheck" class="hidden" style={{ display: "none" }}></input>
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }}></input>
               <FlexRow>
                 <InputWrapper>
                   <InputField
