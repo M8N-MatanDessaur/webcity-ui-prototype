@@ -16,13 +16,17 @@ export const CategoryButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
 
-  ${props => props.isSelected && css`
-    background-color: ${props.children === ('All' || 'Tous') ? 'black' : '#C07FFD'};
-    color: ${props.children === ('All' || 'Tous') ? 'white' : 'black'};
-  `}
+    ${({ isSelected, children }) =>
+    isSelected &&
+    css`
+      background-color: ${['All', 'Tous'].includes(children) ? 'black' : '#C07FFD'};
+      color: ${['All', 'Tous'].includes(children) ? 'white' : 'black'};
+    `}
 
   &:hover {
-    background-color: ${props => props.children === ('All' || 'Tous') ? 'black' : '#C07FFD'};
-    color: ${props => props.children === ('All' || 'Tous') ? 'white' : 'black'};
+    background-color: ${props =>
+      ['All', 'Tous'].includes(props.children) ? 'black' : '#C07FFD'};
+    color: ${props =>
+      ['All', 'Tous'].includes(props.children) ? 'white' : 'black'};
   }
 `;
