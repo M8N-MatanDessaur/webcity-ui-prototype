@@ -87,5 +87,39 @@ export const postsService = {
       console.error("Error fetching post by slug:", error);
       throw new Error("errorLoadingContent");
     }
-  }
+  },
+
+  getPostById: async (id) => {
+    try {
+      const post = await client.fetch(`
+        *[_type == "post" && _id == $id] {
+          _id,
+          title,
+          slug,
+          publishedAt,
+          body,
+          categories[]->{ _id, title },
+          mainImage {
+            asset-> {
+              _id,
+              url
+            }
+          },
+          author->{
+            name,
+            image {
+              asset-> {
+                _id,
+                url
+              }
+            }
+          }
+        }[0]
+      `, { id });
+      return post;
+    } catch (error) {
+      console.error("Error fetching post by ID:", error);
+      throw new Error("errorLoadingContent");
+    }
+  },
 };

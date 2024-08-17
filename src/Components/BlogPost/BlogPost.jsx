@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
 import {
   Article,
@@ -20,62 +20,96 @@ import BackButton from '../BackButton/BackButton';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import CTABlock from '../../Blocks/CTABlock';
+import { postsService } from '../../Services/posts'; // Assuming you have this service
 
 const BlogPost = () => {
-  const { slug } = useParams();
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
+  const { slug } = useParams(); // Get the current slug from the URL parameters
+  const navigate = useNavigate(); // Used to programmatically navigate to other routes
+  const { t, i18n } = useTranslation(); // i18n hook for translations
+  const currentLang = i18n.language; // Get the current language
 
   // Fetch the post data based on the current language
-  const { post, loading, error } = usePost(slug, currentLang);
+  const { post, loading, error } = usePost(slug, currentLang); // Custom hook to fetch the post
+  const [finalPost, setFinalPost] = useState(null); // State to hold the post to display
 
+  useEffect(() => {
+    const handlePostFallback = async () => {
+      // Only attempt to fetch the alternate post if the current post is not found
+      if (!post && !loading && !error) {
+        try {
+          // Fallback to the alternate language (fr if currentLang is en, and vice versa)
+          const altLang = currentLang === 'en' ? 'fr' : 'en';
+          const altPost = await postsService.getPostBySlug(slug, altLang);
+
+          if (altPost) {
+            // Fetch the unlocalized post by ID to check for the correct language version
+            const unLocalizedPost = await postsService.getPostById(altPost[0]._id);
+
+            if (unLocalizedPost?.slug?.[currentLang]) {
+              const correctSlug = unLocalizedPost.slug[currentLang];
+              navigate(`/blog/${correctSlug}`, { replace: true }); // Redirect to the correct URL
+            } else {
+              setFinalPost(altPost); // If no redirect needed, use the alternate language post
+            }
+          } else {
+            setFinalPost(null); // If no post is found in either language
+          }
+        } catch (err) {
+          console.error('Error fetching post by ID:', err);
+        }
+      } else {
+        setFinalPost(post); // If the post is found, use it
+      }
+    };
+
+    // Only run the fallback logic if post is not found
+    if (!post) {
+      handlePostFallback();
+    } else {
+      setFinalPost(post); // If post exists, set it as finalPost directly
+    }
+  }, [post, loading, error, currentLang, slug, navigate]); // Dependencies for useEffect
+
+  // Format the date according to the current language
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString(currentLang, options);
   };
 
   if (loading) {
-    return <FluidContainer><Heading>{t('loading')}</Heading></FluidContainer>;
+    return <FluidContainer><Heading>{t('loading')}</Heading></FluidContainer>; // Show loading indicator while fetching data
   }
 
-  if (error) {
-    console.error('Error fetching post:', error);
-    return <FluidContainer><Heading>{t('errorLoadingContent')}</Heading></FluidContainer>;
+  if (error || !finalPost) {
+    navigate('/blogs', { replace: true }); // Redirect to the blogs page if there is an error or no post found
   }
 
-  if (!post) {
-    console.warn('No post found for the given slug:', slug);
-    return <FluidContainer><Heading>{t('postNotFound')}</Heading></FluidContainer>;
-  }
+  // Extract and safely access all necessary fields from the post object
+  const title = finalPost.title;
+  const slugValue = finalPost.slug;
+  const publishedAt = finalPost.publishedAt;
+  const categories = finalPost.categories;
+  const mainImageUrl = finalPost.mainImage?.asset?.url;
+  const authorName = finalPost.author?.name;
+  const authorImage = finalPost.author?.image?.asset?.url;
+  const bodyContent = finalPost.body;
 
-  console.log('Post data:', post);
-
-  // Extract and safely access all necessary fields
-  const title = post.title;
-  const slugValue = post.slug;
-  const publishedAt = post.publishedAt;
-  const categories = post.categories;
-  const mainImageUrl = post.mainImage?.asset?.url;
-  const authorName = post.author?.name;
-  const authorImage = post.author?.image?.asset?.url;
-  const bodyContent = post.body;
-
-  // Custom components for PortableText
+  // Custom components for PortableText to handle any custom marks or blocks
   const portableTextComponents = {
     marks: {
       customButton: (props) => {
         if (props.text === '[cntctBtn]') {
-          return <CTABlock/>;
+          return <CTABlock />; // Render a custom call-to-action block when [cntctBtn] is found in the text
         }
         return <span>{props.children}</span>;
       },
     },
     block: {
       normal: ({ children }) => {
-        return children.map(child => 
-          typeof child === 'string' && child.includes('[cntctBtn]') 
-          ? <>{child.split('[cntctBtn]').map((part, index) => index === 0 ? <>{part}</> : <><CTABlock />{part}</> )}</> 
-          : child
+        return children.map(child =>
+          typeof child === 'string' && child.includes('[cntctBtn]')
+            ? <>{child.split('[cntctBtn]').map((part, index) => index === 0 ? <>{part}</> : <><CTABlock />{part}</>)}</>
+            : child
         );
       },
     },
@@ -85,11 +119,11 @@ const BlogPost = () => {
     <WallpaperWrapper>
       <Helmet>
         <title>{`${title} - webcity.dev`}</title>
-        <meta name="description" content={post.metaDescription || t('defaultMetaDescription')} />
+        <meta name="description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
 
-        {/* Open Graph tags */}
+        {/* Open Graph tags for social sharing */}
         <meta property="og:title" content={`${title} - webcity.dev`} />
-        <meta property="og:description" content={post.metaDescription || t('defaultMetaDescription')} />
+        <meta property="og:description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
         <meta property="og:image" content={mainImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -97,17 +131,15 @@ const BlogPost = () => {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="webcity.dev" />
 
-        {/* Twitter Card tags */}
+        {/* Twitter Card tags for social sharing */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@webcitydev" />
         <meta name="twitter:title" content={`${title} - webcity.dev`} />
-        <meta name="twitter:description" content={post.metaDescription || t('defaultMetaDescription')} />
+        <meta name="twitter:description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
         <meta name="twitter:image" content={mainImageUrl} />
 
-        {/* Keywords including categories */}
+        {/* Keywords and canonical URL */}
         <meta name="keywords" content={`${categories?.map(cat => cat.title).join(', ')}, web development, programming, blogs, tech news, web agency, business`} />
-
-        {/* Canonical URL */}
         <link rel="canonical" href={`https://www.webcity.dev/blog/${slugValue}`} />
 
         {/* Google Structured Data */}
@@ -130,8 +162,8 @@ const BlogPost = () => {
               }
             },
             "datePublished": publishedAt,
-            "dateModified": post._updatedAt,
-            "description": post.metaDescription,
+            "dateModified": finalPost._updatedAt,
+            "description": finalPost.metaDescription,
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": `https://www.webcity.dev/blog/${slugValue}`
@@ -141,12 +173,13 @@ const BlogPost = () => {
         </script>
       </Helmet>
       <BlocksContainer>
+        {/* Main Image and Title */}
         {mainImageUrl && (
           <ImageContainer imageUrl={mainImageUrl}>
             <ShareButton onClick={() => {
               window.navigator.share({
                 title: title,
-                text: post.metaDescription,
+                text: finalPost.metaDescription,
                 url: `https://www.webcity.dev/blog/${slugValue}`
               });
             }}>
@@ -159,6 +192,8 @@ const BlogPost = () => {
             </TitleOverlay>
           </ImageContainer>
         )}
+
+        {/* Article Content */}
         <Article>
           <AuthorSection>
             {authorImage && <AuthorImage src={authorImage} alt={authorName} />}
@@ -176,6 +211,8 @@ const BlogPost = () => {
             <PortableText value={bodyContent} components={portableTextComponents} />
           </Content>
         </Article>
+
+        {/* Back Button */}
         <BackButton link={"blogs"} />
       </BlocksContainer>
     </WallpaperWrapper>
