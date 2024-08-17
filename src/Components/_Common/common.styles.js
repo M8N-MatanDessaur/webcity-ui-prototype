@@ -157,6 +157,20 @@ export const FluidContainer = styled.div`
   }
 `;
 
+export const ErrorContainer = styled(FluidContainer)`
+margin: auto;
+height: 80vh;
+max-width: 960px;
+justify-content: center;
+align-items: center;
+
+aside {
+flex: unset;
+margin: 2rem 0;
+padding: 0 2rem;
+}
+`
+
 export const FullScreenContainer = styled.div`
     position: relative;
     height: 100%;

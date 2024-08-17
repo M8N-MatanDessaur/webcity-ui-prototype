@@ -14,19 +14,23 @@ import {
   AuthorInfo,
   ShareButton
 } from './BlogPost.styles';
-import { BlocksContainer, FluidContainer, Heading, WallpaperWrapper } from '../_Common/common.styles';
+import { BlocksContainer, BlurredOverlay, ErrorContainer, FluidContainer, Heading, Headline, Paragraph, SubHeading, WallpaperWrapper } from '../_Common/common.styles';
+import Blob  from '../Blob/Blob';
 import { usePost } from '../../Hooks/UsePost';
 import BackButton from '../BackButton/BackButton';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import CTABlock from '../../Blocks/CTABlock';
 import { postsService } from '../../Services/posts'; // Assuming you have this service
+import RecentPostsSidebar from '../RecentPostsSidebar/RecentPostsSidebar';
+import { useRecentPosts } from '../../Hooks/useRecentPosts';
 
 const BlogPost = () => {
   const { slug } = useParams(); // Get the current slug from the URL parameters
   const navigate = useNavigate(); // Used to programmatically navigate to other routes
   const { t, i18n } = useTranslation(); // i18n hook for translations
   const currentLang = i18n.language; // Get the current language
+  const { recentPosts, loading: recentPostsLoading, error: recentPostsError } = useRecentPosts(currentLang);
 
   // Fetch the post data based on the current language
   const { post, loading, error } = usePost(slug, currentLang); // Custom hook to fetch the post
@@ -81,10 +85,16 @@ const BlogPost = () => {
   }
 
   if (error || !finalPost) {
-    return <FluidContainer>
-      <Heading>{t('errorLoadingContent')}</Heading>
+    return (
+    <ErrorContainer>
+      <Headline>{t('errorLoadingContent')}</Headline>
+      <SubHeading>{t('postNotFound')}</SubHeading>
+      <RecentPostsSidebar recentPosts={recentPosts} formatDate={formatDate} />
+      <Blob />
+      <BlurredOverlay />
       <BackButton link={"blogs"} />
-    </FluidContainer>;
+    </ErrorContainer>
+    ); // Show error message if post is not found
   }
 
   // Extract and safely access all necessary fields from the post object

@@ -97,7 +97,8 @@ export default {
         text: 'webcity | faire de votre vision, notre œuvre d\'art',
     },
 
-    errorLoadingContent: 'Erreur de chargement du contenu',
+    errorLoadingContent: 'Oups! L\'article que vous recherchez n\'est pas disponible.',
+    postNotFound: 'Mais ce n\'est pas grave! Découvrez l\'un de nos autres articles',
 
   };
   

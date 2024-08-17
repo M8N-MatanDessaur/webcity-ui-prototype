@@ -99,6 +99,7 @@ export default {
         text: 'webcity | making your vision, our work of art',
     },
 
-    errorLoadingContent: 'Error loading content',
+    errorLoadingContent: 'Oops! The blog you are looking for is not available.',
+    postNotFound: 'But that\'s okay! Check out one of our other blogs',
   };
   
