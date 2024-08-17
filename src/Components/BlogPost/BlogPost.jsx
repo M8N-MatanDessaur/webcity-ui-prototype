@@ -55,7 +55,7 @@ const BlogPost = () => {
             setFinalPost(null); // If no post is found in either language
           }
         } catch (err) {
-          console.error('Error fetching post by ID:', err);
+          navigate('/blogs', { replace: true }); // Redirect to the blogs page if there is an error or no post found
         }
       } else {
         setFinalPost(post); // If the post is found, use it
@@ -81,7 +81,7 @@ const BlogPost = () => {
   }
 
   if (error || !finalPost) {
-    navigate('/blogs', { replace: true }); // Redirect to the blogs page if there is an error or no post found
+    return <FluidContainer><Heading>{t('errorLoadingContent')}</Heading></FluidContainer>; // Show error message if data fetching fails
   }
 
   // Extract and safely access all necessary fields from the post object
