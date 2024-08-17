@@ -81,7 +81,7 @@ const BlogPost = () => {
   }
 
   if (error || !finalPost) {
-    return <FluidContainer><Heading>{t('errorLoadingContent')}</Heading></FluidContainer>; // Show error message if data fetching fails
+    return <FluidContainer></FluidContainer>;
   }
 
   // Extract and safely access all necessary fields from the post object
