@@ -88,6 +88,11 @@ export default {
         comingSoon: 'Restez à l\'écoute pour nos derniers articles',
     },
 
+    cta:{
+        title: 'Prêt à élever votre entreprise avec webcity.dev ?',
+        text: 'Faisons de votre vision une réalité !',
+    },
+
     footerQuote: {
         text: 'webcity | faire de votre vision, notre œuvre d\'art',
     }

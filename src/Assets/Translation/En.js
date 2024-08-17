@@ -90,6 +90,11 @@ export default {
         comingSoon: 'Stay tuned for our latest blogs',
     },
 
+    cta:{
+        title: 'Ready to elevate your business with webcity.dev?',
+        text: 'Let\'s make your vision a reality!',
+    },
+
     footerQuote: {
         text: 'webcity | making your vision, our work of art',
     }

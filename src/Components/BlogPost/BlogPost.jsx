@@ -19,6 +19,7 @@ import { usePost } from '../../Hooks/UsePost';
 import BackButton from '../BackButton/BackButton';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import CTABlock from '../../Blocks/CTABlock';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -58,6 +59,27 @@ const BlogPost = () => {
   const authorName = post.author?.name;
   const authorImage = post.author?.image?.asset?.url;
   const bodyContent = post.body;
+
+  // Custom components for PortableText
+  const portableTextComponents = {
+    marks: {
+      customButton: (props) => {
+        if (props.text === '[cntctBtn]') {
+          return <CTABlock/>;
+        }
+        return <span>{props.children}</span>;
+      },
+    },
+    block: {
+      normal: ({ children }) => {
+        return children.map(child => 
+          typeof child === 'string' && child.includes('[cntctBtn]') 
+          ? <>{child.split('[cntctBtn]').map((part, index) => index === 0 ? <>{part}</> : <><CTABlock />{part}</> )}</> 
+          : child
+        );
+      },
+    },
+  };
 
   return (
     <WallpaperWrapper>
@@ -151,7 +173,7 @@ const BlogPost = () => {
             ))}
           </Categories>
           <Content>
-            <PortableText value={bodyContent} />
+            <PortableText value={bodyContent} components={portableTextComponents} />
           </Content>
         </Article>
         <BackButton link={"blogs"} />
