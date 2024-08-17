@@ -55,7 +55,7 @@ const BlogPost = () => {
             setFinalPost(null); // If no post is found in either language
           }
         } catch (err) {
-          navigate('/blogs', { replace: true }); // Redirect to the blogs page if there is an error or no post found
+          console.error('Error fetching post by ID:', err);
         }
       } else {
         setFinalPost(post); // If the post is found, use it
