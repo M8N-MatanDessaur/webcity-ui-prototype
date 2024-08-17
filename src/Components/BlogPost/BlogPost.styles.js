@@ -99,6 +99,13 @@ export const Content = styled.div`
     margin-bottom: 1rem;
   }
 
+  blockquote {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid #c07ffd;
+  }
+
   img {
     max-width: 100%;
     height: auto;
