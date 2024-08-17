@@ -81,7 +81,10 @@ const BlogPost = () => {
   }
 
   if (error || !finalPost) {
-    return <FluidContainer></FluidContainer>;
+    return <FluidContainer>
+      <Heading>{t('errorLoadingContent')}</Heading>
+      <BackButton link={"blogs"} />
+    </FluidContainer>;
   }
 
   // Extract and safely access all necessary fields from the post object
