@@ -95,7 +95,9 @@ export default {
 
     footerQuote: {
         text: 'webcity | faire de votre vision, notre œuvre d\'art',
-    }
+    },
+
+    errorLoadingContent: 'Erreur de chargement du contenu',
 
   };
   
