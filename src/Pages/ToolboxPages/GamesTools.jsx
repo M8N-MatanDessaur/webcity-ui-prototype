@@ -171,7 +171,12 @@ const links = [
             title: "Infinite Craft",
             description: "Endless building game",
             link: "https://neal.fun/infinite-craft/"
-        }
+        },
+    {
+        title: "Codedex.io",
+        description: "Interactive code learning",
+        link: "https://www.codedex.io/"
+    }
 ];
 
 
