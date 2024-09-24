@@ -14,17 +14,29 @@ export const fadeInAnimation = keyframes`
 export const Headline = styled.h1`
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 600;
     text-align: center;
     padding: 2rem;
     color: var(--text-color);
     width: fit-content;
     height: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     animation: ${fadeInAnimation} 500ms ease-in;
+
+    & span {
+      display: inline-block;
+      color: #FF1493;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    @media (max-width: 1440px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 4rem;
+    }
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -70,9 +82,9 @@ export const AltHeading = styled.h2`
 `;
 
 export const SubHeading = styled.h3`
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: center;
   color: var(--text-color);
@@ -82,6 +94,22 @@ export const SubHeading = styled.h3`
   align-items: center;
   justify-content: center;
   animation: ${fadeInAnimation} 500ms ease-in;
+  font-style: italic;
+
+  & span {
+    display: inline-block;
+    color: #FF1493;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -143,7 +171,6 @@ export const FluidContainer = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -288,16 +315,14 @@ export const PrimaryButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  border-radius: 50px;
   backdrop-filter: blur(5px);
   background-color: #fff;
-  color: #000;
-  border-radius: 26px;
-  box-shadow: inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
-  inset 0px 11px 28px 0px rgb(255, 255, 255);
-  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 999px;
+  border: none;
+  background-color: #FF1493;
+  font-size: 1.5rem;
   font-weight: 300;
-  border: 1px solid #00000020;
   outline: none;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
