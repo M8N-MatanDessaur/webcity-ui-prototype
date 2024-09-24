@@ -2,13 +2,22 @@ import React, { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';
 import { BackgroundContainer, MarqueeWrapper, Keyword } from './KeywordsBackground.styles';
 
-const keywords = [
-  "Website Design", "UI/UX Design", "Branding", "Logo Design", "Responsive Design",
-  "Website Development", "Web App Development", "E-commerce", "SEO", "API Integrations",
-  "Website Maintenance", "Content Updates", "Performance Optimization", "Security Updates", 
-  "Website Redesign", "Bug Fixes", "Cloud Hosting", "Digital Marketing", "Social Media Marketing", 
-  "DevOps", "CI/CD"
-];
+const keywords = {
+  en: [
+    "Website Design", "UI/UX Design", "Branding", "Logo Design", "Responsive Design",
+    "Website Development", "Web App Development", "E-commerce", "SEO", "API Integrations",
+    "Website Maintenance", "Content Updates", "Performance Optimization", "Security Updates", 
+    "Website Redesign", "Bug Fixes", "Cloud Hosting", "Digital Marketing", "Social Media Marketing", 
+    "DevOps", "CI/CD"
+  ],
+  fr: [
+    "Conception de sites Web", "Conception UI/UX", "Image de marque", "Conception de logo", "Design responsive",
+    "Développement de sites Web", "Développement d'applications Web", "Commerce électronique", "Référencement", "Intégrations API",
+    "Maintenance de sites Web", "Mises à jour de contenu", "Optimisation des performances", "Mises à jour de sécurité",
+    "Refonte de site Web", "Correction de bugs", "Hébergement cloud", "Marketing numérique", "Marketing sur les réseaux sociaux",
+    "DevOps", "CI/CD"
+  ]
+};
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -19,10 +28,11 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-const KeywordsBackground = () => {
+const KeywordsBackground = ({ language = 'en' }) => {
   const shuffledKeywordSets = useMemo(() => {
+    const currentKeywords = keywords[language] || keywords.en;
     return [...Array(5)].map(() => {
-      let shuffled = shuffleArray(keywords);
+      let shuffled = shuffleArray(currentKeywords);
       // Ensure no consecutive repetitions
       for (let i = 1; i < shuffled.length; i++) {
         if (shuffled[i] === shuffled[i - 1]) {
@@ -34,7 +44,7 @@ const KeywordsBackground = () => {
       }
       return shuffled;
     });
-  }, []);
+  }, [language]);
 
   return (
     <BackgroundContainer>
