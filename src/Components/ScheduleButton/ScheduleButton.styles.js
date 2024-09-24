@@ -8,7 +8,7 @@ export const ModalOverlay = styled.div`
   width: 100%;
   height: 100vh;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
   width: 700px;
   position: relative;
-  background-color: var(--foreground-color);
+   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
@@ -30,7 +30,6 @@ export const ModalContent = styled.div`
 
   @media (max-width: 480px) {
     padding: 1rem;
-    width: 90%;
   }
 
   @media (max-width: 320px) {
