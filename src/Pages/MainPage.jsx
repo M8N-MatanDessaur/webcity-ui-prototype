@@ -17,6 +17,7 @@ export default function MainPage() {
         <meta property="og:title" content="webcity - tailored websites" />
         <meta property="og:description" content="webcity is a leading web design and development agency. We build stunning websites, web applications, and web experiences with a 100% satisfaction guarantee." />
         <meta property="og:url" content="https://www.webcity.dev" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </Helmet>
       <BlogsButton />
       <Landing />
