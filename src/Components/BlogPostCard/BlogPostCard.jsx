@@ -12,15 +12,15 @@ const BlogPostCard = ({ post, formatDate }) => {
         <BlogTitle>
           <Link to={`/blog/${post.slug}`}>{post.title}</Link>
         </BlogTitle>
-        <BlogMeta>
           <CategorySpan>{post.categories.map(cat => cat.title).join(', ')}</CategorySpan>
-          <DateSpan>{formatDate(post.publishedAt)}</DateSpan>
-        </BlogMeta>
         <BlogExcerpt>{post.excerpt}</BlogExcerpt>
+        <BlogMeta>
         <AuthorSection>
           <AuthorImage src={post.author?.image?.asset?.url} alt={post.author?.name} />
           <AuthorName>{post.author?.name}</AuthorName>
         </AuthorSection>
+        <DateSpan>{formatDate(post.publishedAt)}</DateSpan>
+        </BlogMeta>
       </BlogContent>
     </BlogPost>
   );

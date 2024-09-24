@@ -105,7 +105,8 @@ export const Categories = styled.div`
 `;
 
 export const Category = styled.span`
-  background-color: #c07ffd;
+  background-color: #FF1493;
+  font-weight: 600;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 50px;
