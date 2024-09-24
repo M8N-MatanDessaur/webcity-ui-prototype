@@ -214,7 +214,7 @@ export const BlocksContainer = styled.div`
     height: max-content;
     padding: 150px 2rem;
     position: relative;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 
     @media (max-width: 768px) {
