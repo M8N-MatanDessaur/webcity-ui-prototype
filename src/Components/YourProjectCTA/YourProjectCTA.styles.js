@@ -23,12 +23,14 @@ export const YourProject = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
     > div {
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
 
     h3 {
         font-family: Poppins, sans-serif;
@@ -39,7 +41,7 @@ export const YourProject = styled.div`
 
     q {
         font-family: Poppins, sans-serif;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
 
@@ -54,7 +56,7 @@ export const YourProject = styled.div`
 
     p {
         font-family: Poppins, sans-serif;
-        font-size: 1rem;
+        font-size: 1.2rem;
         max-width: 70%;
     }
 `;

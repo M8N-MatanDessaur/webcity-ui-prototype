@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   --transition-duration: 0.5s;
   --transition-timing: ease-out;
-
+    border-radius: 15px;
   background: transparent;
   color: var(--text-color);	
   width: 100%;

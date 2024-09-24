@@ -128,7 +128,7 @@ export const SubHeading = styled.h3`
 export const Paragraph = styled.p`
     font-size: 1rem;
     color: var(--text-color);
-    max-width: 80%;
+    max-width: 960px;
 `;
 
 export const Blockquote = styled.blockquote`
@@ -316,11 +316,10 @@ export const PrimaryButton = styled.button`
   justify-content: center;
   padding: 1rem 2rem;
   backdrop-filter: blur(5px);
-  background-color: #fff;
   color: #fff;
   border-radius: 999px;
   border: none;
-  background-color: #FF1493;
+  background-color: ${({ alt }) => (alt ? "#000" : "#FF1493")};
   font-size: 1.5rem;
   font-weight: 300;
   outline: none;
