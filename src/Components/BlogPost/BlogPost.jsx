@@ -104,11 +104,9 @@ const BlogPost = () => {
   const publishedAt = finalPost.publishedAt;
   const categories = finalPost.categories;
   const mainImageUrl = finalPost.mainImage?.asset?.url;
-  const authorName = finalPost.author?.name;
+  const authorName = finalPost.author?.name
   const authorImage = finalPost.author?.image?.asset?.url;
   const bodyContent = finalPost.body;
-
-  console.log('finalPost', finalPost);
 
   // Custom components for PortableText to handle any custom marks or blocks
   const portableTextComponents = {

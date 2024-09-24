@@ -18,7 +18,7 @@ export const postsService = {
             }
           },
           author->{
-            "name": name.${lang},
+            "name": name,
             image {
               asset-> {
                 _id,
@@ -72,7 +72,7 @@ export const postsService = {
             }
           },
           author->{
-            "name": name.${lang},
+            "name": name,
             image {
               asset-> {
                 _id,
