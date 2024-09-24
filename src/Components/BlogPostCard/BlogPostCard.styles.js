@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const BlogPost = styled.article`
+  position: relative;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
@@ -56,8 +57,14 @@ export const BlogMeta = styled.div`
 `;
 
 export const CategorySpan = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #b586f7;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50px;
   font-size: 0.8rem;
-  color: #666;
 `;
 
 export const DateSpan = styled.span`
