@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { PrimaryButton } from "../_Common/common.styles";
 import { ModalOverlay, ModalContent, Form, FormTitle, FormSubTitle, FlexRow, InputWrapper, InputField, SubmitButton, CloseButton } from "./ScheduleButton.styles";
 
-export default function ScheduleButton ({ isOn }) {
+export default function ScheduleButton ({ isOn, alt }) {
     const [showModal, setShowModal] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -56,7 +56,7 @@ export default function ScheduleButton ({ isOn }) {
 
   return (
     <>
-      <PrimaryButton isOn={isOn} onClick={handleButtonClick} role="button" title="Schedule">
+      <PrimaryButton alt={alt} isOn={isOn} onClick={handleButtonClick} role="button" title="Schedule">
         {t('buttonText.scheduling')}
       </PrimaryButton>
       {showModal && (

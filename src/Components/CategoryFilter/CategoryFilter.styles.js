@@ -19,14 +19,18 @@ export const CategoryButton = styled.button`
     ${({ isSelected, children }) =>
     isSelected &&
     css`
-      background-color: ${['All', 'Tous'].includes(children) ? 'black' : '#C07FFD'};
-      color: ${['All', 'Tous'].includes(children) ? 'white' : 'black'};
+      background-color: ${['All', 'Tous'].includes(children) ? 'black' : '#FF1493'};
+      color: ${['All', 'Tous'].includes(children) ? 'white' : 'white'};
+      border: ${['All', 'Tous'].includes(children) ? '1px solid black' : '1px solid #FF1493'};
+        font-weight: 600;
     `}
 
   &:hover {
     background-color: ${props =>
-      ['All', 'Tous'].includes(props.children) ? 'black' : '#C07FFD'};
+      ['All', 'Tous'].includes(props.children) ? 'black' : '#FF1493'};
     color: ${props =>
-      ['All', 'Tous'].includes(props.children) ? 'white' : 'black'};
+      ['All', 'Tous'].includes(props.children) ? 'white' : 'white'};
+      border: ${props =>
+      ['All', 'Tous'].includes(props.children) ? '1px solid black' : '1px solid #FF1493'};
   }
 `;

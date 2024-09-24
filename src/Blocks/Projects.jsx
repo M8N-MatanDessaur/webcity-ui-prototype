@@ -70,9 +70,10 @@ export default function Projects() {
 
     return (
         <div id="portfolio" style={{
-            padding: "3rem",
+            padding: "1rem",
             maxWidth: "1400px",
             margin: "0 auto",
+            width: "90%",
             position: "relative",
         }}>
             <Heading>{t('mainText.portfolio')}</Heading>
@@ -91,7 +92,7 @@ export default function Projects() {
                             placeholder="blurred"
                         />
                     ))}
-                  <YourProjectCTA />
+                  <YourProjectCTA alt={true} />
                 </Masonry>
             </ResponsiveMasonry>
         </div>

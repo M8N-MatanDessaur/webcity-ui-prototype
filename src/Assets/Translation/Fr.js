@@ -6,8 +6,10 @@ export default {
     },
     mainText: {
         slogan: 'Nous construisons des sites Web',
-        slogan1: 'sur mesure pour votre entreprise',
-        slogan2: 'Faire de votre vision, notre œuvre d\'art',
+        tailored: 'sur mesure',
+        slogan1: 'pour votre entreprise',
+        slogan2: 'Faire de votre vision, notre',
+        workOfArt: 'œuvre d\'art',
         offeringText: 'Webcity est une agence de conception et de développement Web offrant un service clé-en-main. Nous créons des sites Web, des applications Web et des expériences Web. Satisfaction garantie à 100 %.',
         offeringText2: '— Nous offrons une solution complète prête à l\'emploi pour votre entreprise.',
         portfolio: 'Découvrez Nos Chefs-d\'Œuvre',

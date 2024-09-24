@@ -23,3 +23,14 @@ export const CTAText = styled.p`
     margin-bottom: 15px;
   }
 `;
+
+export const BlurerdBackground = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: #ffffffa0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+`;

@@ -3,7 +3,7 @@ import Blob from "../Blob/Blob";
 import {YourProject, BlurerdContainer} from './YourProjectCTA.styles';
 import { useTranslation } from "react-i18next";
 
-export default function YourProjectCTA() {
+export default function YourProjectCTA({alt}) {
     const { t } = useTranslation();
     return (
         <YourProject>
@@ -11,7 +11,7 @@ export default function YourProjectCTA() {
             <h3>{t('mainText.yourProject')}</h3>
             <p>{t('mainText.yourProjectText')}</p>
             <div>
-                <ScheduleButton isOn={true} />
+                <ScheduleButton isOn={true} alt={alt} />
             </div>
             <BlurerdContainer>
                 <Blob height="300" width="300" />

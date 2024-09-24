@@ -14,25 +14,37 @@ export const fadeInAnimation = keyframes`
 export const Headline = styled.h1`
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 600;
     text-align: center;
     padding: 2rem;
     color: var(--text-color);
     width: fit-content;
     height: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     animation: ${fadeInAnimation} 500ms ease-in;
 
+    & span {
+      display: inline-block;
+      color: #FF1493;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    @media (max-width: 1440px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 4rem;
+    }
+
     @media (max-width: 768px) {
-      font-size: 2.5rem;
-      padding: 1rem;
+      font-size: 3rem;
+      padding: 0.2rem;
     }
 
     @media (max-width: 320px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 `;
 
@@ -70,9 +82,9 @@ export const AltHeading = styled.h2`
 `;
 
 export const SubHeading = styled.h3`
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: center;
   color: var(--text-color);
@@ -82,6 +94,22 @@ export const SubHeading = styled.h3`
   align-items: center;
   justify-content: center;
   animation: ${fadeInAnimation} 500ms ease-in;
+  font-style: italic;
+
+  & span {
+    display: inline-block;
+    color: #FF1493;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -100,7 +128,7 @@ export const SubHeading = styled.h3`
 export const Paragraph = styled.p`
     font-size: 1rem;
     color: var(--text-color);
-    max-width: 80%;
+    max-width: 960px;
 `;
 
 export const Blockquote = styled.blockquote`
@@ -143,7 +171,6 @@ export const FluidContainer = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -187,7 +214,7 @@ export const BlocksContainer = styled.div`
     height: max-content;
     padding: 150px 2rem;
     position: relative;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 
     @media (max-width: 768px) {
@@ -212,8 +239,8 @@ export const BlocksContainer = styled.div`
   min-height: 100vh;
   width: 100%;
   background-image: 
-      linear-gradient(rgba(181, 134, 247, 0.1) 1px, transparent 1px), 
-      linear-gradient(to right, rgba(181, 134, 247, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
+  linear-gradient(rgba(255, 20, 147, 0.05) 1px, transparent 1px), 
+  linear-gradient(to right, rgba(255, 20, 147, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
   background-position: 0 0, 0 0;
   background-size: 20px 20px, 20px 20px;
   background-repeat: repeat, repeat;
@@ -288,16 +315,13 @@ export const PrimaryButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  border-radius: 50px;
   backdrop-filter: blur(5px);
-  background-color: #fff;
-  color: #000;
-  border-radius: 26px;
-  box-shadow: inset -8px -8px 16px 0px rgba(204, 204, 204, 0.6),
-  inset 0px 11px 28px 0px rgb(255, 255, 255);
-  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 999px;
+  border: none;
+  background-color: ${({ alt }) => (alt ? "#000" : "#FF1493")};
+  font-size: 1.5rem;
   font-weight: 300;
-  border: 1px solid #00000020;
   outline: none;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
@@ -312,14 +336,51 @@ export const PrimaryButton = styled.button`
 
   @media (max-width: 768px) {
     width: max-content;
-    font-size: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    width: max-content;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 `;
+
+export const SecondaryButton = styled(PrimaryButton)`
+  background-color: #000;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+
+   @media (max-width: 768px) {
+    width: max-content;
+    font-size: 1.2rem;
+  }
+  `;
+
+export const TertiaryButton = styled(SecondaryButton)`
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  height: 4rem;
+  width: 4rem;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+
+   @media (max-width: 768px) {
+    width: max-content;
+    font-size: 1.2rem;
+  }
+
+  & svg {
+    fill: #000;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  `;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  `;
 
 export const QuotedText = styled.q`
   font-family: Poppins, sans-serif;

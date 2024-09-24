@@ -32,10 +32,28 @@ const responsiveMaxWidth = `
 export const Article = styled.article`
   ${responsiveMaxWidth}
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 4rem;
   background-color: white;
   box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+`;
+
+export const BlogInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -75,12 +93,20 @@ export const MetaData = styled.div`
 export const Categories = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  width: 20%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 export const Category = styled.span`
-  background-color: #c07ffd;
+  background-color: #FF1493;
+  font-weight: 600;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -89,6 +115,7 @@ export const Category = styled.span`
 
 export const Content = styled.div`
   line-height: 1.6;
+  margin: 0 auto;
 
   p {
     margin-bottom: 1rem;
@@ -119,12 +146,8 @@ export const Content = styled.div`
 export const BlogHeadline = styled.h1`
   ${responsiveMaxWidth}
   background: white;
-  padding: 2rem;
-  position: absolute;
-  bottom: -36px;
   color: var(--text-color);
-  font-size: 2.5rem;
-
+  font-size: 2.3rem;
   border-radius: 10px;
 
   @media (max-width: 860px) {
@@ -134,6 +157,28 @@ export const BlogHeadline = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
+`;
+
+export const BlogPostImage = styled.img`
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+`;
+
+export const AuthorSectionContainer = styled.div`
+width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const AuthorSection = styled.div`
@@ -166,38 +211,61 @@ export const AuthorInfo = styled.div`
 `;
 
 export const ShareButton = styled.button`
- font-family: Poppins, sans-serif;
-    background-color: var(--background-color);
-    border: none;
-    padding: 15px;
-    position: absolute;
-  top: 1rem;
-  right: 1rem;
-    z-index: 998;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    border: 1px solid var(--text-color);
-      svg {
-        width: 1.3rem;
-        height: 1.3rem;
-        transform: ${props => (props.isClicked ? "scaleY(-1)" : "none")};
-        transition: transform 0.3s ease-in-out;
+font-family: Poppins, sans-serif;
+  background-color: #ffffff94;
+  backdrop-filter: blur(10px);
+  border: none;
+  padding: 1rem ;;
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  z-index: 998;
+  border-radius: 50px;
+  border: 1px solid var(--text-color);
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  span {
+   font-size: 1.6rem;
+  color: var(--text-color);
+  }
+  &:hover {
+      background-color: black;
+    & svg {
+      fill: white;
     }
+    & span {
+      color: white;
+    }
+      color: white;
+  }
+  &:active {
+    opacity: 0.8
+  }
 
-    &:hover {
-    background-color: black;
-        & svg {
-          fill: white;
-        }
+   @media (max-width: 768px) {
+   top: 25px;
+    right: 25px;
+    font-size: 1rem;
+    & span {
+      font-size: 1.2rem;
     }
+  }
 
-    &:active {
-        opacity: 0.8;
+  @media (max-width: 380px) {
+    font-size: 0.8rem;
+    padding: 0.8rem 2rem;
+    & span {
+      font-size: 1rem;
     }
-
-    @media (max-width: 768px) {
-        width: 40px;
-        height: 40px;
-        padding: 9px;
-    }
+  }
 `;

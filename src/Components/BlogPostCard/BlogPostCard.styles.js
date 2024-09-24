@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const BlogPost = styled.article`
+  position: relative;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
   background-color: #fff;
+  min-height: 400px;
 
   &:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -48,16 +50,28 @@ export const BlogTitle = styled.h2`
 `;
 
 export const BlogMeta = styled.div`
+position: absolute;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.8rem;
+  width: 100%;
   color: #666;
-  margin-bottom: 0.5rem;
+  padding: 1rem 2rem;
 `;
 
 export const CategorySpan = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #FF1493;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50px;
   font-size: 0.8rem;
-  color: #666;
 `;
 
 export const DateSpan = styled.span`
@@ -73,7 +87,6 @@ export const BlogExcerpt = styled.p`
 export const AuthorSection = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 1rem;
 `;
 
 export const AuthorImage = styled.img`

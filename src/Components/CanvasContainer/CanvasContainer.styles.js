@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   --transition-duration: 0.5s;
   --transition-timing: ease-out;
-
+    border-radius: 15px;
   background: transparent;
   color: var(--text-color);	
   width: 100%;
@@ -13,6 +13,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 4rem 0;
   opacity: 0;
   transform: translateY(30px);
   margin-bottom: 2rem;

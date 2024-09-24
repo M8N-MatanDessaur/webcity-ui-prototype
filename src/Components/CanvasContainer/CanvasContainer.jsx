@@ -53,6 +53,7 @@ export default function CanvasContainer({ children }) {
                 height: "100%",
                 border: "none",
                 position: "absolute",
+                borderRadius: "15px",
                 top: 0,
                 left: 0,
                 zIndex: -1,
