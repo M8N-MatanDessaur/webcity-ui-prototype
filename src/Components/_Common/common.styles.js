@@ -40,7 +40,7 @@ export const Headline = styled.h1`
 
     @media (max-width: 768px) {
       font-size: 3rem;
-      padding: 1rem;
+      padding: 0.2rem;
     }
 
     @media (max-width: 320px) {
