@@ -5,8 +5,9 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; /* For Android, iOS Safari */
+  -ms-text-size-adjust: 100%; /* For Internet Explorer */
+  text-size-adjust: 100%; /* Standard property */
   border-collapse: collapse;
   overflow-x: hidden;
 }
