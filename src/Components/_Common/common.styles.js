@@ -39,12 +39,12 @@ export const Headline = styled.h1`
     }
 
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: 3rem;
       padding: 1rem;
     }
 
     @media (max-width: 320px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 `;
 
@@ -239,8 +239,8 @@ export const BlocksContainer = styled.div`
   min-height: 100vh;
   width: 100%;
   background-image: 
-      linear-gradient(rgba(181, 134, 247, 0.1) 1px, transparent 1px), 
-      linear-gradient(to right, rgba(181, 134, 247, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
+  linear-gradient(rgba(255, 20, 147, 0.05) 1px, transparent 1px), 
+  linear-gradient(to right, rgba(255, 20, 147, 0.1) 1px, rgba(255, 255, 255, 0) 1px);
   background-position: 0 0, 0 0;
   background-size: 20px 20px, 20px 20px;
   background-repeat: repeat, repeat;
@@ -345,6 +345,39 @@ export const PrimaryButton = styled.button`
     font-size: 0.9rem;
   }
 `;
+
+export const SecondaryButton = styled(PrimaryButton)`
+  background-color: #000;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  `;
+
+export const TertiaryButton = styled(SecondaryButton)`
+  background-color: transparent;
+  aspect-ratio: 1/1;
+  height: 4rem;
+  width: 4rem;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.5rem;
+
+  font-size: 1.5rem;
+
+  & svg {
+    fill: #000;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  `;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  `;
 
 export const QuotedText = styled.q`
   font-family: Poppins, sans-serif;

@@ -13,6 +13,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 4rem 0;
   opacity: 0;
   transform: translateY(30px);
   margin-bottom: 2rem;

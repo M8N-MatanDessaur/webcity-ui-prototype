@@ -129,7 +129,7 @@ export const FlexRow = styled.div`
 
 export const SubmitButton = styled.button`
   padding: 1.3rem 3rem;
-  background-color: #C07FFD;
+  background-color: #FF1493;
   color: #fff;
   border: none;
   border-radius: 50px;

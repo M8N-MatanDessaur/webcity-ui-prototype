@@ -25,7 +25,7 @@ export default function App() {
   document.documentElement.style.setProperty("--foreground-color", "#f5f5f5");
   document.documentElement.style.setProperty("--border-color", "#00000035");
   document.documentElement.style.setProperty("--accent-color", "#00000010");
-  document.documentElement.style.setProperty("--blurCardColor", "#f5f5f590");
+  document.documentElement.style.setProperty("--blurCardColor", "#ffffffA0");
 
   return (
     <I18nextProvider i18n={i18n}>
