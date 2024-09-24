@@ -28,9 +28,19 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-const KeywordsBackground = ({ language = 'en' }) => {
+const getBrowserLanguage = () => {
+  const language = navigator.language || navigator.userLanguage;
+  return language.split('-')[0]; // This will return 'en' from 'en-US' or 'fr' from 'fr-FR'
+};
+
+const KeywordsBackground = () => {
+  const language = useMemo(() => {
+    const browserLang = getBrowserLanguage();
+    return keywords[browserLang] ? browserLang : 'en';
+  }, []);
+
   const shuffledKeywordSets = useMemo(() => {
-    const currentKeywords = keywords[language] || keywords.en;
+    const currentKeywords = keywords[language];
     return [...Array(5)].map(() => {
       let shuffled = shuffleArray(currentKeywords);
       // Ensure no consecutive repetitions
