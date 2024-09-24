@@ -115,7 +115,6 @@ export const Category = styled.span`
 
 export const Content = styled.div`
   line-height: 1.6;
-  max-width: 960px;
   margin: 0 auto;
 
   p {
