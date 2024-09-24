@@ -337,12 +337,7 @@ export const PrimaryButton = styled.button`
 
   @media (max-width: 768px) {
     width: max-content;
-    font-size: 1rem;
-  }
-
-  @media (max-width: 480px) {
-    width: max-content;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -352,6 +347,11 @@ export const SecondaryButton = styled(PrimaryButton)`
   margin-top: 1rem;
   padding: 1rem 2rem;
   font-size: 1.5rem;
+
+   @media (max-width: 768px) {
+    width: max-content;
+    font-size: 1.2rem;
+  }
   `;
 
 export const TertiaryButton = styled(SecondaryButton)`
@@ -362,8 +362,12 @@ export const TertiaryButton = styled(SecondaryButton)`
   color: #000;
   border: 2px solid #000;
   padding: 0.5rem;
-
   font-size: 1.5rem;
+
+   @media (max-width: 768px) {
+    width: max-content;
+    font-size: 1.2rem;
+  }
 
   & svg {
     fill: #000;
