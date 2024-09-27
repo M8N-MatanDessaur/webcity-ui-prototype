@@ -131,17 +131,15 @@ export const Paragraph = styled.p`
     max-width: 960px;
 `;
 
-export const Blockquote = styled.blockquote`
+export const Blockquote = styled.div`
   width: 100vw;
   height: 100%;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   background: var(--blurCardColor);
   backdrop-filter: blur(5px);
-  padding: 30px 20rem;
   font-size: 1.6rem;
   font-weight: 300;
-  text-align: center;
   line-height: 1.5;
   position: relative;
   display: flex;
@@ -159,9 +157,70 @@ export const Blockquote = styled.blockquote`
     transform: translateY(0);
   }
 
-  @media (max-width: 768px) {
+  & p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 990px;
+    padding: 0 2rem;
+    text-align: center;
+
+    @media (max-width: 1440px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  & q {
     font-size: 1.2rem;
-    padding: 30px 30px;
+    font-weight: 300;
+    margin-top: 1rem;
+    font-style: italic;
+    max-width: 960px;
+    padding: 0 2rem;
+
+    &:before {
+      content: "— ";
+    }
+
+    &:after {
+      content: "";
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
+  }
+
+
+  & h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+     text-align: center;
+     padding: 0 2rem;
+
+    @media (max-width: 1440px) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 `;
 

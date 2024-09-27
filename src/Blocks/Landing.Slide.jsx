@@ -24,7 +24,9 @@ const Landing = () => {
       </FluidContainer>
       <CanvasContainer>
         <Blockquote>
-          {t('mainText.offeringText')} {t('mainText.offeringText2')}
+          <h2>{t('mainText.offeringTitle')}</h2>
+          <p>{t('mainText.offeringText')}</p>
+          <q>{t('mainText.offeringText2')}</q>
           <ButtonsContainer>
           <PortfolioButton isOn={true} />
           <TertiaryButton isOn={true} role="button" title="email us">
