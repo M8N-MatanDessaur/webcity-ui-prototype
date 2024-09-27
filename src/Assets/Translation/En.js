@@ -14,7 +14,7 @@ export default {
         workOfArt: 'work of art',
         offeringTitle: 'Custom websites that turn visitors into customers.',
         offeringText: 'We specialize in web design, development, and user experience optimization. From business sites to complex web apps, we deliver tailored digital solutions that align with your goals and drive results.',
-        offeringText2: 'Offering your business a full ready to roll solution for your business.',
+        offeringText2: 'Offering your business a full ready to roll solution.',
         portfolio: 'Discover Our Masterpieces',
         commingSoon: 'Coming soon ...',
         struggle: 'Struggling to display your most significant work to the world?',
