@@ -33,5 +33,6 @@ export const Button = styled.button`
     @media (max-width: 768px) {
         bottom: 25px;
         left: 25px;
+        padding: 8px;
     }
 `;

@@ -6,7 +6,7 @@ export const FloatingHeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    width: 90%;
+    width: 85%;
     max-width: 960px;
     position: fixed;
     top: 25px;
