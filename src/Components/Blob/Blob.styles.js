@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const colors = ["#C07FFD", "#FF8472", "#FFBB72"];
+const colors = ["#ff9900", "#ff00a8", "#ff9900"];
 
 export const liquidAnimation = keyframes`
   0% {
