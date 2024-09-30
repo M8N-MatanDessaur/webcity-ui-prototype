@@ -5,6 +5,10 @@ export const CategoryFilterWrapper = styled.div`
   gap: 1rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
+justify-content: center;
+  position: sticky;
+    top: 120px;
+    z-index: 88;
 `;
 
 export const CategoryButton = styled.button`

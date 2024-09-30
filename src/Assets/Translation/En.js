@@ -6,6 +6,10 @@ export default {
       about: 'About',
       contact: 'Contact',
     },
+    header:{
+        blogs: 'Blogs',
+        cta: 'Book now',
+    },
     mainText: {
         slogan: 'We build websites',
         tailored: 'tailored',

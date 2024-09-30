@@ -39,10 +39,10 @@ export const Keyword = styled.div`
   &::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -3px;  
+    left: -3px; 
+    right: -3px; 
+    bottom: -3px; 
     background: linear-gradient(45deg, #FFD700, #FF8C00, #FF1493, #8A2BE2);
     border-radius: 9999px;
     z-index: -1;

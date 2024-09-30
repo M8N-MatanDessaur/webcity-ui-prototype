@@ -3,21 +3,15 @@
   "name": "webcity",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "webcity-logo-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "webcity-logo-icon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "webcity-logo-192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "webcity-logo-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "type": "image/svg+xml"
     }
   ],
   "start_url": ".",

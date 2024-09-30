@@ -2,11 +2,9 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
   font-size: 1.6rem;
-  color: var(--text-color);
   font-weight: 500;
   text-transform: capitalize;
   display: block;
-  color: var(--text-color);
 
 @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -18,43 +16,20 @@ export const Title = styled.h1`
 `;
 
 export const Indicator = styled.div`
-    background-color: var(--background-color);
     height: 60px;
     border: none;
-    padding: 15px;
     position: fixed;
-    top: 35px;
+    bottom: 35px;
     right: 35px;
+    color: #FF1493;
     z-index: 998;
     -webkit-border-radius: 50px;
-    border-radius: 50px;
-    border: 1px solid var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-        background-color: var(--text-color);
-        & ${Title} {
-            color: var(--background-color);
-        }
-        & svg {
-            fill: var(--background-color);
-        }
-    }
-    &:active {
-        background-color: var(--background-color);
-    }
 
     @media (max-width: 768px) {
-        padding: 10px 20px;
-        height: 50px;
-        top: 25px;
-        right: 25px;
-    }
-
-    @media (max-width: 380px) {
-        padding: 10px 20px;
-        top: 25px;
+        bottom: 25px;
         right: 25px;
         height: 40px;
     }

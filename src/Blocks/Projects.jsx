@@ -73,7 +73,7 @@ export default function Projects() {
             padding: "1rem",
             maxWidth: "1400px",
             margin: "0 auto",
-            width: "90%",
+            width: "100%",
             position: "relative",
         }}>
             <Heading>{t('mainText.portfolio')}</Heading>

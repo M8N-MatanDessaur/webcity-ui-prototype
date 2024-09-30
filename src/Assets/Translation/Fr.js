@@ -4,6 +4,10 @@ export default {
       about: 'À propos',
       contact: 'Contact',
     },
+    header:{
+        blogs: 'Articles',
+        cta: 'Contactez-nous',
+    },
     mainText: {
         slogan: 'Nous construisons des sites Web',
         tailored: 'sur mesure',

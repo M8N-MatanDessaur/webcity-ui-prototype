@@ -446,7 +446,8 @@ export const QuotedText = styled.q`
   font-size: 1.8rem;
   font-weight: 200;
   margin-bottom: 0.5rem;
- font-style: italic;
+  font-style: italic;
+  color: #ff00a8;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;

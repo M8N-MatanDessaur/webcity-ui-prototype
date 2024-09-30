@@ -4,7 +4,7 @@ export const Sidebar = styled.aside`
   flex: 1;
   height: max-content;
   position: sticky;
-  top: 100px;
+  top: 120px;
 `;
 
 export const SidebarHeading = styled.h3`
