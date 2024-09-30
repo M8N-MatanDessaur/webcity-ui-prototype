@@ -30,6 +30,7 @@ export const ModalContent = styled.div`
 
   @media (max-width: 480px) {
     padding: 1rem;
+    width: 90%;
   }
 
   @media (max-width: 320px) {
