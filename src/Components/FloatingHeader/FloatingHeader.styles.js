@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 /* 
@@ -36,7 +37,7 @@ export const Nav = styled.nav`
     align-items: center;
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
     text-decoration: none;
     color: #000000;
     font-weight: 600;
@@ -44,7 +45,7 @@ export const NavItem = styled.a`
     cursor: pointer;
 `;
 
-export const NavCta = styled.a`
+export const NavCta = styled(Link)`
     padding: 0.5rem 1rem;
     background-color: #FF1493;
     color: #ffffff;

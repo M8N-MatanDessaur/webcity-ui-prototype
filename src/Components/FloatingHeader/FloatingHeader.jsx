@@ -9,6 +9,7 @@ import {
     NavCta
 } from './FloatingHeader.styles';
 import LogoImage from '../../Assets/Images/webcity-logo.svg';
+import { Link } from 'react-router-dom';
 
 export default function FloatingHeader() {
     const { t } = useTranslation();
@@ -21,10 +22,10 @@ export default function FloatingHeader() {
 
     return (
         <FloatingHeaderContainer>
-            <Logo src={LogoImage} alt="Logo" />
+            <Link to={"/"}><Logo src={LogoImage} alt="Logo" /></Link>
             <Nav>
-                <NavItem href="/blogs">{t('header.blogs')}</NavItem>
-                <NavCta href="#" onClick={handleCtaClick}>{t('header.cta')}</NavCta>
+                <NavItem to="/blogs">{t('header.blogs')}</NavItem>
+                <NavCta onClick={handleCtaClick}>{t('header.cta')}</NavCta>
             </Nav>
         </FloatingHeaderContainer>
     );
