@@ -380,7 +380,7 @@ export const PrimaryButton = styled.button`
   border: none;
   background-color: ${({ alt }) => (alt ? "#000" : "#FF1493")};
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 600;
   outline: none;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
