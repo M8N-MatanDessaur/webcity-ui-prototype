@@ -1,20 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-/* 
-    FloatingHeaderContainer,
-    Logo,
-    Nav,
-    NavItem,
-    NavCta
-*/
-
 export const FloatingHeaderContainer = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    width: 100%;
+    width: 90%;
     max-width: 960px;
     position: fixed;
     top: 25px;
