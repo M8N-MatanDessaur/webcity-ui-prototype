@@ -16,8 +16,44 @@ import MoreTools from "./Pages/ToolboxPages/MoreTools";
 import ToolboxPage from "./Pages/ToolboxPage";
 import BlogsPage from "./Pages/BlogsPage";
 import BlogPost from "./Components/BlogPost/BlogPost";
+import FloatingHeader from "./Components/FloatingHeader/FloatingHeader";
+import { ModalProvider, useModal } from './Hooks/useModal';
+import ContactModal from "./Components/ContactModal/ContactModal";
 
-// import TranslationButton from "./Components/TranslationButton/TranslationButton"; 
+// New component that uses useModal
+const AppContent = () => {
+  const { isModalOpen, setIsModalOpen } = useModal();
+
+  return (
+    <Router>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            background: "#fff",
+            color: "#121212",
+          },
+        }}
+      />
+      <FloatingHeader />
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/toolbox" element={<ToolboxPage />} />
+        <Route path="/aitools" element={<AiTools />} />
+        <Route path="/fontstools" element={<FontsTools />} />
+        <Route path="/gamestools" element={<GamesTools />} />
+        <Route path="/generatorstools" element={<GeneratorsTools />} />
+        <Route path="/illustrationstools" element={<IllustrationsTools />} />
+        <Route path="/moretools" element={<MoreTools />} />
+        <Route path="*" element={<MainPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default function App() {
   document.documentElement.style.setProperty("--background-color", "#FFFFFF");
@@ -29,33 +65,9 @@ export default function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Router>
-        <Toaster
-          position="top-right"
-          reverseOrder={false}
-          toastOptions={{
-            style: {
-              background: "#fff",
-              color: "#121212",
-            },
-          }}
-        />
-        <InteractiveLogo />
-        <ContactRevealButton />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/toolbox" element={<ToolboxPage />} />
-          <Route path="/aitools" element={<AiTools />} />
-          <Route path="/fontstools" element={<FontsTools />} />
-          <Route path="/gamestools" element={<GamesTools />} />
-          <Route path="/generatorstools" element={<GeneratorsTools />} />
-          <Route path="/illustrationstools" element={<IllustrationsTools />} />
-          <Route path="/moretools" element={<MoreTools />} />
-          <Route path="*" element={<MainPage />} />
-        </Routes>
-      </Router>
+      <ModalProvider>
+        <AppContent />
+      </ModalProvider>
     </I18nextProvider>
   );
 }

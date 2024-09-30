@@ -4,7 +4,6 @@ import Services from "../Blocks/Services.Slide";
 import AboutUs from "../Blocks/AboutUs";
 import FooterQuote from "../Components/FooterQuote/FooterQuote";
 import Projects from "../Blocks/Projects";
-import BlogsButton from "../Components/BlogsButton/BlogsButton";
 import { Helmet } from "react-helmet";
 
 export default function MainPage() {
@@ -19,7 +18,6 @@ export default function MainPage() {
         <meta property="og:url" content="https://www.webcity.dev" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </Helmet>
-      <BlogsButton />
       <Landing />
       <Services />
       <Projects />

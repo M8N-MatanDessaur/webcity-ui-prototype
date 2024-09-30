@@ -23,7 +23,7 @@ export const Indicator = styled.div`
     border: none;
     padding: 15px;
     position: fixed;
-    top: 35px;
+    bottom: 35px;
     right: 35px;
     z-index: 998;
     -webkit-border-radius: 50px;
@@ -48,13 +48,13 @@ export const Indicator = styled.div`
     @media (max-width: 768px) {
         padding: 10px 20px;
         height: 50px;
-        top: 25px;
+        bottom: 25px;
         right: 25px;
     }
 
     @media (max-width: 380px) {
         padding: 10px 20px;
-        top: 25px;
+        bottom: 25px;
         right: 25px;
         height: 40px;
     }
