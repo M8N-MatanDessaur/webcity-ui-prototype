@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { I18nextProvider } from "react-i18next";
+import { I18nextProvider, useTranslation } from "react-i18next";
 import i18n from "./Assets/Translation/i18n";
 
 import MainPage from "./Pages/MainPage";
@@ -23,6 +23,28 @@ import ContactModal from "./Components/ContactModal/ContactModal";
 // New component that uses useModal
 const AppContent = () => {
   const { isModalOpen, setIsModalOpen } = useModal();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Function to get the browser language
+    const getBrowserLanguage = () => {
+      const browserLang = navigator.language || navigator.userLanguage;
+      return browserLang.split('-')[0]; // Get the primary language code
+    };
+
+    // Set the initial language based on browser settings
+    const browserLang = getBrowserLanguage();
+    if (i18n.languages.includes(browserLang)) {
+      i18n.changeLanguage(browserLang);
+    } else {
+      i18n.changeLanguage('en'); // Fallback to English if browser language is not supported
+    }
+  }, [i18n]);
+
+  useEffect(() => {
+    // Set the lang attribute on the html tag
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   return (
     <Router>
