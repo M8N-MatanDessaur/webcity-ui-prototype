@@ -50,14 +50,47 @@ const BlogsPage = () => {
         return <FluidContainer><Heading>{t('blogs.noPosts')}</Heading></FluidContainer>;
     }
 
+    const schemaOrgBlogPage = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "webcity.dev Blog",
+        "description": "Expert insights on web design, development trends, and best practices",
+        "url": "https://www.webcity.dev/blogs",
+        "publisher": {
+            "@type": "Organization",
+            "name": "webcity.dev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.webcity.dev/logo.png"
+            }
+        },
+        "blogPost": posts.slice(0, visiblePosts).map(post => ({
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "datePublished": post.publishedAt,
+            "author": {
+                "@type": "Person",
+                "name": post.author?.name || "webcity.dev Team"
+            },
+            "url": `https://www.webcity.dev/blog/${post.slug}`
+        }))
+    };
+
     return (
         <WallpaperWrapper>
             <Helmet>
-                <meta name="description" content="webcity.dev blogs" />
-                <title>webcity.dev - Blogs</title>
-                <meta property="og:title" content="webcity.dev | Blogs" />
-                <meta property="og:description" content="webcity.dev blogs" />
+                <title>webcity.dev Blog | Insights on Web Design & Development</title>
+                <meta name="description" content="Explore webcity.dev's blog for expert insights on web design, development trends, and best practices. Stay updated with our latest articles and tips." />
+                <meta property="og:title" content="webcity.dev Blog | Web Design & Development Insights" />
+                <meta property="og:description" content="Explore webcity.dev's blog for expert insights on web design, development trends, and best practices. Stay updated with our latest articles and tips." />
                 <meta property="og:url" content="https://www.webcity.dev/blogs" />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="webcity.dev Blog | Web Design & Development Insights" />
+                <meta name="twitter:description" content="Expert insights on web design, development trends, and best practices. Discover our latest articles and tips for creating stunning websites." />
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaOrgBlogPage)}
+                </script>
             </Helmet>
             <BlocksContainer>
                 <BlogContentWrapper>
