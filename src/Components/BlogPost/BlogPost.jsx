@@ -133,11 +133,11 @@ const BlogPost = () => {
     <WallpaperWrapper>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
+        <meta name="description" content={title} />
 
         {/* Open Graph tags for social sharing */}
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
+        <meta property="og:description" content={title} />
         <meta property="og:image" content={mainImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -149,7 +149,7 @@ const BlogPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@webcitydev" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={finalPost.metaDescription || t('defaultMetaDescription')} />
+        <meta name="twitter:description" content={title} />
         <meta name="twitter:image" content={mainImageUrl} />
 
         {/* Keywords and canonical URL */}
