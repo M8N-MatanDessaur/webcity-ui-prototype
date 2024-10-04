@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '../BackButton/BackButton.styles';
 
 const breakpoints = {
   large: '1200px',
@@ -210,62 +211,16 @@ export const AuthorInfo = styled.div`
   }
 `;
 
-export const ShareButton = styled.button`
-font-family: Poppins, sans-serif;
-  background-color: #ffffff94;
-  backdrop-filter: blur(10px);
-  border: none;
-  padding: 1rem ;;
+export const ShareButton = styled(Button)`
   position: fixed;
-  top: 35px;
+  bottom: 35px;
   right: 35px;
-  z-index: 998;
-  border-radius: 50px;
-  border: 1px solid var(--text-color);
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--text-color);
-    text-decoration: none;
-  }
-  span {
-   font-size: 1.6rem;
-  color: var(--text-color);
-  }
-  &:hover {
-      background-color: black;
-    & svg {
-      fill: white;
-    }
-    & span {
-      color: white;
-    }
-      color: white;
-  }
-  &:active {
-    opacity: 0.8
-  }
+  left: auto;
 
-   @media (max-width: 768px) {
-   top: 25px;
-    right: 25px;
-    font-size: 1rem;
-    & span {
-      font-size: 1.2rem;
+  @media (max-width: 768px) {
+        bottom: 25px;
+        right: 25px;
+        left: auto;
+        padding: 8px;
     }
-  }
-
-  @media (max-width: 380px) {
-    font-size: 0.8rem;
-    padding: 0.8rem 2rem;
-    & span {
-      font-size: 1rem;
-    }
-  }
 `;
