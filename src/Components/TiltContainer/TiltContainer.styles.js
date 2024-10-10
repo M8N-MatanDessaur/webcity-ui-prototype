@@ -19,6 +19,7 @@ export const Tilt = styled.div`
     max-height: 50%;
     width: 40%;
     min-width: 600px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     background-color: #ffffffE0;
