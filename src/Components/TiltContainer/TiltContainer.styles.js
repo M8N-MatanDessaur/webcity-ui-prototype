@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Outside = styled.div`
     position: relative;
-    width: 100%;
+    width: 100VW;
     height: 100%;
     display: flex;
     align-items: center;
@@ -51,6 +51,7 @@ export const Tilt = styled.div`
 
     @media (max-width: 680px) {
         max-height: 500px;
+        min-width: unset;
         width: 90%;
         margin: 0 10px;
     }
