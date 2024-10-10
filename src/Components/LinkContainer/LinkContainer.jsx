@@ -4,8 +4,8 @@ import { Container, LinkTitle, LinkDescription } from "./LinkContainer.styles";
 
 export default function LinkContainer({title, description, link}) {
     return (
-        <Container>
-            <LinkTitle href={link} target="blank">{title}</LinkTitle>
+        <Container href={link} target="blank">
+            <LinkTitle>{title}</LinkTitle>
             <LinkDescription>{description}</LinkDescription>
         </Container>
     );

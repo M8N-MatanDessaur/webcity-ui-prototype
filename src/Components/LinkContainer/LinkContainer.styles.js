@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.a`
     position: relative;
     width:  100%;
     height: max-content;
@@ -32,7 +32,7 @@ export const Container = styled.div`
             border-bottom: none;
         }
 
-        & a {
+        & h3 {
             transform: scale(1.2) translateX(10px);
             transition: all 0.1s ease-in-out;
         }
@@ -49,7 +49,7 @@ export const Container = styled.div`
     }
     `;
 
-export const LinkTitle = styled.a`
+export const LinkTitle = styled.h3`
     color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 700;
