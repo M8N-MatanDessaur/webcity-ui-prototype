@@ -1,10 +1,9 @@
 import React from "react";
-import Blob from "../Blob/Blob";
 import BackButton from "../BackButton/BackButton";
 import { useTranslation } from "react-i18next";
 import PageIndicator from "../PageIndicator/PageIndicator";
 
-import { Container, Glassbox, CategoriesGrid, Category, CategoryTitle, BlurredOverlay } from "./Toolbox.styles";
+import { Container, Glassbox, CategoriesGrid, Category, CategoryTitle } from "./Toolbox.styles";
 
 const Categories = [
       {
@@ -55,7 +54,6 @@ export default function Toolbox() {
         </Glassbox>
         <BackButton link={""} />
         <PageIndicator pageName={t('toolbox.title')}/>
-        <Blob /><BlurredOverlay />
       </Container>
       
     );

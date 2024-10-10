@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     position: relative;
-    width: 650px;
+    width:  100%;
     height: max-content;
     padding: 10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    background: var(--foreground-color);
+   background-color: #ffffffE0;
     opacity: 0.8;
     border-bottom: 1px solid var(--border-color);
 
@@ -19,9 +19,9 @@ export const Container = styled.div`
 
     &:hover {
         padding: 15px 20px;
-        border-bottom: 1px solid var(--text-color);
-        border-top: 1px solid var(--text-color);
-        background: var(--foreground-color);
+        border-bottom: 1px solid #FF149320;
+        border-top: 1px solid #FF149320;
+        background: #FF149320;
         box-shadow: 0px 40px 100px var(--accent-color);
 
         &:first-child {
@@ -33,7 +33,7 @@ export const Container = styled.div`
         }
 
         & a {
-            transform: scale(1.1) translateX(10px);
+            transform: scale(1.2) translateX(10px);
             transition: all 0.1s ease-in-out;
         }
 

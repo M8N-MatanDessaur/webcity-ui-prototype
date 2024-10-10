@@ -33,10 +33,7 @@ export const Glassbox = styled.div`
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    background: var(--foreground-color);
-    opacity: 0.8;
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-color: #00000000;
     `;
 
 export const CategoriesGrid = styled.div`
@@ -50,7 +47,7 @@ export const CategoriesGrid = styled.div`
     gap: 15px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--text-color) var(--foreground-color);
+    scrollbar-color: var(--foreground-color);
     &::-webkit-scrollbar {
         width: 12px;
     }
@@ -85,7 +82,8 @@ export const Category = styled.a`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--foreground-color);
+    background-color: #ffffffE0;
+    backdrop-filter: blur(5px);
     color: var(--text-color);
     font-size: 18px;
     font-weight: bold;
@@ -93,6 +91,7 @@ export const Category = styled.a`
     & svg {
         width: 30%;
         height: 30%;
+        fill: #FF1493;
     }
 
     &:hover {
