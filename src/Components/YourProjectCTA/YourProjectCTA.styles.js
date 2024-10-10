@@ -33,14 +33,14 @@ export const YourProject = styled.div`
 
 
     h3 {
-        font-family: Poppins, sans-serif;
+        font-family: "Outfit", sans-serif;
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
     }
 
     q {
-        font-family: Poppins, sans-serif;
+        font-family: "Outfit", sans-serif;
         font-size: 1rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
@@ -55,7 +55,7 @@ export const YourProject = styled.div`
     }
 
     p {
-        font-family: Poppins, sans-serif;
+        font-family: "Outfit", sans-serif;
         font-size: 1.2rem;
         max-width: 70%;
     }

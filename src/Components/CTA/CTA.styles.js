@@ -27,6 +27,7 @@ export const CTAText = styled.p`
 export const BlurerdBackground = styled.div`
   height: 100%;
   width: 100%;
+  padding: 1rem;
   background-color: #ffffffa0;
   display: flex;
   justify-content: center;

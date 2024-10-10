@@ -69,7 +69,7 @@ export const LogoIcon = styled.svg`
 `;
 
 export const LogoText = styled.input`
-  font-family: 'Poppins', sans-serif;
+  font-family: "Outfit", sans-serif;
   width: 100%;
   height: 100%;
   margin-top: 2px;

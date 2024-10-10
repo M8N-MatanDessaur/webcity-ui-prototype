@@ -12,7 +12,7 @@ export const fadeInAnimation = keyframes`
 `;
 
 export const Headline = styled.h1`
-    font-family: "Inter", sans-serif;
+    font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-size: 6rem;
     font-weight: 600;
@@ -60,7 +60,7 @@ export const Heading = styled.h2`
 `;
 
 export const AltHeading = styled.h2`
- font-family: "Inter", sans-serif;
+ font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-size: 3rem;
   font-weight: 600;
@@ -82,7 +82,7 @@ export const AltHeading = styled.h2`
 `;
 
 export const SubHeading = styled.h3`
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-size: 2rem;
   font-weight: 300;
@@ -134,7 +134,7 @@ export const Paragraph = styled.p`
 export const Blockquote = styled.div`
   width: 100vw;
   height: 100%;
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   background: var(--blurCardColor);
   backdrop-filter: blur(5px);
@@ -367,7 +367,7 @@ export const FadeImage = styled.img`
 `;
 
 export const PrimaryButton = styled.button`
-  font-family: Poppins, sans-serif;
+  font-family: "Outfit", sans-serif;
   display: ${({ isOn }) => (isOn ? "flex" : "none")};
   width: max-content;
   margin-top: 2rem;
@@ -442,7 +442,7 @@ export const ButtonsContainer = styled.div`
   `;
 
 export const QuotedText = styled.q`
-  font-family: Poppins, sans-serif;
+ font-family: "Outfit", sans-serif;
   font-size: 1.8rem;
   font-weight: 200;
   margin-bottom: 0.5rem;

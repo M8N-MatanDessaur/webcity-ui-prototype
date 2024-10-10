@@ -11,7 +11,7 @@ export const fadeIn = keyframes`
 `;
 
 export const Button = styled.button`
-font-family: Poppins, sans-serif;
+font-family: "Outfit", sans-serif;
   background-color: #ffffff94;
   backdrop-filter: blur(10px);
   border: none;

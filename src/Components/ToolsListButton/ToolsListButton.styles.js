@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-font-family: Poppins, sans-serif;
+font-family: "Outfit", sans-serif;
     background-color: var(--background-color);
     border: none;
     padding: 15px;
