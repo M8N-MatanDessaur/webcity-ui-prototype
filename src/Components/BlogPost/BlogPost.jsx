@@ -1,6 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
+
+// Import Prism core and theme
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
+
+// Base language (required for others)
+import 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+
+// Languages
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-markdown';
+
 import {
   Article,
   Categories,
@@ -15,7 +35,17 @@ import {
   ShareButton,
   BlogPostImage
 } from './BlogPost.styles';
-import { BlocksContainer, BlurredOverlay, ErrorContainer, FluidContainer, Heading, Headline, Paragraph, SubHeading, WallpaperWrapper } from '../_Common/common.styles';
+import {
+  BlocksContainer,
+  BlurredOverlay,
+  ErrorContainer,
+  FluidContainer,
+  Heading,
+  Headline,
+  Paragraph,
+  SubHeading,
+  WallpaperWrapper
+} from '../_Common/common.styles';
 import Blob from '../Blob/Blob';
 import { usePost } from '../../Hooks/UsePost';
 import BackButton from '../BackButton/BackButton';
@@ -25,6 +55,7 @@ import CTABlock from '../../Blocks/CTABlock';
 import { postsService } from '../../Services/posts'; // Assuming you have this service
 import RecentPostsSidebar from '../RecentPostsSidebar/RecentPostsSidebar';
 import { useRecentPosts } from '../../Hooks/useRecentPosts';
+import CodeBlock from './CodeBlock';
 
 const BlogPost = () => {
   const { slug } = useParams(); // Get the current slug from the URL parameters
@@ -125,6 +156,13 @@ const BlogPost = () => {
             ? <>{child.split('[cntctBtn]').map((part, index) => index === 0 ? <>{part}</> : <><CTABlock />{part}</>)}</>
             : child
         );
+      },
+    },
+    types: {
+      code: ({ value }) => {
+        if (!value?.code) return null;
+        const language = value.language || 'text';
+        return <CodeBlock code={value.code} language={language} />;
       },
     },
   };
