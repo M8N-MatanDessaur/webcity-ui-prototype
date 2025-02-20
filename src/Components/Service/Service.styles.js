@@ -77,7 +77,7 @@ export const ServiceTitle = styled.h3`
     font-weight: 600;
     color: var(--text-color);
     margin: 0;
-    background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -96,7 +96,6 @@ export const ServiceDescription = styled.p`
     max-width: 90%;
 
     @media (max-width: 940px) {
-        font-size: 0.9rem;
         max-width: 100%;
     }
 `;

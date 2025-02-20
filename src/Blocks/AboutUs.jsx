@@ -10,22 +10,6 @@ const AboutSection = styled.section`
     background: #fff;
     position: relative;
     overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -20%;
-        width: 70%;
-        height: 100%;
-        background: radial-gradient(
-            circle at center,
-            rgba(255, 20, 147, 0.03) 0%,
-            transparent 70%
-        );
-        transform: rotate(-15deg);
-        pointer-events: none;
-    }
 `;
 
 const Content = styled(motion.div)`

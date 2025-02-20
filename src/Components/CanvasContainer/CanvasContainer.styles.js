@@ -16,7 +16,7 @@ export const Container = styled.div`
   margin: 4rem 0;
   opacity: 0;
   transform: translateY(30px);
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   transition: opacity var(--transition-duration) var(--transition-timing),
               transform var(--transition-duration) var(--transition-timing);
 
