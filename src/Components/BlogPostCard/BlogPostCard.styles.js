@@ -2,22 +2,35 @@ import styled from 'styled-components';
 
 export const BlogPost = styled.article`
   position: relative;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: none;
+  border-radius: 16px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   background-color: #fff;
-  min-height: 400px;
+  min-height: 420px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
   &:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
   }
 `;
 
 export const BlogImageWrapper = styled.div`
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  }
 `;
 
 export const BlogImage = styled.img`
@@ -32,25 +45,35 @@ export const BlogImage = styled.img`
 `;
 
 export const BlogContent = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 `;
 
 export const BlogTitle = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  line-height: 1.4;
   
   a {
     color: var(--text-color);
     text-decoration: none;
+    background: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-size: 0px 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.3s ease-in-out;
     
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background-size: 100% 1px;
     }
   }
 `;
 
 export const BlogMeta = styled.div`
-position: absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
   display: flex;
@@ -66,12 +89,20 @@ export const CategorySpan = styled.span`
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: #FF1493;
+  background-color: rgba(255, 20, 147, 0.9);
+  backdrop-filter: blur(4px);
   color: #fff;
   font-weight: 600;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const DateSpan = styled.span`
@@ -80,8 +111,14 @@ export const DateSpan = styled.span`
 `;
 
 export const BlogExcerpt = styled.p`
-  font-size: 0.9rem;
-  color: #444;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.5rem 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const AuthorSection = styled.div`

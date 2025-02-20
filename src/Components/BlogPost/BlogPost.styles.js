@@ -213,14 +213,12 @@ export const AuthorInfo = styled.div`
 
 export const ShareButton = styled(Button)`
   position: fixed;
-  bottom: 35px;
-  right: 35px;
-  left: auto;
+  bottom: 105px;
+  left: 35px;
 
   @media (max-width: 768px) {
-        bottom: 25px;
-        right: 25px;
-        left: auto;
-        padding: 8px;
-    }
+    bottom: 70px;
+    left: 25px;
+    padding: 8px;
+  }
 `;
