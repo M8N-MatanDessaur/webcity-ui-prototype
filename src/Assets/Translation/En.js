@@ -108,5 +108,8 @@ export default {
 
     errorLoadingContent: 'Oops! The blog you are looking for is not available.',
     postNotFound: 'But that\'s okay! Check out one of our other blogs',
+    projects: {
+        viewProject: 'View Project'
+    },
   };
   

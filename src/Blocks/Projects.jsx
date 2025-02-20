@@ -1,100 +1,204 @@
-import React, { useEffect, useRef, useState } from "react";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import img1 from "../Assets/Images/media/1.jpg";
-import img2 from "../Assets/Images/media/2.jpg";
-import img3 from "../Assets/Images/media/3.jpg";
-import img4 from "../Assets/Images/media/4.jpg";
-import img5 from "../Assets/Images/media/5.jpg";
-import img1fr from "../Assets/Images/media/1fr.jpg";
-import img2fr from "../Assets/Images/media/2fr.jpg";
-import img3fr from "../Assets/Images/media/3fr.jpg";
-import img4fr from "../Assets/Images/media/4fr.jpg";
-import img5fr from "../Assets/Images/media/5fr.jpg";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import { FluidContainer, Heading } from "../Components/_Common/common.styles";
+import Project from "../Components/Project/Project";
 
-import {FadeImage, Heading} from "../Components/_Common/common.styles";
-import YourProjectCTA from "../Components/YourProjectCTA/YourProjectCTA";
+import groupeleclerc from "../Assets/Images/media/groupeleclerc.png";
+import cdc from "../Assets/Images/media/cdc.png";
+import whatsaround from "../Assets/Images/media/whatsaround.png";
+import builderio from "../Assets/Images/media/ice.png";
+
+const ProjectsSection = styled.section`
+    position: relative;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+`;
+
+const ProjectsHeader = styled.div`
+    padding: 0rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200%;
+        height: 100%;
+        z-index: -1;
+    }
+`;
+
+const CarouselContainer = styled.div`
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+`;
+
+const CarouselTrack = styled(motion.div)`
+    display: flex;
+    width: 100%;
+`;
+
+const Dots = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: #fff;
+`;
+
+const Dot = styled.button`
+    width: ${props => props.active ? '2rem' : '0.5rem'};
+    height: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    background: ${props => props.active ? 
+        'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)' : 
+        'rgba(0, 0, 0, 0.1)'};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+        background: ${props => props.active ?
+            'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)' :
+            'rgba(0, 0, 0, 0.2)'};
+    }
+`;
+
+const projectsList = [
+    {
+        title: "Groupe Leclerc",
+        description: {
+            en: "A modern website for an architecture & Design firm, featuring a clean design and intuitive navigation to showcase their services and projects.",
+            fr: "Un site web moderne pour une entreprise d'architecture et de conception, avec un design épuré et une navigation intuitive pour présenter leurs services et projets."
+        },
+        image: groupeleclerc,
+        url: "https://groupeleclerc.net/",
+        techStack: ["React", "Styled Components", "Sanity"]
+    },
+    {
+        title: "CDC Rivière-du-Nord",
+        description: {
+            en: "A modern website for community development, featuring resources and information about local initiatives, blogs, and programs.",
+            fr: "Un site web moderne pour le développement communautaire, offrant des ressources et des informations sur les initiatives, blogs et programmes locaux."
+        },
+        image: cdc,
+        url: "https://cdcrdn.org/",
+        techStack: ["React", "Styled Components", "Sanity", "Framer Motion"]
+    },
+    {
+        title: "Whatsaround Template",
+        description: {
+            en: "A showcase of modern web development capabilities using React, Styled Components, and Framer Motion.",
+            fr: "Une démonstration des capacités de développement web moderne utilisant React, Styled Components et Framer Motion."
+        },
+        image: whatsaround,
+        url: "https://whatsaround.netlify.app/",
+        techStack: ["React", "Styled Components", "Framer Motion", "Google Maps API", "MapBox"]
+    },
+    {
+        title: "Builder.io Template",
+        description: {
+            en: "A showcase of modern web development capabilities using the Builder.io platform for visual content management and Next.js for server-side rendering.",
+            fr: "Une démonstration des capacités de développement web moderne utilisant la plateforme Builder.io pour la gestion de contenu visuel et Next.js pour le rendu côté serveur."
+        },
+        image: builderio,
+        url: "https://builderio-site-demo.netlify.app/",
+        techStack: ["Builder.io", "Next.js", "Css modules", "Framer Motion", "MapBox"]
+    }
+];
 
 export default function Projects() {
     const { t, i18n } = useTranslation();
-    const isFrench = i18n.language === 'fr';
-    const images = isFrench ? [img1fr, img2fr, img3fr, img4fr, img5fr] : [img1, img2, img3, img4, img5];
-    const imgRefs = useRef([]);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const autoPlayDelay = 6000; // 8 seconds
 
-    const initializeObserver = () => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    } else {
-                        entry.target.classList.remove('fade-in');
-                    }
-                });
-            },
-            { threshold: 0.1, rootMargin: "0px 0px 100px 0px" }
+    const nextSlide = useCallback(() => {
+        setCurrentIndex(prevIndex => 
+            prevIndex === projectsList.length - 1 ? 0 : prevIndex + 1
         );
-
-        imgRefs.current.forEach((img) => {
-            if (img) {
-                observer.observe(img);
-            }
-        });
-
-        return observer;
-    };
-
-    useEffect(() => {
-        let observer = initializeObserver();
-
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            observer.disconnect();
-            window.removeEventListener('resize', handleResize);
-        };
     }, []);
 
     useEffect(() => {
-        const observer = initializeObserver();
+        let intervalId;
+        
+        if (isAutoPlaying) {
+            intervalId = setInterval(nextSlide, autoPlayDelay);
+        }
 
         return () => {
-            observer.disconnect();
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
         };
-    }, [windowWidth]);
+    }, [isAutoPlaying, nextSlide]);
+
+    const handleDotClick = (index) => {
+        setCurrentIndex(index);
+        setIsAutoPlaying(false);
+        // Resume auto-play after 10 seconds of user inactivity
+        setTimeout(() => setIsAutoPlaying(true), 10000);
+    };
+
+    const handleMouseEnter = () => {
+        setIsAutoPlaying(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsAutoPlaying(true);
+    };
 
     return (
-        <div id="portfolio" style={{
-            padding: "1rem",
-            maxWidth: "1400px",
-            margin: "0 auto",
-            width: "100%",
-            position: "relative",
-        }}>
-            <Heading>{t('mainText.portfolio')}</Heading>
-            <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 750: 2 }}
-                key={windowWidth} // Force re-render on window width change
+        <ProjectsSection id="projects">
+            <ProjectsHeader>
+                <Heading>
+                    {t("mainText.portfolio")}
+                </Heading>
+            </ProjectsHeader>
+            
+            <CarouselContainer 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
-                <Masonry>
-                    {images.map((img, index) => (
-                        <FadeImage
-                            key={index}
-                            ref={(el) => (imgRefs.current[index] = el)}
-                            src={img}
-                            alt={`img${index + 1}`}
-                            loading='lazy'
-                            placeholder="blurred"
+                <AnimatePresence mode="wait">
+                    <CarouselTrack
+                        key={currentIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <Project 
+                            title={projectsList[currentIndex].title} 
+                            description={projectsList[currentIndex].description[i18n.language]} 
+                            image={projectsList[currentIndex].image} 
+                            url={projectsList[currentIndex].url} 
+                            techStack={projectsList[currentIndex].techStack} 
                         />
-                    ))}
-                  <YourProjectCTA alt={true} />
-                </Masonry>
-            </ResponsiveMasonry>
-        </div>
+                    </CarouselTrack>
+                </AnimatePresence>
+            </CarouselContainer>
+
+            <Dots>
+                {projectsList.map((_, index) => (
+                    <Dot
+                        key={index}
+                        active={index === currentIndex}
+                        onClick={() => handleDotClick(index)}
+                    />
+                ))}
+            </Dots>
+        </ProjectsSection>
     );
 }

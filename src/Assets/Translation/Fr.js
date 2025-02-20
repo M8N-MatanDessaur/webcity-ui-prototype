@@ -3,6 +3,7 @@ export default {
       welcome: 'Bienvenue',
       about: 'À propos',
       contact: 'Contact',
+      viewProject: 'Voir le Projet'
     },
     header:{
         blogs: 'Articles',

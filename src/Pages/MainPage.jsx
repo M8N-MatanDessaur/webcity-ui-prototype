@@ -5,6 +5,8 @@ import AboutUs from "../Blocks/AboutUs";
 import FooterQuote from "../Components/FooterQuote/FooterQuote";
 import Projects from "../Blocks/Projects";
 import { Helmet } from "react-helmet";
+import Statistics from "../Components/Statistics/Statistics";
+import Testimonials from "../Components/Testimonials/Testimonials";
 
 export default function MainPage() {
   const schemaOrgWebsite = {
@@ -69,7 +71,9 @@ export default function MainPage() {
       </Helmet>
       <Landing />
       <Services />
+      {/* <Statistics /> */}
       <Projects />
+      {/* <Testimonials /> */}
       <AboutUs />
       <FooterQuote />
     </>
