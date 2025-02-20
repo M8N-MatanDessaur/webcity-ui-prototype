@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 import { ProjectSlide, ProjectImage, ProjectContent, ProjectTitle, ProjectDescription, ProjectLink, TechStack, TechTag } from './Project.styles';
 
 const Project = ({ title, description, image, url, techStack = [] }) => {
     const controls = useAnimation();
     const imageRef = useRef(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const { t } = useTranslation(); // Use the hook to get the t function
 
     // Handle window resize
     useEffect(() => {
@@ -131,7 +133,7 @@ const Project = ({ title, description, image, url, techStack = [] }) => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    View Project →
+                    {t('projects.viewProject')} →
                 </ProjectLink>
             </ProjectContent>
         </ProjectSlide>

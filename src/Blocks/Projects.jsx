@@ -79,18 +79,18 @@ const projectsList = [
     {
         title: "Groupe Leclerc",
         description: {
-            en: "A modern website for a construction company, featuring a clean design and intuitive navigation to showcase their services and projects.",
-            fr: "Un site web moderne pour une entreprise de construction, avec un design épuré et une navigation intuitive pour présenter leurs services et projets."
+            en: "A modern website for an architecture & Design firm, featuring a clean design and intuitive navigation to showcase their services and projects.",
+            fr: "Un site web moderne pour une entreprise d'architecture et de conception, avec un design épuré et une navigation intuitive pour présenter leurs services et projets."
         },
         image: groupeleclerc,
         url: "https://groupeleclerc.net/",
         techStack: ["React", "Styled Components", "Sanity"]
     },
     {
-        title: "CDCRDN",
+        title: "CDC Rivière-du-Nord",
         description: {
-            en: "A comprehensive platform for community development, offering resources and information about local initiatives and programs.",
-            fr: "Une plateforme complète pour le développement communautaire, offrant des ressources et des informations sur les initiatives et programmes locaux."
+            en: "A modern website for community development, featuring resources and information about local initiatives, blogs, and programs.",
+            fr: "Un site web moderne pour le développement communautaire, offrant des ressources et des informations sur les initiatives, blogs et programmes locaux."
         },
         image: cdc,
         url: "https://cdcrdn.org/",
@@ -122,7 +122,7 @@ export default function Projects() {
     const { t, i18n } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const autoPlayDelay = 8000; // 8 seconds
+    const autoPlayDelay = 6000; // 8 seconds
 
     const nextSlide = useCallback(() => {
         setCurrentIndex(prevIndex => 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 import styled from 'styled-components';
@@ -204,6 +204,25 @@ const members = [
 export default function MembersGrid() {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState('matan');
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const autoPlayDelay = 5000; // 8 seconds
+
+    useEffect(() => {
+        let interval;
+        if (isAutoPlaying) {
+            interval = setInterval(() => {
+                // Find current index and get next member
+                const currentIndex = members.findIndex(member => member.id === activeTab);
+                const nextIndex = (currentIndex + 1) % members.length;
+                setActiveTab(members[nextIndex].id);
+            }, autoPlayDelay);
+        }
+        return () => clearInterval(interval);
+    }, [isAutoPlaying, activeTab, members]);
+
+    // Pause auto-rotation on hover
+    const handleMouseEnter = () => setIsAutoPlaying(false);
+    const handleMouseLeave = () => setIsAutoPlaying(true);
 
     const cardVariants = {
         enter: { x: 20, opacity: 0 },
@@ -212,13 +231,16 @@ export default function MembersGrid() {
     };
 
     return (
-        <Container>
+        <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <TabList>
                 {members.map(member => (
                     <TabButton
                         key={member.id}
                         isActive={activeTab === member.id}
-                        onClick={() => setActiveTab(member.id)}
+                        onClick={() => {
+                            setActiveTab(member.id);
+                            setIsAutoPlaying(false);
+                        }}
                         color={member.solidColor}
                     >
                         {member.name}
