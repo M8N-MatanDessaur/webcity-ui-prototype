@@ -6,7 +6,7 @@ import { AltHeading, Paragraph, Separator } from "../Components/_Common/common.s
 import MembersGrid from "../Components/MembersGrid/MembersGrid";
 
 const AboutSection = styled.section`
-    padding: 6rem 2rem;
+    padding: 2rem 2rem;
     background: #fff;
     position: relative;
     overflow: hidden;

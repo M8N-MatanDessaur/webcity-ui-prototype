@@ -84,7 +84,7 @@ export const ProjectContent = styled.div`
     }
 
     @media (max-width: 768px) {
-        padding: 1.5rem;
+        padding: 1.5rem 4.25rem;
     }
 `;
 
