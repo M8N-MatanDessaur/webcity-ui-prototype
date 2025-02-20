@@ -158,7 +158,8 @@ export const TechStack = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
+    max-width: 500px;
 
     @media (max-width: 1024px) {
         justify-content: center;

@@ -78,28 +78,40 @@ const Dot = styled.button`
 const projectsList = [
     {
         title: "Groupe Leclerc",
-        description: "A modern website for a construction company, featuring a clean design and intuitive navigation to showcase their services and projects.",
+        description: {
+            en: "A modern website for a construction company, featuring a clean design and intuitive navigation to showcase their services and projects.",
+            fr: "Un site web moderne pour une entreprise de construction, avec un design épuré et une navigation intuitive pour présenter leurs services et projets."
+        },
         image: groupeleclerc,
         url: "https://groupeleclerc.net/",
         techStack: ["React", "Styled Components", "Sanity"]
     },
     {
         title: "CDCRDN",
-        description: "A comprehensive platform for community development, offering resources and information about local initiatives and programs.",
+        description: {
+            en: "A comprehensive platform for community development, offering resources and information about local initiatives and programs.",
+            fr: "Une plateforme complète pour le développement communautaire, offrant des ressources et des informations sur les initiatives et programmes locaux."
+        },
         image: cdc,
         url: "https://cdcrdn.org/",
         techStack: ["React", "Styled Components", "Sanity", "Framer Motion"]
     },
     {
-        title: "What's Around",
-        description: "An innovative location-based app that helps users discover interesting places and events in their vicinity.",
+        title: "Whatsaround Template",
+        description: {
+            en: "A showcase of modern web development capabilities using React, Styled Components, and Framer Motion.",
+            fr: "Une démonstration des capacités de développement web moderne utilisant React, Styled Components et Framer Motion."
+        },
         image: whatsaround,
         url: "https://whatsaround.netlify.app/",
         techStack: ["React", "Styled Components", "Framer Motion", "Google Maps API", "MapBox"]
     },
     {
         title: "Builder.io Template",
-        description: "A showcase of modern web development capabilities using the Builder.io platform for visual content management.",
+        description: {
+            en: "A showcase of modern web development capabilities using the Builder.io platform for visual content management and Next.js for server-side rendering.",
+            fr: "Une démonstration des capacités de développement web moderne utilisant la plateforme Builder.io pour la gestion de contenu visuel et Next.js pour le rendu côté serveur."
+        },
         image: builderio,
         url: "https://builderio-site-demo.netlify.app/",
         techStack: ["Builder.io", "Next.js", "Css modules", "Framer Motion", "MapBox"]
@@ -107,7 +119,7 @@ const projectsList = [
 ];
 
 export default function Projects() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const autoPlayDelay = 8000; // 8 seconds
@@ -167,7 +179,13 @@ export default function Projects() {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <Project {...projectsList[currentIndex]} />
+                        <Project 
+                            title={projectsList[currentIndex].title} 
+                            description={projectsList[currentIndex].description[i18n.language]} 
+                            image={projectsList[currentIndex].image} 
+                            url={projectsList[currentIndex].url} 
+                            techStack={projectsList[currentIndex].techStack} 
+                        />
                     </CarouselTrack>
                 </AnimatePresence>
             </CarouselContainer>
