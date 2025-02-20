@@ -6,12 +6,12 @@ export default function PortfolioButton({ isOn }) {
   const { t } = useTranslation();
 
   const goToPortfolio = () => {
-    const portfolioElement = document.getElementById('portfolio');
-    if (portfolioElement) {
-      portfolioElement.scrollIntoView({ behavior: 'smooth' });
+    const projectsElement = document.getElementById('projects');
+    if (projectsElement) {
+      projectsElement.scrollIntoView({ behavior: 'smooth' });
     } else {
       // Fallback if the element is not found
-      window.location.hash = '#portfolio';
+      window.location.hash = '#projects';
     }
   };
 
