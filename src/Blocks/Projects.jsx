@@ -8,6 +8,7 @@ import Project from "../Components/Project/Project";
 import groupeleclerc from "../Assets/Images/media/groupeleclerc.png";
 import cdc from "../Assets/Images/media/cdc.png";
 import whatsaround from "../Assets/Images/media/whatsaround.png";
+import builderio from "../Assets/Images/media/ice.png";
 
 const ProjectsSection = styled.section`
     position: relative;
@@ -97,9 +98,9 @@ const projectsList = [
         techStack: ["React Native", "Firebase", "Google Maps API"]
     },
     {
-        title: "Builder.io Demo",
+        title: "Builder.io Template",
         description: "A showcase of modern web development capabilities using the Builder.io platform for visual content management.",
-        image: "https://builderio-site-demo.netlify.app/og-image.jpg",
+        image: builderio,
         url: "https://builderio-site-demo.netlify.app/",
         techStack: ["Builder.io", "React", "Next.js", "Vercel"]
     }
@@ -109,7 +110,7 @@ export default function Projects() {
     const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const autoPlayDelay = 5000; // 5 seconds
+    const autoPlayDelay = 8000; // 8 seconds
 
     const nextSlide = useCallback(() => {
         setCurrentIndex(prevIndex => 

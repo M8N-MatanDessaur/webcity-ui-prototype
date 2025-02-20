@@ -54,11 +54,11 @@ const Project = ({ title, description, image, url, techStack = [] }) => {
                     initial={{ opacity: 0 }}
                     animate={{ 
                         opacity: 1,
-                        y: [0, "-45%"],
+                        y: [0, "-60%"],
                         transition: {
                             opacity: { duration: 0.3 },
                             y: {
-                                duration: 12,
+                                duration: 15,
                                 ease: "linear",
                                 repeat: Infinity,
                                 repeatType: "reverse"
@@ -66,6 +66,7 @@ const Project = ({ title, description, image, url, techStack = [] }) => {
                         }
                     }}
                     loading="lazy"
+                    style={{ objectPosition: "top center" }}
                 />
             </ProjectImage>
             
