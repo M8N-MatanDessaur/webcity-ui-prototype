@@ -19,9 +19,10 @@ export const ProjectSlide = styled.div`
 
 export const ProjectImage = styled.div`
     position: relative;
-    width: 55%;
+    width: 50%;
     height: 100%;
     overflow: hidden;
+    padding: 0 4rem;
 
     &::after {
         content: '';
@@ -68,7 +69,7 @@ export const ProjectImage = styled.div`
 
 export const ProjectContent = styled.div`
     position: relative;
-    width: 45%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;

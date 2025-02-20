@@ -71,9 +71,9 @@ export default function MainPage() {
       </Helmet>
       <Landing />
       <Services />
-      <Statistics />
+      {/* <Statistics /> */}
       <Projects />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <AboutUs />
       <FooterQuote />
     </>

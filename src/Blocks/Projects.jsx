@@ -18,7 +18,7 @@ const ProjectsSection = styled.section`
 `;
 
 const ProjectsHeader = styled.div`
-    padding: 6rem 2rem 3rem;
+    padding: 0rem 2rem 3rem;
     text-align: center;
     position: relative;
     z-index: 2;
@@ -81,28 +81,28 @@ const projectsList = [
         description: "A modern website for a construction company, featuring a clean design and intuitive navigation to showcase their services and projects.",
         image: groupeleclerc,
         url: "https://groupeleclerc.net/",
-        techStack: ["React", "Next.js", "Tailwind CSS", "Framer Motion"]
+        techStack: ["React", "Styled Components", "Sanity"]
     },
     {
         title: "CDCRDN",
         description: "A comprehensive platform for community development, offering resources and information about local initiatives and programs.",
         image: cdc,
         url: "https://cdcrdn.org/",
-        techStack: ["React", "Styled Components", "Node.js", "MongoDB"]
+        techStack: ["React", "Styled Components", "Sanity", "Framer Motion"]
     },
     {
         title: "What's Around",
         description: "An innovative location-based app that helps users discover interesting places and events in their vicinity.",
         image: whatsaround,
         url: "https://whatsaround.netlify.app/",
-        techStack: ["React Native", "Firebase", "Google Maps API"]
+        techStack: ["React", "Styled Components", "Framer Motion", "Google Maps API", "MapBox"]
     },
     {
         title: "Builder.io Template",
         description: "A showcase of modern web development capabilities using the Builder.io platform for visual content management.",
         image: builderio,
         url: "https://builderio-site-demo.netlify.app/",
-        techStack: ["Builder.io", "React", "Next.js", "Vercel"]
+        techStack: ["Builder.io", "Next.js", "Css modules", "Framer Motion", "MapBox"]
     }
 ];
 

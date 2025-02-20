@@ -1,244 +1,141 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const pulse = keyframes`
-    0% {
-        transform: scale(0.97);
-        box-shadow: 0 0 0 0 #00000030;
-    }
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 5px #00000000;
-    }
-    100% {
-        transform: scale(0.97);
-        box-shadow: 0 0 0 0 #00000030;
-    }
-`;
-
-export const GridWrapper = styled.div` 
+export const GridWrapper = styled.div`
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 75px;
-    padding: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 
     @media (max-width: 800px) {
-        grid-template-columns: repeat(1, 1fr);
-        place-items: center;
-        padding: 35px;
-        gap: 35px;
-    }
-
-    &::-webkit-scrollbar {
-        width: 10px;
-        background: var(--foreground-color);
-    }
-
-    &::-webkit-scrollbar-track {
-        background: var(--foreground-color);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--text-color);
-        border-radius: 20px;
-        border: 3px solid var(--foreground-color);
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 `;
 
 export const MemberCard = styled.div`
     position: relative;
-    width: 450px;
-    height: max-content;
-    min-height: 260px;
-    padding: 25px;
-    margin: 15px 0;
-    border: 1px solid var(--border-color);    
-    border-radius: 10px;
+    width: 100%;
+    background: var(--foreground-color);
+    border-radius: 20px;
+    padding: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: start;
     flex-direction: column;
+    align-items: center;
     color: var(--text-color);
-    font-size: 18px;
-    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
 
-    @media (max-width: 800px) {
-        height: max-content;
-        min-height: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
+
+    &:hover::before {
+        opacity: 1;
+    }
+`;
+
+export const MemberPicture = styled.img`
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--foreground-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: var(--background-color);
+    z-index: 1;
+`;
+
+export const ExtraText = styled.div`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #FF1493 0%, rgba(255, 20, 147, 0.6) 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.2);
 `;
 
 export const CardHeader = styled.div`
     width: 100%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    overflow: hidden;
-    color: var(--text-color);
-    font-weight: bold;
-`;
-
-export const MemberPicture = styled.img`
-    position: absolute;
-    top: -35px;
-    left: -35px;
-    width: 100px;
-    background-color: transparent;
-    color: var(--text-color);
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
     z-index: 1;
-
-    animation: ${pulse} 2s infinite;
-
-    &:hover {
-        transform: scale(1.08);
-        transition: all 0.1s ease-in-out;
-    }
-
-    @media (max-width: 768px) {
-        width: 75px;
-        top: -25px;
-        left: -25px;
-    }
-
 `;
 
 export const CardHeaderText = styled.div`
-    position: relative;
-    width: 80%;
-    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    overflow: hidden;
+    gap: 0.5rem;
+`;
+
+export const CardHeaderTitle = styled.h3`
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--text-color);
+    margin: 0;
+    line-height: 1.2;
+`;
+
+export const CardHeaderSubtitle = styled.p`
     font-size: 1rem;
-    font-weight: bold;
-`;
-
-export const CardHeaderTitle = styled.div`
-    position: relative;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: bold;
-
-    @media (max-width: 768px) {
-        font-size: 1rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 0.9rem;
-    }
-`;
-
-export const CardHeaderSubtitle = styled.div`
-    position: relative;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
     color: var(--text-color);
     opacity: 0.8;
-    font-size: 0.8rem;
-    font-weight: 400;
-
-    @media (max-width: 768px) {
-        font-size: 0.7rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 0.6rem;
-    }
+    margin: 0;
 `;
 
-export const CardBody = styled.div`    
-    position: relative;
+export const CardBody = styled.div`
     width: 100%;
-    height: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: auto;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 18px;
-    font-weight: bold;
+    text-align: center;
+    z-index: 1;
 `;
 
-export const CardBodyText = styled.div`    
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    overflow: auto;
+export const CardBodyText = styled.p`
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-color);
-    font-size: 0.9rem;
-    font-weight: 400;
-
-    &::-webkit-scrollbar {
-        width: 10px;
-        background: var(--foreground-color);
-    }
-
-    &::-webkit-scrollbar-track {
-        background: var(--foreground-color);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--text-color);
-        border-radius: 20px;
-        border: 3px solid var(--foreground-color);
-    }
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
 `;
 
-export const ExtraText = styled.h2`
-    position: absolute;
-    top: -18px;
-    left: 75px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(text-color);
-
-    @media (max-width: 480px) {
-        left: 55px;
-    }
-    `;
-
-
-    export const LinkAlt = styled(Link)`
+export const LinkAlt = styled(Link)`
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #FF1493 0%, rgba(255, 20, 147, 0.6) 100%);
+    color: white;
     text-decoration: none;
-    align-self: flex-start;
-    font-size: 0.9rem;
-    color: #6376f8;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.2);
+    transition: all 0.3s ease;
 
     &:hover {
-        color: var(--text-color);
-        transition: all 0.2s ease-in-out;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 20, 147, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 `;
