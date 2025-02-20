@@ -19,6 +19,7 @@ import BlogPost from "./Components/BlogPost/BlogPost";
 import FloatingHeader from "./Components/FloatingHeader/FloatingHeader";
 import { ModalProvider, useModal } from './Hooks/useModal';
 import ContactModal from "./Components/ContactModal/ContactModal";
+import BackToTop from './Components/BackToTop/BackToTop';
 
 // New component that uses useModal
 const AppContent = () => {
@@ -73,6 +74,7 @@ const AppContent = () => {
         <Route path="/moretools" element={<MoreTools />} />
         <Route path="*" element={<MainPage />} />
       </Routes>
+      <BackToTop />
     </Router>
   );
 };

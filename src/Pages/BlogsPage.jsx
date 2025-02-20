@@ -125,58 +125,96 @@ const BlogsPage = () => {
 };
 
 const ComingSoonBlogCard = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  transition: all 0.3s ease;
+  min-height: 420px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    width: 100%;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+    color: #2d3748;
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 768px) {
     padding: 2rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-    background-color: #fff;
-
-    &:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        width: 100%;
-        font-weight: 200;
-        margin: 0;
-    }
-
-    @media (max-width: 768px) {
-        padding: 1rem;
-    }
+    min-height: 300px;
+  }
 `;
 
 const BlogContentWrapper = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 1rem;
   }
 `;
 
 const MainSection = styled.div`
   flex: 3;
+  animation: fadeIn 0.6s ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const BlogGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
 
   @media (max-width: 1440px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
 const LoadMoreButton = styled(PrimaryButton)`
-  margin: 2rem auto;
+  margin: 3rem auto 2rem;
   display: block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
 `;
 
 export default BlogsPage;
