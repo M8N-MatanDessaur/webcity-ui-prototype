@@ -1,113 +1,102 @@
-import styled, { keyframes } from "styled-components";
-
-export const flip3d = keyframes`
-    0% {
-        transform: rotateY(180deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
-`;
+import styled from "styled-components";
 
 export const ServiceWrapper = styled.div`
-    &.in-view {
-        animation: ${flip3d} 1s forwards;
-    }
-    perspective: 1000px;
-    backface-visibility: hidden;
-    width: 30%;
-    height: max-content;
-    height: 22em;
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    padding: 2rem;
+    background: var(--card-bg-color, rgba(255, 255, 255, 0.02));
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 35px;
-    background-color: var(--foreground-color);
-    border-radius: 12px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 4px 8px -2px, rgb(255 255 255 / 15%) 0px 0px 0px 1px;
+    transition: all 0.3s ease;
 
-    transition: all 0.1s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at top right,
+            rgba(255, 20, 147, 0.15),
+            transparent 50%
+        );
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-    &:hover {
-        box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
-        transition: all 0.1s ease-in-out;
-        & svg {
-            transform: scale(1.2);
-            transition: all 0.2s ease-in-out;
-        }
+    &:hover::before {
+        opacity: 1;
     }
 
     @media (max-width: 940px) {
-        width: auto;
-        padding: 25px;
-
-        &:hover {
-            box-shadow: none;
-        }
-
-        &:active {
-            box-shadow: 0 0 15px var(--accent-color), 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color);
-            transition: all 0.1s ease-in-out;
-            & svg {
-                transform: scale(1.2);
-                transition: all 0.1s ease-in-out;
-            }
-        }
-
+        min-height: 280px;
+        padding: 1.5rem;
     }
 `;
 
+export const ServiceContent = styled.div`
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+`;
+
 export const ServiceIcon = styled.div`
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    color: var(--text-color);
-    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(255, 20, 147, 0.1));
+    border-radius: 16px;
+    padding: 0.75rem;
 
-    & svg {
+    svg {
         width: 100%;
         height: 100%;
+        color: #FF1493;
+    }
+
+    @media (max-width: 940px) {
+        width: 3rem;
+        height: 3rem;
     }
 `;
 
 export const ServiceTitle = styled.h3`
+    font-family: "Outfit", sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    text-align: center;
     color: var(--text-color);
-    margin-bottom: 1rem;
+    margin: 0;
+    background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    @media (max-width: 768px) {
-        font-size: 1.2rem;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 1rem;
-    }
-
-    @media (max-width: 320px) {
-        font-size: 0.5rem;
+    @media (max-width: 940px) {
+        font-size: 1.25rem;
     }
 `;
 
 export const ServiceDescription = styled.p`
+    font-family: "Outfit", sans-serif;
     font-size: 1rem;
-    font-weight: 400;
-    text-align: center;
+    line-height: 1.6;
     color: var(--text-color);
-    
-    @media (max-width: 768px) {
-        font-size: 1.1rem;
-    }
+    opacity: 0.8;
+    margin: 0;
+    max-width: 90%;
 
-    @media (max-width: 480px) {
-        font-size: 1rem;
+    @media (max-width: 940px) {
+        font-size: 0.9rem;
+        max-width: 100%;
     }
 `;

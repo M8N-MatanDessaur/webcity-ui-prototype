@@ -243,6 +243,10 @@ export const FluidContainer = styled.div`
   }
 `;
 
+export const SectionContainer = styled(FluidContainer)`
+  min-height: unset;
+`;
+
 export const ErrorContainer = styled(FluidContainer)`
 margin: auto;
 height: 80vh;

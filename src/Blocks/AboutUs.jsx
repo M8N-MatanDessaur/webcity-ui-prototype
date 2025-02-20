@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { AltHeading, Paragraph, Separator, FluidContainer, QuotedText } from "../Components/_Common/common.styles";
+import { AltHeading, Paragraph, Separator, SectionContainer, QuotedText } from "../Components/_Common/common.styles";
 import MembersGrid from "../Components/MembersGrid/MembersGrid";
 
 export default function AboutUs() {
@@ -8,7 +8,7 @@ export default function AboutUs() {
     const { t } = useTranslation();
 
     return (
-        <FluidContainer>
+        <SectionContainer>
             <AltHeading>{t('aboutUs.title')}</AltHeading>
             <Paragraph>{t('aboutUs.subtitle')}</Paragraph>
             <br /><br />
@@ -17,6 +17,6 @@ export default function AboutUs() {
             <br />
             <Separator />
             <MembersGrid />
-        </FluidContainer>
+        </SectionContainer>
     );
 }
