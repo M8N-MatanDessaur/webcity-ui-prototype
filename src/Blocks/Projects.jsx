@@ -46,6 +46,10 @@ const CarouselContainer = styled.div`
 const CarouselTrack = styled(motion.div)`
     display: flex;
     width: 100%;
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
 `;
 
 const Dots = styled.div`
@@ -122,11 +126,18 @@ export default function Projects() {
     const { t, i18n } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const autoPlayDelay = 6000; // 8 seconds
+    const [dragStartX, setDragStartX] = useState(0);
+    const autoPlayDelay = 6000;
 
     const nextSlide = useCallback(() => {
         setCurrentIndex(prevIndex => 
             prevIndex === projectsList.length - 1 ? 0 : prevIndex + 1
+        );
+    }, []);
+
+    const previousSlide = useCallback(() => {
+        setCurrentIndex(prevIndex => 
+            prevIndex === 0 ? projectsList.length - 1 : prevIndex - 1
         );
     }, []);
 
@@ -147,7 +158,6 @@ export default function Projects() {
     const handleDotClick = (index) => {
         setCurrentIndex(index);
         setIsAutoPlaying(false);
-        // Resume auto-play after 10 seconds of user inactivity
         setTimeout(() => setIsAutoPlaying(true), 10000);
     };
 
@@ -157,6 +167,27 @@ export default function Projects() {
 
     const handleMouseLeave = () => {
         setIsAutoPlaying(true);
+    };
+
+    const handleDragStart = (event, info) => {
+        setDragStartX(info.point.x);
+        setIsAutoPlaying(false);
+    };
+
+    const handleDragEnd = (event, info) => {
+        const dragEndX = info.point.x;
+        const dragDifference = dragEndX - dragStartX;
+        const dragThreshold = 50; // minimum drag distance to trigger slide change
+
+        if (Math.abs(dragDifference) > dragThreshold) {
+            if (dragDifference > 0) {
+                previousSlide();
+            } else {
+                nextSlide();
+            }
+        }
+
+        setTimeout(() => setIsAutoPlaying(true), 10000);
     };
 
     return (
@@ -178,6 +209,11 @@ export default function Projects() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.1}
+                        onDragStart={handleDragStart}
+                        onDragEnd={handleDragEnd}
                     >
                         <Project 
                             title={projectsList[currentIndex].title} 
