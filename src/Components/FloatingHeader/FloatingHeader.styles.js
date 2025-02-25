@@ -39,7 +39,7 @@ export const NavItem = styled(Link)`
 
 export const NavCta = styled(Link)`
     padding: 0.5rem 1rem;
-    background-color: #FF1493;
+    background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
     color: #ffffff;
     border-radius: 50px;
     text-decoration: none;

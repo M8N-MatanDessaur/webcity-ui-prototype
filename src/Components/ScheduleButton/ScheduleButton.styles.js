@@ -98,7 +98,7 @@ export const FormTitle = styled.h2`
 
 export const FormSubTitle = styled.h3`
   font-size: 1.5rem;
- font-weight: 300
+  font-weight: 300
   color: var(--text-color);
   opacity: 0.8;
   text-align: center;
@@ -128,7 +128,7 @@ export const FlexRow = styled.div`
 
 export const SubmitButton = styled.button`
   padding: 1.3rem 3rem;
-  background-color: #FF1493;
+  background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
   color: #fff;
   border: none;
   border-radius: 50px;

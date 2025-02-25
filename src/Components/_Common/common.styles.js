@@ -383,6 +383,7 @@ export const PrimaryButton = styled.button`
   border-radius: 999px;
   border: none;
   background-color: ${({ alt }) => (alt ? "#000" : "#FF1493")};
+  background: ${({ alt }) => (alt ? "#000" : "linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)")};
   font-size: 1.5rem;
   font-weight: 600;
   outline: none;
