@@ -418,12 +418,11 @@ export const SecondaryButton = styled(PrimaryButton)`
   `;
 
 export const TertiaryButton = styled(SecondaryButton)`
-  background-color: transparent;
+  background: #000;
   aspect-ratio: 1/1;
   height: 4rem;
   width: 4rem;
-  color: #000;
-  border: 2px solid #000;
+  color: #fff;
   padding: 0.5rem;
   font-size: 1.5rem;
 
@@ -433,7 +432,7 @@ export const TertiaryButton = styled(SecondaryButton)`
   }
 
   & svg {
-    fill: #000;
+    fill: #fff;
     height: 2rem;
     width: 2rem;
   }
