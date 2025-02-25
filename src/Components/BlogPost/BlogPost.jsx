@@ -33,7 +33,10 @@ import {
   AuthorImage,
   AuthorInfo,
   ShareButton,
-  BlogPostImage
+  BlogPostImage,
+  ShareSection,
+  ShareText,
+  ShareButtonStyled
 } from './BlogPost.styles';
 import {
   BlocksContainer,
@@ -225,17 +228,6 @@ const BlogPost = () => {
         </script>
       </Helmet>
       <BlocksContainer>
-        <ShareButton onClick={() => {
-          window.navigator.share({
-            title: title,
-            text: finalPost.metaDescription,
-            url: `https://www.webcity.dev/blog/${slugValue}`
-          });
-        }}>
-          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92 0-1.61-1.31-2.92-2.92-2.92Z"></path>
-          </svg>
-        </ShareButton>
         <Article>
           <BlogPostImage src={mainImageUrl} alt={title} />
           <BlogInfo>
@@ -258,6 +250,28 @@ const BlogPost = () => {
           <Content>
             <PortableText value={bodyContent} components={portableTextComponents} />
           </Content>
+          <ShareSection>
+            <ShareText>{t('blog.share.text', 'Like what you\'ve read? Share with a special someone! ✨')}</ShareText>
+            <ShareButtonStyled onClick={() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: post?.title || t('blog.share.defaultTitle', 'Interesting blog post'),
+                  text: post?.description || t('blog.share.defaultDescription', 'Check out this interesting blog post!'),
+                  url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+              } else {
+                // Fallback to copy to clipboard
+                navigator.clipboard.writeText(window.location.href)
+                  .then(() => alert(t('blog.share.copySuccess', 'Link copied to clipboard!')))
+                  .catch(err => console.log('Error copying to clipboard:', err));
+              }
+            }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.12548 15.0077 5.24917 15.0227 5.37061L8.08261 9.19071C7.54305 8.46669 6.78899 8 5.93426 8C4.31055 8 3 9.34315 3 11C3 12.6569 4.31055 14 5.93426 14C6.78899 14 7.54305 13.5333 8.08261 12.8093L15.0227 16.6294C15.0077 16.7508 15 16.8745 15 17C15 18.6569 16.3431 20 18 20C19.6569 20 21 18.6569 21 17C21 15.3431 19.6569 14 18 14C17.1453 14 16.3912 14.4667 15.8517 15.1907L8.91165 11.3706C8.92664 11.2492 8.93426 11.1255 8.93426 11C8.93426 10.8745 8.92664 10.7508 8.91165 10.6294L15.8517 6.80929C16.3912 7.53331 17.1453 8 18 8Z" fill="currentColor"/>
+              </svg>
+              {t('blog.share.button', 'Share')}
+            </ShareButtonStyled>
+          </ShareSection>
         </Article>
 
         {/* Back Button */}

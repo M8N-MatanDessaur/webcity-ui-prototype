@@ -52,7 +52,7 @@ export const Article = styled.article`
   animation: ${fadeIn} 500ms ease-in;
 
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: 1rem;
     font-size: 1rem;
   }
 `;
@@ -297,24 +297,65 @@ export const ProgressBar = styled.div`
 `;
 
 export const ShareSection = styled.div`
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
   display: flex;
-  gap: 1rem;
-  margin: 2.5rem 0;
-  padding: 1.5rem;
-  background-color: #f8fafc;
-  border-radius: 12px;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-`;
-
-export const ShareButton = styled(Button)`
-  position: fixed;
-  bottom: 105px;
-  left: 35px;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--background-color);
+  border-radius: 16px;
+  animation: ${fadeIn} 500ms ease-in;
 
   @media (max-width: 768px) {
-    bottom: 70px;
-    left: 25px;
-    padding: 8px;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+export const ShareText = styled.p`
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+`;
+
+export const ShareButtonStyled = styled(Button)`
+  position: relative;
+  top: unset;
+  left: unset;
+  bottom: unset;
+  right: unset;
+  background: #000;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px #00000030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #00000030;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  svg {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    position: unset;
   }
 `;

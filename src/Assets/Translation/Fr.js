@@ -70,15 +70,23 @@ export default {
         matanExtraText:'co-fondateur',
 
         ericSubtitle: 'Développement Commercial',
-        ericText: 'Bonjour, je suis Eric ! Ancien responsable des opérations devenu passionné de technologie, je combine la planification stratégique, le leadership et la communication avec mes compétences en programmation. Ma mission : mener vos projets commerciaux vers le succès avec efficacité et innovation.',
-        matanExtraText:'co-fondateur',
+        ericText: 'Bonjour, je suis Eric ! Ancien responsable des opérations devenu passionné de technologie, je combine la planification stratégique, le leadership et la communication avec mes compétences en programmation. Ma mission : mener vos projets d\'entreprise vers le succès avec efficacité et innovation.',
+        ericExtraText:'co-fondateur',
 
         jacobsSubtitle: 'Spécialiste Marketing',
-        jacobText: 'Moi je suis Jacob, Passionné de technologie et de marketing, mon parcours m\'a naturellement conduit vers le marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, en ajoutant de la valeur avec mon expertise unique.',
+        jacobText: 'Salut, je suis Jacob ! Passionné de tech et de marketing, mon parcours m\'a naturellement conduit au marketing web. Avec un diplôme en marketing et une riche expérience web, je suis ravi de contribuer à des projets qui suscitent ma passion, apportant de la valeur avec mon expertise unique.',
         
         clickHere: 'Jettez un coup d\'œuil à notre boite d\'outils',
     },
-
+    blog: {
+        share: {
+            text: 'Vous avez aimé cet article ? Partagez-le avec quelqu\'un de spécial ! ✨',
+            button: 'Partager',
+            defaultTitle: 'Article intéressant',
+            defaultDescription: 'Découvrez cet article intéressant !',
+            copySuccess: 'Lien copié dans le presse-papiers !'
+        }
+    },
     toolbox:{
         title: 'Boite à outils',
         fontsTools: 'Polices & Typographie',

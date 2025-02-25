@@ -65,7 +65,7 @@ export default {
         title: 'The team behind the magic',
         subtitle: 'We are a young passionate team who are dedicated to helping businesses grow and succeed. We are a full service web design and development agency. We build websites, web applications, and web experiences. 100% satisfaction guaranteed.',
         vision: "Empowering Digital Dreams",
-        visionText: "At webcity.dev, we believe every business can unlock its digital potential. We're not just crafting websites; we're building gateways to your success. Our passion fuels us to push the boundaries of web design and development, transforming entrepreneurial dreams into captivating digital realities. We're committed to excellence and your 100% satisfaction. Let's shape the future of online business together. Your success is our vision—let’s make it happen!",
+        visionText: "At webcity.dev, we believe every business can unlock its digital potential. We're not just crafting websites; we're building gateways to your success. Our passion fuels us to push the boundaries of web design and development, transforming entrepreneurial dreams into captivating digital realities. We're committed to excellence and your 100% satisfaction. Let's shape the future of online business together. Your success is our vision—let's make it happen!",
         matanSubtitle: 'Lead Developer / Designer',
         matanText: 'Hey there! I\'m Matan, a dedicated full-stack developer. Skilled in crafting robust solutions, I thrive on helping businesses succeed with clean, efficient code. Let\'s build something amazing together!',
         matanExtraText:'cofounder',
@@ -79,7 +79,15 @@ export default {
     
         clickHere: 'Check out our toolbox',
     },
-
+    blog: {
+        share: {
+            text: 'Like what you\'ve read? Share with a special someone! ✨',
+            button: 'Share',
+            defaultTitle: 'Interesting blog post',
+            defaultDescription: 'Check out this interesting blog post!',
+            copySuccess: 'Link copied to clipboard!'
+        }
+    },
     toolbox:{
         title: 'Toolbox',
         fontsTools: 'Fonts & Typography',
